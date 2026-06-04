@@ -426,7 +426,10 @@
           <span class="font-label-technical text-label-technical text-on-surface-warm">$131K / MO</span>
         </div>
       </div>
-      <a href="#contact" class="mt-12 w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">REQUEST CASE STUDY</a>
+      <div class="mt-12 flex flex-col gap-3">
+        <a href="/case-studies/001.html" class="w-full py-4 bg-accent-performance text-on-surface-warm font-label-button uppercase hover:brightness-110 transition-all text-center">READ FULL CASE STUDY →</a>
+        <a href="#contact" class="w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">REQUEST AUDIT</a>
+      </div>
     </div>
   </div>
 
@@ -449,7 +452,10 @@
           <span class="font-label-technical text-label-technical text-on-surface-warm">Ongoing</span>
         </div>
       </div>
-      <a href="#contact" class="mt-12 w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">REQUEST CASE STUDY</a>
+      <div class="mt-12 flex flex-col gap-3">
+        <a href="/case-studies/002.html" class="w-full py-4 bg-accent-performance text-on-surface-warm font-label-button uppercase hover:brightness-110 transition-all text-center">READ FULL CASE STUDY →</a>
+        <a href="#contact" class="w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">REQUEST AUDIT</a>
+      </div>
     </div>
     <div class="col-span-12 md:col-span-8 p-12 flex flex-col justify-center bg-surface-secondary">
       <p class="font-body-lg text-body-lg text-on-surface-warm italic mb-8 leading-relaxed">
@@ -690,6 +696,43 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Wire contact form to Resend function for direct email delivery
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.querySelector('form[name="contact"]');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fd = new FormData(contactForm);
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = 'SENDING...';
+        btn.disabled = true;
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: fd.get('name'),
+              email: fd.get('email'),
+              service: fd.get('brand') || '—',
+              message: fd.get('message')
+            })
+          });
+          if (res.ok) {
+            contactForm.innerHTML = '<p class="font-label-technical text-label-technical text-accent-performance uppercase py-8 tracking-widest">TRANSMISSION RECEIVED — WE\'LL BE IN TOUCH WITHIN 24 HOURS.</p>';
+          } else {
+            btn.textContent = originalText;
+            btn.disabled = false;
+          }
+        } catch {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }
+      });
+    }
+  });
+
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
