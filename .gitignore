@@ -1,0 +1,20 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.env.local
+.env.production
+
+# Keep .env (it only has placeholder comments, no secrets)
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Data files (contact submissions stored locally in dev)
+data/contacts.json
+
+# Claude
+.claude/

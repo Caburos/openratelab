@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Navy #0F2650 → HSL 219 68% 19% */
+    --primary: 219 68% 19%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Teal #01CFC9 → HSL 178 99% 41% */
+    --accent: 178 99% 41%;
+    --accent-foreground: 219 68% 19%;
+
+    /* Light teal #B7ECEA → HSL 178 58% 82% */
+    --accent-light: 178 58% 82%;
+
+    /* Ultra-light teal bg #EEFBFA → HSL 175 62% 96% */
+    --accent-bg: 175 62% 96%;
+
+    --background: 0 0% 100%;
+    --foreground: 219 20% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 219 20% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 219 20% 18%;
+
+    --secondary: 175 62% 96%;
+    --secondary-foreground: 219 68% 19%;
+
+    --muted: 210 20% 97%;
+    --muted-foreground: 215 16% 47%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 178 99% 41%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #0F2650 0%, #01CFC9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 bg-primary text-white font-semibold rounded-full hover:opacity-90 transition-opacity;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-colors;
+  }
+}

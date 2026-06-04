@@ -1,0 +1,287 @@
+{
+  "hero": {
+    "headline": "Uros builds your internet presence",
+    "subheadline": "I specialize in creating powerful e-commerce solutions and comprehensive email marketing automation. From custom online stores, landing pages to complete email systems, attributing revenues up to 30%, I help businesses maximize their revenue and grow their customer base through strategic digital marketing.",
+    "stats": [
+      {
+        "label": "Years",
+        "value": "3+"
+      },
+      {
+        "label": "Projects",
+        "value": "20+"
+      },
+      {
+        "label": "Happy Clients",
+        "value": "99%"
+      }
+    ],
+    "primaryCta": "Start Your Project",
+    "secondaryCta": "View My Work",
+    "profileImage": "https://res.cloudinary.com/dqh5ndaf7/image/upload/v1758535389/urosbuilds400x400_dfrtwv.jpg",
+    "trustLabels": {
+      "rating": "5.0 rating",
+      "clients": "20+ happy clients",
+      "response": "24 hours response"
+    }
+  },
+  "services": {
+    "heading": "Services I Offer",
+    "subheading": "From concept to launch, I provide comprehensive web development services tailored to help your business succeed online.",
+    "customSolutionsText": "Don't see what you're looking for? I also offer custom solutions.",
+    "customSolutionsButtonText": "Discuss Your Project",
+    "services": [
+      {
+        "id": "1",
+        "title": "E-commerce Website Development",
+        "description": "Build powerful online stores that convert visitors into customers.",
+        "features": [
+          "Custom storefront design",
+          "Payment integration",
+          "Inventory management"
+        ],
+        "price": "Starting at $5,000",
+        "icon": "code"
+      },
+      {
+        "id": "2",
+        "title": "Brand & Package Design",
+        "description": "Create compelling visual identities that stand out.",
+        "features": [
+          "Logo design",
+          "Brand guidelines",
+          "Packaging design"
+        ],
+        "price": "Starting at $2,000",
+        "icon": "palette"
+      },
+      {
+        "id": "3",
+        "title": "Website Maintenance & Security",
+        "description": "Keep your website running smoothly and securely.",
+        "features": [
+          "Regular updates",
+          "Security monitoring",
+          "Performance optimization"
+        ],
+        "price": "Starting at $500/month",
+        "icon": "shield"
+      },
+      {
+        "id": "4",
+        "title": "SEO & Content Optimization",
+        "description": "Improve your online visibility and search rankings.",
+        "features": [
+          "Keyword research",
+          "Content optimization",
+          "Technical SEO"
+        ],
+        "price": "Starting at $1,500",
+        "icon": "zap"
+      },
+      {
+        "id": "5",
+        "title": "Mobile App Development",
+        "description": "Native and cross-platform mobile applications.",
+        "features": [
+          "iOS & Android apps",
+          "User-friendly design",
+          "Fast & scalable"
+        ],
+        "price": "Starting at $8,000",
+        "icon": "smartphone"
+      },
+      {
+        "id": "1764542834766",
+        "title": "testni service",
+        "description": "testni opis",
+        "features": [
+          "dela1",
+          "dela2",
+          "dela3"
+        ],
+        "price": "1",
+        "icon": "zap"
+      }
+    ]
+  },
+  "work": {
+    "heading": "Featured Work",
+    "subheading": "Here are some of my recent projects that showcase my expertise.",
+    "projects": [
+      {
+        "id": "1",
+        "title": "TVMerch.com",
+        "description": "A modern e-commerce platform for merchandise sales with streaming integration.",
+        "tags": [
+          "E-commerce",
+          "Streaming",
+          "Design"
+        ],
+        "image": "https://res.cloudinary.com/dqh5ndaf7/image/upload/v1758536923/veva_hdja5f.jpg",
+        "link": "https://tvmerch.com",
+        "clientOrder": "E-commerce Platform",
+        "result": "40% increase in conversion rate"
+      },
+      {
+        "id": "2",
+        "title": "Opti",
+        "description": "Optimization platform for digital agencies.",
+        "tags": [
+          "SaaS",
+          "Analytics",
+          "Dashboard"
+        ],
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+        "link": "#",
+        "clientOrder": "SaaS Dashboard",
+        "result": "Reduced operational costs by 35%"
+      },
+      {
+        "id": "3",
+        "title": "CreativeAgency.com",
+        "description": "Portfolio website for a creative design agency.",
+        "tags": [
+          "Portfolio",
+          "Design",
+          "Branding"
+        ],
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+        "link": "#",
+        "clientOrder": "Agency Portfolio",
+        "result": "Increased client inquiries by 60%"
+      },
+      {
+        "id": "1764715372064",
+        "title": "ttest",
+        "description": "test project",
+        "tags": [
+          "tag1"
+        ],
+        "image": "none",
+        "link": "project link",
+        "clientOrder": "category"
+      }
+    ]
+  },
+  "testimonials": {
+    "heading": "What My Clients Say",
+    "subheading": "Don't just take my word for it. Here's what my clients have to say.",
+    "testimonials": [
+      {
+        "id": "1",
+        "name": "Sarah Johnson",
+        "title": "CEO",
+        "company": "Tech Startup Inc",
+        "content": "Working with Uros was transformative. He delivered exactly what we needed on time and exceeded our expectations.",
+        "rating": 5,
+        "image": "https://res.cloudinary.com/dqh5ndaf7/image/upload/v1758537233/taya-widmar_kn77xu.jpg"
+      },
+      {
+        "id": "2",
+        "name": "Mike Chen",
+        "title": "Marketing Director",
+        "company": "E-Commerce Store",
+        "content": "The website he built increased our conversions by 40%. Highly recommended for anyone serious about results.",
+        "rating": 5,
+        "image": "https://res.cloudinary.com/dqh5ndaf7/image/upload/v1758537453/utii_v5p964.jpg"
+      },
+      {
+        "id": "3",
+        "name": "Emily Rodriguez",
+        "title": "Founder",
+        "company": "Creative Designs Co",
+        "content": "Professional, responsive, and incredibly talented. Uros is the best investment we've made for our brand.",
+        "rating": 5,
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
+      },
+      {
+        "id": "1764798449351",
+        "name": "tester",
+        "title": "testing",
+        "company": "testing company",
+        "content": "test",
+        "rating": 5,
+        "image": ""
+      }
+    ],
+    "trustLabel": "⭐ 4.9 rating from 20+ reviews",
+    "ctaHeading": "Ready to join these satisfied clients?",
+    "ctaText": "Start Your Success Story"
+  },
+  "about": {
+    "heading": "About Me",
+    "content": [
+      "Hi, I'm Uros Korene, a passionate e-commerce developer and email marketing specialist based in Europe. With over 5+ Years of experience, I've successfully completed 20+ client projects, including complex e-commerce stores, marketplaces, and full email marketing setups.",
+      "My expertise spans across multiple platforms and technologies including WordPress, Shopify, WooCommerce, Klaviyo, MailerLite, ActiveCampaign, SendGrid, MailPoet, and FunnelKit. I specialize in creating high-performance websites with LiteSpeed optimization, multilingual support, and dynamic content management.",
+      "I focus on delivering comprehensive solutions that include e-commerce development, email automation, speed optimization, SEO structuring, and ongoing maintenance. Whether it's building multi-vendor marketplaces with Dokan, implementing Judge.me reviews, or managing multisite setups with cPanel, I ensure every project drives measurable results and revenue growth."
+    ],
+    "image": "https://res.cloudinary.com/dqh5ndaf7/image/upload/v1758535389/urosbuilds400x400_dfrtwv.jpg",
+    "stats": [
+      {
+        "label": "Projects Completed",
+        "value": "20+",
+        "icon": "award"
+      },
+      {
+        "label": "Client Satisfaction",
+        "value": "99%",
+        "icon": "users"
+      }
+    ],
+    "skills": [
+      {
+        "name": "E-commerce Development",
+        "level": 98
+      },
+      {
+        "name": "Email Marketing Automation",
+        "level": 95
+      },
+      {
+        "name": "WooCommerce & Shopify",
+        "level": 89
+      },
+      {
+        "name": "Website Maintenance",
+        "level": 96
+      },
+      {
+        "name": "Web Performance",
+        "level": 90
+      },
+      {
+        "name": "testni",
+        "level": 50
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to Grow Your Business?",
+    "subheading": "Let's work together to create a website that drives results and helps your business reach new heights.",
+    "primaryCta": "Start Your Project",
+    "secondaryCta": "View Case Studies"
+  },
+  "contact": {
+    "heading": "Let's Work Together",
+    "subheading": "Get in touch with me",
+    "email": "uros@urosbuilds.com",
+    "phone": "+1 (555) 123-4567",
+    "description": "I'm always excited to work on new projects and help businesses grow. Feel free to reach out through any of the channels below.",
+    "projectTypes": [
+      "E-commerce Development",
+      "Brand & Package Design",
+      "Website Maintenance",
+      "SEO & Content Optimization",
+      "Mobile App Development",
+      "Custom Solution"
+    ],
+    "budgetRanges": [
+      "$1,000 - $5,000",
+      "$5,000 - $10,000",
+      "$10,000 - $25,000",
+      "$25,000 - $50,000",
+      "$50,000+"
+    ]
+  }
+}
