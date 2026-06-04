@@ -36,16 +36,28 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://openratelab.com/#organization",
   "name": "OpenRateLab",
   "url": "https://openratelab.com",
-  "logo": "https://openratelab.com/images/logo.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://openratelab.com/images/logo.png"
+  },
   "description": "OpenRateLab builds Klaviyo retention systems and writes conversion copy for e-commerce and DTC brands.",
+  "email": "uros@openratelab.com",
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "uros@openratelab.com",
-    "contactType": "customer service"
+    "contactType": "customer service",
+    "availableLanguage": "English"
   },
-  "sameAs": []
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
 }
 </script>
 
@@ -63,7 +75,7 @@
         "@type": "Service",
         "name": "Email Copywriting",
         "description": "High-performance email copy engineered to convert — welcome flows, campaigns, abandoned cart, win-back, and every lifecycle touchpoint.",
-        "provider": { "@type": "Organization", "name": "OpenRateLab" }
+        "provider": { "@type": "Organization", "@id": "https://openratelab.com/#organization", "name": "OpenRateLab" }
       }
     },
     {
@@ -73,7 +85,7 @@
         "@type": "Service",
         "name": "Ad Copywriting",
         "description": "Direct-response ad copy for Meta, Google, and TikTok that stops the scroll and drives qualified traffic at scale.",
-        "provider": { "@type": "Organization", "name": "OpenRateLab" }
+        "provider": { "@type": "Organization", "@id": "https://openratelab.com/#organization", "name": "OpenRateLab" }
       }
     },
     {
@@ -83,7 +95,7 @@
         "@type": "Service",
         "name": "Klaviyo Automation",
         "description": "Advanced Klaviyo architecture — custom events, dynamic segmentation, predictive analytics, and flow systems built to compound.",
-        "provider": { "@type": "Organization", "name": "OpenRateLab" }
+        "provider": { "@type": "Organization", "@id": "https://openratelab.com/#organization", "name": "OpenRateLab" }
       }
     },
     {
@@ -93,7 +105,7 @@
         "@type": "Service",
         "name": "Website Copy",
         "description": "Landing pages, product descriptions, and homepage copy written to convert visitors into buyers — and buyers into repeat customers.",
-        "provider": { "@type": "Organization", "name": "OpenRateLab" }
+        "provider": { "@type": "Organization", "@id": "https://openratelab.com/#organization", "name": "OpenRateLab" }
       }
     }
   ]
@@ -114,7 +126,7 @@
         "@type": "Review",
         "reviewBody": "We were leaving money on the table with our email list. OpenRateLab rewrote our welcome flow and within 30 days it was generating more revenue than our entire previous email program combined.",
         "author": { "@type": "Person", "name": "Nika" },
-        "itemReviewed": { "@type": "Organization", "name": "OpenRateLab" },
+        "itemReviewed": { "@type": "Organization", "@id": "https://openratelab.com/#organization", "name": "OpenRateLab" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
       }
     },
@@ -125,7 +137,7 @@
         "@type": "Review",
         "reviewBody": "The copy they write actually sounds like our brand — not like a template. Our open rates went up, our click rates went up, and most importantly our revenue from email went up.",
         "author": { "@type": "Person", "name": "Teia" },
-        "itemReviewed": { "@type": "Organization", "name": "OpenRateLab" },
+        "itemReviewed": { "@type": "Organization", "@id": "https://openratelab.com/#organization", "name": "OpenRateLab" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
       }
     },
@@ -136,7 +148,7 @@
         "@type": "Review",
         "reviewBody": "What sets them apart is they understand the full funnel. They don't just write emails — they think about where your customer is in the journey and what will move them. That's rare.",
         "author": { "@type": "Person", "name": "Viktor" },
-        "itemReviewed": { "@type": "Organization", "name": "OpenRateLab" },
+        "itemReviewed": { "@type": "Organization", "@id": "https://openratelab.com/#organization", "name": "OpenRateLab" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
       }
     }
@@ -417,6 +429,38 @@
       <a href="#contact" class="mt-12 w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">REQUEST CASE STUDY</a>
     </div>
   </div>
+
+  <!-- Case Study 002 -->
+  <div class="grid grid-cols-12 gap-0 border border-muted-silver/20 border-t-0">
+    <div class="col-span-12 md:col-span-4 p-12 flex flex-col justify-center border-r border-muted-silver/20">
+      <span class="font-label-technical text-label-technical text-accent-performance mb-4">CASE_STUDY:002 // EMAIL ATTRIBUTION</span>
+      <h3 class="font-headline-md text-headline-md uppercase mb-8 leading-tight">30%+ EMAIL REVENUE<br/>— DTC BRAND</h3>
+      <div class="space-y-6">
+        <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase">STATE_BEFORE</span>
+          <span class="font-label-technical text-label-technical text-on-surface-warm">Sporadic sends</span>
+        </div>
+        <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase">EMAIL_ATTR</span>
+          <span class="font-label-technical text-label-technical text-accent-performance">30%+</span>
+        </div>
+        <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase">STATUS</span>
+          <span class="font-label-technical text-label-technical text-on-surface-warm">Ongoing</span>
+        </div>
+      </div>
+      <a href="#contact" class="mt-12 w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">REQUEST CASE STUDY</a>
+    </div>
+    <div class="col-span-12 md:col-span-8 p-12 flex flex-col justify-center bg-surface-secondary">
+      <p class="font-body-lg text-body-lg text-on-surface-warm italic mb-8 leading-relaxed">
+        "My store went from sending the occasional newsletter to having a proper email system with flows, a campaign calendar, and clean deliverability. Revenue attribution from email is consistently above 30%. I barely think about it anymore."
+      </p>
+      <div class="flex items-center gap-6">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase">AMANDA R.</span>
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase">// FOUNDER, DTC BRAND</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Testimonials -->
@@ -623,7 +667,7 @@
 <footer class="grid grid-cols-12 gap-gutter px-8 md:px-16 py-40 w-full bg-surface-primary border-t border-muted-silver/30">
   <div class="col-span-12 md:col-span-6 mb-20 md:mb-0">
     <div class="font-headline-lg text-2xl md:text-headline-lg font-black text-on-surface-warm uppercase tracking-tighter mb-8 leading-none">OPENRATELAB.</div>
-    <p class="font-label-technical text-label-technical text-muted-silver max-w-md">PRECISION RETENTION SYSTEMS. ANALYTICALLY DRIVEN. EDITORIALLY EXECUTED. &copy;2025 OPENRATELAB.</p>
+    <p class="font-label-technical text-label-technical text-muted-silver max-w-md">PRECISION RETENTION SYSTEMS. ANALYTICALLY DRIVEN. EDITORIALLY EXECUTED. &copy;<span id="year">2025</span> OPENRATELAB.</p>
   </div>
   <div class="col-span-6 md:col-span-3">
     <span class="font-label-technical text-label-technical text-accent-performance mb-8 block uppercase">NAVIGATION</span>
@@ -645,6 +689,7 @@
 </footer>
 
 <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
