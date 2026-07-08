@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OPENRATELAB | Precision Retention Systems</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&amp;family=Source+Serif+4:ital,wght@0,400;1,400&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "on-surface-warm": "#F9F9F7",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "on-primary": "#680011",
+                    "on-error-container": "#ffdad6",
+                    "surface-container": "#201f1f",
+                    "tertiary": "#6fd8cc",
+                    "surface-secondary": "#262626",
+                    "outline-variant": "#5b403f",
+                    "surface": "#131313",
+                    "inverse-surface": "#e5e2e1",
+                    "primary-container": "#ff535b",
+                    "on-surface-variant": "#e4bebc",
+                    "tertiary-fixed": "#8cf4e8",
+                    "on-background": "#e5e2e1",
+                    "muted-silver": "#A3A3A3",
+                    "on-secondary-fixed-variant": "#464747",
+                    "surface-container-high": "#2a2a2a",
+                    "accent-performance": "#E63946",
+                    "surface-primary": "#0D0D0D",
+                    "on-tertiary-fixed-variant": "#00504a",
+                    "outline": "#ab8987",
+                    "secondary": "#c7c6c6",
+                    "tertiary-fixed-dim": "#6fd8cc",
+                    "surface-bright": "#3a3939",
+                    "surface-container-highest": "#353534",
+                    "secondary-fixed": "#e3e2e2",
+                    "inverse-primary": "#bb152c",
+                    "surface-tint": "#ffb3b1",
+                    "error-container": "#93000a",
+                    "on-secondary": "#2f3131",
+                    "on-primary-fixed-variant": "#92001c",
+                    "on-error": "#690005",
+                    "on-tertiary-container": "#00302c",
+                    "on-primary-container": "#5b000e",
+                    "primary-fixed": "#ffdad8",
+                    "on-tertiary": "#003733",
+                    "secondary-container": "#484949",
+                    "error": "#ffb4ab",
+                    "surface-dim": "#131313",
+                    "surface-variant": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-fixed": "#410007",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "tertiary-container": "#2fa096",
+                    "on-secondary-container": "#b8b8b8",
+                    "background": "#131313",
+                    "primary": "#ffb3b1",
+                    "on-tertiary-fixed": "#00201d",
+                    "inverse-on-surface": "#313030"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "margin-tablet": "32px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-button": ["Hanken Grotesk"],
+                    "body-lg": ["Source Serif 4"],
+                    "display-xl-mobile": ["Hanken Grotesk"],
+                    "body-md": ["Source Serif 4"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "display-xl": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "label-technical": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "label-button": ["14px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "display-xl-mobile": ["64px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["40px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-technical": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0D0D0D;
+            color: #F9F9F7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .technical-border {
+            border: 1px solid rgba(163, 163, 163, 0.2);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .snap-v-scroll {
+            scroll-snap-type: y proximity;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface-warm selection:bg-accent-performance selection:text-white">
+<!-- TopNavBar Mobile (Derived from JSON with Mobile Adaptations) -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface-primary border-b border-muted-silver/20 px-6 h-16 flex items-center justify-between">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface-warm uppercase">
+            OPENRATELAB
+        </div>
+<button class="p-2" id="menu-toggle">
+<span class="material-symbols-outlined text-on-surface-warm">menu</span>
+</button>
+</nav>
+<!-- Fullscreen Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-surface-primary z-[60] flex flex-col p-8 transform translate-x-full transition-transform duration-300" id="mobile-menu">
+<div class="flex justify-end mb-12">
+<button class="p-2" id="menu-close">
+<span class="material-symbols-outlined text-on-surface-warm">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-8">
+<a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm hover:text-accent-performance transition-colors" href="#">STRATEGY</a>
+<a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm hover:text-accent-performance transition-colors" href="#">SYSTEMS</a>
+<a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm hover:text-accent-performance transition-colors" href="#">RESULTS</a>
+<a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm hover:text-accent-performance transition-colors" href="#">EXPERTISE</a>
+</div>
+<div class="mt-auto border-t border-muted-silver/20 pt-8">
+<button class="w-full bg-on-surface-warm text-surface-primary py-4 font-label-button text-label-button uppercase tracking-widest active:scale-95 transition-transform">
+                BOOK AUDIT
+            </button>
+</div>
+</div>
+<!-- Main Content Canvas -->
+<main class="pt-16 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="px-6 py-12 border-b border-muted-silver/20">
+<div class="flex flex-col gap-4 mb-12">
+<span class="font-label-technical text-label-technical text-accent-performance uppercase tracking-widest">EST. 2024 / PERFORMANCE UNIT</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold uppercase leading-none tracking-tighter">
+                    ENGINEERING <br/>
+<span class="text-accent-performance">RETENTION</span> <br/>
+                    INFRASTRUCTURE.
+                </h1>
+</div>
+<!-- Hero Data Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="technical-border p-4 flex flex-col gap-2">
+<span class="font-label-technical text-label-technical text-muted-silver">TOTAL ATTRIBUTION</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tight">$420M+</span>
+</div>
+<div class="technical-border p-4 flex flex-col gap-2">
+<span class="font-label-technical text-label-technical text-muted-silver">AVG. LIFT</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-accent-performance">42.8%</span>
+</div>
+<div class="col-span-2 technical-border p-4 flex justify-between items-center">
+<span class="font-label-technical text-label-technical text-muted-silver">EFFICIENCY MULTIPLIER</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tight">3.2X</span>
+</div>
+</div>
+</section>
+<!-- Systems Architecture (Stacked) -->
+<section class="px-6 py-20 bg-surface-secondary">
+<div class="mb-12">
+<h2 class="font-headline-md text-headline-md font-bold uppercase tracking-tight mb-2">SYSTEMS ARCHITECTURE</h2>
+<div class="h-1 w-12 bg-accent-performance"></div>
+</div>
+<div class="flex flex-col gap-8">
+<!-- Card 01 -->
+<div class="technical-border bg-surface-primary p-6 relative group overflow-hidden">
+<div class="flex justify-between items-start mb-8">
+<span class="font-label-technical text-label-technical text-muted-silver">01 / RETENTION FLOWS</span>
+<span class="material-symbols-outlined text-accent-performance">terminal</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold uppercase mb-4">KLAVIYO <br/>OPTIMIZATION</h3>
+<p class="font-body-md text-body-md text-muted-silver mb-8 leading-relaxed">High-frequency segmentation logic designed for maximum inbox authority and LTV expansion.</p>
+<div class="flex justify-between items-center border-t border-muted-silver/10 pt-4">
+<span class="font-label-technical text-label-technical">STATUS: ACTIVE</span>
+<div class="flex items-center gap-2 group-active:translate-x-2 transition-transform">
+<span class="font-label-button text-label-button uppercase">VIEW SPEC</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 02 -->
+<div class="technical-border bg-surface-primary p-6 relative group overflow-hidden">
+<div class="flex justify-between items-start mb-8">
+<span class="font-label-technical text-label-technical text-muted-silver">02 / ACQUISITION</span>
+<span class="material-symbols-outlined text-accent-performance">analytics</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold uppercase mb-4">DIRECT <br/>RESPONSE</h3>
+<p class="font-body-md text-body-md text-muted-silver mb-8 leading-relaxed">Aggressive copy-driven systems that convert cold traffic into high-intent data assets.</p>
+<div class="flex justify-between items-center border-t border-muted-silver/10 pt-4">
+<span class="font-label-technical text-label-technical">STATUS: ACTIVE</span>
+<div class="flex items-center gap-2 group-active:translate-x-2 transition-transform">
+<span class="font-label-button text-label-button uppercase">VIEW SPEC</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Ledger Case Study -->
+<section class="py-20 border-b border-muted-silver/20">
+<div class="px-6 mb-8">
+<span class="font-label-technical text-label-technical text-accent-performance mb-2 block">SELECTED CASE STUDY</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-black uppercase tracking-tighter">THE LEDGER.</h2>
+</div>
+<div class="relative w-full aspect-[4/5] bg-surface-secondary overflow-hidden mb-8">
+<img alt="Performance Metrics Visualization" class="w-full h-full object-cover grayscale opacity-50 contrast-125" data-alt="A macro photograph of a high-resolution stock market data terminal in a dark, sophisticated command center. The screen displays complex glowing red and white charts against a deep black background. The lighting is clinical and focused, emphasizing a sense of high-stakes financial precision. The overall aesthetic is dark-mode editorial, prioritizing clarity, technical detail, and aggressive monochrome contrasts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBolP8cCgdS_Aao0LTQKOVN-sb4iLh61nePMIJvZgI6GV87j3ciN7zYwpCNPxXqqHb9us7gjZqWzTvj1839xrAgf6kGl0wwHqIs5WdLL1_fC46oqoCwUsL7xpjQGEAiYa9B9UWaG9ROri705MhLfczTC9BGiO5gP0yTL2uZilZlrm5PXpCZVncJPV6uZnYHxnRIcLzaNl0g4FJElE6YPnXK2nPKT7PRDSudcoYVO_Juzjmgz7wc-qza8YzohfOViri7KxYjFI5f8PoN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-primary via-transparent to-transparent"></div>
+<!-- Floating Data Overlays -->
+<div class="absolute bottom-6 left-6 right-6 flex flex-col gap-4">
+<div class="bg-surface-primary/80 backdrop-blur-md technical-border p-4">
+<span class="font-label-technical text-label-technical text-accent-performance">REVENUE LIFT</span>
+<div class="font-headline-md text-headline-md font-bold">+124%</div>
+</div>
+<div class="bg-surface-primary/80 backdrop-blur-md technical-border p-4">
+<span class="font-label-technical text-label-technical text-muted-silver">TIME TO SCALE</span>
+<div class="font-headline-md text-headline-md font-bold">14 DAYS</div>
+</div>
+</div>
+</div>
+<div class="px-6">
+<p class="font-body-lg text-body-md text-on-surface-warm italic mb-8 leading-relaxed">
+                    "OpenRateLab transformed our lifecycle marketing from a generic broadcast channel into a precision-engineered revenue engine. The results were instantaneous and mathematically undeniable."
+                </p>
+<div class="flex flex-col gap-1 border-l-2 border-accent-performance pl-4">
+<span class="font-label-button text-label-button uppercase">MARCUS VANE</span>
+<span class="font-label-technical text-label-technical text-muted-silver">CMO, APEX INDUSTRIES</span>
+</div>
+</div>
+</section>
+<!-- Capabilities List -->
+<section class="px-6 py-20">
+<h2 class="font-label-technical text-label-technical text-muted-silver uppercase tracking-[0.2em] mb-12">OPERATIONAL CAPABILITIES</h2>
+<div class="flex flex-col">
+<div class="py-6 border-b border-muted-silver/20 flex justify-between items-center group">
+<span class="font-headline-md text-[24px] font-bold uppercase tracking-tight">Lifecycle Audit</span>
+<span class="material-symbols-outlined text-muted-silver group-active:text-accent-performance">add</span>
+</div>
+<div class="py-6 border-b border-muted-silver/20 flex justify-between items-center group">
+<span class="font-headline-md text-[24px] font-bold uppercase tracking-tight">Retention Systems</span>
+<span class="material-symbols-outlined text-muted-silver group-active:text-accent-performance">add</span>
+</div>
+<div class="py-6 border-b border-muted-silver/20 flex justify-between items-center group">
+<span class="font-headline-md text-[24px] font-bold uppercase tracking-tight">Data Integration</span>
+<span class="material-symbols-outlined text-muted-silver group-active:text-accent-performance">add</span>
+</div>
+<div class="py-6 border-b border-muted-silver/20 flex justify-between items-center group">
+<span class="font-headline-md text-[24px] font-bold uppercase tracking-tight">Creative Ops</span>
+<span class="material-symbols-outlined text-muted-silver group-active:text-accent-performance">add</span>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="px-6 py-24 bg-accent-performance text-on-surface-warm">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-black uppercase tracking-tighter mb-8 leading-none">
+                SECURE YOUR <br/>SYSTEMS AUDIT.
+            </h2>
+<p class="font-body-md text-body-md mb-12 opacity-90">
+                We only accept 2 new audits per month to maintain operational precision. Reserve your slot now.
+            </p>
+<button class="w-full bg-surface-primary text-on-surface-warm py-5 font-label-button text-label-button uppercase tracking-widest active:scale-95 transition-transform">
+                APPLY FOR AUDIT
+            </button>
+</section>
+</main>
+<!-- Footer (Derived from JSON) -->
+<footer class="bg-surface-primary border-t border-muted-silver/30 px-6 py-16 flex flex-col gap-12">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-black text-on-surface-warm uppercase tracking-tighter">
+            OPENRATELAB
+        </div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<span class="font-label-technical text-label-technical text-muted-silver uppercase">Legal</span>
+<a class="font-label-button text-label-button uppercase hover:text-on-surface-warm" href="#">PRIVACY POLICY</a>
+<a class="font-label-button text-label-button uppercase hover:text-on-surface-warm" href="#">TERMS OF SERVICE</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-technical text-label-technical text-muted-silver uppercase">Focus</span>
+<a class="font-label-button text-label-button uppercase hover:text-on-surface-warm" href="#">KLAVIYO AUDIT</a>
+<a class="font-label-button text-label-button uppercase hover:text-on-surface-warm" href="#">CRO SYSTEMS</a>
+</div>
+</div>
+<div class="pt-8 border-t border-muted-silver/10">
+<p class="font-label-technical text-label-technical text-muted-silver">
+                ©2024 OPENRATELAB. PRECISION RETENTION SYSTEMS.
+            </p>
+</div>
+</footer>
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // Simple parallax-like reveal on scroll for technical-border items
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.technical-border').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+            observer.observe(el);
+        });
+    </script>
+</body></html>

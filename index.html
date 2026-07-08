@@ -294,13 +294,38 @@
 <nav class="fixed top-0 z-50 flex justify-between items-center w-full px-4 md:px-16 h-20 bg-surface-primary border-b border-muted-silver/20">
   <a href="#home" class="font-headline-md text-base md:text-headline-md font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors">OPENRATELAB</a>
   <div class="hidden md:flex items-center space-x-12">
-    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="#services">SERVICES</a>
-    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="#results">RESULTS</a>
-    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="#expertise">EXPERTISE</a>
-    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="#contact">CONTACT</a>
+    <a class="nav-link text-on-surface-warm font-label-button uppercase border-b-2 border-transparent hover:text-accent-performance transition-colors duration-150" href="#services" data-section="services">SERVICES</a>
+    <a class="nav-link text-on-surface-warm font-label-button uppercase border-b-2 border-transparent hover:text-accent-performance transition-colors duration-150" href="#results" data-section="results">RESULTS</a>
+    <a class="nav-link text-on-surface-warm font-label-button uppercase border-b-2 border-transparent hover:text-accent-performance transition-colors duration-150" href="#ledger" data-section="ledger">CASE STUDIES</a>
+    <a class="nav-link text-on-surface-warm font-label-button uppercase border-b-2 border-transparent hover:text-accent-performance transition-colors duration-150" href="#expertise" data-section="expertise">EXPERTISE</a>
+    <a class="nav-link text-on-surface-warm font-label-button uppercase border-b-2 border-transparent hover:text-accent-performance transition-colors duration-150" href="#contact" data-section="contact">CONTACT</a>
   </div>
-  <a href="#contact" class="bg-on-surface-warm text-surface-primary px-3 py-2 md:px-6 md:py-3 font-label-button uppercase hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-150 active:scale-95">BOOK AUDIT</a>
+  <div class="flex items-center gap-2">
+    <a href="#contact" class="bg-on-surface-warm text-surface-primary px-3 py-2 md:px-6 md:py-3 font-label-button uppercase hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-150 active:scale-95">BOOK AUDIT</a>
+    <button class="md:hidden p-2" id="menu-toggle" aria-label="Open menu">
+      <span class="material-symbols-outlined text-on-surface-warm">menu</span>
+    </button>
+  </div>
 </nav>
+
+<!-- Fullscreen Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-surface-primary z-[60] flex flex-col p-8 transform translate-x-full transition-transform duration-300 md:hidden" id="mobile-menu">
+  <div class="flex justify-end mb-12">
+    <button class="p-2" id="menu-close" aria-label="Close menu">
+      <span class="material-symbols-outlined text-on-surface-warm">close</span>
+    </button>
+  </div>
+  <div class="flex flex-col gap-8">
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="#services">SERVICES</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="#results">RESULTS</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="#ledger">CASE STUDIES</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="#expertise">EXPERTISE</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="#contact">CONTACT</a>
+  </div>
+  <div class="mt-auto border-t border-muted-silver/20 pt-8">
+    <a href="#contact" class="block text-center w-full bg-on-surface-warm text-surface-primary py-4 font-label-button uppercase tracking-widest active:scale-95 transition-transform">BOOK AUDIT</a>
+  </div>
+</div>
 
 <!-- Hero Section -->
 <section id="home" class="relative pt-40 pb-32 px-8 md:px-16 pixel-grid overflow-hidden">
@@ -335,17 +360,17 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
     <div class="flex flex-col">
       <span class="font-label-technical text-label-technical text-accent-performance mb-2">REV_ATTRIBUTED</span>
-      <span class="font-display-xl-mobile md:text-[80px] font-bold font-label-technical leading-none text-accent-performance">$1.2M+</span>
+      <span class="font-display-xl-mobile md:text-[80px] font-bold font-label-technical leading-none">$1.2M+</span>
       <p class="font-label-button uppercase text-muted-silver mt-4">Email Revenue Generated</p>
     </div>
     <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
       <span class="font-label-technical text-label-technical text-accent-performance mb-2">AVG_OPEN_RATE</span>
-      <span class="font-display-xl-mobile md:text-[80px] font-bold font-label-technical leading-none text-accent-performance">33%+</span>
+      <span class="font-display-xl-mobile md:text-[80px] font-bold font-label-technical leading-none">33%+</span>
       <p class="font-label-button uppercase text-muted-silver mt-4">Average Open Rate Across Accounts</p>
     </div>
     <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
       <span class="font-label-technical text-label-technical text-accent-performance mb-2">BRANDS_SERVED</span>
-      <span class="font-display-xl-mobile md:text-[80px] font-bold font-label-technical leading-none text-accent-performance">22</span>
+      <span class="font-display-xl-mobile md:text-[80px] font-bold font-label-technical leading-none">22</span>
       <p class="font-label-button uppercase text-muted-silver mt-4">E-Commerce Brands Scaled</p>
     </div>
   </div>
@@ -409,66 +434,228 @@
     <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">THE LEDGER</h2>
     <span class="font-label-technical text-label-technical text-muted-silver md:pb-4">[ RECENT_DEPLOYMENTS ]</span>
   </div>
-  <div class="grid grid-cols-12 gap-0 border border-muted-silver/20">
-    <div class="col-span-12 md:col-span-8 overflow-hidden bg-surface-secondary">
-      <img class="w-full h-[400px] md:h-[600px] object-cover grayscale brightness-75 hover:grayscale-0 hover:scale-105 transition-all duration-700" src="/images/hero-banner.jpg" alt="E-commerce brand email marketing case study — revenue growth via Klaviyo retention system"/>
-    </div>
-    <div class="col-span-12 md:col-span-4 p-6 md:p-12 flex flex-col justify-center md:border-l border-muted-silver/20">
-      <span class="font-label-technical text-label-technical text-accent-performance mb-4">CASE_STUDY:001 // DTC BRAND</span>
-      <h3 class="font-headline-md text-headline-md uppercase mb-8 leading-tight">75.2% OPEN RATE —<br/>E-COMMERCE BRAND</h3>
-      <div class="space-y-6">
-        <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
-          <span class="font-label-technical text-label-technical text-muted-silver uppercase">ACTIVE_LIST</span>
-          <span class="font-label-technical text-label-technical text-on-surface-warm">16,000+</span>
-        </div>
-        <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
-          <span class="font-label-technical text-label-technical text-muted-silver uppercase">AVG_OPEN_RATE</span>
-          <span class="font-label-technical text-label-technical text-accent-performance">75.2%</span>
-        </div>
-        <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
-          <span class="font-label-technical text-label-technical text-muted-silver uppercase">CAMPAIGN_REVENUE</span>
-          <span class="font-label-technical text-label-technical text-on-surface-warm">$131K / MO</span>
-        </div>
-      </div>
-      <div class="mt-12 flex flex-col gap-3">
-        <a href="/case-studies/001.html" class="w-full py-4 bg-accent-performance text-on-surface-warm font-label-button uppercase hover:brightness-110 transition-all text-center">READ FULL CASE STUDY →</a>
-        <a href="#contact" class="w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">REQUEST AUDIT</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- Case Study 002 -->
-  <div class="grid grid-cols-12 gap-0 border border-muted-silver/20 border-t-0">
-    <div class="col-span-12 md:col-span-4 p-6 md:p-12 flex flex-col justify-center md:border-r border-muted-silver/20">
-      <span class="font-label-technical text-label-technical text-accent-performance mb-4">CASE_STUDY:002 // EMAIL ATTRIBUTION</span>
-      <h3 class="font-headline-md text-headline-md uppercase mb-8 leading-tight">30%+ EMAIL REVENUE<br/>— DTC BRAND</h3>
-      <div class="space-y-6">
-        <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
-          <span class="font-label-technical text-label-technical text-muted-silver uppercase">STATE_BEFORE</span>
-          <span class="font-label-technical text-label-technical text-on-surface-warm">Sporadic sends</span>
+  <div class="relative">
+    <div id="ledger-track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-0 border border-muted-silver/20" style="scrollbar-width:none;-ms-overflow-style:none;">
+      <!-- CASE_STUDY:001 -->
+      <div class="ledger-slide grid grid-cols-12 gap-0 min-w-full flex-shrink-0 snap-center">
+        <div class="col-span-12 md:col-span-8 overflow-hidden bg-surface-secondary">
+          <img class="w-full h-[400px] md:h-[600px] object-cover grayscale brightness-75 hover:grayscale-0 hover:scale-105 transition-all duration-700" src="/images/hero-banner.jpg" alt="E-commerce brand email marketing case study — revenue growth via Klaviyo retention system"/>
         </div>
-        <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
-          <span class="font-label-technical text-label-technical text-muted-silver uppercase">EMAIL_ATTR</span>
-          <span class="font-label-technical text-label-technical text-accent-performance">30%+</span>
-        </div>
-        <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
-          <span class="font-label-technical text-label-technical text-muted-silver uppercase">STATUS</span>
-          <span class="font-label-technical text-label-technical text-on-surface-warm">Ongoing</span>
+        <div class="col-span-12 md:col-span-4 p-6 md:p-12 flex flex-col justify-center md:border-l border-muted-silver/20">
+          <span class="font-label-technical text-label-technical text-accent-performance mb-4">CASE_STUDY:001 // DTC BRAND</span>
+          <h3 class="font-headline-md text-headline-md uppercase mb-8 leading-tight">75.2% OPEN RATE —<br/>E-COMMERCE BRAND</h3>
+          <div class="space-y-6">
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">ACTIVE_LIST</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">16,000+</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">AVG_OPEN_RATE</span>
+              <span class="font-label-technical text-label-technical text-accent-performance">75.2%</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">CAMPAIGN_REVENUE</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">$131K / MO</span>
+            </div>
+          </div>
+          <a href="/case-studies/ecommerce-open-rate-system.html" class="mt-12 w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">READ FULL CASE STUDY</a>
         </div>
       </div>
-      <div class="mt-12 flex flex-col gap-3">
-        <a href="/case-studies/002.html" class="w-full py-4 bg-accent-performance text-on-surface-warm font-label-button uppercase hover:brightness-110 transition-all text-center">READ FULL CASE STUDY →</a>
-        <a href="#contact" class="w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">REQUEST AUDIT</a>
+
+      <!-- CASE_STUDY:002 -->
+      <div class="ledger-slide grid grid-cols-12 gap-0 min-w-full flex-shrink-0 snap-center">
+        <div class="col-span-12 md:col-span-8 overflow-hidden bg-surface-secondary flex items-center justify-center h-[400px] md:h-[600px] relative">
+          <svg viewBox="0 0 400 260" class="w-full h-full" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="260" fill="#1c1b1b"/>
+            <line x1="20" y1="220" x2="380" y2="220" stroke="#A3A3A3" stroke-opacity="0.2"/>
+            <rect x="60" y="170" width="60" height="50" fill="#353534"/>
+            <rect x="260" y="70" width="60" height="150" fill="#E63946"/>
+            <text x="55" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="10" fill="#A3A3A3">SPORADIC SENDS</text>
+            <text x="255" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="10" fill="#A3A3A3">SYSTEM IN PLACE</text>
+          </svg>
+          <span class="absolute top-6 left-6 font-label-technical text-label-technical text-muted-silver">[ FIG. 00 // EMAIL REVENUE ATTRIBUTION ]</span>
+        </div>
+        <div class="col-span-12 md:col-span-4 p-6 md:p-12 flex flex-col justify-center md:border-l border-muted-silver/20">
+          <span class="font-label-technical text-label-technical text-accent-performance mb-4">CASE_STUDY:002</span>
+          <h3 class="font-headline-md text-headline-md uppercase mb-8 leading-tight">30%+ EMAIL REVENUE<br/>— DTC BRAND</h3>
+          <p class="font-label-button uppercase text-muted-silver text-xs mb-6">DTC BRAND</p>
+          <div class="space-y-6">
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">STATE_BEFORE</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">Sporadic Sends</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">EMAIL_ATTR</span>
+              <span class="font-label-technical text-label-technical text-accent-performance">30%+</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">STATUS</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">Ongoing</span>
+            </div>
+          </div>
+          <a href="/case-studies/dtc-brand-attribution-system.html" class="mt-12 w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">READ FULL CASE STUDY</a>
+        </div>
+      </div>
+
+      <!-- CASE_STUDY:003 -->
+      <div class="ledger-slide grid grid-cols-12 gap-0 min-w-full flex-shrink-0 snap-center">
+        <div class="col-span-12 md:col-span-8 overflow-hidden bg-surface-secondary flex items-center justify-center h-[400px] md:h-[600px] relative">
+          <svg viewBox="0 0 400 260" class="w-full h-full" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="260" fill="#1c1b1b"/>
+            <line x1="20" y1="220" x2="380" y2="220" stroke="#A3A3A3" stroke-opacity="0.2"/>
+            <polyline points="20,205 120,198 200,150 280,95 380,40" fill="none" stroke="#E63946" stroke-width="3"/>
+            <circle cx="380" cy="40" r="5" fill="#E63946"/>
+            <text x="20" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="11" fill="#A3A3A3">NO INCENTIVE</text>
+            <text x="330" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="11" fill="#A3A3A3">SEND DAY</text>
+          </svg>
+          <span class="absolute top-6 left-6 font-label-technical text-label-technical text-muted-silver">[ FIG. 01 // REVENUE PER SEND ]</span>
+        </div>
+        <div class="col-span-12 md:col-span-4 p-6 md:p-12 flex flex-col justify-center md:border-l border-muted-silver/20">
+          <span class="font-label-technical text-label-technical text-accent-performance mb-4">CASE_STUDY:003</span>
+          <h3 class="font-headline-md text-headline-md uppercase mb-8 leading-tight">$35,972 FROM<br/>ONE SINGLE SEND</h3>
+          <p class="font-label-button uppercase text-muted-silver text-xs mb-6">MULTI-SPECIES ANIMAL WELLNESS BRAND</p>
+          <div class="space-y-6">
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">CAMPAIGN_REVENUE</span>
+              <span class="font-label-technical text-label-technical text-accent-performance">$35,972</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">REV_PER_RECIPIENT</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">$2.16</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">OPEN_RATE</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">63%</span>
+            </div>
+          </div>
+          <a href="/case-studies/multi-species-wellness-brand.html" class="mt-12 w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">READ FULL CASE STUDY</a>
+        </div>
+      </div>
+
+      <!-- CASE_STUDY:004 -->
+      <div class="ledger-slide grid grid-cols-12 gap-0 min-w-full flex-shrink-0 snap-center">
+        <div class="col-span-12 md:col-span-8 overflow-hidden bg-surface-secondary flex items-center justify-center h-[400px] md:h-[600px] relative">
+          <svg viewBox="0 0 400 260" class="w-full h-full" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="260" fill="#1c1b1b"/>
+            <line x1="20" y1="220" x2="380" y2="220" stroke="#A3A3A3" stroke-opacity="0.2"/>
+            <polyline points="20,90 100,85 180,95 260,80 340,88 380,82" fill="none" stroke="#E63946" stroke-width="3"/>
+            <text x="20" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="11" fill="#A3A3A3">36 MONTHS OF SENDS</text>
+            <text x="330" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="11" fill="#A3A3A3">TODAY</text>
+          </svg>
+          <span class="absolute top-6 left-6 font-label-technical text-label-technical text-muted-silver">[ FIG. 02 // OPEN RATE, 3-YEAR TREND ]</span>
+        </div>
+        <div class="col-span-12 md:col-span-4 p-6 md:p-12 flex flex-col justify-center md:border-l border-muted-silver/20">
+          <span class="font-label-technical text-label-technical text-accent-performance mb-4">CASE_STUDY:004</span>
+          <h3 class="font-headline-md text-headline-md uppercase mb-8 leading-tight">77-81% OPEN RATES<br/>FOR 3+ YEARS</h3>
+          <p class="font-label-button uppercase text-muted-silver text-xs mb-6">DTC PET WELLNESS BRAND</p>
+          <div class="space-y-6">
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">OPEN_RATE_RANGE</span>
+              <span class="font-label-technical text-label-technical text-accent-performance">77-81%</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">CAMPAIGN_REVENUE</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">$742-853</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">PROGRAM_LENGTH</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">3+ YRS</span>
+            </div>
+          </div>
+          <a href="/case-studies/pet-wellness-brand.html" class="mt-12 w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">READ FULL CASE STUDY</a>
+        </div>
+      </div>
+
+      <!-- CASE_STUDY:005 -->
+      <div class="ledger-slide grid grid-cols-12 gap-0 min-w-full flex-shrink-0 snap-center">
+        <div class="col-span-12 md:col-span-8 overflow-hidden bg-surface-secondary flex items-center justify-center h-[400px] md:h-[600px] relative">
+          <svg viewBox="0 0 400 260" class="w-full h-full" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="260" fill="#1c1b1b"/>
+            <line x1="20" y1="220" x2="380" y2="220" stroke="#A3A3A3" stroke-opacity="0.2"/>
+            <rect x="60" y="130" width="40" height="90" fill="#353534"/>
+            <rect x="160" y="100" width="40" height="120" fill="#353534"/>
+            <rect x="260" y="50" width="40" height="170" fill="#E63946"/>
+            <text x="60" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="10" fill="#A3A3A3">AVG SEND</text>
+            <text x="150" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="10" fill="#A3A3A3">PROMO SEND</text>
+            <text x="250" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="10" fill="#A3A3A3">THIS SEND</text>
+          </svg>
+          <span class="absolute top-6 left-6 font-label-technical text-label-technical text-muted-silver">[ FIG. 03 // REVENUE PER RECIPIENT ]</span>
+        </div>
+        <div class="col-span-12 md:col-span-4 p-6 md:p-12 flex flex-col justify-center md:border-l border-muted-silver/20">
+          <span class="font-label-technical text-label-technical text-accent-performance mb-4">CASE_STUDY:005</span>
+          <h3 class="font-headline-md text-headline-md uppercase mb-8 leading-tight">HIGHEST REVENUE EFFICIENCY<br/>OF ANY ACCOUNT WE'VE RUN</h3>
+          <p class="font-label-button uppercase text-muted-silver text-xs mb-6">FARM-DIRECT PET TREATS BRAND</p>
+          <div class="space-y-6">
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">REV_PER_RECIPIENT</span>
+              <span class="font-label-technical text-label-technical text-accent-performance">$0.80</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">LIST_SIZE</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">~1,100</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">INCENTIVE</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">NONE</span>
+            </div>
+          </div>
+          <a href="/case-studies/farm-direct-pet-treats-brand.html" class="mt-12 w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">READ FULL CASE STUDY</a>
+        </div>
+      </div>
+
+      <!-- CASE_STUDY:006 -->
+      <div class="ledger-slide grid grid-cols-12 gap-0 min-w-full flex-shrink-0 snap-center">
+        <div class="col-span-12 md:col-span-8 overflow-hidden bg-surface-secondary flex items-center justify-center h-[400px] md:h-[600px] relative">
+          <svg viewBox="0 0 400 260" class="w-full h-full" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="260" fill="#1c1b1b"/>
+            <line x1="20" y1="220" x2="380" y2="220" stroke="#A3A3A3" stroke-opacity="0.2"/>
+            <circle cx="80" cy="140" r="10" fill="#E63946"/>
+            <circle cx="170" cy="130" r="10" fill="#E63946"/>
+            <circle cx="260" cy="145" r="10" fill="#E63946"/>
+            <circle cx="340" cy="135" r="10" fill="#E63946"/>
+            <line x1="80" y1="140" x2="340" y2="135" stroke="#A3A3A3" stroke-dasharray="4 4" stroke-opacity="0.4"/>
+            <text x="60" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="10" fill="#A3A3A3">ANGLE_01</text>
+            <text x="150" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="10" fill="#A3A3A3">ANGLE_02</text>
+            <text x="240" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="10" fill="#A3A3A3">ANGLE_03</text>
+            <text x="320" y="245" class="font-label-technical" font-family="JetBrains Mono" font-size="10" fill="#A3A3A3">ANGLE_04</text>
+          </svg>
+          <span class="absolute top-6 left-6 font-label-technical text-label-technical text-muted-silver">[ FIG. 05 // PATTERN REPLICATION ]</span>
+        </div>
+        <div class="col-span-12 md:col-span-4 p-6 md:p-12 flex flex-col justify-center md:border-l border-muted-silver/20">
+          <span class="font-label-technical text-label-technical text-accent-performance mb-4">CASE_STUDY:006</span>
+          <h3 class="font-headline-md text-headline-md uppercase mb-8 leading-tight">THE SAME RESULT,<br/>FOUR DIFFERENT WAYS</h3>
+          <p class="font-label-button uppercase text-muted-silver text-xs mb-6">EQUINE PERFORMANCE NUTRITION BRAND</p>
+          <div class="space-y-6">
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">CAMPAIGN_REVENUE</span>
+              <span class="font-label-technical text-label-technical text-accent-performance">$700-900</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">REPLICATIONS</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">4X</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-muted-silver/10 pb-2">
+              <span class="font-label-technical text-label-technical text-muted-silver uppercase">PROGRAM_LENGTH</span>
+              <span class="font-label-technical text-label-technical text-on-surface-warm">12+ MO</span>
+            </div>
+          </div>
+          <a href="/case-studies/equine-performance-nutrition-brand.html" class="mt-12 w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">READ FULL CASE STUDY</a>
+        </div>
       </div>
     </div>
-    <div class="col-span-12 md:col-span-8 p-6 md:p-12 flex flex-col justify-center bg-surface-secondary">
-      <p class="font-body-lg text-body-lg text-on-surface-warm italic mb-8 leading-relaxed">
-        "My store went from sending the occasional newsletter to having a proper email system with flows, a campaign calendar, and clean deliverability. Revenue attribution from email is consistently above 30%. I barely think about it anymore."
-      </p>
-      <div class="flex items-center gap-6">
-        <span class="font-label-technical text-label-technical text-accent-performance uppercase">AMANDA R.</span>
-        <span class="font-label-technical text-label-technical text-muted-silver uppercase">// FOUNDER, DTC BRAND</span>
+
+    <!-- Slider controls -->
+    <div class="flex items-center justify-between mt-8">
+      <div class="flex items-center gap-3">
+        <button id="ledger-prev" aria-label="Previous case study" class="p-3 border border-muted-silver/30 text-on-surface-warm hover:bg-on-surface-warm hover:text-surface-primary transition-all">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <button id="ledger-next" aria-label="Next case study" class="p-3 border border-muted-silver/30 text-on-surface-warm hover:bg-on-surface-warm hover:text-surface-primary transition-all">
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
       </div>
+      <div id="ledger-dots" class="flex items-center gap-3"></div>
     </div>
   </div>
 </section>
@@ -682,18 +869,19 @@
   <div class="col-span-6 md:col-span-3">
     <span class="font-label-technical text-label-technical text-accent-performance mb-8 block uppercase">NAVIGATION</span>
     <ul class="space-y-4">
-      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm transition-all" href="#services">SERVICES</a></li>
-      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm transition-all" href="#results">RESULTS</a></li>
-      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm transition-all" href="#expertise">EXPERTISE</a></li>
-      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm transition-all" href="#testimonials">TESTIMONIALS</a></li>
-      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm transition-all" href="#contact">CONTACT</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="#services">SERVICES</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="#results">RESULTS</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="#ledger">CASE STUDIES</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="#expertise">EXPERTISE</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="#testimonials">TESTIMONIALS</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="#contact">CONTACT</a></li>
     </ul>
   </div>
   <div class="col-span-6 md:col-span-3">
     <span class="font-label-technical text-label-technical text-accent-performance mb-8 block uppercase">CONTACT</span>
     <ul class="space-y-4">
-      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm transition-all" href="mailto:uros@openratelab.com">uros@openratelab.com</a></li>
-      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm transition-all" href="#contact">BOOK FREE AUDIT</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="mailto:uros@openratelab.com">uros@openratelab.com</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="#contact">BOOK FREE AUDIT</a></li>
     </ul>
   </div>
 </footer>
@@ -701,7 +889,9 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Netlify Forms — AJAX submit with inline success message
+  // Netlify Forms — AJAX submit with inline success message, plus a parallel
+  // call to the Resend-backed function so notification email delivery
+  // doesn't depend on Netlify's own dashboard notification settings.
   document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector('form[name="contact"]');
     if (contactForm) {
@@ -711,12 +901,26 @@
         const orig = btn.textContent;
         btn.textContent = 'SENDING...';
         btn.disabled = true;
-        fetch('/', {
+
+        const formData = new FormData(contactForm);
+        const netlifyCapture = fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(contactForm)).toString()
-        })
-          .then(r => {
+          body: new URLSearchParams(formData).toString()
+        });
+        const emailSend = fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.get('name'),
+            email: formData.get('email'),
+            service: formData.get('brand'),
+            message: formData.get('message')
+          })
+        }).catch(() => {});
+
+        Promise.all([netlifyCapture, emailSend])
+          .then(([r]) => {
             if (r.ok) {
               contactForm.innerHTML = '<p class="font-label-technical text-label-technical text-accent-performance uppercase py-8 tracking-widest">TRANSMISSION RECEIVED — WE\'LL BE IN TOUCH WITHIN 24 HOURS.</p>';
             } else {
@@ -741,6 +945,80 @@
         }
       });
     });
+
+    // Scroll-spy: highlight the nav link for the section currently in view
+    const navLinks = document.querySelectorAll('.nav-link');
+    const spySections = Array.from(document.querySelectorAll('section[id]'));
+    if (navLinks.length && spySections.length) {
+      const setActive = (id) => {
+        navLinks.forEach((link) => {
+          const active = link.dataset.section === id;
+          link.classList.toggle('text-accent-performance', active);
+          link.classList.toggle('font-bold', active);
+          link.classList.toggle('border-accent-performance', active);
+          link.classList.toggle('border-transparent', !active);
+        });
+      };
+      const spyObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActive(entry.target.id);
+          });
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+      );
+      spySections.forEach((section) => spyObserver.observe(section));
+    }
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuToggle && menuClose && mobileMenu) {
+      menuToggle.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
+      menuClose.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+      });
+    }
+
+    // Ledger case-study slider
+    const track = document.getElementById('ledger-track');
+    const prevBtn = document.getElementById('ledger-prev');
+    const nextBtn = document.getElementById('ledger-next');
+    const dotsWrap = document.getElementById('ledger-dots');
+    if (track && dotsWrap) {
+      const slides = Array.from(track.querySelectorAll('.ledger-slide'));
+      const goTo = (i) => {
+        const clamped = Math.max(0, Math.min(slides.length - 1, i));
+        track.scrollTo({ left: slides[clamped].offsetLeft, behavior: 'smooth' });
+      };
+      const currentIndex = () => {
+        let closest = 0;
+        let closestDist = Infinity;
+        slides.forEach((s, i) => {
+          const dist = Math.abs(s.offsetLeft - track.scrollLeft);
+          if (dist < closestDist) { closestDist = dist; closest = i; }
+        });
+        return closest;
+      };
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-muted-silver/30 ledger-dot transition-colors';
+        dot.setAttribute('aria-label', 'Go to case study ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+      const dots = dotsWrap.querySelectorAll('.ledger-dot');
+      const updateDots = () => {
+        const index = currentIndex();
+        dots.forEach((d, i) => d.classList.toggle('bg-accent-performance', i === index));
+      };
+      updateDots();
+      track.addEventListener('scroll', () => window.requestAnimationFrame(updateDots));
+      prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
+      nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
+    }
   });
 </script>
 
