@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>43.3% Open Rate + 2.86% CTR — Fashion Email That Actually Holds | OpenRateLab Case Study</title>
+<meta name="description" content="How an activewear brand maintained above-industry open rates and click rates simultaneously across 50 campaigns and 62 automated flows."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#0D0D0D"/>
+<link rel="canonical" href="https://openratelab.com/case-studies/activewear-brand-email-engagement.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="43.3% Open Rate + 2.86% CTR — Fashion Email That Actually Holds | OpenRateLab Case Study"/>
+<meta property="og:description" content="How an activewear brand maintained above-industry open rates and click rates simultaneously across 50 campaigns and 62 automated flows."/>
+<meta property="og:url" content="https://openratelab.com/case-studies/activewear-brand-email-engagement.html"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  body { background-color: #0D0D0D; color: #F9F9F7; -webkit-font-smoothing: antialiased; }
+  .rule-line { height: 1px; background-color: rgba(163, 163, 163, 0.2); width: 100%; }
+  .pixel-grid { background-image: radial-gradient(circle, #262626 1px, transparent 1px); background-size: 40px 40px; }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+</style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "accent-performance": "#E63946",
+          "surface-primary": "#0D0D0D",
+          "surface-secondary": "#262626",
+          "on-surface-warm": "#F9F9F7",
+          "muted-silver": "#A3A3A3"
+        },
+        "borderRadius": { "DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "0rem" },
+        "spacing": { "gutter": "24px", "margin-desktop": "64px", "unit": "8px", "margin-mobile": "20px", "margin-tablet": "32px" },
+        "fontFamily": {
+          "headline-lg-mobile": ["Hanken Grotesk"], "display-xl-mobile": ["Hanken Grotesk"], "display-xl": ["Hanken Grotesk"],
+          "label-button": ["Hanken Grotesk"], "label-technical": ["JetBrains Mono"], "body-md": ["Source Serif 4"],
+          "headline-lg": ["Hanken Grotesk"], "body-lg": ["Source Serif 4"], "headline-md": ["Hanken Grotesk"]
+        },
+        "fontSize": {
+          "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "display-xl-mobile": ["44px", {"lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+          "label-button": ["14px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+          "label-technical": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+          "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-surface-primary selection:bg-accent-performance selection:text-surface-primary">
+
+<nav class="fixed top-0 z-50 flex justify-between items-center w-full px-4 md:px-16 h-20 bg-surface-primary border-b border-muted-silver/20">
+  <a href="/" class="font-headline-md text-base md:text-headline-md font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors">OPENRATELAB</a>
+  <div class="hidden md:flex items-center space-x-12">
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/#services">SERVICES</a>
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/#ledger">CASE STUDIES</a>
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/about">ABOUT</a>
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/#contact">CONTACT</a>
+  </div>
+  <a href="/#contact" class="bg-on-surface-warm text-surface-primary px-3 py-2 md:px-6 md:py-3 font-label-button uppercase hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-150 active:scale-95">BOOK AUDIT</a>
+</nav>
+
+<main class="mt-20">
+  <!-- Hero -->
+  <section class="min-h-[60vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <a href="/#ledger" class="inline-flex items-center gap-2 font-label-technical text-label-technical text-muted-silver uppercase hover:text-accent-performance transition-colors mb-10 w-fit">
+      <span class="material-symbols-outlined text-base">arrow_back</span> BACK TO THE LEDGER
+    </a>
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-10">
+      <div class="max-w-3xl">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4 tracking-[0.2em]">[ THE LEDGER / CASE_STUDY:008 // ACTIVEWEAR &amp; FASHION BRAND ]</span>
+        <h1 class="font-display-xl-mobile md:text-headline-lg font-black md:font-bold uppercase leading-none mb-6">FASHION EMAIL<br/>THAT HOLDS</h1>
+        <p class="font-body-lg text-body-lg text-muted-silver max-w-xl">43.3% open rate. 2.86% click rate. Both above industry average — simultaneously. 62 flows, 50 campaigns, and an unsubscribe rate under 0.35%.</p>
+      </div>
+      <div class="flex flex-col items-start md:items-end text-left md:text-right border-l-4 md:border-l border-accent-performance md:border-muted-silver/20 pl-6 md:pl-12">
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase mb-2">PRIMARY METRIC</span>
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none">43.3%</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm">AVG OPEN RATE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Fashion Email Problem -->
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-t border-muted-silver/20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+      <div class="md:col-span-4">
+        <h2 class="font-headline-md text-headline-md uppercase md:sticky md:top-32">THE FASHION<br/>EMAIL PROBLEM</h2>
+      </div>
+      <div class="md:col-span-8 md:border-l border-muted-silver/20 md:pl-16 mt-8 md:mt-0 space-y-8">
+        <div>
+          <span class="font-label-technical text-label-technical text-accent-performance block mb-4">01. DIAGNOSIS</span>
+          <p class="font-body-lg text-body-lg text-on-surface-warm leading-relaxed mb-4">Fashion and activewear email has a well-documented problem. Subscribers sign up during a discount moment — a first-purchase offer, a seasonal sale, a welcome popup — collect the code, and disengage. The brand used a discount to acquire the email address. The subscriber associated the email address with discounts. When the discounts stop, so does the engagement.</p>
+          <p class="font-body-lg text-body-lg text-on-surface-warm leading-relaxed mb-4">Most fashion email programs try to solve this by sending more frequently and leaning harder on promotions. That compounds the problem. Open rates drop as subscribers learn that most emails don't warrant attention. Unsubscribe rates climb when sends feel like noise rather than signal. The spiral accelerates.</p>
+          <p class="font-body-lg text-body-lg text-on-surface-warm leading-relaxed">The industry average for fashion email open rate is around 20-25%. Click rates average 2-2.5%. Brands that run discount-heavy programs often land below both. The goal with this activewear brand was to build an email program where engagement held above both benchmarks without needing to lean on constant promotional incentives to drive it.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 border border-muted-silver/20">
+            <span class="font-label-technical text-label-technical text-muted-silver block mb-2 uppercase">INDUSTRY OPEN AVG</span>
+            <p class="font-headline-md text-headline-md text-muted-silver">~25%</p>
+          </div>
+          <div class="p-6 border border-muted-silver/20">
+            <span class="font-label-technical text-label-technical text-muted-silver block mb-2 uppercase">INDUSTRY CTR AVG</span>
+            <p class="font-headline-md text-headline-md text-muted-silver">~2.5%</p>
+          </div>
+          <div class="p-6 border border-accent-performance/40 bg-accent-performance/5">
+            <span class="font-label-technical text-label-technical text-accent-performance block mb-2 uppercase">THIS ACCOUNT</span>
+            <p class="font-headline-md text-headline-md text-accent-performance">Both beat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategy: 62 Flows -->
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-secondary border-t border-muted-silver/20">
+    <div class="mb-16 md:mb-20">
+      <span class="font-label-technical text-label-technical text-accent-performance block mb-2">[ INFRASTRUCTURE ]</span>
+      <h2 class="font-display-xl-mobile text-display-xl-mobile uppercase mb-8">THE AUTOMATION<br/>FOUNDATION</h2>
+      <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl">62 flows is not a number chosen arbitrarily. Every flow exists because a specific subscriber moment required a specific automated response. The program treats email less like a broadcast channel and more like a CRM.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+      <div class="md:col-span-4 p-8 md:p-12 border border-muted-silver/30 bg-surface-primary flex flex-col justify-between min-h-[260px]">
+        <div>
+          <span class="font-label-technical text-label-technical text-on-surface-warm mb-6 block">ACQUISITION FLOWS</span>
+          <h3 class="font-headline-md text-headline-md uppercase leading-tight mb-4">WELCOME &amp;<br/>ONBOARDING</h3>
+        </div>
+        <p class="font-body-md text-body-md text-muted-silver">Welcome sequences, SMS opt-in prompts, and early education flows introduced new subscribers to the brand before they encountered a campaign. First impressions were managed, not left to chance.</p>
+      </div>
+      <div class="md:col-span-4 p-8 md:p-12 border border-muted-silver/30 bg-surface-primary flex flex-col justify-between min-h-[260px]">
+        <div>
+          <span class="font-label-technical text-label-technical text-on-surface-warm mb-6 block">BEHAVIORAL FLOWS</span>
+          <h3 class="font-headline-md text-headline-md uppercase leading-tight mb-4">BROWSE &amp;<br/>ABANDON</h3>
+        </div>
+        <p class="font-body-md text-body-md text-muted-silver">Browse abandonment, cart abandonment, and checkout recovery flows fired on observed behavior. These triggered when it mattered — when a subscriber had shown intent — not on a generic schedule.</p>
+      </div>
+      <div class="md:col-span-4 p-8 md:p-12 border border-muted-silver/30 bg-surface-primary flex flex-col justify-between min-h-[260px]">
+        <div>
+          <span class="font-label-technical text-label-technical text-on-surface-warm mb-6 block">RETENTION FLOWS</span>
+          <h3 class="font-headline-md text-headline-md uppercase leading-tight mb-4">POST-PURCHASE<br/>&amp; LOYALTY</h3>
+        </div>
+        <p class="font-body-md text-body-md text-muted-silver">Post-purchase sequences, VIP early-access flows, and loyalty acknowledgement turned single buyers into repeat customers without requiring a new campaign send for each interaction.</p>
+      </div>
+      <div class="md:col-span-8 p-8 md:p-12 border border-muted-silver/30 bg-surface-primary flex flex-col justify-between min-h-[240px]">
+        <div>
+          <span class="font-label-technical text-label-technical text-on-surface-warm mb-6 block">WIN-BACK &amp; SUNSET</span>
+          <h3 class="font-headline-md text-headline-md uppercase leading-tight mb-6">UNENGAGED PROFILES<br/>HANDLED SYSTEMATICALLY</h3>
+        </div>
+        <p class="font-body-md text-body-md text-muted-silver">Before any profile hit a suppression threshold, a win-back flow gave it every opportunity to re-engage. Profiles that didn't respond were removed cleanly — protecting sender reputation and keeping the active list percentage high. This is the part most fashion brands skip, and it's the main reason their deliverability degrades over time.</p>
+      </div>
+      <div class="md:col-span-4 p-8 md:p-12 bg-accent-performance flex flex-col justify-between min-h-[240px]">
+        <div>
+          <span class="font-label-technical text-label-technical text-on-surface-warm mb-6 block">TOTAL</span>
+          <h3 class="font-display-xl-mobile text-display-xl-mobile font-black text-surface-primary leading-none">62</h3>
+          <p class="font-headline-md text-headline-md uppercase text-surface-primary mt-2">ACTIVE FLOWS</p>
+        </div>
+        <p class="font-label-button text-label-button uppercase text-on-surface-warm/80">COVERING EVERY LIFECYCLE STAGE. RUNNING IN PARALLEL, AROUND THE CLOCK.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Segmentation & Campaigns -->
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-t border-muted-silver/20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+      <div class="md:col-span-4">
+        <h2 class="font-headline-md text-headline-md uppercase md:sticky md:top-32">SEGMENTATION<br/>AS STRATEGY</h2>
+      </div>
+      <div class="md:col-span-8 md:border-l border-muted-silver/20 md:pl-16 mt-8 md:mt-0 space-y-8">
+        <div>
+          <span class="font-label-technical text-label-technical text-accent-performance block mb-4">02. CAMPAIGN STRUCTURE</span>
+          <p class="font-body-lg text-body-lg text-on-surface-warm leading-relaxed mb-4">With 62 flows handling the always-on lifecycle work, the 50 campaign sends were reserved for moments that warranted a full broadcast: product drops, seasonal releases, and a limited number of promotional moments tied to real occasions rather than calendar-filling sends.</p>
+          <p class="font-body-lg text-body-lg text-on-surface-warm leading-relaxed mb-4">Each campaign was segmented before it sent. VIP subscribers received early access before the general list. Engaged subscribers received the standard version. Unengaged subscribers — those who hadn't opened in the last 90 days — were excluded entirely, protecting the open rate and the sender domain simultaneously.</p>
+          <p class="font-body-lg text-body-lg text-on-surface-warm leading-relaxed">Brand voice consistency was enforced across every touchpoint. Fashion email fails when it looks like a different brand each week — inconsistent design, inconsistent tone, inconsistent offer logic. Every send followed the same visual identity and communication style, which is part of why the unsubscribe rate held at 0.349%: subscribers knew what they were getting, and they chose to stay subscribed.</p>
+        </div>
+        <div class="p-8 border border-muted-silver/20 bg-surface-secondary">
+          <span class="font-label-technical text-label-technical text-accent-performance block mb-4 uppercase">THE SEGMENTATION TIERS</span>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <span class="font-label-technical text-label-technical text-accent-performance w-24 shrink-0">VIP</span>
+              <p class="font-body-md text-body-md text-on-surface-warm">Early access to drops. Exclusive acknowledgement. Different copy tone. Higher-intent audience treated as such.</p>
+            </div>
+            <div class="rule-line opacity-30"></div>
+            <div class="flex items-start gap-4">
+              <span class="font-label-technical text-label-technical text-muted-silver w-24 shrink-0">ENGAGED</span>
+              <p class="font-body-md text-body-md text-muted-silver">Standard campaign sends. Consistent cadence. Full campaign access on release day.</p>
+            </div>
+            <div class="rule-line opacity-30"></div>
+            <div class="flex items-start gap-4">
+              <span class="font-label-technical text-label-technical text-muted-silver w-24 shrink-0">LAPSING</span>
+              <p class="font-body-md text-body-md text-muted-silver">Win-back flow triggered. Not included in standard campaign sends until re-engagement is confirmed.</p>
+            </div>
+            <div class="rule-line opacity-30"></div>
+            <div class="flex items-start gap-4">
+              <span class="font-label-technical text-label-technical text-muted-silver w-24 shrink-0">UNENGAGED</span>
+              <p class="font-body-md text-body-md text-muted-silver">Excluded from campaigns. Suppressed after win-back flow concludes without re-engagement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Delta -->
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-y border-muted-silver/20">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-10 md:gap-16">
+      <div class="w-full md:w-1/3">
+        <h2 class="font-display-xl-mobile text-display-xl-mobile uppercase leading-none text-accent-performance">THE<br/>DELTA</h2>
+        <p class="mt-8 font-body-lg text-body-lg text-muted-silver">Quantitative outcomes from 12 months of Klaviyo campaign and flow reporting.</p>
+        <p class="mt-6 font-body-md text-body-md text-muted-silver leading-relaxed">Most email programs beat the open rate benchmark or the click rate benchmark. Beating both simultaneously is significantly harder — especially in fashion, where a subscriber base acquired through discount incentives tends to click less and unsubscribe more as promotional frequency increases.</p>
+      </div>
+      <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 md:gap-y-16">
+        <div class="border-b border-muted-silver/20 pb-8">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-4">AVG OPEN RATE</span>
+          <div class="font-display-xl-mobile text-display-xl-mobile font-bold">43.3%</div>
+          <div class="bg-surface-secondary inline-block px-3 py-1 mt-4">
+            <span class="font-label-technical text-label-technical text-accent-performance">+18.3PP ABOVE AVG</span>
+          </div>
+        </div>
+        <div class="border-b border-muted-silver/20 pb-8">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-4">AVG CLICK RATE</span>
+          <div class="font-display-xl-mobile text-display-xl-mobile font-bold">2.86%</div>
+          <div class="bg-surface-secondary inline-block px-3 py-1 mt-4">
+            <span class="font-label-technical text-label-technical text-accent-performance">ABOVE INDUSTRY AVG</span>
+          </div>
+        </div>
+        <div class="border-b border-muted-silver/20 pb-8">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-4">CLICK-TO-OPEN RATE</span>
+          <div class="font-display-xl-mobile text-display-xl-mobile font-bold">6.6%</div>
+          <div class="bg-surface-secondary inline-block px-3 py-1 mt-4">
+            <span class="font-label-technical text-label-technical text-accent-performance">STRONG CONTENT MATCH</span>
+          </div>
+        </div>
+        <div class="border-b border-muted-silver/20 pb-8">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-4">AVG UNSUB RATE</span>
+          <div class="font-display-xl-mobile text-display-xl-mobile font-bold">0.349%</div>
+          <div class="bg-surface-secondary inline-block px-3 py-1 mt-4">
+            <span class="font-label-technical text-label-technical text-accent-performance">WELL UNDER 0.5% RISK</span>
+          </div>
+        </div>
+        <div class="border-b border-muted-silver/20 pb-8 md:border-b-0">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-4">ACTIVE FLOWS</span>
+          <div class="font-display-xl-mobile text-display-xl-mobile font-bold">62</div>
+          <div class="bg-surface-secondary inline-block px-3 py-1 mt-4">
+            <span class="font-label-technical text-label-technical text-accent-performance">FULL LIFECYCLE</span>
+          </div>
+        </div>
+        <div class="border-b border-muted-silver/20 pb-8 md:border-b-0">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-4">CAMPAIGNS SENT</span>
+          <div class="font-display-xl-mobile text-display-xl-mobile font-bold">50</div>
+          <div class="bg-surface-secondary inline-block px-3 py-1 mt-4">
+            <span class="font-label-technical text-label-technical text-accent-performance">CALIBRATED, NOT FILLER</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why This Worked -->
+  <section class="py-24 md:py-60 px-8 md:px-16 flex flex-col items-center text-center">
+    <div class="max-w-3xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-8">WHY THIS WORKED</span>
+      <blockquote class="font-headline-lg text-headline-lg-mobile md:text-headline-lg italic leading-tight text-on-surface-warm mb-8">
+        &ldquo;Fashion email fails when the list becomes a discount audience. The 62 flows treated each subscriber tier differently from day one. You can't retroactively fix a list trained to expect discounts — you have to build it differently from the start.&rdquo;
+      </blockquote>
+      <span class="font-label-technical text-label-technical text-muted-silver uppercase">OPENRATELAB ANALYSIS</span>
+    </div>
+  </section>
+
+  <div class="px-8 md:px-16"><div class="rule-line opacity-50"></div></div>
+
+  <section class="px-8 md:px-16 py-16">
+    <p class="font-label-technical text-label-technical text-muted-silver max-w-2xl">[ DATA_NOTE ] All metrics reflect 12 months of campaign and flow performance pulled directly from the account's Klaviyo reporting. Open rate, click rate, and unsub rate are account-level averages across all sends. Client identity is withheld per our confidentiality standard.</p>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">DEPLOYMENT_FINAL_PHASE</span>
+    <h2 class="font-display-xl-mobile md:text-headline-lg uppercase mb-8 leading-tight">WANT RESULTS<br/>LIKE THIS?</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Tell us where you are, what's not working, and what you want to grow. We'll map out an exact strategy. No cost, no obligation.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+</main>
+
+<footer class="grid grid-cols-12 gap-gutter px-8 md:px-16 py-40 w-full bg-surface-primary border-t border-muted-silver/30">
+  <div class="col-span-12 md:col-span-6 mb-20 md:mb-0">
+    <div class="font-headline-lg text-2xl md:text-headline-lg font-black text-on-surface-warm uppercase tracking-tighter mb-8 leading-none">OPENRATELAB.</div>
+    <p class="font-label-technical text-label-technical text-muted-silver max-w-md">PRECISION RETENTION SYSTEMS. ANALYTICALLY DRIVEN. EDITORIALLY EXECUTED. &copy;2026 OPENRATELAB.</p>
+  </div>
+  <div class="col-span-12 md:col-span-3">
+    <span class="font-label-technical text-label-technical text-accent-performance mb-8 block uppercase">NAVIGATION</span>
+    <ul class="space-y-4">
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#services">SERVICES</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#ledger">CASE STUDIES</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/about">ABOUT</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#contact">CONTACT</a></li>
+    </ul>
+  </div>
+  <div class="col-span-12 md:col-span-3">
+    <span class="font-label-technical text-label-technical text-accent-performance mb-8 block uppercase">CONTACT</span>
+    <ul class="space-y-4">
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="mailto:uros@openratelab.com">uros@openratelab.com</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#contact">BOOK FREE AUDIT</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
