@@ -31,20 +31,8 @@
       "image": "https://openratelab.com/images/og-image.png",
       "datePublished": "2026-07-18T00:00:00Z",
       "dateModified": "2026-07-18T00:00:00Z",
-      "author": {
-        "@type": "Organization",
-        "name": "OpenRateLab",
-        "url": "https://openratelab.com"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "OpenRateLab",
-        "url": "https://openratelab.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://openratelab.com/images/og-image.png"
-        }
-      }
+      "author": {"@type": "Organization", "name": "OpenRateLab", "url": "https://openratelab.com"},
+      "publisher": {"@type": "Organization", "name": "OpenRateLab", "url": "https://openratelab.com", "logo": {"@type": "ImageObject", "url": "https://openratelab.com/images/og-image.png"}}
     },
     {
       "@type": "BreadcrumbList",
@@ -90,21 +78,10 @@
     darkMode: "class",
     theme: {
       extend: {
-        "colors": {
-          "accent-performance": "#E63946",
-          "surface-primary": "#0D0D0D",
-          "surface-secondary": "#262626",
-          "on-surface-warm": "#F9F9F7",
-          "muted-silver": "#A3A3A3"
-        },
+        "colors": { "accent-performance": "#E63946", "surface-primary": "#0D0D0D", "surface-secondary": "#262626", "on-surface-warm": "#F9F9F7", "muted-silver": "#A3A3A3" },
         "borderRadius": { "DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "0rem" },
         "spacing": { "gutter": "24px" },
-        "fontFamily": {
-          "headline-lg-mobile": ["Hanken Grotesk"], "display-xl-mobile": ["Hanken Grotesk"],
-          "label-button": ["Hanken Grotesk"], "label-technical": ["JetBrains Mono"],
-          "body-md": ["Source Serif 4"], "headline-lg": ["Hanken Grotesk"],
-          "body-lg": ["Source Serif 4"], "headline-md": ["Hanken Grotesk"]
-        },
+        "fontFamily": { "headline-lg-mobile": ["Hanken Grotesk"], "display-xl-mobile": ["Hanken Grotesk"], "label-button": ["Hanken Grotesk"], "label-technical": ["JetBrains Mono"], "body-md": ["Source Serif 4"], "headline-lg": ["Hanken Grotesk"], "body-lg": ["Source Serif 4"], "headline-md": ["Hanken Grotesk"] },
         "fontSize": {
           "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
           "display-xl-mobile": ["44px", {"lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
@@ -136,7 +113,6 @@
 
 <main class="mt-20">
 
-  <!-- Hero -->
   <section class="px-8 md:px-16 py-16 md:py-24 border-b border-muted-silver/20">
     <a href="/blog/" class="inline-flex items-center gap-2 font-label-technical text-label-technical text-muted-silver uppercase hover:text-accent-performance transition-colors mb-10">
       <span class="material-symbols-outlined text-base">arrow_back</span> BACK TO BLOG
@@ -144,30 +120,25 @@
     <div class="max-w-4xl">
       <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-4 block">DELIVERABILITY / KLAVIYO — 7 MIN READ — 2026-07-18</span>
       <h1 class="font-display-xl-mobile md:text-headline-lg uppercase leading-none tracking-tighter mb-8">EMAIL LIST HYGIENE<br/>IN KLAVIYO: HOW TO CLEAN<br/>WITHOUT LOSING REVENUE.</h1>
-      <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl italic">Most brands either never clean their list (bad for deliverability) or suppress too aggressively (burns winnable subscribers). Here's the 4-tier segmentation system that protects both.</p>
+      <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl italic">Most brands either never clean their list — bad for deliverability — or suppress too aggressively and burn winnable subscribers. The 4-tier segmentation system below protects both.</p>
     </div>
   </section>
 
-  <!-- Article Body -->
   <article class="px-8 md:px-16 py-16 max-w-3xl prose-article">
 
-    <p>List hygiene is one of those email marketing topics that sounds like admin work but has a direct line to revenue. A dirty list doesn't just drag down your open rates — it damages your sender reputation, which means fewer of your emails reach the inbox across your entire subscriber base, including your best customers.</p>
+    <p>List hygiene has a direct line to revenue. A dirty list doesn't just drag down open rates — it damages sender reputation, which means fewer emails reach the inbox across the entire subscriber base, including the best customers.</p>
 
-    <p>At the same time, suppressing too aggressively loses you subscribers who would have converted with one more well-timed email. The goal isn't to shrink your list. It's to send the right emails to the right people and stop sending to the ones who've genuinely disengaged.</p>
-
-    <p>Here's the system we use on active accounts.</p>
+    <p>The goal isn't a smaller list. It's sending the right emails to the right people, and stopping sends to subscribers who have genuinely disengaged.</p>
 
     <h2>Why List Hygiene Affects Deliverability</h2>
 
-    <p>Email deliverability is determined in large part by how Gmail, Outlook, and other providers assess your sending reputation. They look at engagement signals: open rates, click rates, spam complaint rates, and whether people are unsubscribing or deleting without opening.</p>
-
-    <p>When you consistently send to people who don't open, providers register that your emails aren't wanted. Over time, they start routing your emails to the promotions tab, the spam folder, or simply not delivering them at all. This affects every email you send — including to your engaged subscribers who do want to hear from you.</p>
+    <p>Gmail, Outlook, and other providers assess sender reputation using engagement signals: open rates, click rates, spam complaint rates, and whether people are deleting without opening. Consistent sends to people who don't open register as unwanted emails. Over time, providers start routing to the promotions tab, to spam, or simply not delivering. That affects every send — including to the subscribers who do want the emails.</p>
 
     <p>The fix isn't sending fewer emails. It's sending to the right people.</p>
 
     <h2>The 4-Tier Engagement Segmentation</h2>
 
-    <p>Rather than a binary "engaged / not engaged" split, we use a four-tier structure that lets you send different content at different frequencies to each group, and run a win-back before any suppression happens.</p>
+    <p>A binary "engaged / not engaged" split loses too much nuance. Four tiers let you send different content at different frequencies to each group, and run a win-back before any suppression happens.</p>
 
     <div class="my-8">
       <div class="segment-tier tier-vip">
@@ -175,79 +146,71 @@
           <div class="tier-label" style="color:#F9F9F7;">VIP</div>
           <div class="tier-label mt-1" style="color:#A3A3A3;">OPENED IN 30 DAYS<br/>OR 2+ PURCHASES</div>
         </div>
-        <div class="tier-desc">Your most engaged subscribers and your best customers. Send everything to this segment — campaigns, flow emails, product launches. High frequency is appropriate here. These people want to hear from you.</div>
+        <div class="tier-desc">Most engaged subscribers and best customers. Send everything — campaigns, flows, product launches. High frequency is appropriate here. These people want to hear from you.</div>
       </div>
       <div class="segment-tier tier-engaged">
         <div>
           <div class="tier-label" style="color:#A3A3A3;">ENGAGED</div>
           <div class="tier-label mt-1" style="color:#A3A3A3;">OPENED IN 60–90 DAYS</div>
         </div>
-        <div class="tier-desc">Active but not highly frequent openers. Send campaigns and major flows, but reduce promotional frequency. These subscribers are warming or cooling depending on what you send. Good content keeps them in this tier; spam pushes them to Lapsing.</div>
+        <div class="tier-desc">Active but not frequent openers. Send campaigns and major flows, reduce promotional frequency. Good content keeps them here. Over-sending pushes them to Lapsing.</div>
       </div>
       <div class="segment-tier tier-lapsing">
         <div>
           <div class="tier-label" style="color:#E63946;">LAPSING</div>
           <div class="tier-label mt-1" style="color:#A3A3A3;">NO OPEN IN 90–150 DAYS</div>
         </div>
-        <div class="tier-desc">Danger zone. These subscribers are disengaging. Send 1–2 campaigns per month maximum — only your highest-value content. Trigger a win-back flow at the 90-day mark. The goal is re-engagement or an informed decision to stop sending.</div>
+        <div class="tier-desc">Danger zone. These subscribers are disengaging. Send 1–2 campaigns per month maximum — highest-value content only. Trigger a win-back flow at the 90-day mark. Re-engage or make a suppression decision.</div>
       </div>
       <div class="segment-tier tier-unengaged">
         <div>
           <div class="tier-label" style="color:#5a5959;">UNENGAGED</div>
           <div class="tier-label mt-1" style="color:#A3A3A3;">NO OPEN IN 150+ DAYS</div>
         </div>
-        <div class="tier-desc">Run a final win-back. If no engagement, suppress. Do not continue sending to this segment — you're paying for contacts that aren't opening and actively hurting your sender reputation with every send.</div>
+        <div class="tier-desc">Run a final win-back. No engagement — suppress. Continuing to send damages sender reputation with every email. These contacts contribute almost nothing to revenue.</div>
       </div>
     </div>
 
-    <p>The thresholds above (30/60–90/90–150/150+) are starting points. Adjust based on your send frequency — a brand that sends daily needs shorter windows than one sending weekly. What matters is the structure: engagement tiers with different treatment at each level.</p>
+    <p>The thresholds above are starting points — adjust for your send frequency. A brand sending daily needs shorter windows than one sending weekly. The structure is what matters: different treatment at each tier, with a win-back before suppression.</p>
 
     <h2>The Win-Back Flow: Before You Suppress</h2>
 
-    <p>Suppression should always be preceded by an attempt to win back. Some lapsed subscribers genuinely just missed your emails — life got busy, they changed inboxes, or they went quiet and would re-engage with the right prompt.</p>
-
-    <p>A win-back flow for the Lapsing and Unengaged tiers looks like this:</p>
+    <p>Suppression always follows an attempt to win back. Some lapsed subscribers genuinely missed your emails. A win-back flow catches them before they're gone.</p>
 
     <ul>
-      <li><strong>Email 1 (day 0):</strong> Re-engagement offer or strong value proposition. Subject line: make it about them, not about your brand. "We noticed you haven't been around" is weak. "Here's what you've missed" is stronger. A compelling offer or genuinely useful piece of content is stronger still.</li>
-      <li><strong>Email 2 (day 5):</strong> Final notice. Tell them you're going to stop emailing them unless they'd like to stay on the list. This transparency works — some people re-engage just because they were given the choice. It also filters out the people who genuinely want to leave.</li>
+      <li><strong>Email 1 (day 0):</strong> Re-engagement offer or strong value proposition. Write the subject line about them, not about your brand. A compelling offer or genuinely useful content beats "we noticed you haven't been around."</li>
+      <li><strong>Email 2 (day 5):</strong> Final notice. Tell them you're going to stop emailing unless they'd like to stay. Transparency works — some re-engage because they were given the choice. It also cleanly identifies the people who genuinely want to leave.</li>
       <li><strong>Suppression (day 7 if no engagement):</strong> No third email. Suppress.</li>
     </ul>
 
-    <p>A two-email win-back that results in suppression is still a win. You've identified dead weight, protected your deliverability, and potentially recovered some subscribers who just needed the prompt.</p>
+    <p>A two-email win-back that ends in suppression is still a win. Dead weight identified, deliverability protected, winnable subscribers recovered.</p>
 
-    <h2>How to Set This Up in Klaviyo</h2>
+    <h2>Setting This Up in Klaviyo</h2>
 
     <h3>Step 1: Build the Four Segments</h3>
 
-    <p>In Klaviyo, go to Segments and create four segments using the following conditions:</p>
+    <p>In Klaviyo, create four segments using these conditions:</p>
 
     <ul>
       <li><strong>VIP:</strong> "Has opened email at least once in the last 30 days" OR "Has placed order at least 2 times"</li>
       <li><strong>Engaged:</strong> "Has opened email at least once in the last 90 days" AND NOT VIP</li>
       <li><strong>Lapsing:</strong> "Has opened email at least once in the last 150 days" AND NOT Engaged AND NOT VIP</li>
-      <li><strong>Unengaged:</strong> "Is in List [your main list]" AND NOT Lapsing AND NOT Engaged AND NOT VIP — i.e., everyone who hasn't opened in 150+ days</li>
+      <li><strong>Unengaged:</strong> "Is in List [main list]" AND NOT Lapsing AND NOT Engaged AND NOT VIP</li>
     </ul>
 
-    <p>Note: Klaviyo's open tracking is affected by iOS MPP, which inflates open counts on Apple Mail. If you're seeing artificially high "opened" signals, you may want to use click-based engagement as an alternative or supplementary signal.</p>
+    <p>Note: Klaviyo's open tracking is affected by iOS MPP, which inflates open counts on Apple Mail. If open signals look artificially high, use click-based engagement as a supplementary signal alongside opens.</p>
 
     <h3>Step 2: Create the Win-Back Flow</h3>
 
-    <p>Build a flow triggered by "Joins Segment" — specifically, when someone enters your Lapsing segment. Set a delay of 2–3 days to avoid triggering on subscribers who only recently went quiet.</p>
-
-    <p>Inside the flow: Email 1 → 5-day delay → Email 2 → 7-day delay → Conditional split on "Has opened email since starting this flow" → suppress the "No" branch.</p>
+    <p>Trigger: "Joins Segment" — fires when someone enters the Lapsing segment. Set a 2–3 day delay to avoid triggering on subscribers who only recently went quiet. Structure: Email 1 → 5-day delay → Email 2 → 7-day delay → Conditional split on "Has opened email since starting this flow" → suppress the No branch.</p>
 
     <h3>Step 3: Suppress the Unengaged Segment</h3>
 
-    <p>Before suppressing at scale, run the win-back flow for 30–60 days to give lapsing subscribers the chance to re-engage. Then go to your Unengaged segment and suppress in bulk.</p>
+    <p>Run the win-back flow for 30–60 days before any bulk suppression — give lapsing subscribers the chance to come back. Then suppress the Unengaged segment in bulk. Klaviyo allows profile suppression without deletion, so suppressed profiles can be unsuppressed if they re-subscribe.</p>
 
-    <p>Klaviyo allows you to suppress profiles, which prevents them from receiving emails without deleting their data. Suppressed profiles can be unsuppressed if they re-subscribe — this is the correct approach over deletion.</p>
+    <h2>How Often to Run This</h2>
 
-    <h2>How Often to Run This Process</h2>
-
-    <p>This isn't a one-time cleanup. Build the segments once, set up the win-back flow, and let it run continuously. New subscribers will move through tiers based on their behaviour without any manual intervention.</p>
-
-    <p>Review the segment sizes quarterly. If your Lapsing segment is growing faster than your Engaged segment, you have a content or frequency problem — you're either sending too much or the content isn't compelling enough to maintain engagement.</p>
+    <p>Build the segments once, set up the win-back flow, and let it run continuously. New subscribers move through tiers based on behaviour without manual intervention. Review segment sizes quarterly — if Lapsing is growing faster than Engaged, there's a content or frequency problem: you're either sending too much or the content isn't compelling enough to hold engagement.</p>
 
     <div class="stat-callout">
       <div class="stat-num">43.3%</div>
@@ -256,38 +219,24 @@
 
     <h2>What to Expect After Cleaning</h2>
 
-    <p>The first measurable effect after suppressing unengaged subscribers is a drop in your total list size — which can feel counterintuitive. You're paying for fewer contacts in Klaviyo, and your "list size" metric looks smaller. Both of these are positives.</p>
+    <p>The first effect after suppressing unengaged subscribers is a drop in total list size. You're paying for fewer contacts in Klaviyo and the "list size" number is smaller. Both are positives.</p>
 
-    <p>Over the following 30–60 days, you should see:</p>
-
-    <ul>
-      <li><strong>Open rate increase</strong> — you're now calculating opens against a smaller, more engaged denominator</li>
-      <li><strong>Spam complaint rate drop</strong> — you've removed the segment most likely to be marking you as spam</li>
-      <li><strong>Inbox placement improvement</strong> — Gmail and Outlook see more positive engagement signals per send and start routing your emails to the primary inbox more consistently</li>
-      <li><strong>Stable or improved revenue</strong> — unengaged subscribers were contributing almost nothing to revenue; removing them rarely impacts the bottom line</li>
-    </ul>
-
-    <p>What list hygiene doesn't fix: copy quality, offer relevance, or a broken flow architecture. If your engaged subscribers aren't converting, that's a different problem. List hygiene removes the noise so you can hear the signal clearly.</p>
+    <p>Over the following 30–60 days: open rate rises because you're calculating against a smaller denominator of people who actually want the emails. Spam complaint rate drops. Inbox placement improves as Gmail and Outlook see more positive engagement signals per send. Revenue holds — unengaged subscribers were contributing almost nothing, and removing them rarely moves the bottom line.</p>
 
     <h2>The Most Common Mistake</h2>
 
-    <p>Brands either wait too long to suppress (and let deliverability decay for months) or suppress based on arbitrary rules without running a win-back first.</p>
+    <p>Brands wait too long to suppress and let deliverability decay for months, or suppress too aggressively without a win-back first. The two-email win-back is not optional. It recovers a meaningful percentage of lapsed subscribers who needed a prompt, and gives you clean data on everyone else.</p>
 
-    <p>The two-email win-back before suppression is not optional. It recovers a meaningful percentage of subscribers who would otherwise be silently suppressed, and it gives you clean data: people who didn't re-engage despite a direct ask are genuinely disengaged. There's no revenue left on the table when you suppress them.</p>
-
-    <p>Do the win-back. Then suppress without guilt.</p>
+    <p>People who didn't re-engage after a direct ask are genuinely gone. Suppress them without reservation.</p>
 
   </article>
 
-  <div class="px-8 md:px-16">
-    <div class="rule-line max-w-3xl"></div>
-  </div>
+  <div class="px-8 md:px-16"><div class="rule-line max-w-3xl"></div></div>
 
   <section class="px-8 md:px-16 py-12 max-w-3xl">
-    <p class="font-label-technical text-label-technical text-muted-silver">[ DATA_NOTE ] Performance figures cited above are pulled from active client accounts managed by OpenRateLab. Accounts are anonymised. The segmentation thresholds and flow structures described reflect our current operational approach; adjust for your brand's send frequency and list characteristics.</p>
+    <p class="font-label-technical text-label-technical text-muted-silver">[ DATA_NOTE ] Performance figures cited above are pulled from active client accounts managed by OpenRateLab. Accounts are anonymised. Segmentation thresholds and flow structures described reflect our current operational approach — adjust for your brand's send frequency and list characteristics.</p>
   </section>
 
-  <!-- Related -->
   <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 bg-surface-secondary">
     <span class="font-label-technical text-label-technical text-muted-silver uppercase tracking-[0.2em] mb-8 block">RELATED ARTICLES</span>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -304,14 +253,11 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
     <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">WORK WITH US</span>
     <h2 class="font-display-xl-mobile md:text-headline-lg uppercase mb-8 leading-tight">WANT US TO AUDIT<br/>YOUR KLAVIYO ACCOUNT?</h2>
     <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">We audit list health, flow architecture, and deliverability for DTC brands. Book a free audit — no pitch, just an honest read of where your account stands.</p>
-    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
-      GET A FREE AUDIT
-    </a>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">GET A FREE AUDIT</a>
   </section>
 
 </main>
