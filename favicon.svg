@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" fill="#0D0D0D"/>
+  <!-- Rising performance line -->
+  <polyline points="4,26 11,20 19,12 27,5" stroke="#E63946" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Endpoint dot -->
+  <circle cx="27" cy="5" r="2.8" fill="#E63946"/>
+  <!-- Baseline -->
+  <line x1="4" y1="27" x2="28" y2="27" stroke="#F9F9F7" stroke-width="1.5" opacity="0.2" stroke-linecap="round"/>
+</svg>
