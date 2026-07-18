@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Klaviyo Email Flows: The Complete Setup Guide for DTC Brands | OpenRateLab</title>
+<meta name="description" content="What Klaviyo flows you need, how to structure them, and what separates a 30-flow account from one running 200+. Real data from active DTC accounts."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#0D0D0D"/>
+<link rel="canonical" href="https://openratelab.com/blog/klaviyo-email-flows-guide.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Klaviyo Email Flows: The Complete Setup Guide for DTC Brands | OpenRateLab"/>
+<meta property="og:description" content="What Klaviyo flows you need, how to structure them, and what separates a 30-flow account from one running 200+. Real data from active DTC accounts."/>
+<meta property="og:url" content="https://openratelab.com/blog/klaviyo-email-flows-guide.html"/>
+<meta property="og:image" content="https://openratelab.com/images/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Klaviyo Email Flows: The Complete Setup Guide for DTC Brands | OpenRateLab"/>
+<meta name="twitter:description" content="What Klaviyo flows you need, how to structure them, and what separates a 30-flow account from one running 200+. Real data from active DTC accounts."/>
+<meta name="twitter:image" content="https://openratelab.com/images/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Klaviyo Email Flows: The Complete Setup Guide for DTC Brands",
+      "description": "What Klaviyo flows you need, how to structure them, and what separates a 30-flow account from one running 200+. Real data from active DTC accounts.",
+      "url": "https://openratelab.com/blog/klaviyo-email-flows-guide.html",
+      "image": "https://openratelab.com/images/og-image.png",
+      "datePublished": "2026-07-18T00:00:00Z",
+      "dateModified": "2026-07-18T00:00:00Z",
+      "author": {
+        "@type": "Organization",
+        "name": "OpenRateLab",
+        "url": "https://openratelab.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "OpenRateLab",
+        "url": "https://openratelab.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://openratelab.com/images/og-image.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://openratelab.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://openratelab.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Klaviyo Email Flows Guide", "item": "https://openratelab.com/blog/klaviyo-email-flows-guide.html"}
+      ]
+    }
+  ]
+}
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  body { background-color: #0D0D0D; color: #F9F9F7; -webkit-font-smoothing: antialiased; }
+  .rule-line { height: 1px; background-color: rgba(163, 163, 163, 0.2); width: 100%; }
+  .pixel-grid { background-image: radial-gradient(circle, #262626 1px, transparent 1px); background-size: 40px 40px; }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  .prose-article h2 { font-family: 'Hanken Grotesk', sans-serif; font-size: 28px; line-height: 36px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; color: #F9F9F7; margin-top: 56px; margin-bottom: 20px; }
+  .prose-article h3 { font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 26px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; color: #F9F9F7; margin-top: 36px; margin-bottom: 12px; }
+  .prose-article p { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 30px; color: #c8c5c2; margin-bottom: 24px; }
+  .prose-article strong { color: #F9F9F7; font-weight: 700; }
+  .prose-article ul { margin-bottom: 24px; padding-left: 0; list-style: none; }
+  .prose-article ul li { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 30px; color: #c8c5c2; padding-left: 20px; position: relative; margin-bottom: 8px; }
+  .prose-article ul li::before { content: "—"; position: absolute; left: 0; color: #E63946; }
+  .stat-callout { background: #1a1a1a; border-left: 3px solid #E63946; padding: 24px 28px; margin: 36px 0; }
+  .stat-callout .stat-num { font-family: 'Hanken Grotesk', sans-serif; font-size: 48px; line-height: 52px; font-weight: 800; color: #F9F9F7; }
+  .stat-callout .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #A3A3A3; margin-top: 4px; }
+</style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "accent-performance": "#E63946",
+          "surface-primary": "#0D0D0D",
+          "surface-secondary": "#262626",
+          "on-surface-warm": "#F9F9F7",
+          "muted-silver": "#A3A3A3"
+        },
+        "borderRadius": { "DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "0rem" },
+        "spacing": { "gutter": "24px" },
+        "fontFamily": {
+          "headline-lg-mobile": ["Hanken Grotesk"], "display-xl-mobile": ["Hanken Grotesk"],
+          "label-button": ["Hanken Grotesk"], "label-technical": ["JetBrains Mono"],
+          "body-md": ["Source Serif 4"], "headline-lg": ["Hanken Grotesk"],
+          "body-lg": ["Source Serif 4"], "headline-md": ["Hanken Grotesk"]
+        },
+        "fontSize": {
+          "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "display-xl-mobile": ["44px", {"lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+          "label-button": ["14px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+          "label-technical": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+          "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-surface-primary selection:bg-accent-performance selection:text-surface-primary">
+
+<nav class="fixed top-0 z-50 flex justify-between items-center w-full px-4 md:px-16 h-20 bg-surface-primary border-b border-muted-silver/20">
+  <a href="/" class="font-headline-md text-base md:text-headline-md font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors">OPENRATELAB</a>
+  <div class="hidden md:flex items-center space-x-12">
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/#services">SERVICES</a>
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/#ledger">CASE STUDIES</a>
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/about">ABOUT</a>
+    <a class="text-accent-performance font-label-button uppercase border-b border-accent-performance transition-colors duration-150" href="/blog/">BLOG</a>
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/#contact">CONTACT</a>
+  </div>
+  <a href="/#contact" class="bg-on-surface-warm text-surface-primary px-3 py-2 md:px-6 md:py-3 font-label-button uppercase hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-150 active:scale-95">BOOK AUDIT</a>
+</nav>
+
+<main class="mt-20">
+
+  <!-- Hero -->
+  <section class="px-8 md:px-16 py-16 md:py-24 border-b border-muted-silver/20">
+    <a href="/blog/" class="inline-flex items-center gap-2 font-label-technical text-label-technical text-muted-silver uppercase hover:text-accent-performance transition-colors mb-10">
+      <span class="material-symbols-outlined text-base">arrow_back</span> BACK TO BLOG
+    </a>
+    <div class="max-w-4xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-4 block">KLAVIYO / FLOWS — 8 MIN READ — 2026-07-18</span>
+      <h1 class="font-display-xl-mobile md:text-headline-lg uppercase leading-none tracking-tighter mb-8">KLAVIYO EMAIL FLOWS:<br/>THE COMPLETE SETUP GUIDE<br/>FOR DTC BRANDS.</h1>
+      <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl italic">What flows you need, how to structure them, and what separates a 30-flow account from one running 200+. Including real performance numbers from active accounts.</p>
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <article class="px-8 md:px-16 py-16 max-w-3xl prose-article">
+
+    <p>Most DTC brands set up three Klaviyo flows — welcome, abandoned cart, post-purchase — and call it automation. Then they wonder why email contributes 15% of revenue while their competitors are pushing 40%.</p>
+
+    <p>The gap is almost always flows. Specifically: the depth of the flow architecture, how well flows are segmented, and whether the copy inside them actually sounds like a brand talking to a person rather than a template talking to a lead.</p>
+
+    <p>This guide covers what a mature Klaviyo flow setup looks like, what each flow type does, and what the data shows about performance when flows are built vs. neglected.</p>
+
+    <h2>Flows vs. Campaigns: What's the Difference?</h2>
+
+    <p>Before getting into setup: campaigns are one-time sends you schedule manually — a product launch, a sale, a weekly newsletter. Flows are automated sequences triggered by subscriber behaviour or properties.</p>
+
+    <p>The distinction matters because flows run 24/7 without any input from you once they're live. A well-built abandoned cart flow generates revenue while you sleep. A poorly built one wastes the most purchase-intent traffic you'll ever get.</p>
+
+    <p>For most DTC brands at scale, flows contribute <strong>35–50% of total email revenue</strong>, sometimes more. Campaigns handle the rest. Neglecting flows means you're permanently leaving a third to half of your email channel's potential on the table.</p>
+
+    <h2>The 5 Flows Every DTC Brand Needs First</h2>
+
+    <p>If you're starting from zero or auditing what you have, these five are non-negotiable. Everything else comes after.</p>
+
+    <h3>1. Welcome Series</h3>
+
+    <p>The highest open-rate flow you'll ever have. New subscribers are at peak interest — they just gave you their email, which means something. A well-built welcome series sets brand expectations, delivers value, handles objections, and pushes toward a first purchase.</p>
+
+    <p><strong>Minimum structure:</strong> 4–6 emails over 7–10 days. Email 1 goes immediately. The rest build brand story, social proof, and offer. If you're pushing a discount in email 1, you're training your list to wait for coupons — save the offer for email 3 or 4, after you've given them a reason to care.</p>
+
+    <h3>2. Abandoned Cart</h3>
+
+    <p>Someone added to cart and left. The intention signal is as high as it gets without a completed purchase. Three emails minimum: immediate recovery (within 1 hour), a follow-up with urgency or social proof (24 hours), and a final push (48–72 hours). Split-test whether adding a discount in email 3 lifts revenue or cannibalizes margin.</p>
+
+    <h3>3. Browse Abandonment</h3>
+
+    <p>Lower intent than cart, but higher volume. Someone viewed a product page and left without adding to cart. One or two emails, sent within a few hours, referencing the product they viewed. Keep copy lighter than abandoned cart — you're nudging, not recovering.</p>
+
+    <h3>4. Post-Purchase</h3>
+
+    <p>Underbuilt by almost every brand we audit. The post-purchase window is when your customer is most emotionally engaged with your brand — they just bought something. Use it to: deliver value around the product they purchased, cross-sell complementary items, drive reviews, and set up the repurchase trigger.</p>
+
+    <p>A proper post-purchase flow has separate branches for first-time buyers vs. repeat buyers. What a first-time customer needs to hear is completely different from what someone on their fifth order needs.</p>
+
+    <h3>5. Win-Back</h3>
+
+    <p>For subscribers who haven't purchased in 90, 120, or 180 days depending on your average purchase cycle. Win-back flows do two things: recover some lapsed customers, and surface who you should suppress before they drag down your sender reputation.</p>
+
+    <h2>What a Mature Flow Architecture Looks Like</h2>
+
+    <p>The five flows above are the foundation. Mature accounts — the ones generating 40%+ email revenue — run 60 to 200+ flows. The difference isn't complexity for its own sake. It's granularity.</p>
+
+    <div class="stat-callout">
+      <div class="stat-num">205</div>
+      <div class="stat-label">Active flows in one account we manage — contributing to a 35.3% average flow open rate across 2.5M emails sent</div>
+    </div>
+
+    <p>That 205 isn't 205 variations of the same abandoned cart email. It's 205 flows targeting different customer states: product-specific post-purchase sequences, category-level browse abandonment, loyalty tier triggers, subscription renewal reminders, seasonal re-engagement, review request timing splits, VIP-only flows, and more.</p>
+
+    <p>Each flow exists because there's a specific customer behaviour or lifecycle moment that generic flows can't serve well. The more precisely you can match your messaging to where someone is in their relationship with your brand, the better every metric gets.</p>
+
+    <h2>Flow Trigger Types in Klaviyo</h2>
+
+    <p>Every flow starts with a trigger. Knowing your trigger options is how you identify what flows to build next.</p>
+
+    <ul>
+      <li><strong>Metric-based:</strong> A customer action — placed order, started checkout, viewed product, clicked a link</li>
+      <li><strong>List/segment-based:</strong> When someone joins a specific list or qualifies for a segment</li>
+      <li><strong>Date-based:</strong> Birthdays, anniversaries, subscription renewal dates</li>
+      <li><strong>Price drop:</strong> Triggers when an item a customer viewed or saved drops in price</li>
+      <li><strong>Back in stock:</strong> For items someone viewed that were out of stock</li>
+    </ul>
+
+    <p>Most brands only use metric-based triggers. Segment-based triggers are where you can get creative — building flows that fire when someone meets a specific condition (first purchase over $X, third order, hasn't bought in 60 days, etc.).</p>
+
+    <h2>Flow Filters vs. Trigger Filters</h2>
+
+    <p>This is where a lot of brands go wrong. Klaviyo has two distinct filter types:</p>
+
+    <p><strong>Trigger filters</strong> control who enters the flow at the moment of trigger. If someone meets the trigger condition but fails a trigger filter, they never enter.</p>
+
+    <p><strong>Flow filters</strong> are evaluated at each step. If a subscriber no longer meets the condition when an email is about to send — say, they completed a purchase between when the flow triggered and when email 2 was scheduled — they skip that step.</p>
+
+    <p>For abandoned cart, always use a flow filter checking "has not placed order since starting this flow." Otherwise you'll email people who already converted.</p>
+
+    <h2>Measuring Flow Performance</h2>
+
+    <p>The metrics that matter for flows are different from campaign metrics. What to watch:</p>
+
+    <ul>
+      <li><strong>Flow open rate:</strong> Should be meaningfully higher than your campaign average. If it's not, your subject lines or sender reputation need work</li>
+      <li><strong>Revenue per recipient:</strong> The truest measure of flow quality. Compare across flow types and email positions to find the leverage points</li>
+      <li><strong>Conversion rate by flow step:</strong> Email 1 vs. Email 2 vs. Email 3. Usually there's a sharp drop — find it and fix it</li>
+      <li><strong>Unsubscribe rate per flow:</strong> High unsubs from a specific flow means something's wrong with timing, frequency, or relevance</li>
+    </ul>
+
+    <div class="stat-callout">
+      <div class="stat-num">35.3%</div>
+      <div class="stat-label">Average flow open rate across a 205-flow account — vs. industry average of ~15-20%</div>
+    </div>
+
+    <h2>Common Mistakes in Klaviyo Flow Setup</h2>
+
+    <p><strong>Not splitting first-time vs. repeat buyers.</strong> The most common and most costly mistake. Sending a "here's what makes us different" welcome message to someone on their sixth order is tone-deaf, and they'll unsubscribe from it.</p>
+
+    <p><strong>One abandoned cart email.</strong> The data consistently shows that email 2 and email 3 in an abandoned cart sequence recover meaningful revenue that email 1 alone would never capture. Three emails minimum.</p>
+
+    <p><strong>Ignoring flow timing.</strong> The 1-hour delay on abandoned cart matters. Sending immediately (under 10 minutes) can feel intrusive; waiting 24 hours misses the peak purchase-intent window. Test your timing by category and average order value.</p>
+
+    <p><strong>No conditional splits.</strong> Klaviyo's conditional splits let you send different content to different customer profiles within the same flow. Someone who bought once gets a different email 2 than someone who bought five times. Most accounts use zero conditional splits. That's a gap.</p>
+
+    <p><strong>Copy that sounds like a template.</strong> Flows can't fake personalization if the copy sounds like it was written for everyone. The subject line should reference a real behaviour. The body should sound like the brand, not like "your cart is waiting."</p>
+
+    <h2>Where to Start If You're Auditing Your Account</h2>
+
+    <p>Pull your flow performance report in Klaviyo. Sort by revenue. The flows at the bottom of that list — the ones generating almost nothing — are usually the ones that haven't been touched since they were set up two years ago.</p>
+
+    <p>Don't delete them. Audit them. Look at the open rates, the step-by-step drop-offs, the copy. In most accounts, the problem isn't missing flows — it's that existing flows were set up once and never optimised.</p>
+
+    <p>Once the existing flows are working, then start building the next tier. More flows with the same performance problems is just more problems.</p>
+
+  </article>
+
+  <div class="px-8 md:px-16">
+    <div class="rule-line max-w-3xl"></div>
+  </div>
+
+  <section class="px-8 md:px-16 py-12 max-w-3xl">
+    <p class="font-label-technical text-label-technical text-muted-silver">[ DATA_NOTE ] Flow count and open rate figures cited above reflect actual performance from client accounts managed by OpenRateLab, pulled from Klaviyo reporting. Accounts are anonymised per our confidentiality standard.</p>
+  </section>
+
+  <!-- Related -->
+  <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 bg-surface-secondary">
+    <span class="font-label-technical text-label-technical text-muted-silver uppercase tracking-[0.2em] mb-8 block">RELATED ARTICLES</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <a href="/blog/email-list-hygiene-klaviyo.html" class="block border border-muted-silver/20 p-8 hover:border-accent-performance transition-colors group">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-3 block">DELIVERABILITY / KLAVIYO</span>
+        <h3 class="font-headline-md text-xl text-on-surface-warm font-bold mb-3 group-hover:text-accent-performance transition-colors">Email List Hygiene in Klaviyo: How to Clean Your List Without Losing Revenue</h3>
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase">7 MIN READ →</span>
+      </a>
+      <a href="/blog/ecommerce-email-open-rate-benchmarks.html" class="block border border-muted-silver/20 p-8 hover:border-accent-performance transition-colors group">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-3 block">BENCHMARKS / DATA</span>
+        <h3 class="font-headline-md text-xl text-on-surface-warm font-bold mb-3 group-hover:text-accent-performance transition-colors">Ecommerce Email Open Rate Benchmarks: Real Data From Active Klaviyo Accounts</h3>
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase">6 MIN READ →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">WORK WITH US</span>
+    <h2 class="font-display-xl-mobile md:text-headline-lg uppercase mb-8 leading-tight">WANT YOUR FLOWS<br/>ACTUALLY BUILT?</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">We audit, rebuild, and optimise Klaviyo flow architecture for DTC brands. Book a free audit — we'll map out exactly what's missing from your account.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+
+</main>
+
+<footer class="grid grid-cols-12 gap-gutter px-8 md:px-16 py-40 w-full bg-surface-primary border-t border-muted-silver/30">
+  <div class="col-span-12 md:col-span-6 mb-20 md:mb-0">
+    <div class="font-headline-lg text-2xl md:text-headline-lg font-black text-on-surface-warm uppercase tracking-tighter mb-8 leading-none">OPENRATELAB.</div>
+    <p class="font-label-technical text-label-technical text-muted-silver max-w-md">PRECISION RETENTION SYSTEMS. ANALYTICALLY DRIVEN. EDITORIALLY EXECUTED. &copy;2026 OPENRATELAB.</p>
+  </div>
+  <div class="col-span-12 md:col-span-3">
+    <span class="font-label-technical text-label-technical text-accent-performance mb-8 block uppercase">NAVIGATION</span>
+    <ul class="space-y-4">
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#services">SERVICES</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#ledger">CASE STUDIES</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/about">ABOUT</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/blog/">BLOG</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#contact">CONTACT</a></li>
+    </ul>
+  </div>
+  <div class="col-span-12 md:col-span-3">
+    <span class="font-label-technical text-label-technical text-accent-performance mb-8 block uppercase">CONTACT</span>
+    <ul class="space-y-4">
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="mailto:uros@openratelab.com">uros@openratelab.com</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#contact">BOOK FREE AUDIT</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
