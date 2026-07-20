@@ -2,6 +2,7 @@
   base = "."
   publish = "."
   command = ""
+# auto-deploy enabled 2026-07-18
 
 [[headers]]
   for = "/*"
