@@ -1,0 +1,26 @@
+# OpenRateLab
+
+> Email marketing agency for e-commerce and DTC brands. We build Klaviyo retention systems and write conversion copy that compounds revenue month over month.
+
+## Key Pages
+
+- [Homepage](https://openratelab.com/): Klaviyo email marketing agency for DTC brands
+- [About](https://openratelab.com/about): How we work and what we believe
+- [Blog](https://openratelab.com/blog/): Guides on Klaviyo flows, open rates, and deliverability
+
+## Case Studies
+
+- [75.2% Open Rate — E-Commerce Brand](https://openratelab.com/case-studies/ecommerce-open-rate-system.html): Full Klaviyo flow and campaign rebuild, 16,000+ subscribers
+- [54.8% Open Rate at Scale — Health Supplement Brand](https://openratelab.com/case-studies/health-supplement-brand-at-scale.html): 205-flow account, 2.5M emails, sustained performance
+- [43.3% Open Rate + 2.86% CTR — Activewear Brand](https://openratelab.com/case-studies/activewear-brand-email-engagement.html): 50 campaigns, 28k subscriber list
+- [DTC Brand Attribution System](https://openratelab.com/case-studies/dtc-brand-attribution-system.html)
+- [Pet Wellness Brand](https://openratelab.com/case-studies/pet-wellness-brand.html)
+- [Multi-Species Wellness Brand](https://openratelab.com/case-studies/multi-species-wellness-brand.html)
+- [Farm-Direct Pet Treats Brand](https://openratelab.com/case-studies/farm-direct-pet-treats-brand.html)
+- [Equine Performance Nutrition Brand](https://openratelab.com/case-studies/equine-performance-nutrition-brand.html)
+
+## Blog Articles
+
+- [Klaviyo Email Flows: Complete Setup Guide for DTC Brands](https://openratelab.com/blog/klaviyo-email-flows-guide.html): Flow architecture, trigger types, and what separates 30-flow and 200-flow accounts
+- [Ecommerce Email Open Rate Benchmarks: Real Klaviyo Data](https://openratelab.com/blog/ecommerce-email-open-rate-benchmarks.html): Real performance numbers from active accounts we manage
+- [Email List Hygiene in Klaviyo](https://openratelab.com/blog/email-list-hygiene-klaviyo.html): How to clean a list without losing revenue

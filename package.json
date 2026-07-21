@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "npm run build:client",
     "build:client": "vite build",
+    "build:static-css": "tailwindcss -c tailwind.static.config.js -i static.css -o styles.css --minify",
     "format.fix": "prettier --write .",
     "typecheck": "tsc"
   },

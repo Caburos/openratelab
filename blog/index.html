@@ -21,7 +21,6 @@
 <meta name="twitter:title" content="Email Marketing Blog | Klaviyo Tips for DTC Brands | OpenRateLab"/>
 <meta name="twitter:description" content="Email marketing tactics, Klaviyo guides, and benchmarks from an agency that manages active DTC accounts. No theory. Real data, real accounts."/>
 <meta name="twitter:image" content="https://openratelab.com/images/og-image.png"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -35,40 +34,7 @@
   .article-card:hover .card-arrow { transform: translateX(4px); }
   .card-arrow { transition: transform 0.2s ease; }
 </style>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-          "accent-performance": "#E63946",
-          "surface-primary": "#0D0D0D",
-          "surface-secondary": "#262626",
-          "on-surface-warm": "#F9F9F7",
-          "muted-silver": "#A3A3A3"
-        },
-        "borderRadius": { "DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "0rem" },
-        "spacing": { "gutter": "24px", "margin-desktop": "64px", "unit": "8px", "margin-mobile": "20px", "margin-tablet": "32px" },
-        "fontFamily": {
-          "headline-lg-mobile": ["Hanken Grotesk"], "display-xl-mobile": ["Hanken Grotesk"], "display-xl": ["Hanken Grotesk"],
-          "label-button": ["Hanken Grotesk"], "label-technical": ["JetBrains Mono"], "body-md": ["Source Serif 4"],
-          "headline-lg": ["Hanken Grotesk"], "body-lg": ["Source Serif 4"], "headline-md": ["Hanken Grotesk"]
-        },
-        "fontSize": {
-          "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-          "display-xl-mobile": ["44px", {"lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-          "display-xl": ["96px", {"lineHeight": "92px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
-          "label-button": ["14px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "700"}],
-          "label-technical": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
-          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-          "headline-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-          "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
-          "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
-        }
-      }
-    }
-  }
-</script>
+<link rel="stylesheet" href="/styles.css"/>
 </head>
 <body class="bg-surface-primary selection:bg-accent-performance selection:text-surface-primary">
 
@@ -81,8 +47,31 @@
     <a class="text-accent-performance font-label-button uppercase border-b border-accent-performance transition-colors duration-150" href="/blog/">BLOG</a>
     <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/#contact">CONTACT</a>
   </div>
-  <a href="/#contact" class="bg-on-surface-warm text-surface-primary px-3 py-2 md:px-6 md:py-3 font-label-button uppercase hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-150 active:scale-95">BOOK AUDIT</a>
+  <div class="flex items-center gap-2">
+    <a href="/#contact" class="bg-on-surface-warm text-surface-primary px-3 py-2 md:px-6 md:py-3 font-label-button uppercase hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-150 active:scale-95">BOOK AUDIT</a>
+    <button class="md:hidden p-2" id="menu-toggle" aria-label="Open menu">
+      <span class="material-symbols-outlined text-on-surface-warm" aria-hidden="true">menu</span>
+    </button>
+  </div>
 </nav>
+
+<div class="fixed inset-0 bg-surface-primary z-[60] flex flex-col p-8 transform translate-x-full transition-transform duration-300 md:hidden" id="mobile-menu">
+  <div class="flex justify-end mb-12">
+    <button class="p-2" id="menu-close" aria-label="Close menu">
+      <span class="material-symbols-outlined text-on-surface-warm" aria-hidden="true">close</span>
+    </button>
+  </div>
+  <div class="flex flex-col gap-8">
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="/#services">SERVICES</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="/#ledger">CASE STUDIES</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="/about">ABOUT</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-accent-performance uppercase" href="/blog/">BLOG</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="/#contact">CONTACT</a>
+  </div>
+  <div class="mt-auto border-t border-muted-silver/20 pt-8">
+    <a href="/#contact" class="block text-center w-full bg-on-surface-warm text-surface-primary py-4 font-label-button uppercase tracking-widest active:scale-95 transition-transform">BOOK AUDIT</a>
+  </div>
+</div>
 
 <main class="mt-20">
 
@@ -105,7 +94,7 @@
       <!-- Article 1 -->
       <a href="/blog/klaviyo-email-flows-guide.html" class="article-card block group border-b border-muted-silver/20 py-12 grid grid-cols-12 gap-8 items-start hover:bg-surface-secondary/30 -mx-8 px-8 md:-mx-16 md:px-16 transition-colors">
         <div class="col-span-12 md:col-span-2">
-          <span class="font-label-technical text-label-technical text-muted-silver">2026-07-18</span>
+          <span class="font-label-technical text-label-technical text-muted-silver"><time datetime="2026-07-18">2026-07-18</time></span>
           <div class="mt-2 font-label-technical text-label-technical text-muted-silver/50">8 MIN READ</div>
         </div>
         <div class="col-span-12 md:col-span-7">
@@ -115,14 +104,14 @@
         </div>
         <div class="col-span-12 md:col-span-3 flex md:justify-end items-center gap-3 pt-2 md:pt-0">
           <span class="font-label-button text-label-button text-muted-silver uppercase">READ ARTICLE</span>
-          <span class="material-symbols-outlined text-accent-performance card-arrow">arrow_forward</span>
+          <span class="material-symbols-outlined text-accent-performance card-arrow" aria-hidden="true">arrow_forward</span>
         </div>
       </a>
 
       <!-- Article 2 -->
       <a href="/blog/ecommerce-email-open-rate-benchmarks.html" class="article-card block group border-b border-muted-silver/20 py-12 grid grid-cols-12 gap-8 items-start hover:bg-surface-secondary/30 -mx-8 px-8 md:-mx-16 md:px-16 transition-colors">
         <div class="col-span-12 md:col-span-2">
-          <span class="font-label-technical text-label-technical text-muted-silver">2026-07-18</span>
+          <span class="font-label-technical text-label-technical text-muted-silver"><time datetime="2026-07-18">2026-07-18</time></span>
           <div class="mt-2 font-label-technical text-label-technical text-muted-silver/50">6 MIN READ</div>
         </div>
         <div class="col-span-12 md:col-span-7">
@@ -132,14 +121,14 @@
         </div>
         <div class="col-span-12 md:col-span-3 flex md:justify-end items-center gap-3 pt-2 md:pt-0">
           <span class="font-label-button text-label-button text-muted-silver uppercase">READ ARTICLE</span>
-          <span class="material-symbols-outlined text-accent-performance card-arrow">arrow_forward</span>
+          <span class="material-symbols-outlined text-accent-performance card-arrow" aria-hidden="true">arrow_forward</span>
         </div>
       </a>
 
       <!-- Article 3 -->
       <a href="/blog/email-list-hygiene-klaviyo.html" class="article-card block group border-b border-muted-silver/20 py-12 grid grid-cols-12 gap-8 items-start hover:bg-surface-secondary/30 -mx-8 px-8 md:-mx-16 md:px-16 transition-colors">
         <div class="col-span-12 md:col-span-2">
-          <span class="font-label-technical text-label-technical text-muted-silver">2026-07-18</span>
+          <span class="font-label-technical text-label-technical text-muted-silver"><time datetime="2026-07-18">2026-07-18</time></span>
           <div class="mt-2 font-label-technical text-label-technical text-muted-silver/50">7 MIN READ</div>
         </div>
         <div class="col-span-12 md:col-span-7">
@@ -149,7 +138,7 @@
         </div>
         <div class="col-span-12 md:col-span-3 flex md:justify-end items-center gap-3 pt-2 md:pt-0">
           <span class="font-label-button text-label-button text-muted-silver uppercase">READ ARTICLE</span>
-          <span class="material-symbols-outlined text-accent-performance card-arrow">arrow_forward</span>
+          <span class="material-symbols-outlined text-accent-performance card-arrow" aria-hidden="true">arrow_forward</span>
         </div>
       </a>
 
@@ -192,5 +181,20 @@
   </div>
 </footer>
 
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuToggle && menuClose && mobileMenu) {
+      menuToggle.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
+      menuClose.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+      });
+    }
+  });
+</script>
 </body>
 </html>
