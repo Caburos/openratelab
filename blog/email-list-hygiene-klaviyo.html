@@ -51,6 +51,38 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How often should you clean your Klaviyo list?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Run a full list health audit quarterly, with lighter monthly checks on engaged-segment ratios. The real trigger isn't a calendar date — it's performance signals. If open rates are dropping, spam complaints are rising, or your engaged segment is shrinking as a percentage of total subscribers, it's time to clean."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I delete unengaged subscribers in Klaviyo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your list count goes down, your open rate goes up, and your deliverability improves — because inbox providers are no longer seeing your emails consistently ignored. The risk is suppressing contacts who could still be reactivated. Use a 4-tier system: suppress before deleting, and only move to deletion after a win-back sequence has run with no response."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find unengaged contacts in Klaviyo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Build a segment using Klaviyo's engagement filters: contacts who have not opened or clicked any email in the last 90, 120, or 180 days (choose based on your send frequency). Exclude anyone who has placed an order in that window. Run them through a win-back sequence before making any suppression decision."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -248,6 +280,33 @@
 
   <section class="px-8 md:px-16 py-12 max-w-3xl">
     <p class="font-label-technical text-label-technical text-muted-silver">[ DATA_NOTE ] Performance figures cited above are pulled from active client accounts managed by OpenRateLab. Accounts are anonymised. Segmentation thresholds and flow structures described reflect our current operational approach — adjust for your brand's send frequency and list characteristics.</p>
+  </section>
+
+  <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 max-w-3xl">
+    <h2 class="font-headline-md text-headline-md uppercase mb-12">FREQUENTLY ASKED</h2>
+    <div class="space-y-0">
+      <details class="group border-t border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">How often should you clean your Klaviyo list?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">We run a full list health audit quarterly for every account we manage, with lighter monthly checks on engaged-segment ratios. The trigger isn't a calendar date — it's performance signals. If your open rates are dropping, if spam complaints are rising, or if your engaged segment is shrinking as a percentage of total subscribers, it's time to clean. Don't wait for a quarterly review if the data is telling you something now.</p>
+      </details>
+      <details class="group border-t border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">What happens if I delete unengaged subscribers in Klaviyo?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">Your list count goes down, your open rate goes up, and your deliverability improves — because inbox providers are no longer seeing your emails consistently ignored. The risk is suppressing contacts who could still be reactivated. That's why we use a 4-tier system: suppress before deleting, and only move to deletion after the win-back sequence has run its course with no response.</p>
+      </details>
+      <details class="group border-t border-b border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">How do I find unengaged contacts in Klaviyo?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">Build a segment using Klaviyo's engagement filters: contacts who have not opened or clicked any email in the last 90, 120, or 180 days (choose based on your send frequency). Exclude anyone who has placed an order in that window — recent buyers who don't open email are a different problem. That segment is your unengaged pool. Run them through a win-back sequence before making any suppression decision.</p>
+      </details>
+    </div>
   </section>
 
   <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 bg-surface-secondary">

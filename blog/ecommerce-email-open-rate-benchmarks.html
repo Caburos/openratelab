@@ -51,6 +51,38 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's a good open rate for Klaviyo emails?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Based on accounts we manage: flows consistently hit 40–55%+ and campaigns 35–50%+. Klaviyo's published benchmarks show industry averages around 25–30% — the gap reflects how many accounts in those averages have poor list health or weak subject line strategy. A well-built account on a clean list should be running well above the industry average within 90 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my Klaviyo open rate low?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The three most common causes: unengaged contacts dragging deliverability down, weak subject lines that don't earn the open, and sender reputation damage from sending too broadly too fast. The first step is always a list health audit — if your engaged segment is below 30%, that's where to start."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What open rate does Klaviyo consider good?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Klaviyo's published benchmarks place the e-commerce average around 25–30%. In practice, any account above 35% on campaigns and 45% on flows is performing well. Anything below 25% on flows is a sign the system needs work — whether that's list segmentation, flow trigger logic, or both."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -245,6 +277,33 @@
 
   <section class="px-8 md:px-16 py-12 max-w-3xl">
     <p class="font-label-technical text-label-technical text-muted-silver">[ DATA_NOTE ] All account-level figures cited above are pulled directly from Klaviyo reporting for accounts managed by OpenRateLab. Accounts are anonymised per our confidentiality standard. Industry averages referenced are based on Klaviyo's published benchmark data.</p>
+  </section>
+
+  <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 max-w-3xl">
+    <h2 class="font-headline-md text-headline-md uppercase mb-12">FREQUENTLY ASKED</h2>
+    <div class="space-y-0">
+      <details class="group border-t border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">What's a good open rate for Klaviyo emails?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">Based on accounts we manage: flows consistently hit 40–55%+ and campaigns 35–50%+. Klaviyo's own published benchmarks show industry averages around 25–30% — the gap reflects how many accounts in those averages have poor list health or weak subject line strategy. A well-built account on a clean list should be running well above the industry average within 90 days.</p>
+      </details>
+      <details class="group border-t border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">Why is my Klaviyo open rate low?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">The three most common causes: unengaged contacts dragging your deliverability down, weak subject lines that don't earn the open, and sender reputation damage from sending too broadly too fast. The first step is always a list health audit — if your engaged segment is below 30%, that's where to start. Open rate is a downstream metric. Fix the list and the subject lines, and it follows.</p>
+      </details>
+      <details class="group border-t border-b border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">What open rate does Klaviyo consider good?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">Klaviyo's published benchmarks place the e-commerce average around 25–30%. Their own platform health indicators flag accounts below 15% as at-risk. In practice, any account above 35% on campaigns and 45% on flows is performing well. Anything below 25% on flows is a sign the system needs work — whether that's list segmentation, flow trigger logic, or both.</p>
+      </details>
+    </div>
   </section>
 
   <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 bg-surface-secondary">

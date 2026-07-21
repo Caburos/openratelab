@@ -51,6 +51,46 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many Klaviyo flows does a DTC brand need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most accounts start with 3–5 core flows: welcome, abandoned cart, post-purchase, browse abandonment, and win-back. That baseline covers 80% of the revenue opportunity for most lists. The accounts we manage at scale run 50–200+ flows — built incrementally as data justifies each addition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What triggers Klaviyo flows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flows are triggered by events (Added to Cart, Placed Order, Viewed Product), list or segment membership changes, date properties (birthday, anniversary), or custom events sent from your store. Getting the trigger logic right is what separates a flow that runs when it should from one that fires late, fires twice, or never fires at all."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between a Klaviyo flow and a campaign?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flows are automated sequences triggered by subscriber behaviour — they send without manual intervention after setup. Campaigns are one-time sends scheduled manually, like a product launch or promotional email. Flows handle always-on revenue work; campaigns handle timely, event-driven sends. Both matter. Neither replaces the other."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long should an abandoned cart sequence be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three emails is the standard starting point: one at 1 hour, one at 24 hours, one at 72 hours. What matters more than length is the copy at each step — the first email should acknowledge the cart without pressure, the second should handle the most common objection, the third should create urgency without a discount."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -243,6 +283,40 @@
 
   <section class="px-8 md:px-16 py-12 max-w-3xl">
     <p class="font-label-technical text-label-technical text-muted-silver">[ DATA_NOTE ] Flow count and open rate figures cited above reflect actual performance from client accounts managed by OpenRateLab, pulled from Klaviyo reporting. Accounts are anonymised per our confidentiality standard.</p>
+  </section>
+
+  <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 max-w-3xl">
+    <h2 class="font-headline-md text-headline-md uppercase mb-12">FREQUENTLY ASKED</h2>
+    <div class="space-y-0">
+      <details class="group border-t border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">How many Klaviyo flows does a DTC brand need?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">Most accounts start with 3–5 core flows: welcome, abandoned cart, post-purchase, browse abandonment, and win-back. That baseline covers 80% of the revenue opportunity for most lists. The accounts we manage at scale run 50–200+ flows — but those are built incrementally as the data justifies each addition, not deployed all at once.</p>
+      </details>
+      <details class="group border-t border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">What triggers Klaviyo flows?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">Flows are triggered by events (Added to Cart, Placed Order, Viewed Product), list or segment membership changes, date properties (birthday, anniversary), or custom events sent from your store. The trigger determines when Klaviyo enters someone into the flow. Getting the trigger logic right is what separates a flow that runs when it should from one that fires late, fires twice, or never fires at all.</p>
+      </details>
+      <details class="group border-t border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">What's the difference between a Klaviyo flow and a campaign?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">Flows are automated sequences triggered by subscriber behaviour — they send without you doing anything after the initial setup. Campaigns are one-time sends you schedule manually, like a product launch or a promotional email. Flows handle the always-on revenue work; campaigns handle the timely, event-driven sends. Both matter. Neither replaces the other.</p>
+      </details>
+      <details class="group border-t border-b border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">How long should an abandoned cart sequence be?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">Three emails is the standard starting point: one at 1 hour, one at 24 hours, one at 72 hours. Some accounts extend to four or five. What matters more than length is the copy at each step — the first email should acknowledge the cart without pressure, the second should handle the most common objection, the third should create urgency without a discount. Adding a fourth or fifth only helps if the first three are already performing.</p>
+      </details>
+    </div>
   </section>
 
   <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 bg-surface-secondary">
