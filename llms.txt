@@ -24,3 +24,4 @@
 - [Klaviyo Email Flows: Complete Setup Guide for DTC Brands](https://openratelab.com/blog/klaviyo-email-flows-guide.html): Flow architecture, trigger types, and what separates 30-flow and 200-flow accounts
 - [Ecommerce Email Open Rate Benchmarks: Real Klaviyo Data](https://openratelab.com/blog/ecommerce-email-open-rate-benchmarks.html): Real performance numbers from active accounts we manage
 - [Email List Hygiene in Klaviyo](https://openratelab.com/blog/email-list-hygiene-klaviyo.html): How to clean a list without losing revenue
+- [Klaviyo Email Performance Report 2026](https://openratelab.com/blog/klaviyo-performance-report-2026.html): Original data from 22+ actively managed DTC accounts — campaign open rates, flow metrics, unsubscribe rates
