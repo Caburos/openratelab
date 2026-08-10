@@ -92,8 +92,11 @@ module.exports = {
       fontSize: {
         // headline-lg-mobile: 40px from homepage (mobile nav used site-wide)
         "headline-lg-mobile": ["40px", { lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "700" }],
-        // display-xl-mobile: 64px — only the homepage hero uses text-display-xl-mobile as a size class
+        // display-xl-mobile: 64px — used for case-study stat numbers (short strings, fit fine at 64px)
         "display-xl-mobile": ["64px", { lineHeight: "60px", letterSpacing: "-0.02em", fontWeight: "800" }],
+        // display-lg-mobile: 48px — homepage hero H1 and final-CTA H2, both multi-word sentences that
+        // overflow mobile width at 64px (e.g. "MARKETING", "RETENTION" are wider than the content column)
+        "display-lg-mobile": ["48px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "800" }],
         // display-xl: desktop hero on homepage
         "display-xl": ["120px", { lineHeight: "110px", letterSpacing: "-0.04em", fontWeight: "800" }],
         "label-button": ["14px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "700" }],
