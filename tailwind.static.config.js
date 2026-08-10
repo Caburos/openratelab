@@ -94,9 +94,10 @@ module.exports = {
         "headline-lg-mobile": ["40px", { lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "700" }],
         // display-xl-mobile: 64px — used for case-study stat numbers (short strings, fit fine at 64px)
         "display-xl-mobile": ["64px", { lineHeight: "60px", letterSpacing: "-0.02em", fontWeight: "800" }],
-        // display-lg-mobile: 48px — homepage hero H1 and final-CTA H2, both multi-word sentences that
-        // overflow mobile width at 64px (e.g. "MARKETING", "RETENTION" are wider than the content column)
-        "display-lg-mobile": ["48px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "800" }],
+        // display-lg-mobile: fluid 44px-64px — homepage hero H1 and final-CTA H2. Words like "MARKETING"
+        // and "RETENTION" overflow narrow phones at a flat 64px, so this scales down only on screens where
+        // it would actually overflow (~<390px wide) and stays full-size (64px) on larger phones.
+        "display-lg-mobile": ["clamp(2.75rem, 19vw - 0.875rem, 4rem)", { lineHeight: "1", letterSpacing: "-0.02em", fontWeight: "800" }],
         // display-xl: desktop hero on homepage
         "display-xl": ["120px", { lineHeight: "110px", letterSpacing: "-0.04em", fontWeight: "800" }],
         "label-button": ["14px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "700" }],
