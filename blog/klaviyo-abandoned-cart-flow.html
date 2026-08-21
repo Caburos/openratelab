@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1BTX88Q3NG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1BTX88Q3NG');
+</script>
+<title>Abandoned Cart Flows in Klaviyo: Structure, Timing, and Copy That Recovers Revenue | OpenRateLab</title>
+<meta name="description" content="How to structure a Klaviyo abandoned cart flow that recovers revenue without nagging. Timing, email count, and the copy that actually gets carts finished."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#0D0D0D"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="canonical" href="https://openratelab.com/blog/klaviyo-abandoned-cart-flow"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Abandoned Cart Flows in Klaviyo: Structure, Timing, and Copy That Recovers Revenue | OpenRateLab"/>
+<meta property="og:description" content="How to structure a Klaviyo abandoned cart flow that recovers revenue without nagging."/>
+<meta property="og:url" content="https://openratelab.com/blog/klaviyo-abandoned-cart-flow"/>
+<meta property="og:image" content="https://openratelab.com/images/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Abandoned Cart Flows in Klaviyo: Structure, Timing, and Copy That Recovers Revenue | OpenRateLab"/>
+<meta name="twitter:description" content="How to structure a Klaviyo abandoned cart flow that recovers revenue without nagging."/>
+<meta name="twitter:image" content="https://openratelab.com/images/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Abandoned Cart Flows in Klaviyo: Structure, Timing, and Copy That Recovers Revenue",
+      "description": "How to structure a Klaviyo abandoned cart flow that recovers revenue without nagging. Timing, email count, and the copy that actually gets carts finished.",
+      "url": "https://openratelab.com/blog/klaviyo-abandoned-cart-flow",
+      "image": "https://openratelab.com/images/og-image.png",
+      "datePublished": "2026-08-11T00:00:00Z",
+      "dateModified": "2026-08-11T00:00:00Z",
+      "author": {
+        "@type": "Person",
+        "name": "Uros Korene",
+        "url": "https://openratelab.com/about/"
+      },
+      "publisher": {"@type": "Organization", "name": "OpenRateLab", "url": "https://openratelab.com", "logo": {"@type": "ImageObject", "url": "https://openratelab.com/images/og-image.png"}}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://openratelab.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://openratelab.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Abandoned Cart Flows in Klaviyo", "item": "https://openratelab.com/blog/klaviyo-abandoned-cart-flow"}
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long after cart abandonment should the first email send?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We typically trigger the first email 1 hour after abandonment, sometimes as fast as 30 minutes for high-intent categories where the shopper is likely still comparing options in another tab. Waiting a full day is usually too slow: intent decays fast, and by 24 hours many shoppers have already bought elsewhere or moved on entirely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many emails should an abandoned cart flow have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3 emails is the standard structure we build: a reminder, a value/objection-handling email, and a final urgency or incentive email. Going beyond 3 rarely improves recovery and risks feeling like nagging. The goal is to catch genuine hesitation, not wear the shopper down."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should abandoned cart emails always include a discount?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Leading with a discount on every abandoned cart trains shoppers to abandon carts on purpose, expecting a coupon. We reserve the discount, if used at all, for the final email in the sequence, after the first two emails have made the case on product value and removed friction like shipping or sizing concerns."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  body { background-color: #0D0D0D; color: #F9F9F7; -webkit-font-smoothing: antialiased; }
+  .rule-line { height: 1px; background-color: rgba(163, 163, 163, 0.2); width: 100%; }
+  .pixel-grid { background-image: radial-gradient(circle, #262626 1px, transparent 1px); background-size: 40px 40px; }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  .prose-article h2 { font-family: 'Hanken Grotesk', sans-serif; font-size: 28px; line-height: 36px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; color: #F9F9F7; margin-top: 56px; margin-bottom: 20px; }
+  .prose-article h3 { font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 26px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; color: #F9F9F7; margin-top: 36px; margin-bottom: 12px; }
+  .prose-article p { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 30px; color: #c8c5c2; margin-bottom: 24px; }
+  .prose-article strong { color: #F9F9F7; font-weight: 700; }
+  .prose-article ul { margin-bottom: 24px; padding-left: 0; list-style: none; }
+  .prose-article ul li { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 30px; color: #c8c5c2; padding-left: 20px; position: relative; margin-bottom: 8px; }
+  .prose-article ul li::before { content: "—"; position: absolute; left: 0; color: #E63946; }
+  .stat-callout { background: #1a1a1a; border-left: 3px solid #E63946; padding: 24px 28px; margin: 36px 0; }
+  .stat-callout .stat-num { font-family: 'Hanken Grotesk', sans-serif; font-size: 48px; line-height: 52px; font-weight: 800; color: #F9F9F7; }
+  .stat-callout .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #A3A3A3; margin-top: 4px; }
+</style>
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body class="bg-surface-primary selection:bg-accent-performance selection:text-surface-primary">
+
+<nav class="fixed top-0 z-50 flex justify-between items-center w-full px-4 md:px-16 h-20 bg-surface-primary border-b border-muted-silver/20">
+  <a href="/" class="font-headline-md text-base md:text-headline-md font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors">OPENRATELAB</a>
+  <div class="hidden md:flex items-center space-x-12">
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/#services">SERVICES</a>
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/#ledger">CASE STUDIES</a>
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/about/">ABOUT</a>
+    <a class="text-accent-performance font-label-button uppercase border-b border-accent-performance transition-colors duration-150" href="/blog/">BLOG</a>
+    <a class="text-on-surface-warm font-label-button uppercase hover:text-accent-performance transition-colors duration-150" href="/#contact">CONTACT</a>
+  </div>
+  <div class="flex items-center gap-2">
+    <a href="/#contact" class="bg-on-surface-warm text-surface-primary px-3 py-2 md:px-6 md:py-3 font-label-button uppercase hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-150 active:scale-95">BOOK AUDIT</a>
+    <button class="md:hidden p-2" id="menu-toggle" aria-label="Open menu">
+      <span class="material-symbols-outlined text-on-surface-warm" aria-hidden="true">menu</span>
+    </button>
+  </div>
+</nav>
+
+<div class="fixed inset-0 bg-surface-primary z-[60] flex flex-col p-8 transform translate-x-full transition-transform duration-300 md:hidden" id="mobile-menu">
+  <div class="flex justify-end mb-12">
+    <button class="p-2" id="menu-close" aria-label="Close menu">
+      <span class="material-symbols-outlined text-on-surface-warm" aria-hidden="true">close</span>
+    </button>
+  </div>
+  <div class="flex flex-col gap-8">
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="/#services">SERVICES</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="/#ledger">CASE STUDIES</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="/about/">ABOUT</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-accent-performance uppercase" href="/blog/">BLOG</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="/#contact">CONTACT</a>
+  </div>
+  <div class="mt-auto border-t border-muted-silver/20 pt-8">
+    <a href="/#contact" class="block text-center w-full bg-on-surface-warm text-surface-primary py-4 font-label-button uppercase tracking-widest active:scale-95 transition-transform">BOOK AUDIT</a>
+  </div>
+</div>
+
+<main class="mt-20">
+
+  <section class="px-8 md:px-16 py-16 md:py-24 border-b border-muted-silver/20">
+    <a href="/blog/" class="inline-flex items-center gap-2 font-label-technical text-label-technical text-muted-silver uppercase hover:text-accent-performance transition-colors mb-10">
+      <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span> BACK TO BLOG
+    </a>
+    <div class="max-w-4xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-4 block">KLAVIYO / FLOWS · 6 MIN READ · <time datetime="2026-08-11">2026-08-11</time></span>
+      <h1 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase leading-none tracking-tighter mb-8">ABANDONED CART FLOWS:<br/>STRUCTURE, TIMING,<br/>AND COPY THAT RECOVERS.</h1>
+      <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl italic">An abandoned cart is not a lost sale. It's a subscriber one step from converting, with the highest purchase intent of any flow trigger in Klaviyo. Treat it that way.</p>
+      <div class="flex items-center gap-4 mt-8 pt-8 border-t border-muted-silver/20">
+        <div>
+          <span class="font-label-button text-on-surface-warm block">UROS KORENE</span>
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase">Founder, OpenRateLab</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="px-8 md:px-16 py-16 max-w-3xl prose-article">
+
+    <p>Cart abandonment is a different problem than the <a href="/blog/klaviyo-welcome-series-guide.html" class="text-accent-performance hover:underline transition-colors">welcome series</a> solves. A new subscriber needs to be convinced the brand is worth their attention. Someone who abandoned a cart already made that decision: they picked a product, added it, and stopped short of paying. The job of this flow is removing whatever stopped them, not reintroducing the brand.</p>
+
+    <h2>Speed Matters More Than Almost Anything Else</h2>
+
+    <p>Intent decays fast after abandonment. We trigger the first email 1 hour after the cart is left, sometimes as fast as 30 minutes for categories where shoppers are likely comparing options across multiple tabs. Waiting a full day is usually too slow: by then, many shoppers have bought elsewhere or simply moved on. The window for genuine reconsideration is measured in hours, not days.</p>
+
+    <h2>The 3-Email Structure</h2>
+
+    <ul>
+      <li><strong>Email 1 (1 hour):</strong> A simple reminder. Show the exact product they left, make the checkout link one click away, and keep the copy short. This is not the moment for a hard sell: most people who convert off email 1 just needed a nudge back to the tab they closed.</li>
+      <li><strong>Email 2 (24 hours):</strong> Handle the objection. This is where real friction gets addressed: shipping cost and timeline, sizing or fit concerns, return policy, or social proof if trust is the barrier. What goes here should be informed by whatever your actual customers ask before buying.</li>
+      <li><strong>Email 3 (48-72 hours):</strong> Final urgency, and the only place we'd consider a discount. If the product is still in the cart after two emails handling the friction directly, a modest incentive or genuine urgency (limited stock, a closing window) can be the deciding factor.</li>
+    </ul>
+
+    <h2>Why the Discount Shouldn't Come First</h2>
+
+    <p>Leading every abandoned cart email with a discount teaches shoppers to abandon carts deliberately, expecting a coupon to follow. We hold the discount for the final email, after the first two have made the case on product value and removed real friction. This protects margin on the shoppers who would have converted anyway, and reserves the incentive for genuine fence-sitters.</p>
+
+    <div class="stat-callout">
+      <div class="stat-num">$131K</div>
+      <div class="stat-label">Monthly campaign revenue on an e-commerce account running a full flow system, including a 3-email abandoned cart sequence, alongside a 75.2% open rate</div>
+    </div>
+    <p class="font-label-technical text-label-technical text-muted-silver" style="margin-top:16px"><a href="/case-studies/ecommerce-open-rate-system.html" class="text-accent-performance hover:underline transition-colors">&rarr; Full case study: 75.2% open rate, e-commerce brand</a></p>
+
+    <h2>Setting the Trigger in Klaviyo</h2>
+
+    <p>Trigger on "Checkout Started" for the initial event, filtered to exclude anyone who's placed an order since. Set the flow filter to check "Has placed order zero times since starting this flow" before each email sends: this prevents someone who already completed the purchase from receiving a redundant reminder or, worse, a discount code for something they already bought at full price.</p>
+
+    <h2>What Product Images and Copy Should Actually Show</h2>
+
+    <p>Show the exact abandoned item, not a generic product grid. Dynamic product blocks pulling the real cart contents outperform static "you might also like" sections here: the shopper already chose this specific item, so remind them of that choice rather than presenting new decisions.</p>
+
+    <p class="font-label-technical text-label-technical text-muted-silver" style="margin-top:24px"><a href="/blog/klaviyo-post-purchase-flow.html" class="text-accent-performance hover:underline transition-colors">&rarr; Post-purchase flows: turning one order into a repeat customer</a></p>
+
+  </article>
+
+  <div class="px-8 md:px-16"><div class="rule-line max-w-3xl"></div></div>
+
+  <section class="px-8 md:px-16 py-12 max-w-3xl">
+    <p class="font-label-technical text-label-technical text-muted-silver">[ DATA_NOTE ] Performance figures cited above are pulled from active client accounts managed by OpenRateLab. Accounts are anonymized. Timing and structure described reflect our current operational approach: adjust for your category's typical consideration window.</p>
+  </section>
+
+  <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 max-w-3xl">
+    <h2 class="font-headline-md text-headline-md uppercase mb-12">FREQUENTLY ASKED</h2>
+    <div class="space-y-0">
+      <details class="group border-t border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">How long after cart abandonment should the first email send?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">We typically trigger the first email 1 hour after abandonment, sometimes as fast as 30 minutes for high-intent categories where the shopper is likely still comparing options in another tab. Waiting a full day is usually too slow: intent decays fast, and by 24 hours many shoppers have already bought elsewhere or moved on entirely.</p>
+      </details>
+      <details class="group border-t border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">How many emails should an abandoned cart flow have?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">3 emails is the standard structure we build: a reminder, a value/objection-handling email, and a final urgency or incentive email. Going beyond 3 rarely improves recovery and risks feeling like nagging. The goal is to catch genuine hesitation, not wear the shopper down.</p>
+      </details>
+      <details class="group border-t border-b border-muted-silver/20">
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">Should abandoned cart emails always include a discount?</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">No. Leading with a discount on every abandoned cart trains shoppers to abandon carts on purpose, expecting a coupon. We reserve the discount, if used at all, for the final email in the sequence, after the first two emails have made the case on product value and removed friction like shipping or sizing concerns.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 bg-surface-secondary">
+    <span class="font-label-technical text-label-technical text-muted-silver uppercase tracking-[0.2em] mb-8 block">RELATED ARTICLES</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <a href="/blog/klaviyo-welcome-series-guide.html" class="block border border-muted-silver/20 p-8 hover:border-accent-performance transition-colors group">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-3 block">KLAVIYO / FLOWS</span>
+        <h3 class="font-headline-md text-xl text-on-surface-warm font-bold mb-3 group-hover:text-accent-performance transition-colors">The Klaviyo Welcome Series That Actually Converts</h3>
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase">7 MIN READ →</span>
+      </a>
+      <a href="/blog/klaviyo-email-flows-guide.html" class="block border border-muted-silver/20 p-8 hover:border-accent-performance transition-colors group">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-3 block">KLAVIYO / FLOWS</span>
+        <h3 class="font-headline-md text-xl text-on-surface-warm font-bold mb-3 group-hover:text-accent-performance transition-colors">Klaviyo Email Flows: The Complete Setup Guide for DTC Brands</h3>
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase">8 MIN READ →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">WORK WITH US</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">LEAVING REVENUE<br/>IN ABANDONED CARTS?</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">We build and write full flow systems for DTC brands, starting with the flows that recover revenue fastest. Book a free audit to see where your account stands.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">GET A FREE AUDIT</a>
+  </section>
+
+</main>
+
+<footer class="grid grid-cols-12 gap-gutter px-8 md:px-16 py-40 w-full bg-surface-primary border-t border-muted-silver/30">
+  <div class="col-span-12 md:col-span-6 mb-20 md:mb-0">
+    <div class="font-headline-lg text-2xl md:text-headline-lg font-black text-on-surface-warm uppercase tracking-tighter mb-8 leading-none">OPENRATELAB.</div>
+    <p class="font-label-technical text-label-technical text-muted-silver max-w-md">PRECISION RETENTION SYSTEMS. ANALYTICALLY DRIVEN. EDITORIALLY EXECUTED. &copy;2026 OPENRATELAB.</p>
+  </div>
+  <div class="col-span-12 md:col-span-3">
+    <span class="font-label-technical text-label-technical text-accent-performance mb-8 block uppercase">NAVIGATION</span>
+    <ul class="space-y-4">
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#services">SERVICES</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#ledger">CASE STUDIES</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/about/">ABOUT</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/blog/">BLOG</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#contact">CONTACT</a></li>
+    </ul>
+  </div>
+  <div class="col-span-12 md:col-span-3">
+    <span class="font-label-technical text-label-technical text-accent-performance mb-8 block uppercase">CONTACT</span>
+    <ul class="space-y-4">
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="mailto:uros@openratelab.com">uros@openratelab.com</a></li>
+      <li><a class="font-label-button text-muted-silver uppercase hover:text-on-surface-warm underline transition-all" href="/#contact">BOOK FREE AUDIT</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuToggle && menuClose && mobileMenu) {
+      menuToggle.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
+      menuClose.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+      });
+    }
+  });
+</script>
+</body>
+</html>
