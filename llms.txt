@@ -1,31 +1,38 @@
 # OpenRateLab
 
-> Email marketing agency for e-commerce and DTC brands. We build Klaviyo retention systems and write conversion copy that compounds revenue month over month.
+> OpenRateLab is a Klaviyo email marketing agency for e-commerce and DTC brands, founded by Uros Korene in 2023. Services: email copywriting, full Klaviyo account builds, Klaviyo automation (flows, segmentation), and email strategy audits.
 
-## Key Pages
+## Site
 
-- [Homepage](https://openratelab.com/): Klaviyo email marketing agency for DTC brands
-- [About](https://openratelab.com/about): How we work and what we believe
-- [Blog](https://openratelab.com/blog/): Guides on Klaviyo flows, open rates, and deliverability
+- [Homepage](https://openratelab.com/): services, case studies, and contact
+- [About](https://openratelab.com/about/): founder background and agency approach
+- [Blog](https://openratelab.com/blog/): Klaviyo guides, benchmarks, and flow deep-dives
+
+## Blog
+
+- [Klaviyo Email Performance Report 2026: Data From 22+ Active DTC Accounts](https://openratelab.com/blog/klaviyo-performance-report-2026)
+- [Klaviyo Email Flows: The Complete Setup Guide for DTC Brands](https://openratelab.com/blog/klaviyo-email-flows-guide)
+- [Ecommerce Email Open Rate Benchmarks: Data From Active Klaviyo Accounts](https://openratelab.com/blog/ecommerce-email-open-rate-benchmarks)
+- [Email List Hygiene in Klaviyo: How to Clean Your List Without Losing Revenue](https://openratelab.com/blog/email-list-hygiene-klaviyo)
+- [Klaviyo Email Copywriting: What Actually Makes Subscribers Click](https://openratelab.com/blog/klaviyo-email-copywriting-guide)
+- [How to Choose a Klaviyo Agency: The Questions That Actually Matter](https://openratelab.com/blog/how-to-choose-a-klaviyo-agency)
+- [The Klaviyo Welcome Series That Actually Converts](https://openratelab.com/blog/klaviyo-welcome-series-guide)
+- [Abandoned Cart Flows in Klaviyo: Structure, Timing, and Copy That Recovers Revenue](https://openratelab.com/blog/klaviyo-abandoned-cart-flow)
+- [Post-Purchase Flows in Klaviyo: Turning One Order Into a Repeat Customer](https://openratelab.com/blog/klaviyo-post-purchase-flow)
+- [Win-Back Flows in Klaviyo: Recovering Lapsed Customers Before You Suppress Them](https://openratelab.com/blog/klaviyo-win-back-flow)
+- [Email Deliverability for DTC Brands: SPF, DKIM, and Sender Reputation Explained](https://openratelab.com/blog/email-deliverability-guide-dtc)
 
 ## Case Studies
 
-- [75.2% Open Rate — E-Commerce Brand](https://openratelab.com/case-studies/ecommerce-open-rate-system.html): Full Klaviyo flow and campaign rebuild, 16,000+ subscribers
-- [54.8% Open Rate at Scale — Health Supplement Brand](https://openratelab.com/case-studies/health-supplement-brand-at-scale.html): 205-flow account, 2.5M emails, sustained performance
-- [43.3% Open Rate + 2.86% CTR — Activewear Brand](https://openratelab.com/case-studies/activewear-brand-email-engagement.html): 50 campaigns, 28k subscriber list
-- [DTC Brand Attribution System](https://openratelab.com/case-studies/dtc-brand-attribution-system.html)
-- [Pet Wellness Brand](https://openratelab.com/case-studies/pet-wellness-brand.html)
-- [Multi-Species Wellness Brand](https://openratelab.com/case-studies/multi-species-wellness-brand.html)
-- [Farm-Direct Pet Treats Brand](https://openratelab.com/case-studies/farm-direct-pet-treats-brand.html)
-- [Equine Performance Nutrition Brand](https://openratelab.com/case-studies/equine-performance-nutrition-brand.html)
-- [Specialty Supplement Brand — $182K in 12 Months](https://openratelab.com/case-studies/specialty-supplement-brand-182k.html): 26 flows, 172 campaigns, 33.3% open rate
-- [Lifestyle & Wellness Brand — 80.7% Open Rate Post Rebuild](https://openratelab.com/case-studies/lifestyle-wellness-brand-80pct.html): Platform migration, full list rebuild, 45 flows, $56K revenue
-- [Nutrition Brand — $69K Revenue, Flows Beating Campaigns](https://openratelab.com/case-studies/nutrition-brand-69k-revenue.html): 26 flows, 73 campaigns, 70% open rate, automation-first setup
-- [Specialty Food Brand — Lean 16-Flow Setup](https://openratelab.com/case-studies/specialty-food-brand-lean-setup.html): 16 flows, 39 campaigns, $19K revenue, 40.9% open rate
-
-## Blog Articles
-
-- [Klaviyo Email Flows: Complete Setup Guide for DTC Brands](https://openratelab.com/blog/klaviyo-email-flows-guide.html): Flow architecture, trigger types, and what separates 30-flow and 200-flow accounts
-- [Ecommerce Email Open Rate Benchmarks: Klaviyo Data](https://openratelab.com/blog/ecommerce-email-open-rate-benchmarks.html): Performance numbers from active accounts we manage
-- [Email List Hygiene in Klaviyo](https://openratelab.com/blog/email-list-hygiene-klaviyo.html): How to clean a list without losing revenue
-- [Klaviyo Email Performance Report 2026](https://openratelab.com/blog/klaviyo-performance-report-2026.html): Original data from 22+ actively managed DTC accounts — campaign open rates, flow metrics, unsubscribe rates
+- [75.2% Open Rate From a Flow Rebuild](https://openratelab.com/case-studies/ecommerce-open-rate-system)
+- [30%+ Email Revenue Attribution, Ongoing](https://openratelab.com/case-studies/dtc-brand-attribution-system)
+- [$182K Email Revenue in 12 Months](https://openratelab.com/case-studies/specialty-supplement-brand-182k)
+- [80.7% Open Rate After Full Klaviyo Rebuild](https://openratelab.com/case-studies/lifestyle-wellness-brand-80pct)
+- [$69K Email Revenue: Flows Outperforming Campaigns](https://openratelab.com/case-studies/nutrition-brand-69k-revenue)
+- [$19K Email Revenue: Lean 16-Flow Setup](https://openratelab.com/case-studies/specialty-food-brand-lean-setup)
+- [77-81% Open Rates, Sustained 3+ Years](https://openratelab.com/case-studies/pet-wellness-brand)
+- [$35,972 From a Single Campaign Send](https://openratelab.com/case-studies/multi-species-wellness-brand)
+- [Highest Revenue Efficiency of Any Account We've Run](https://openratelab.com/case-studies/farm-direct-pet-treats-brand)
+- [The Same Result, Four Different Ways](https://openratelab.com/case-studies/equine-performance-nutrition-brand)
+- [54.8% Open Rate at Scale: 203 Campaigns, 2.5 Million Emails](https://openratelab.com/case-studies/health-supplement-brand-at-scale)
+- [43.3% Open Rate + 2.86% CTR: Fashion Email That Actually Holds](https://openratelab.com/case-studies/activewear-brand-email-engagement)
