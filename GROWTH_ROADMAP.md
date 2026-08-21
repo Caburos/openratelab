@@ -95,13 +95,26 @@ Ran `/code-review` (high effort) plus an independent fact-verification pass acro
 ## Phase 5 — Off-Page & Trust Signals
 *All free — directories, listings, relationships. Cross-check against `/seo-audit` sections 9 (Off-Page & Authority) and 24 (Entity Graph Audit) for the full methodology.*
 
-- [ ] Finish the Clutch profile to 100% (audit in progress this session)
-- [ ] Add 2–3 more relevant free directories — GoodFirms, DesignRush, UpCity, Sortlist. Don't spam every directory that exists; pick the ones actual buyers browse.
-- [ ] Apply to the **Klaviyo Partner directory** if eligible — extremely high relevance given the core specialization
-- [ ] Google Business Profile — create/claim if not already done (Phase 1)
-- [ ] LinkedIn Company Page — confirm it exists, is fully filled out, and posts link back to blog/case studies
-- [ ] Request real reviews on Clutch from the named clients already quoted on the homepage (Nika, Teia, Viktor) — reviews compound both Clutch ranking and GEO citability
-- [ ] Build 1–2 reciprocal relationships with complementary, non-competing agencies (Shopify dev shops, other ecom-adjacent verticals) for case-study swaps or mentions — relationship-based, zero budget
+- [~] Finish the Clutch profile to 100% — largely done in an earlier session (About, GA4 field, Packages description, social fields addressed); "Upgrade to Verified" and paid features intentionally skipped per Uros. Re-verifying current state needs an active Clutch vendor-dashboard session (see Phase 4 entity-consistency note).
+- [~] Add 2–3 more relevant free directories — GoodFirms, DesignRush, UpCity, Sortlist — **researched 2026-08-21, blocked on account creation**. All four offer free-tier agency listings buyers actually browse. None publish hard eligibility minimums (size, revenue, tenure) that would block a small/new agency. **Blocked**: creating an account or submitting a listing on a third-party site is outside what I can do myself (account creation is off-limits for me regardless of how it's framed) — this needs Uros to sign up directly. Happy to draft the listing description/copy for each once he's ready to create the accounts.
+- [~] Apply to the **Klaviyo Partner directory** — **researched 2026-08-21, one real blocker found**. Read the actual application form (klaviyo.com/partners/partner-agency-form) without submitting anything. No hard minimum on agency size or tenure — the form has options for "1 or 2" employees and "Less than 6 months" in business, so a small/new agency isn't disqualified. But **a LinkedIn URL is a required field**, and Uros confirmed earlier this session there's no agency LinkedIn page yet. This application is blocked until the LinkedIn Company Page below exists. The form also asks for a business street address and phone — worth deciding in advance whether that's the same privacy concern that ruled out Google Business Profile, since Uros didn't want a personal address public.
+- [ ] Google Business Profile — **skipped per Uros** (2026-08-21, Phase 1): doesn't want a personal address public. Unchanged.
+- [ ] LinkedIn Company Page — **doesn't exist** (confirmed by Uros this session: "i don't have agency linkedin or facebook"). Creating it requires an account, which is outside what I can do myself — needs Uros to create it. Once it exists, unblocks the Klaviyo Partner application above and the entity-consistency check from Phase 4.
+- [~] Request real reviews on Clutch from the named clients already quoted on the homepage (Nika, Teia, Viktor) — **drafted, not sent**. I don't have their contact details, and sending outreach on Uros's behalf needs his explicit go-ahead each time regardless. Drafted a reusable template below for Uros to personalize and send himself.
+- [ ] Build 1–2 reciprocal relationships with complementary, non-competing agencies (Shopify dev shops, other ecom-adjacent verticals) for case-study swaps or mentions — not started. This is relationship-building outreach (finding real prospective partners, then contacting them), which needs Uros's direction on who to approach before I'd draft anything — flagging as the next open item rather than guessing at named agencies to approach.
+
+**Draft: Clutch review-request email** (template — personalize `[Name]` and send from your own email; not sent by me)
+> Subject: Quick favor — 2 minutes on Clutch?
+>
+> Hi [Name],
+>
+> Really glad the email system's been working for you. If you've got two minutes, would you leave a quick review on our Clutch profile? It helps other brands find us and takes the guesswork out of choosing an agency.
+>
+> [Clutch review link]
+>
+> No pressure if you're slammed — just means a lot coming from an account that's actually seen the results.
+>
+> Uros
 
 ## Phase 6 — Ongoing Automation & Monitoring
 *Goal: turn this from one-off cleanup into a recurring loop that catches regressions automatically.*
