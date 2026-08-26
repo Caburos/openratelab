@@ -226,3 +226,36 @@ canonical self-reference, required JSON-LD types) and exits non-zero if
 anything drifts. Run this before every commit that touches page markup —
 it is the actual enforcement mechanism; this file is the explanation of
 *why* the rules are what they are.
+
+## 8. Skills are session-local unless they're committed here
+
+`GROWTH_ROADMAP.md` repeatedly cites a `/seo-audit` skill as "a maintained,
+sourced technical/GEO playbook already in this environment," with a full
+audit dated 2026-08-21. **That skill does not exist in this repo
+(`.claude/skills/`) and is not in the account's enabled/searchable skill
+list either** — confirmed 2026-08-26 via both a repo search and the
+`ListSkills`/`SearchSkills` tools, which returned nothing for "seo,"
+"audit," or "geo." It clearly ran once, in some session, on some machine —
+but it lived only in that session's local environment, was never committed
+to the repo, and so didn't travel here. This is the same root cause as the
+`.gitignore`'s old blanket `.claude/` rule (Section 6/skill history): a
+skill isn't durable just because a past session had it — only what's
+committed to this repo is guaranteed to be here for the next session.
+
+Practical consequence: **`scripts/check_pages.py` is not a replacement for
+`/seo-audit`.** It only enforces the narrow, structural rules in Sections
+3–5 (nav/footer consistency, basic meta presence/length, required JSON-LD
+types). Per `GROWTH_ROADMAP.md`'s own description, `/seo-audit` covered
+substantially more — Core Web Vitals, HTTP headers, JS-rendering/
+crawlability, mobile, accessibility, entity-graph audits, and AI-citation
+monitoring — none of which this checker touches. Don't assume a clean
+`check_pages.py` run means the site is technically/GEO sound; it means the
+site matches *this repo's* documented consistency rules, nothing broader.
+
+If `/seo-audit` (or an equivalent) is available in a future session, the
+fix is to save it into this repo as a project skill
+(`.claude/skills/seo-audit/SKILL.md`, same pattern as `new-page/`) so it
+stops being session-local. Rebuilding it from scratch based only on the
+roadmap's summary of its branches isn't done here — that would risk
+producing a lower-quality, unsourced imitation of a skill whose actual
+checklist content isn't recoverable from this repo.
