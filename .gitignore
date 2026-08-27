@@ -16,5 +16,6 @@ dist-ssr
 # Data files (contact submissions stored locally in dev)
 data/contacts.json
 
-# Claude
-.claude/
+# Claude — keep project skills/agents/settings tracked so they travel with
+# the repo across sessions; only exclude genuinely local-only state.
+.claude/settings.local.json
