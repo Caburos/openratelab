@@ -58,3 +58,40 @@
   to = "/.netlify/functions/api"
   status = 200
   force = true
+
+# Case study URL renames (removed baked-in metrics from slugs, 2026-08-27)
+[[redirects]]
+  from = "/case-studies/specialty-supplement-brand-182k"
+  to = "/case-studies/specialty-supplement-brand"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/specialty-supplement-brand-182k.html"
+  to = "/case-studies/specialty-supplement-brand"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/lifestyle-wellness-brand-80pct"
+  to = "/case-studies/lifestyle-wellness-brand"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/lifestyle-wellness-brand-80pct.html"
+  to = "/case-studies/lifestyle-wellness-brand"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/nutrition-brand-69k-revenue"
+  to = "/case-studies/nutrition-brand-revenue"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/nutrition-brand-69k-revenue.html"
+  to = "/case-studies/nutrition-brand-revenue"
+  status = 301
+  force = true
