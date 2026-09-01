@@ -1,8 +1,9 @@
 [build]
-  base = "."
-  publish = "."
-  command = "npm ci && npm run build:static-css"
-# auto-deploy enabled 2026-07-18
+  base = "astro-site"
+  command = "npm ci && npm run build"
+  publish = "astro-site/dist"
+# Cutover to Astro: 2026-09-01. Previous static-HTML config preserved in
+# git history (see the pre-astro-migration tag) if a rollback is needed.
 
 [[headers]]
   for = "/*"
@@ -41,7 +42,7 @@
     Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
-  for = "/sitemap.xml"
+  for = "/sitemap-index.xml"
   [headers.values]
     Content-Type = "application/xml"
     Cache-Control = "public, max-age=604800"
@@ -52,6 +53,11 @@
     Content-Type = "text/plain"
     Cache-Control = "public, max-age=604800"
 
+# Functions directory stays at the repo root — unaffected by `base`,
+# Netlify Functions deploy independently of the publish directory.
+[functions]
+  directory = "netlify/functions"
+
 # Contact form API → Netlify function
 [[redirects]]
   from = "/api/contact"
@@ -59,7 +65,24 @@
   status = 200
   force = true
 
-# Case study URL renames (removed baked-in metrics from slugs, 2026-08-27)
+# Trailing-slash normalization: no trailing slash on individual posts/case
+# studies is canonical (CLAUDE.md). Astro's static build emits a directory
+# index.html either way, so both forms resolve — this makes the no-slash
+# form authoritative instead of leaving two working URLs for one page.
+[[redirects]]
+  from = "/case-studies/:slug/"
+  to = "/case-studies/:slug"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/:slug/"
+  to = "/blog/:slug"
+  status = 301
+  force = true
+
+# Case study URL renames from the NDA-compliance pass — still needed
+# post-cutover since old indexed/bookmarked links may still hit these.
 [[redirects]]
   from = "/case-studies/specialty-supplement-brand-182k"
   to = "/case-studies/specialty-supplement-brand"
@@ -93,5 +116,20 @@
 [[redirects]]
   from = "/case-studies/nutrition-brand-69k-revenue.html"
   to = "/case-studies/nutrition-brand-revenue"
+  status = 301
+  force = true
+
+# Legacy .html-suffixed URLs from the old static site — every page moved
+# from e.g. /blog/foo.html to /blog/foo. Without this, old indexed/
+# bookmarked/shared links with .html would 404 post-cutover.
+[[redirects]]
+  from = "/blog/:slug.html"
+  to = "/blog/:slug"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/:slug.html"
+  to = "/case-studies/:slug"
   status = 301
   force = true

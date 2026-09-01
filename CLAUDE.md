@@ -8,25 +8,70 @@ the one thing guaranteed to travel with the repo.
 
 ## 1. What is actually deployed
 
-The live site (openratelab.com) is the **static HTML** at the repo root —
-`index.html`, `about/`, `blog/`, `case-studies/` — styled by `styles.css`
-(compiled from `static.css` via `tailwind.static.config.js`). Confirm this
-yourself if in doubt: `netlify.toml`'s build command only runs
-`build:static-css` and publishes `.` — it never runs `vite build`.
+**As of 2026-09-01, the live site (openratelab.com) is built from
+`astro-site/`** — an Astro project with React islands for interactivity
+(contact form, mobile menu, nav scroll-spy, scroll animations) and
+content collections for the 12 case studies + 11 blog posts
+(`astro-site/src/content/`). `netlify.toml`'s `[build]` block sets
+`base = "astro-site"`, `command = "npm ci && npm run build"`, `publish =
+"astro-site/dist"`. Confirm this yourself if in doubt, and **also check
+the Netlify dashboard's own Build & deploy → Continuous deployment
+settings** — those can silently override `netlify.toml` (this exact
+thing happened once already: the dashboard had a stale `npm run
+build:client` command overriding the file's setting).
 
-**`client/` and `server/` are an unused, stale React/Express starter
-template** (Vite + React Router + Express), inherited from the project's
-original scaffold and never wired into deployment. It has had one commit
-since this repo's initial commit. Do not edit it expecting changes to reach
-production, and do not treat its content (fade/slide `framer-motion`
-animations, its own copy, its own components) as representative of the real
-site. If a future decision is made to migrate to it, that requires
-server-side rendering or static export (Next.js static export, Astro, etc.)
-— the current `client/` app is a plain client-rendered SPA, which would
-regress SEO/crawlability versus the current fully-static HTML.
+**The root-level static HTML files (`index.html`, `about/`, `blog/`,
+`case-studies/`) are no longer what's deployed.** They're kept in the
+repo as historical reference and an emergency rollback path — see
+Section 1a — but editing them will not change anything live. The rest of
+this file (Sections 2–8 below) describes that legacy static-HTML system
+in detail; treat it as historical/rollback documentation, not a
+description of the live architecture, until it's rewritten.
+
+**`client/` and `server/` at the repo root are a *different*, older,
+unused React/Express starter template** — not the same thing as
+`astro-site/`. Don't confuse them. `client/`/`server/` predate this
+migration entirely and were never wired into deployment; `astro-site/`
+is the real, live app.
 
 `AGENTS.md` describes the generic starter template and predates this
 project's real architecture — don't use it as a description of what's live.
+
+### 1a. Rollback path
+
+If the Astro site needs to be rolled back to the old static HTML:
+1. `git tag pre-astro-migration` marks the exact commit the static site
+   was last known-good at — `git show pre-astro-migration:netlify.toml`
+   has the old build config to restore.
+2. The old root-level HTML files are still present in the repo (not
+   deleted) — reverting `netlify.toml`'s `[build]` block to `base = "."`,
+   `command = "npm ci && npm run build:static-css"`, `publish = "."`
+   brings back the static site immediately.
+3. Don't forget to also revert the Netlify dashboard's build-setting
+   overrides if they were changed for the Astro cutover (see Section 1).
+
+### 1b. Working in `astro-site/`
+
+- Content lives in `astro-site/src/content/{case-studies,blog}/*.mdx` —
+  frontmatter schema is `astro-site/src/content.config.ts`. Edit content
+  there, not in the old root HTML files.
+- Shared layout (nav/footer/head/mobile-menu) is
+  `astro-site/src/layouts/BaseLayout.astro`.
+- Page templates: `astro-site/src/pages/case-studies/[slug].astro`,
+  `astro-site/src/pages/blog/[slug].astro`, `astro-site/src/pages/index.astro`,
+  `astro-site/src/pages/about/index.astro`.
+- `llms.txt` and the sitemap generate automatically from the content
+  collections — don't hand-edit them.
+- Astro bundles `<script>` tags as deferred ES modules: **don't wrap
+  script logic in a `DOMContentLoaded` listener** — by the time a
+  deferred module runs, that event has usually already fired, so the
+  listener never executes. This broke the mobile menu and animations
+  site-wide once already. Just run the code directly (an IIFE if you
+  need to scope variables).
+- `astro-site/` has its own `postcss.config.mjs` (deliberately empty) to
+  stop Vite's config resolution from walking up to the repo root and
+  picking up the legacy `client/` scaffold's Tailwind v3 `postcss.config.js`.
+  Don't delete it.
 
 ## 2. Page inventory (as of 2026-08-26)
 
