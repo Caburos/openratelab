@@ -119,18 +119,3 @@
   to = "/case-studies/nutrition-brand-revenue"
   status = 301
   force = true
-
-# Legacy .html-suffixed URLs from the old static site — every page moved
-# from e.g. /blog/foo.html to /blog/foo. Without this, old indexed/
-# bookmarked/shared links with .html would 404 post-cutover.
-[[redirects]]
-  from = "/blog/:slug.html"
-  to = "/blog/:slug"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/case-studies/:slug.html"
-  to = "/case-studies/:slug"
-  status = 301
-  force = true
