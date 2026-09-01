@@ -1,6 +1,9 @@
 node_modules
 dist
 dist-ssr
+
+# Netlify CLI local state/build artifacts — never commit these
+.netlify
 *.local
 .DS_Store
 .env.local
