@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/*
+  Brand design tokens ported from the current live site's
+  tailwind.static.config.js — Tailwind v4 uses CSS-based theme config
+  instead of a JS config file. Keep this in sync if the source file
+  changes before cutover.
+*/
+@theme {
+  /* Core brand tokens */
+  --color-accent-performance: #E63946;
+  --color-surface-primary: #0D0D0D;
+  --color-surface-secondary: #262626;
+  --color-on-surface-warm: #F9F9F7;
+  --color-muted-silver: #A3A3A3;
+
+  /* Extended material tokens (used across pages) */
+  --color-secondary-fixed: #e3e2e2;
+  --color-inverse-on-surface: #313030;
+  --color-primary-fixed: #ffdad8;
+  --color-on-secondary-container: #b8b8b8;
+  --color-secondary: #c7c6c6;
+  --color-inverse-primary: #bb152c;
+  --color-on-error: #690005;
+  --color-secondary-container: #484949;
+  --color-error-container: #93000a;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-tint: #ffb3b1;
+  --color-on-secondary: #2f3131;
+  --color-surface-variant: #353534;
+  --color-secondary-fixed-dim: #c7c6c6;
+  --color-surface-bright: #3a3939;
+  --color-on-secondary-fixed-variant: #464747;
+  --color-outline-variant: #5b403f;
+  --color-on-background: #e5e2e1;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-on-secondary-fixed: #1a1c1c;
+  --color-on-primary: #680011;
+  --color-primary-container: #ff535b;
+  --color-background: #131313;
+  --color-on-tertiary: #003733;
+  --color-error: #ffb4ab;
+  --color-tertiary-fixed-dim: #6fd8cc;
+  --color-on-tertiary-fixed: #00201d;
+  --color-surface: #131313;
+  --color-surface-dim: #131313;
+  --color-outline: #ab8987;
+  --color-tertiary: #6fd8cc;
+  --color-on-tertiary-container: #00302c;
+  --color-primary-fixed-dim: #ffb3b1;
+  --color-on-surface: #e5e2e1;
+  --color-on-primary-fixed-variant: #92001c;
+  --color-surface-container-highest: #353534;
+  --color-tertiary-fixed: #8cf4e8;
+  --color-surface-container-high: #2a2a2a;
+  --color-on-surface-variant: #e4bebc;
+  --color-on-primary-fixed: #410007;
+  --color-on-tertiary-fixed-variant: #00504a;
+  --color-inverse-surface: #e5e2e1;
+  --color-on-error-container: #ffdad6;
+  --color-surface-container: #201f1f;
+  --color-on-primary-container: #5b000e;
+  --color-primary: #ffb3b1;
+  --color-tertiary-container: #2fa096;
+
+  /* Brutalist design: zero border radius everywhere */
+  --radius: 0rem;
+  --radius-lg: 0rem;
+  --radius-xl: 0rem;
+  --radius-full: 0rem;
+
+  /* Layout spacing tokens */
+  --spacing-gutter: 24px;
+  --spacing-margin-desktop: 64px;
+  --spacing-unit: 8px;
+  --spacing-margin-mobile: 20px;
+  --spacing-margin-tablet: 32px;
+
+  /* Font families */
+  --font-headline-lg-mobile: "Hanken Grotesk", sans-serif;
+  --font-display-xl-mobile: "Hanken Grotesk", sans-serif;
+  --font-display-xl: "Hanken Grotesk", sans-serif;
+  --font-label-button: "Hanken Grotesk", sans-serif;
+  --font-label-technical: "JetBrains Mono", monospace;
+  --font-body-md: "Source Serif 4", serif;
+  --font-headline-lg: "Hanken Grotesk", sans-serif;
+  --font-body-lg: "Source Serif 4", serif;
+  --font-headline-md: "Hanken Grotesk", sans-serif;
+
+  /* Font sizes with paired line-height / letter-spacing / weight */
+  --text-headline-lg-mobile: 40px;
+  --text-headline-lg-mobile--line-height: 44px;
+  --text-headline-lg-mobile--letter-spacing: -0.01em;
+  --text-headline-lg-mobile--font-weight: 700;
+
+  --text-display-xl-mobile: 64px;
+  --text-display-xl-mobile--line-height: 60px;
+  --text-display-xl-mobile--letter-spacing: -0.02em;
+  --text-display-xl-mobile--font-weight: 800;
+
+  --text-display-lg-mobile: clamp(2.75rem, 19vw - 0.875rem, 4rem);
+  --text-display-lg-mobile--line-height: 1;
+  --text-display-lg-mobile--letter-spacing: -0.02em;
+  --text-display-lg-mobile--font-weight: 800;
+
+  --text-display-xl: 120px;
+  --text-display-xl--line-height: 110px;
+  --text-display-xl--letter-spacing: -0.04em;
+  --text-display-xl--font-weight: 800;
+
+  --text-label-button: 14px;
+  --text-label-button--line-height: 16px;
+  --text-label-button--letter-spacing: 0.02em;
+  --text-label-button--font-weight: 700;
+
+  --text-label-technical: 12px;
+  --text-label-technical--line-height: 16px;
+  --text-label-technical--letter-spacing: 0.05em;
+  --text-label-technical--font-weight: 500;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-md--font-weight: 400;
+
+  --text-headline-lg: 56px;
+  --text-headline-lg--line-height: 64px;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 700;
+
+  --text-body-lg: 20px;
+  --text-body-lg--line-height: 32px;
+  --text-body-lg--font-weight: 400;
+
+  --text-headline-md: 32px;
+  --text-headline-md--line-height: 40px;
+  --text-headline-md--font-weight: 600;
+}

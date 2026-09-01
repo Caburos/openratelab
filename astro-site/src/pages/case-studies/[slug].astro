@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('caseStudies');
+  return caseStudies.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{data.title}</title>
+    <meta name="description" content={data.description} />
+    <link rel="canonical" href={`https://openratelab.com/case-studies/${entry.id}`} />
+  </head>
+  <body>
+    <p>[ THE LEDGER / CASE_STUDY:{data.caseStudyNumber} // {data.industryLabel.toUpperCase()} ]</p>
+    {data.isComposite && <p><strong>COMPOSITE CASE STUDY</strong></p>}
+    <h1 set:html={data.heroHeadline.replace('\n', '<br/>')} />
+    <p>{data.heroSubtext}</p>
+    <p>{data.primaryMetric.value} — {data.primaryMetric.label}</p>
+
+    <article>
+      <Content />
+    </article>
+
+    {data.authorQuote && (
+      <blockquote>
+        <p>&ldquo;{data.authorQuote.quote}&rdquo;</p>
+        <cite>{data.authorQuote.attribution}</cite>
+      </blockquote>
+    )}
+
+    <p><em>[ DATA_NOTE ] {data.compositeDisclaimer}</em></p>
+
+    <h2>Frequently Asked</h2>
+    {data.faq.map((item: { question: string; answer: string }) => (
+      <details>
+        <summary>{item.question}</summary>
+        <p>{item.answer}</p>
+      </details>
+    ))}
+  </body>
+</html>
