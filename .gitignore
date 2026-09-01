@@ -22,5 +22,5 @@ data/contacts.json
 
 # Planning/working docs — kept locally for reference, not published to the
 # public repo (repo should only contain the actual site and its content).
-REACT_MIGRATION_PLAN.md
+ASTRO_MIGRATION_PLAN.md
 UROSBUILDS_COMPARISON_TRANSCRIPT.md
