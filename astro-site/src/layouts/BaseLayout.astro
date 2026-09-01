@@ -114,8 +114,10 @@ function navClass(section: typeof activeNav) {
     <a href="/" class="font-headline-md text-base md:text-headline-md font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors">OPENRATELAB</a>
     <div class="hidden md:flex items-center space-x-12">
       <a class={navClass('services')} href="/#services">SERVICES</a>
+      <a class={navLinkBase} href="/#results">RESULTS</a>
       <a class={navClass('case-studies')} href="/#ledger">CASE STUDIES</a>
       <a class={navClass('about')} href="/about/">ABOUT</a>
+      <a class={navLinkBase} href="/#expertise">EXPERTISE</a>
       <a class={navClass('blog')} href="/blog/">BLOG</a>
       <a class={navClass('contact')} href="/#contact">CONTACT</a>
     </div>
@@ -136,8 +138,10 @@ function navClass(section: typeof activeNav) {
   </div>
   <div class="flex flex-col gap-8">
     <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href={isHomepage ? '#services' : '/#services'}>SERVICES</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href={isHomepage ? '#results' : '/#results'}>RESULTS</a>
     <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href={isHomepage ? '#ledger' : '/#ledger'}>CASE STUDIES</a>
     <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="/about/">ABOUT</a>
+    <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href={isHomepage ? '#expertise' : '/#expertise'}>EXPERTISE</a>
     <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href="/blog/">BLOG</a>
     <a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface-warm uppercase hover:text-accent-performance transition-colors" href={isHomepage ? '#contact' : '/#contact'}>CONTACT</a>
   </div>
