@@ -593,14 +593,7 @@ const jsonLd = [
   <!--
     Contact Section — form markup/fields ported faithfully, including the
     Netlify Forms detection attributes (data-netlify, hidden form-name
-    input, netlify-honeypot) so static analysis can still recognize this
-    form. NOT wired up: the source's JS submit handler that
-    preventDefault()s, POSTs to "/" for Netlify capture, POSTs to
-    "/api/contact" (the Resend Netlify Function) in parallel, and swaps in
-    an inline success message. Without that JS this form will currently
-    do a full-page POST to "/" (default Netlify Forms behavior) rather
-    than an inline success state — wiring the AJAX handler + Resend call
-    is deferred to a later phase.
+    input, netlify-honeypot). AJAX submit handler wired below.
   -->
   <section id="contact" class="py-24 md:py-40 px-8 md:px-16 bg-surface-secondary border-t border-muted-silver/20">
     <div class="grid grid-cols-12 gap-gutter">
@@ -650,7 +643,191 @@ const jsonLd = [
       </div>
     </div>
   </section>
+
+  <script>
+    // Netlify Forms — AJAX submit with inline success message, plus a
+    // parallel call to the Resend-backed function so notification email
+    // delivery doesn't depend on Netlify's own dashboard notification
+    // settings. Ported from the live static site's inline script.
+    (() => {
+      const contactForm = document.querySelector('form[name="contact"]');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const btn = contactForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+          const orig = btn.textContent;
+          btn.textContent = 'SENDING...';
+          btn.disabled = true;
+
+          const formData = new FormData(contactForm as HTMLFormElement);
+          const netlifyCapture = fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+          });
+          const emailSend = fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: formData.get('name'),
+              email: formData.get('email'),
+              service: formData.get('brand'),
+              message: formData.get('message'),
+            }),
+          }).catch(() => {});
+
+          Promise.all([netlifyCapture, emailSend])
+            .then(([r]) => {
+              if (r.ok) {
+                contactForm.innerHTML = '<p class="font-label-technical text-label-technical text-accent-performance uppercase py-8 tracking-widest">TRANSMISSION RECEIVED. WE\'LL BE IN TOUCH WITHIN 24 HOURS.</p>';
+              } else {
+                btn.textContent = orig;
+                btn.disabled = false;
+              }
+            })
+            .catch(() => {
+              btn.textContent = orig;
+              btn.disabled = false;
+            });
+        });
+      }
+    })();
+
+    // Smooth-scroll for in-page anchor links, offset for the fixed nav.
+    (() => {
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (this: HTMLAnchorElement, e) {
+          const targetId = this.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            const navHeight = 80;
+            const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+
+    // Nav scroll-spy: highlight the nav link for the section currently in view.
+    (() => {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const spySections = Array.from(document.querySelectorAll('section[id]'));
+      if (navLinks.length && spySections.length) {
+        const setActive = (id: string) => {
+          navLinks.forEach((link) => {
+            const active = (link as HTMLElement).dataset.section === id;
+            link.classList.toggle('text-accent-performance', active);
+            link.classList.toggle('font-bold', active);
+            link.classList.toggle('border-accent-performance', active);
+            link.classList.toggle('border-transparent', !active);
+          });
+        };
+        const spyObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) setActive(entry.target.id);
+            });
+          },
+          { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+        );
+        spySections.forEach((section) => spyObserver.observe(section));
+      }
+    })();
+
+    // Scroll-triggered reveal animations. Purely presentational — adds
+    // classes at runtime only, touches no text/links. Baseline parity with
+    // the live site; a richer animation pass is separate future work.
+    (() => {
+      if (!('IntersectionObserver' in window)) return;
+
+      const wipeTargets = document.querySelectorAll('#services .grid, #ledger .grid, #testimonials .grid, #expertise .grid');
+      wipeTargets.forEach((el) => el.classList.add('reveal-wipe'));
+
+      const leftTargets = document.querySelectorAll('#results h2, #testimonials h2, #services h2, #ledger h2, #expertise h2');
+      leftTargets.forEach((el) => el.classList.add('reveal-left'));
+
+      const lineTargets = document.querySelectorAll('#results .rule-line, #testimonials .rule-line');
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.05, rootMargin: '0px 0px -10% 0px' }
+      );
+
+      wipeTargets.forEach((el) => revealObserver.observe(el));
+      leftTargets.forEach((el) => revealObserver.observe(el));
+      lineTargets.forEach((el) => revealObserver.observe(el));
+
+      // Count-up on the #results stat numbers. Ends on the exact original
+      // text every time, so the final DOM state always matches raw HTML.
+      const counters = document.querySelectorAll('#results span.font-display-xl-mobile');
+      const countObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            countObserver.unobserve(entry.target);
+            const el = entry.target as HTMLElement;
+            const finalText = el.textContent || '';
+            const match = finalText.match(/[\d.]+/);
+            if (!match || match.index === undefined) return;
+            const targetNum = parseFloat(match[0]);
+            const prefix = finalText.slice(0, match.index);
+            const suffix = finalText.slice(match.index + match[0].length);
+            const decimals = (match[0].split('.')[1] || '').length;
+            const duration = 1200;
+            let start: number | null = null;
+            function tick(ts: number) {
+              if (start === null) start = ts;
+              const progress = Math.min((ts - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = prefix + (targetNum * eased).toFixed(decimals) + suffix;
+              if (progress < 1) requestAnimationFrame(tick);
+              else el.textContent = finalText;
+            }
+            requestAnimationFrame(tick);
+          });
+        },
+        { threshold: 0.5 }
+      );
+      counters.forEach((el) => countObserver.observe(el));
+    })();
+  </script>
 </BaseLayout>
+
+<style>
+  .reveal-wipe {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-wipe.in-view {
+    clip-path: inset(0 0 0 0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-24px);
+    transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-left.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .rule-line {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .rule-line.in-view {
+    transform: scaleX(1);
+  }
+</style>
 
 <style>
   /* Capabilities list: prevent long capability names from overflowing on
