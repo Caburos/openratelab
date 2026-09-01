@@ -1,7 +1,7 @@
 [build]
   base = "astro-site"
   command = "npm ci && npm run build"
-  publish = "astro-site/dist"
+  publish = "dist"
 # Cutover to Astro: 2026-09-01. Previous static-HTML config preserved in
 # git history (see the pre-astro-migration tag) if a rollback is needed.
 
@@ -53,10 +53,11 @@
     Content-Type = "text/plain"
     Cache-Control = "public, max-age=604800"
 
-# Functions directory stays at the repo root — unaffected by `base`,
-# Netlify Functions deploy independently of the publish directory.
+# Functions directory: netlify/functions lives at the REPO ROOT, but
+# `base = "astro-site"` makes every relative path in this file resolve
+# from astro-site/ instead — including this one. Go back up one level.
 [functions]
-  directory = "netlify/functions"
+  directory = "../netlify/functions"
 
 # Contact form API → Netlify function
 [[redirects]]
