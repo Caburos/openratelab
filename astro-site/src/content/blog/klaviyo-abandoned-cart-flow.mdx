@@ -1,0 +1,49 @@
+---
+title: "Abandoned Cart Flows in Klaviyo: Structure, Timing, and Copy That Recovers Revenue | OpenRateLab"
+description: "How to structure a Klaviyo abandoned cart flow that recovers revenue without nagging. Timing, email count, and the copy that actually gets carts finished."
+datePublished: 2026-08-11
+dateModified: 2026-08-11
+author: "Uros Korene"
+readTime: "6 MIN READ"
+dataDisclaimer: "Performance figures cited above are illustrative composites based on patterns observed across accounts managed by OpenRateLab and should not be interpreted as the verified results of one identifiable account. Timing and structure described reflect our current operational approach: adjust for your category's typical consideration window."
+faq:
+  - question: "How long after cart abandonment should the first email send?"
+    answer: "We typically trigger the first email 1 hour after abandonment, sometimes as fast as 30 minutes for high-intent categories where the shopper is likely still comparing options in another tab. Waiting a full day is usually too slow: intent decays fast, and by 24 hours many shoppers have already bought elsewhere or moved on entirely."
+  - question: "How many emails should an abandoned cart flow have?"
+    answer: "3 emails is the standard structure we build: a reminder, a value/objection-handling email, and a final urgency or incentive email. Going beyond 3 rarely improves recovery and risks feeling like nagging. The goal is to catch genuine hesitation, not wear the shopper down."
+  - question: "Should abandoned cart emails always include a discount?"
+    answer: "No. Leading with a discount on every abandoned cart trains shoppers to abandon carts on purpose, expecting a coupon. We reserve the discount, if used at all, for the final email in the sequence, after the first two emails have made the case on product value and removed friction like shipping or sizing concerns."
+---
+
+Cart abandonment is a different problem than the [welcome series](/blog/klaviyo-welcome-series-guide) solves. A new subscriber needs to be convinced the brand is worth their attention. Someone who abandoned a cart already made that decision: they picked a product, added it, and stopped short of paying. The job of this flow is removing whatever stopped them, not reintroducing the brand.
+
+## Speed Matters More Than Almost Anything Else
+
+Intent decays fast after abandonment. We trigger the first email 1 hour after the cart is left, sometimes as fast as 30 minutes for categories where shoppers are likely comparing options across multiple tabs. Waiting a full day is usually too slow: by then, many shoppers have bought elsewhere or simply moved on. The window for genuine reconsideration is measured in hours, not days.
+
+## The 3-Email Structure
+
+- **Email 1 (1 hour):** A simple reminder. Show the exact product they left, make the checkout link one click away, and keep the copy short. This is not the moment for a hard sell: most people who convert off email 1 just needed a nudge back to the tab they closed.
+- **Email 2 (24 hours):** Handle the objection. This is where real friction gets addressed: shipping cost and timeline, sizing or fit concerns, return policy, or social proof if trust is the barrier. What goes here should be informed by whatever your actual customers ask before buying.
+- **Email 3 (48-72 hours):** Final urgency, and the only place we'd consider a discount. If the product is still in the cart after two emails handling the friction directly, a modest incentive or genuine urgency (limited stock, a closing window) can be the deciding factor.
+
+## Why the Discount Shouldn't Come First
+
+Leading every abandoned cart email with a discount teaches shoppers to abandon carts deliberately, expecting a coupon to follow. We hold the discount for the final email, after the first two have made the case on product value and removed real friction. This protects margin on the shoppers who would have converted anyway, and reserves the incentive for genuine fence-sitters.
+
+<div class="stat-callout">
+  <div class="stat-num">$123K</div>
+  <div class="stat-label">Monthly campaign revenue on an e-commerce account running a full flow system, including a 3-email abandoned cart sequence, alongside a 70.7% open rate</div>
+</div>
+
+[→ Full case study: 70.7% open rate, e-commerce brand](/case-studies/ecommerce-open-rate-system)
+
+## Setting the Trigger in Klaviyo
+
+Trigger on "Checkout Started" for the initial event, filtered to exclude anyone who's placed an order since. Set the flow filter to check "Has placed order zero times since starting this flow" before each email sends: this prevents someone who already completed the purchase from receiving a redundant reminder or, worse, a discount code for something they already bought at full price.
+
+## What Product Images and Copy Should Actually Show
+
+Show the exact abandoned item, not a generic product grid. Dynamic product blocks pulling the real cart contents outperform static "you might also like" sections here: the shopper already chose this specific item, so remind them of that choice rather than presenting new decisions.
+
+[→ Post-purchase flows: turning one order into a repeat customer](/blog/klaviyo-post-purchase-flow)

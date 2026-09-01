@@ -1,0 +1,21 @@
+---
+interface Props {
+  items: { question: string; answer: string }[];
+}
+const { items } = Astro.props;
+---
+
+<section class="px-8 md:px-16 py-16 border-t border-muted-silver/20 max-w-3xl">
+  <h2 class="font-headline-md text-headline-md uppercase mb-12">FREQUENTLY ASKED</h2>
+  <div class="space-y-0">
+    {items.map((item, i) => (
+      <details class:list={["group border-t border-muted-silver/20", { "border-b": i === items.length - 1 }]}>
+        <summary class="flex justify-between items-center py-5 cursor-pointer list-none">
+          <span class="font-body-lg text-body-lg text-on-surface-warm group-open:text-accent-performance transition-colors">{item.question}</span>
+          <span class="font-label-technical text-label-technical text-muted-silver ml-6 shrink-0">[+]</span>
+        </summary>
+        <p class="font-body-md text-body-md text-muted-silver pb-6">{item.answer}</p>
+      </details>
+    ))}
+  </div>
+</section>
