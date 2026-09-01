@@ -66,22 +66,6 @@
   status = 200
   force = true
 
-# Trailing-slash normalization: no trailing slash on individual posts/case
-# studies is canonical (CLAUDE.md). Astro's static build emits a directory
-# index.html either way, so both forms resolve — this makes the no-slash
-# form authoritative instead of leaving two working URLs for one page.
-[[redirects]]
-  from = "/case-studies/:slug/"
-  to = "/case-studies/:slug"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/:slug/"
-  to = "/blog/:slug"
-  status = 301
-  force = true
-
 # Case study URL renames from the NDA-compliance pass — still needed
 # post-cutover since old indexed/bookmarked links may still hit these.
 [[redirects]]
