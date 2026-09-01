@@ -1,0 +1,150 @@
+# DRAFT — not active. This is what the repo ROOT netlify.toml should
+# become at cutover (Phase 9), replacing the current static-site config.
+# Not applied automatically: cutover requires explicit approval and a
+# side-by-side review against the live netlify.toml at that time, since
+# either file may have changed since this draft was written.
+#
+# Pattern matches Caburos/urosbuilds' proven approach: build from a
+# subfolder via `base`, publish its dist output, keep the same security
+# headers and Functions directory (functions are independent of the
+# publish directory, so no change needed there), and add the trailing-
+# slash normalization redirect so /case-studies/foo/ and /case-studies/foo
+# both resolve to the canonical (no-slash) form instead of serving two
+# URLs for the same content.
+
+[build]
+  base = "astro-site"
+  command = "npm ci && npm run build"
+  publish = "astro-site/dist"
+
+# Same security headers as the current live netlify.toml — unchanged.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/favicon.svg"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/favicon.ico"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/sitemap-index.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain"
+    Cache-Control = "public, max-age=604800"
+
+# Functions directory stays at the repo root — unaffected by `base`,
+# Netlify Functions deploy independently of the publish directory.
+[functions]
+  directory = "netlify/functions"
+
+# Contact form API → Netlify function (unchanged from current live config)
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/api"
+  status = 200
+  force = true
+
+# Trailing-slash normalization for content pages: CLAUDE.md's convention
+# is no trailing slash on individual posts/case studies. Astro's static
+# build always emits a directory index.html either way, so both forms
+# resolve — this redirect makes the no-slash form canonical instead of
+# leaving two working URLs for the same page (a duplicate-content SEO
+# smell). Matches the same pattern urosbuilds uses.
+[[redirects]]
+  from = "/case-studies/:slug/"
+  to = "/case-studies/:slug"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/:slug/"
+  to = "/blog/:slug"
+  status = 301
+  force = true
+
+# Case study URL renames from the NDA-compliance pass — still needed
+# post-cutover since old indexed/bookmarked links may still hit these.
+[[redirects]]
+  from = "/case-studies/specialty-supplement-brand-182k"
+  to = "/case-studies/specialty-supplement-brand"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/specialty-supplement-brand-182k.html"
+  to = "/case-studies/specialty-supplement-brand"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/lifestyle-wellness-brand-80pct"
+  to = "/case-studies/lifestyle-wellness-brand"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/lifestyle-wellness-brand-80pct.html"
+  to = "/case-studies/lifestyle-wellness-brand"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/nutrition-brand-69k-revenue"
+  to = "/case-studies/nutrition-brand-revenue"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/nutrition-brand-69k-revenue.html"
+  to = "/case-studies/nutrition-brand-revenue"
+  status = 301
+  force = true
+
+# Legacy .html-suffixed URLs from the old static site — every page moved
+# from e.g. /blog/foo.html to /blog/foo. Without this, old indexed/shared
+# links with .html would 404 post-cutover.
+[[redirects]]
+  from = "/blog/:slug.html"
+  to = "/blog/:slug"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/:slug.html"
+  to = "/case-studies/:slug"
+  status = 301
+  force = true
