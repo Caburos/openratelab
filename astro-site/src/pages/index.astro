@@ -310,13 +310,9 @@ const jsonLd = [
     above) instead of 12 hand-copied slides. Each card pulls its eyebrow
     tag, composite label, primary metric, and blurb straight from the
     collection so this list can never drift from what's on the individual
-    case-study pages.
-
-    NOT reproduced in this pass: the live site's horizontal snap-scroll
-    carousel (#ledger-track), the prev/next arrow buttons, the dot
-    indicators, and the JS that drives them (scrollTo, IntersectionObserver
-    dot-highlighting). This renders instead as a static stacked grid of
-    all 12 entries. Carousel interactivity is deferred to a later phase.
+    case-study pages. All 12 cards are still always present in the raw
+    HTML (fully crawlable) — the carousel below is a CSS/JS presentation
+    layer on top, not a content-hiding mechanism.
   -->
   <section id="ledger" class="py-24 md:py-40 bg-surface-primary overflow-x-hidden">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-16 px-8 md:px-16">
@@ -325,9 +321,9 @@ const jsonLd = [
     </div>
 
     <div class="px-8 md:px-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-muted-silver/20">
+      <div id="ledger-track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         {caseStudies.map((entry) => (
-          <div class="p-8 md:p-10 border-r border-b border-muted-silver/20 flex flex-col justify-between min-h-[380px]">
+          <div class="ledger-slide snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-8 md:p-10 border border-muted-silver/20 flex flex-col justify-between min-h-[380px]">
             <div>
               <span class="font-label-technical text-label-technical text-accent-performance mb-4 block">
                 [ THE LEDGER / CASE_STUDY:{entry.data.caseStudyNumber} // {entry.data.industryLabel.toUpperCase()} ]
@@ -342,6 +338,18 @@ const jsonLd = [
             <a href={`/case-studies/${entry.id}`} class="w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">READ FULL CASE STUDY</a>
           </div>
         ))}
+      </div>
+
+      <div class="flex items-center justify-between mt-8">
+        <div id="ledger-dots" class="flex items-center gap-2"></div>
+        <div class="flex gap-3">
+          <button id="ledger-prev" class="p-3 border border-muted-silver/30 hover:border-accent-performance hover:text-accent-performance transition-colors" aria-label="Previous case study">
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+          </button>
+          <button id="ledger-next" class="p-3 border border-muted-silver/30 hover:border-accent-performance hover:text-accent-performance transition-colors" aria-label="Next case study">
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -708,6 +716,48 @@ const jsonLd = [
           }
         });
       });
+    })();
+
+    // Ledger case-study slider: scroll-snap track driven by prev/next
+    // buttons + clickable dots. All 12 cards are always in the DOM
+    // (crawlable); this only controls scroll position.
+    (() => {
+      const track = document.getElementById('ledger-track');
+      const prevBtn = document.getElementById('ledger-prev');
+      const nextBtn = document.getElementById('ledger-next');
+      const dotsWrap = document.getElementById('ledger-dots');
+      if (!track || !dotsWrap || !prevBtn || !nextBtn) return;
+
+      const slides = Array.from(track.querySelectorAll<HTMLElement>('.ledger-slide'));
+      const goTo = (i: number) => {
+        const clamped = Math.max(0, Math.min(slides.length - 1, i));
+        track.scrollTo({ left: slides[clamped].offsetLeft, behavior: 'smooth' });
+      };
+      const currentIndex = () => {
+        let closest = 0;
+        let closestDist = Infinity;
+        slides.forEach((s, i) => {
+          const dist = Math.abs(s.offsetLeft - track.scrollLeft);
+          if (dist < closestDist) { closestDist = dist; closest = i; }
+        });
+        return closest;
+      };
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-muted-silver/30 ledger-dot transition-colors';
+        dot.setAttribute('aria-label', 'Go to case study ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+      const dots = dotsWrap.querySelectorAll('.ledger-dot');
+      const updateDots = () => {
+        const index = currentIndex();
+        dots.forEach((d, i) => d.classList.toggle('bg-accent-performance', i === index));
+      };
+      updateDots();
+      track.addEventListener('scroll', () => window.requestAnimationFrame(updateDots));
+      prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
+      nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
     })();
 
     // Nav scroll-spy: highlight the nav link for the section currently in view.

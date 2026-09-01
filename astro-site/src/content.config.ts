@@ -60,6 +60,8 @@ const blogPosts = defineCollection({
     ...seoFields,
     author: z.string().default('Uros Korene'),
     readTime: z.string(), // e.g. "7 MIN READ"
+    category: z.string(), // e.g. "KLAVIYO / FLOWS" — shown on the /blog/ index card
+    excerpt: z.string(), // short card blurb for the /blog/ index — distinct from `description` (meta tag copy)
     dataDisclaimer: z.string().optional(), // the [ DATA_NOTE ] footer text, when the post cites performance figures
     faq: z.array(faqEntry).default([]),
   }),
