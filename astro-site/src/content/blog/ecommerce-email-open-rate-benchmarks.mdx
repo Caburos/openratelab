@@ -1,0 +1,158 @@
+---
+title: "Ecommerce Email Open Rate Benchmarks: Data From Active Klaviyo Accounts | OpenRateLab"
+description: "What's a good ecommerce email open rate? Real data from accounts we manage, not industry surveys — benchmarks for campaigns and flows."
+datePublished: 2026-07-18
+dateModified: 2026-07-27
+author: "Uros Korene"
+readTime: "6 MIN READ"
+faq:
+  - question: "What's a good open rate for Klaviyo emails?"
+    answer: "Based on accounts we manage: flows consistently hit 40–55%+ and campaigns 35–50%+. Klaviyo's own published benchmarks show industry averages around 25–30%: the gap reflects how many accounts in those averages have poor list health or weak subject line strategy. A well-built account on a clean list should be running well above the industry average within 90 days."
+  - question: "Why is my Klaviyo open rate low?"
+    answer: "The three most common causes: unengaged contacts dragging your deliverability down, weak subject lines that don't earn the open, and sender reputation damage from sending too broadly too fast. The first step is always a list health audit: if your engaged segment is below 30%, that's where to start. Open rate is a downstream metric. Fix the list and the subject lines, and it follows."
+  - question: "What open rate does Klaviyo consider good?"
+    answer: "Klaviyo's published benchmarks place the e-commerce average around 25–30%. Their own platform health indicators flag accounts below 15% as at-risk. In practice, any account above 35% on campaigns and 45% on flows is performing well. Anything below 25% on flows is a sign the system needs work: whether that's list segmentation, flow trigger logic, or both."
+---
+
+Industry averages are context, not targets. The benchmarks published by email platforms aggregate data from every account on their system, including brands that haven't touched their flows in two years, haven't suppressed a single unengaged subscriber, and send the same blast to everyone. That drags the average down considerably.
+
+The numbers below are from accounts we manage: brands with clean lists, active segmentation, and working flow architecture. This is what best-in-class actually produces.
+
+## What Is the Industry Email Open Rate Baseline?
+
+[Klaviyo's published benchmarks](https://www.klaviyo.com/resources/benchmark-report) put average ecommerce campaign open rates at 35–40% post-iOS 15. [Apple's Mail Privacy Protection](https://support.apple.com/en-us/102574) inflated these numbers by registering machine-generated opens as genuine opens on Apple devices. For brands still measuring opens without accounting for MPP, real engagement often sits 10–15 points below what Klaviyo reports.
+
+When benchmarking, compare against accounts using the same measurement methodology. MPP-inflated numbers are not comparable to MPP-adjusted ones.
+
+## What We See Across Managed Accounts
+
+Figures below are illustrative composites based on patterns observed across managed accounts and should not be interpreted as the verified results of one identifiable client.
+
+<div class="overflow-x-auto">
+  <table class="benchmark-table">
+    <thead>
+      <tr>
+        <th>ACCOUNT TYPE</th>
+        <th>LIST SIZE</th>
+        <th>AVG CAMPAIGN OPEN RATE</th>
+        <th>AVG FLOW OPEN RATE</th>
+        <th>EMAILS SENT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Health &amp; Supplement (DTC)</td>
+        <td>Large</td>
+        <td class="highlight">51.5%</td>
+        <td class="highlight">33.2%</td>
+        <td>2,365,244</td>
+      </tr>
+      <tr>
+        <td>Activewear &amp; Fashion (DTC)</td>
+        <td>Mid-size</td>
+        <td class="highlight">40.3%</td>
+        <td>—</td>
+        <td>46 campaigns</td>
+      </tr>
+      <tr>
+        <td>Pet Wellness (DTC)</td>
+        <td>Mid-size</td>
+        <td class="highlight">72–76%</td>
+        <td>—</td>
+        <td>over two years sustained</td>
+      </tr>
+      <tr>
+        <td>Ecommerce (General DTC)</td>
+        <td>15,000+</td>
+        <td class="highlight">70.7%</td>
+        <td>—</td>
+        <td>Post flow rebuild</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+These aren't cherry-picked best sends. They're sustained average performance: campaigns sent month over month to real subscriber bases.
+
+<div class="stat-callout">
+  <div class="stat-num">70.7%</div>
+  <div class="stat-label">Average open rate on 15,000+ subscriber list after a complete Klaviyo flow rebuild, sustained, not a one-time spike</div>
+</div>
+
+[→ Full case study: how this e-commerce brand hit and held 70.7% open rate](/case-studies/ecommerce-open-rate-system)
+
+## Why These Numbers Are Higher
+
+Three things separate the accounts above from industry average.
+
+### List Hygiene
+
+Every account in the table runs active suppression. Unengaged subscribers (no opens in 90–180 days depending on send frequency) go through a [win-back sequence](/blog/email-list-hygiene-klaviyo) and get suppressed if they don't re-engage. Open rate rises because the calculation runs against a smaller denominator of people who actually want the emails. That's not gaming the metric. It's measuring the right thing.
+
+### Segmentation
+
+Sending the same email to everyone drives mediocre open rates. Every account above sends different content to different segments: buyers vs. non-buyers, product category interests, engagement recency, purchase frequency. Higher relevance drives higher open rates. Most brands know this and don't act on it.
+
+### Subject Line Quality
+
+Subject lines determine whether an email gets opened before anyone sees a word of the body. An A/B test on subject lines in a well-segmented list with good deliverability can move open rates 15–20 points. Most brands run no subject line tests at all.
+
+## Campaign Open Rates vs. Flow Open Rates
+
+Campaigns and flows need separate measurement. [Flows](/blog/klaviyo-email-flows-guide) (automated sequences triggered by subscriber behavior) typically outperform campaigns because they send at moments of high relevance. An abandoned cart email arriving an hour after someone left your site is inherently more relevant than a newsletter on a fixed schedule.
+
+Across the accounts we manage, flow open rates run 5–15 points higher than campaign open rates. If yours are lower, the flows are triggering incorrectly or the copy doesn't match the behavior that triggered them.
+
+## How to Benchmark Your Own Account
+
+- **Compare sends to engaged segments only:** total-list averages mix engaged and unengaged and give you a number that's neither accurate nor actionable
+- **Separate campaigns from flows** in your reporting: they serve different purposes and have different open rate baselines
+- **Track 90-day trailing averages,** not individual send performance: single-send numbers fluctuate based on subject line, timing, and external events
+- **Account for iOS MPP inflation** when comparing recent numbers to pre-2021 benchmarks: machine opens count as opens in Klaviyo's reporting
+
+## What a Realistic Target Looks Like
+
+For a DTC brand with reasonable list hygiene and basic segmentation, a realistic campaign open rate target is 35–50%. Accounts with optimized systems, clean lists, and strong copy push 50–80%. Consistently below 30% on engaged segments points to a deliverability or relevance problem.
+
+<div class="overflow-x-auto">
+  <table class="benchmark-table">
+    <thead>
+      <tr>
+        <th>PERFORMANCE TIER</th>
+        <th>CAMPAIGN OPEN RATE</th>
+        <th>FLOW OPEN RATE</th>
+        <th>SIGNAL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="highlight">BEST-IN-CLASS</td>
+        <td class="highlight">50–80%</td>
+        <td class="highlight">55–80%+</td>
+        <td>Optimised system, clean list, strong copy</td>
+      </tr>
+      <tr>
+        <td>GOOD</td>
+        <td>35–50%</td>
+        <td>45–55%</td>
+        <td>Reasonable hygiene and segmentation in place</td>
+      </tr>
+      <tr>
+        <td>NEEDS IMPROVEMENT</td>
+        <td>25–35%</td>
+        <td>35–45%</td>
+        <td>List or strategy issues dragging performance</td>
+      </tr>
+      <tr>
+        <td>AT RISK</td>
+        <td>&lt; 25%</td>
+        <td>&lt; 35%</td>
+        <td>Deliverability problem: list hygiene urgent</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+Open rate isn't the goal. Revenue is. Open rate tells you whether your emails are getting attention, which determines whether the copy gets a chance to convert. Fix open rates because higher open rates mean more people seeing your offers, not because the number on a dashboard matters in itself.
+
+[→ Klaviyo Email Performance Report 2026: full data breakdown from 22+ active DTC accounts we manage](/blog/klaviyo-performance-report-2026)

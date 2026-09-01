@@ -1,0 +1,50 @@
+---
+title: "Win-Back Flows in Klaviyo: Recovering Lapsed Customers Before You Suppress Them | OpenRateLab"
+description: "Before you suppress an inactive segment, try to win it back. Win-back flow structure, timing, and how it connects to list hygiene and sender reputation."
+datePublished: 2026-08-18
+dateModified: 2026-08-18
+author: "Uros Korene"
+readTime: "6 MIN READ"
+faq:
+  - question: "When should a win-back flow trigger?"
+    answer: "Most brands trigger win-back somewhere between 60 and 120 days of no opens, clicks, or purchases, calibrated to their normal purchase cycle. A brand with a 90-day repurchase cycle needs a longer inactivity window than one with a 30-day cycle, otherwise the flow fires on customers who are simply between normal purchases."
+  - question: "What should a win-back email say?"
+    answer: "The first email should re-establish value without leading with a discount: what's new, what they're missing, why the brand still matters to them. If that doesn't produce engagement, a second email can escalate with a genuine incentive. The flow should end with a direct question asking if they want to keep receiving emails, not a silent expiration."
+  - question: "What happens if someone doesn't respond to the win-back flow?"
+    answer: "They should be suppressed, not just left on the list unengaged. Continuing to email someone who has ignored your win-back attempt drags down open and click rates, which affects inbox placement for every other subscriber. Win-back exists specifically to earn the right to suppress cleanly."
+---
+
+Every list has a segment that's gone quiet: no opens, no clicks, no purchases in months. The instinct is to suppress and move on, and for [sender reputation](/blog/email-list-hygiene-klaviyo) reasons, that instinct is often correct eventually. But suppressing without a genuine win-back attempt first means giving up on customers who might still convert, and it skips the one flow that makes suppression decisions defensible.
+
+## Why Win-Back Comes Before Suppression
+
+A subscriber who's gone quiet isn't necessarily gone. They might be between purchase cycles, might have started missing your emails in a crowded inbox, or might just need a reason to look again. A win-back flow tests that before writing them off. If they still don't respond after a real attempt, suppressing them is a clean decision, not a guess.
+
+This also protects the flow itself from becoming another source of the same problem it's trying to fix: emailing people who've already shown they don't want your emails just adds more disengagement, which drags on deliverability for everyone else on the list.
+
+## Setting the Inactivity Window
+
+The trigger point depends on your product's natural repurchase cycle, not a universal number. A consumable with a 30-day replenishment cycle should trigger win-back around 60 days of inactivity. A durable good with a 6-month or annual purchase pattern needs a much longer window, or the flow fires on customers who are simply between normal purchases, not actually lapsed.
+
+<div class="stat-callout">
+  <div class="stat-num">$123K</div>
+  <div class="stat-label">Monthly flow revenue sustained by a e-commerce brand running a full lifecycle system including win-back, alongside 70.7% open rates</div>
+</div>
+
+[→ Full case study: 70.7% open rate, $123K monthly flow revenue, e-commerce brand](/case-studies/ecommerce-open-rate-system)
+
+## The Win-Back Sequence
+
+- **Email 1, re-establish value:** Lead with what's new or what they're missing, not a discount. This tests whether renewed relevance alone re-engages them.
+- **Email 2, escalate with a real incentive:** If email 1 doesn't produce an open or click, this is where a genuine offer belongs. Save the discount for the point where value alone hasn't worked.
+- **Email 3, direct question, clean exit:** Ask plainly whether they want to keep hearing from you. This isn't just polite: it converts a silent non-responder into either a re-engaged subscriber or a confirmed suppression, and both outcomes are better than lingering ambiguity.
+
+## Don't Lead With the Discount
+
+The same principle that applies to [abandoned cart](/blog/klaviyo-abandoned-cart-flow) and [welcome](/blog/klaviyo-welcome-series-guide) flows applies here: a discount offered before value trains subscribers to wait for one every time, and it doesn't address why they disengaged in the first place. If they stopped opening because your emails stopped being relevant to them, a coupon in email 1 doesn't fix that; it just buys one more transaction from someone who'll go quiet again.
+
+## What Happens After the Flow Ends
+
+Anyone who doesn't engage across the full sequence should be suppressed, not left on the list in limbo. Continuing to send to non-responders after a real win-back attempt has failed is the exact behavior that damages open rates and inbox placement industry-wide. The win-back flow's real function is to make that suppression decision earned and clean, not just to recover a few extra sales.
+
+[→ Email deliverability for DTC brands: SPF, DKIM, and sender reputation basics](/blog/email-deliverability-guide-dtc)

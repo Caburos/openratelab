@@ -1,0 +1,155 @@
+---
+title: "Klaviyo Email Flows: The Complete Setup Guide for DTC Brands | OpenRateLab"
+description: "What Klaviyo flows you need, how to structure them, and what separates a 30-flow account from one running 200+. Data from active DTC accounts."
+datePublished: 2026-07-18
+dateModified: 2026-07-27
+author: "Uros Korene"
+readTime: "8 MIN READ"
+faq:
+  - question: "How many Klaviyo flows does a DTC brand need?"
+    answer: "Most accounts start with 3–5 core flows: welcome, abandoned cart, post-purchase, browse abandonment, and win-back. That baseline covers 80% of the revenue opportunity for most lists. The accounts we manage at scale run 50–200+ flows, but those are built incrementally as the data justifies each addition, not deployed all at once."
+  - question: "What triggers Klaviyo flows?"
+    answer: "Flows are triggered by events (Added to Cart, Placed Order, Viewed Product), list or segment membership changes, date properties (birthday, anniversary), or custom events sent from your store. The trigger determines when Klaviyo enters someone into the flow. Getting the trigger logic right is what separates a flow that runs when it should from one that fires late, fires twice, or never fires at all."
+  - question: "What's the difference between a Klaviyo flow and a campaign?"
+    answer: "Flows are automated sequences triggered by subscriber behavior: they send without you doing anything after the initial setup. Campaigns are one-time sends you schedule manually, like a product launch or a promotional email. Flows handle the always-on revenue work; campaigns handle the timely, event-driven sends. Both matter. Neither replaces the other."
+  - question: "How long should an abandoned cart sequence be?"
+    answer: "Three emails is the standard starting point: one at 1 hour, one at 24 hours, one at 72 hours. Some accounts extend to four or five. What matters more than length is the copy at each step: the first email should acknowledge the cart without pressure, the second should handle the most common objection, the third should create urgency without a discount. Adding a fourth or fifth only helps if the first three are already performing."
+---
+
+Most DTC brands run three flows (welcome, abandoned cart, post-purchase) and call it automation. Email sits at 15% of revenue. The accounts built properly are at 40%+.
+
+The gap is the flow architecture. Not the copy, not the offer: the depth of the system underneath both, and whether it's been built or just assembled from defaults.
+
+## What's the Difference Between Klaviyo Flows and Campaigns?
+
+Campaigns are one-time sends you schedule manually. A product launch, a sale, a weekly newsletter. Flows are automated sequences triggered by subscriber behavior: they run without input once live.
+
+A well-built abandoned cart flow generates revenue at 2am with no one watching. A poorly built one wastes the highest-intent traffic the account will ever see. For most DTC brands at scale, flows contribute 35–50% of total email revenue. Neglecting them means permanently leaving a third to half of the channel on the table.
+
+## The 5 Flows Every DTC Brand Needs First
+
+These are non-negotiable. Everything else is built on top of them.
+
+### 1. Welcome Series
+
+The highest open-rate flow in any account. New subscribers are at peak interest. They just gave you their email. A well-built welcome series sets brand expectations, delivers value, handles objections, and moves toward a first purchase.
+
+Minimum structure: 4–6 emails over 7–10 days. Email 1 goes immediately. Leading with a discount in email 1 trains the list to wait for coupons. Save the offer for email 3 or 4, after you've given them a reason to care.
+
+### 2. Abandoned Cart
+
+Someone added to cart and left. The intention signal is as high as it gets without a completed purchase. Three emails minimum: immediate recovery (within 1 hour), urgency or social proof (24 hours), and a final push (48–72 hours). Test whether a discount in email 3 lifts revenue or cannibalises margin before making it permanent.
+
+### 3. Browse Abandonment
+
+Lower intent than cart, higher volume. Someone viewed a product page and left without adding. One or two emails within a few hours, referencing the product they viewed. Keep copy lighter than abandoned cart. You're nudging, not recovering.
+
+### 4. Post-Purchase
+
+The most underbuilt flow in almost every account we audit. The post-purchase window is when a customer is most engaged. They just bought. Use it to deliver value around the product, cross-sell complementary items, drive reviews, and trigger the repurchase.
+
+A proper post-purchase flow branches on first-time buyers vs. repeat buyers. What a first-time customer needs to hear is completely different from what someone on their fifth order needs.
+
+### 5. Win-Back
+
+For subscribers who haven't purchased in 90, 120, or 180 days depending on your average purchase cycle. Win-back does two things: recovers some lapsed customers, and surfaces who to suppress before they drag down sender reputation. [See the 4-tier list hygiene system →](/blog/email-list-hygiene-klaviyo)
+
+## What a Mature Flow Architecture Looks Like
+
+The five flows above are the foundation. Mature accounts (the ones at 40%+ email revenue) run 60 to 200+ flows. The difference isn't complexity for its own sake. It's granularity.
+
+<div class="stat-callout">
+  <div class="stat-num">193</div>
+  <div class="stat-label">Active flows in one account we manage, contributing to a 33.2% average flow open rate across 2.4M emails sent</div>
+</div>
+
+[→ Full case study: 51.5% open rate at scale, health & supplement brand running 193 flows](/case-studies/health-supplement-brand-at-scale)
+
+193 flows isn't 193 variations of the same abandoned cart email. It's product-specific post-purchase sequences, category-level browse abandonment, loyalty tier triggers, subscription renewal reminders, seasonal re-engagement, review request timing splits, and VIP-only flows. Each exists because a specific customer state required a specific response that a generic flow can't deliver. The more precisely the messaging matches where someone is in their relationship with the brand, the better every metric gets.
+
+## What Are the Flow Trigger Types in Klaviyo?
+
+Every flow starts with a trigger. These are the options:
+
+<div class="overflow-x-auto">
+  <table class="benchmark-table">
+    <thead>
+      <tr>
+        <th>TRIGGER TYPE</th>
+        <th>FIRES WHEN</th>
+        <th>COMMON USE CASE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="highlight">Metric-based</td>
+        <td>A customer completes a tracked action: placed order, started checkout, viewed product, clicked a link</td>
+        <td>Abandoned cart, post-purchase, browse abandonment</td>
+      </tr>
+      <tr>
+        <td class="highlight">List / Segment-based</td>
+        <td>Someone joins a specific list or qualifies for a segment</td>
+        <td>Welcome series, win-back, loyalty tier flows</td>
+      </tr>
+      <tr>
+        <td class="highlight">Date-based</td>
+        <td>A date property is reached: birthday, anniversary, renewal date</td>
+        <td>Birthday offers, subscription reminders, annual re-engagement</td>
+      </tr>
+      <tr>
+        <td class="highlight">Price drop</td>
+        <td>A product a subscriber viewed or saved drops in price</td>
+        <td>Recovery for price-sensitive browse abandonment</td>
+      </tr>
+      <tr>
+        <td class="highlight">Back in stock</td>
+        <td>A product a subscriber viewed returns to inventory</td>
+        <td>Re-engaging subscribers who saw an out-of-stock item</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+Most brands only use metric-based triggers. Segment-based triggers are where the leverage is. These are flows that fire when someone meets a specific condition: first purchase over $X, third order, hasn't bought in 60 days.
+
+## What's the Difference Between Flow Filters and Trigger Filters?
+
+**Trigger filters** control who enters the flow at the moment of trigger. Fail the filter, never enter.
+
+**Flow filters** are evaluated at each step. If a subscriber no longer meets the condition when an email is about to send (say, they completed a purchase between trigger and email 2), they skip that step.
+
+For abandoned cart, always run a flow filter checking "has not placed order since starting this flow." Without it, you're emailing people who already converted.
+
+## How Do You Measure Klaviyo Flow Performance?
+
+Flows and campaigns need separate measurement. The metrics that matter for flows:
+
+- **Flow open rate:** Should be meaningfully higher than [campaign average](/blog/ecommerce-email-open-rate-benchmarks). If it's not, subject lines or sender reputation need work
+- **Revenue per recipient:** The truest measure of flow quality. Compare across flow types and email positions to find leverage
+- **Conversion rate by flow step:** Email 1 vs. email 2 vs. email 3. There's usually a sharp drop: find it and fix it
+- **Unsubscribe rate per flow:** High unsubs from a specific flow means a timing, frequency, or relevance problem
+
+<div class="stat-callout">
+  <div class="stat-num">33.2%</div>
+  <div class="stat-label">Average flow open rate across a 193-flow account, vs. industry average of ~25%</div>
+</div>
+
+[→ Klaviyo Email Performance Report 2026: flow and campaign data from 22+ active DTC accounts](/blog/klaviyo-performance-report-2026)
+
+## Common Mistakes in Klaviyo Flow Setup
+
+**Not splitting first-time vs. repeat buyers.** The most common and most costly mistake. Sending a "here's what makes us different" email to someone on their sixth order drives unsubscribes.
+
+**One abandoned cart email.** Emails 2 and 3 consistently recover revenue that email 1 alone won't capture. Three emails minimum.
+
+**Ignoring flow timing.** Sending immediately (under 10 minutes) can feel intrusive. Waiting 24 hours misses the purchase-intent window. Test timing by category and average order value.
+
+**No conditional splits.** [Klaviyo's conditional splits](https://help.klaviyo.com/hc/en-us/articles/115002775432) send different content to different customer profiles within the same flow. Someone who bought once gets a different email 2 than someone who bought five times. Most accounts use zero conditional splits.
+
+**Copy that sounds like a template.** Subject lines should reference a real behavior. The body should sound like the brand. "Your cart is waiting" is a template, not copy.
+
+## Where to Start If You're Auditing Your Account
+
+Pull your [flow performance report](https://www.klaviyo.com/features/flows) in Klaviyo. Sort by revenue. The flows at the bottom, generating almost nothing, are the ones that haven't been touched since setup.
+
+Don't delete them. Audit them. Look at open rates, step-by-step drop-offs, the copy. In most accounts the problem isn't missing flows: it's that existing flows were built once and never optimized. Fix those first. Then build the next tier.

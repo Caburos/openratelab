@@ -1,0 +1,42 @@
+---
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blogPosts');
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{data.title}</title>
+    <meta name="description" content={data.description} />
+    <link rel="canonical" href={`https://openratelab.com/blog/${entry.id}`} />
+  </head>
+  <body>
+    <p>{data.author} — {data.readTime}</p>
+    <article>
+      <Content />
+    </article>
+
+    {data.faq.length > 0 && (
+      <>
+        <h2>Frequently Asked</h2>
+        {data.faq.map((item: { question: string; answer: string }) => (
+          <details>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </>
+    )}
+  </body>
+</html>

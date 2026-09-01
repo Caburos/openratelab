@@ -1,0 +1,118 @@
+---
+title: "Email List Hygiene in Klaviyo: How to Clean Your List Without Losing Revenue | OpenRateLab"
+description: "A practical guide to email list hygiene in Klaviyo: the 4-tier segmentation system we use to protect deliverability without burning winnable subscribers."
+datePublished: 2026-07-18
+dateModified: 2026-07-27
+author: "Uros Korene"
+readTime: "7 MIN READ"
+faq:
+  - question: "How often should you clean your Klaviyo list?"
+    answer: "We run a full list health audit quarterly for every account we manage, with lighter monthly checks on engaged-segment ratios. The trigger isn't a calendar date: it's performance signals. If your open rates are dropping, if spam complaints are rising, or if your engaged segment is shrinking as a percentage of total subscribers, it's time to clean. Don't wait for a quarterly review if the data is telling you something now."
+  - question: "What happens if I delete unengaged subscribers in Klaviyo?"
+    answer: "Your list count goes down, your open rate goes up, and your deliverability improves. Inbox providers are no longer seeing your emails consistently ignored. The risk is suppressing contacts who could still be reactivated. That's why we use a 4-tier system: suppress before deleting, and only move to deletion after the win-back sequence has run its course with no response."
+  - question: "How do I find unengaged contacts in Klaviyo?"
+    answer: "Build a segment using Klaviyo's engagement filters: contacts who have not opened or clicked any email in the last 90, 120, or 180 days (choose based on your send frequency). Exclude anyone who has placed an order in that window: recent buyers who don't open email are a different problem. That segment is your unengaged pool. Run them through a win-back sequence before making any suppression decision."
+---
+
+List hygiene has a direct line to revenue. A dirty list doesn't just drag down open rates. It damages sender reputation, which means fewer emails reach the inbox across the entire subscriber base, including the best customers.
+
+The goal isn't a smaller list. It's sending the right emails to the right people, and stopping sends to subscribers who have genuinely disengaged.
+
+## Why List Hygiene Affects Deliverability
+
+Gmail, Outlook, and other providers assess sender reputation using engagement signals: [open rates](/blog/ecommerce-email-open-rate-benchmarks), click rates, spam complaint rates, and whether people are deleting without opening. Consistent sends to people who don't open register as unwanted emails. Over time, providers start routing to the promotions tab, to spam, or simply not delivering. That affects every send, including to the subscribers who do want the emails.
+
+The fix isn't sending fewer emails. It's sending to the right people.
+
+## What Is the 4-Tier Engagement Segmentation?
+
+A binary "engaged / not engaged" split loses too much nuance. Four tiers let you send different content at different frequencies to each group, and run a win-back before any suppression happens.
+
+<div class="my-8">
+  <div class="segment-tier tier-vip">
+    <div>
+      <div class="tier-label" style="color:#F9F9F7;">VIP</div>
+      <div class="tier-label mt-1" style="color:#A3A3A3;">OPENED IN 30 DAYS<br/>OR 2+ PURCHASES</div>
+    </div>
+    <div class="tier-desc">Most engaged subscribers and best customers. Send everything: campaigns, flows, product launches. High frequency is appropriate here. These people want to hear from you.</div>
+  </div>
+  <div class="segment-tier tier-engaged">
+    <div>
+      <div class="tier-label" style="color:#A3A3A3;">ENGAGED</div>
+      <div class="tier-label mt-1" style="color:#A3A3A3;">OPENED IN 60–90 DAYS</div>
+    </div>
+    <div class="tier-desc">Active but not frequent openers. Send campaigns and major flows, reduce promotional frequency. Good content keeps them here. Over-sending pushes them to Lapsing.</div>
+  </div>
+  <div class="segment-tier tier-lapsing">
+    <div>
+      <div class="tier-label" style="color:#E63946;">LAPSING</div>
+      <div class="tier-label mt-1" style="color:#A3A3A3;">NO OPEN IN 90–150 DAYS</div>
+    </div>
+    <div class="tier-desc">Danger zone. These subscribers are disengaging. Send 1–2 campaigns per month maximum, highest-value content only. Trigger a win-back flow at the 90-day mark. Re-engage or make a suppression decision.</div>
+  </div>
+  <div class="segment-tier tier-unengaged">
+    <div>
+      <div class="tier-label" style="color:#5a5959;">UNENGAGED</div>
+      <div class="tier-label mt-1" style="color:#A3A3A3;">NO OPEN IN 150+ DAYS</div>
+    </div>
+    <div class="tier-desc">Run a final win-back. No engagement: suppress. Continuing to send damages sender reputation with every email. These contacts contribute almost nothing to revenue.</div>
+  </div>
+</div>
+
+The thresholds above are starting points. Adjust for your send frequency. A brand sending daily needs shorter windows than one sending weekly. The structure is what matters: different treatment at each tier, with a win-back before suppression.
+
+## The Win-Back Flow: Before You Suppress
+
+Suppression always follows an attempt to win back. Some lapsed subscribers genuinely missed your emails. A [win-back flow](/blog/klaviyo-email-flows-guide) catches them before they're gone.
+
+- **Email 1 (day 0):** Re-engagement offer or strong value proposition. Write the subject line about them, not about your brand. A compelling offer or genuinely useful content beats "we noticed you haven't been around."
+- **Email 2 (day 5):** Final notice. Tell them you're going to stop emailing unless they'd like to stay. Transparency works: some re-engage because they were given the choice. It also cleanly identifies the people who genuinely want to leave.
+- **Suppression (day 7 if no engagement):** No third email. Suppress.
+
+A two-email win-back that ends in suppression is still a win. Dead weight identified, deliverability protected, winnable subscribers recovered.
+
+## Setting This Up in Klaviyo
+
+### Step 1: Build the Four Segments
+
+In Klaviyo, create four segments using these conditions:
+
+- **VIP:** "Has opened email at least once in the last 30 days" OR "Has placed order at least 2 times"
+- **Engaged:** "Has opened email at least once in the last 90 days" AND NOT VIP
+- **Lapsing:** "Has opened email at least once in the last 150 days" AND NOT Engaged AND NOT VIP
+- **Unengaged:** "Is in List [main list]" AND NOT Lapsing AND NOT Engaged AND NOT VIP
+
+Note: Klaviyo's open tracking is affected by [iOS MPP](https://support.apple.com/en-us/102574), which inflates open counts on Apple Mail. If open signals look artificially high, use click-based engagement as a supplementary signal alongside opens.
+
+### Step 2: Create the Win-Back Flow
+
+Trigger: "Joins Segment" fires when someone enters the Lapsing segment. Set a 2–3 day delay to avoid triggering on subscribers who only recently went quiet. Structure: Email 1 → 5-day delay → Email 2 → 7-day delay → Conditional split on "Has opened email since starting this flow" → suppress the No branch.
+
+### Step 3: Suppress the Unengaged Segment
+
+Run the win-back flow for 30–60 days before any bulk suppression, giving lapsing subscribers the chance to come back. Then suppress the Unengaged segment in bulk. [Klaviyo allows profile suppression without deletion](https://help.klaviyo.com/hc/en-us/articles/115005246108), so suppressed profiles can be unsuppressed if they re-subscribe.
+
+## How Often to Run This
+
+Build the segments once, set up the win-back flow, and let it run continuously. New subscribers move through tiers based on behavior without manual intervention. Review segment sizes quarterly. If Lapsing is growing faster than Engaged, there's a content or frequency problem: you're either sending too much or the content isn't compelling enough to hold engagement.
+
+<div class="stat-callout">
+  <div class="stat-num">40.3%</div>
+  <div class="stat-label">Average open rate maintained on an account running this 4-tier segmentation across 46 campaigns, with a 0.32% unsubscribe rate</div>
+</div>
+
+[→ Full case study: 40.3% open rate + 2.66% CTR sustained across 46 campaigns, activewear brand](/case-studies/activewear-brand-email-engagement)
+
+## What to Expect After Cleaning
+
+The first effect after suppressing unengaged subscribers is a drop in total list size. You're paying for fewer contacts in Klaviyo and the "list size" number is smaller. Both are positives.
+
+Over the following 30–60 days: open rate rises because you're calculating against a smaller denominator of people who actually want the emails. Spam complaint rate drops. Inbox placement improves as Gmail and Outlook see more positive engagement signals per send. Revenue holds. Unengaged subscribers were contributing almost nothing, and removing them rarely moves the bottom line.
+
+## What Is the Most Common List Hygiene Mistake?
+
+Brands wait too long to suppress and let deliverability decay for months, or suppress too aggressively without a win-back first. The two-email win-back is not optional. It recovers a meaningful percentage of lapsed subscribers who needed a prompt, and gives you clean data on everyone else.
+
+People who didn't re-engage after a direct ask are genuinely gone. Suppress them without reservation.
+
+[→ Klaviyo Email Performance Report 2026: see how this system performs across 22+ active DTC accounts](/blog/klaviyo-performance-report-2026)
