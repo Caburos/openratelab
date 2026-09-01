@@ -736,25 +736,52 @@ const jsonLd = [
       }
     })();
 
-    // Scroll-triggered reveal animations. Purely presentational — adds
-    // classes at runtime only, touches no text/links. Baseline parity with
-    // the live site; a richer animation pass is separate future work.
+    // Scroll-triggered reveal animations. Purely presentational, and
+    // fail-safe by construction: the "start hidden" state is only ever
+    // set as an inline style, applied right here — if this script errors,
+    // gets blocked, or IntersectionObserver is unsupported, elements are
+    // simply never hidden in the first place (the CSS classes carry no
+    // hiding rule of their own, only the transition property). A prior
+    // version hid content via a plain CSS class with no such fallback,
+    // which broke in production (case studies/services/testimonials
+    // stayed permanently invisible). A hard timeout below is a second,
+    // independent safety net in case an observer is created but never
+    // fires for some element.
     (() => {
       if (!('IntersectionObserver' in window)) return;
 
-      const wipeTargets = document.querySelectorAll('#services .grid, #ledger .grid, #testimonials .grid, #expertise .grid');
-      wipeTargets.forEach((el) => el.classList.add('reveal-wipe'));
+      const wipeTargets = document.querySelectorAll<HTMLElement>('#services .grid, #ledger .grid, #testimonials .grid, #expertise .grid');
+      wipeTargets.forEach((el) => {
+        el.classList.add('reveal-wipe');
+        el.style.clipPath = 'inset(0 100% 0 0)';
+      });
 
-      const leftTargets = document.querySelectorAll('#results h2, #testimonials h2, #services h2, #ledger h2, #expertise h2');
-      leftTargets.forEach((el) => el.classList.add('reveal-left'));
+      const leftTargets = document.querySelectorAll<HTMLElement>('#results h2, #testimonials h2, #services h2, #ledger h2, #expertise h2');
+      leftTargets.forEach((el) => {
+        el.classList.add('reveal-left');
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(-24px)';
+      });
 
-      const lineTargets = document.querySelectorAll('#results .rule-line, #testimonials .rule-line');
+      const lineTargets = document.querySelectorAll<HTMLElement>('#results .rule-line, #testimonials .rule-line');
+      lineTargets.forEach((el) => {
+        el.style.transform = 'scaleX(0)';
+      });
+
+      const allTargets = [...wipeTargets, ...leftTargets, ...lineTargets];
+
+      const reveal = (el: HTMLElement) => {
+        el.style.clipPath = '';
+        el.style.opacity = '';
+        el.style.transform = '';
+        el.classList.add('in-view');
+      };
 
       const revealObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
+              reveal(entry.target as HTMLElement);
               revealObserver.unobserve(entry.target);
             }
           });
@@ -762,9 +789,16 @@ const jsonLd = [
         { threshold: 0.05, rootMargin: '0px 0px -10% 0px' }
       );
 
-      wipeTargets.forEach((el) => revealObserver.observe(el));
-      leftTargets.forEach((el) => revealObserver.observe(el));
-      lineTargets.forEach((el) => revealObserver.observe(el));
+      allTargets.forEach((el) => revealObserver.observe(el));
+
+      // Hard fallback: whatever hasn't revealed itself within 4s (an
+      // observer edge case, a very short page, etc.) just gets revealed
+      // directly. Content is never permanently hidden.
+      setTimeout(() => {
+        allTargets.forEach((el) => {
+          if (!el.classList.contains('in-view')) reveal(el);
+        });
+      }, 4000);
 
       // Count-up on the #results stat numbers. Ends on the exact original
       // text every time, so the final DOM state always matches raw HTML.
@@ -803,29 +837,28 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
+  /*
+    Content must always be visible regardless of JS. A prior version of
+    this animation hid content (clip-path/opacity) until a JS
+    IntersectionObserver added .in-view, with no fallback — when the
+    observer didn't fire in a real browser, case studies/services/
+    testimonials stayed permanently invisible in production. Fixed: no
+    class here ever hides content. .in-view is now purely a one-time
+    transition trigger (see the JS below, which sets the *starting*
+    hidden state as an inline style applied and removed in the same task,
+    with a hard requestAnimationFrame-based fallback) — if JS never runs
+    at all, elements simply have no animation and are fully visible,
+    which is the correct failure mode.
+  */
   .reveal-wipe {
-    clip-path: inset(0 100% 0 0);
     transition: clip-path 1.1s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .reveal-wipe.in-view {
-    clip-path: inset(0 0 0 0);
-  }
   .reveal-left {
-    opacity: 0;
-    transform: translateX(-24px);
     transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .reveal-left.in-view {
-    opacity: 1;
-    transform: translateX(0);
-  }
   .rule-line {
-    transform: scaleX(0);
     transform-origin: left;
     transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .rule-line.in-view {
-    transform: scaleX(1);
   }
 </style>
 
