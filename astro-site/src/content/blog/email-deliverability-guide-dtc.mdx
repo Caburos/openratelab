@@ -14,7 +14,7 @@ faq:
   - question: "Why is my email going to spam even though the copy is good?"
     answer: "Inbox placement is determined mostly by sender reputation and authentication, not subject line or copy quality. A domain with missing or misconfigured SPF/DKIM/DMARC, a history of low engagement, or a list full of unengaged or invalid addresses will land in spam regardless of how well the email is written. Deliverability problems have to be fixed at the infrastructure and list-health level before copy improvements can show their real effect."
   - question: "How does list hygiene affect deliverability?"
-    answer: "Mailbox providers track engagement at the domain level. A list full of subscribers who never open or click signals to Gmail, Outlook, and Yahoo that your mail isn't wanted, which lowers inbox placement for everyone on the list, including engaged subscribers. Regularly suppressing unengaged addresses, ideally after a genuine win-back attempt, protects deliverability for the subscribers who actually want to hear from you."
+    answer: "Mailbox providers track engagement at the domain level. A list full of subscribers who never open or click signals to Gmail, Outlook, and Yahoo that your mail isn't wanted, which lowers inbox placement for everyone on the list, including engaged subscribers. Regularly suppressing unengaged addresses, ideally after a genuine win-back attempt, protects deliverability for the subscribers who want to hear from you."
 ---
 
 We get asked to fix "bad email performance" more often than we get asked to fix deliverability directly, but they're frequently the same problem. A flow with sharp [copy](/blog/klaviyo-email-copywriting-guide) and smart segmentation can't outperform a domain that's landing in spam. Deliverability is the floor everything else sits on.
@@ -23,7 +23,7 @@ We get asked to fix "bad email performance" more often than we get asked to fix 
 
 These three records live in your domain's DNS settings and together tell mailbox providers your email is legitimate.
 
-- **SPF (Sender Policy Framework):** A list of servers authorized to send email on your domain's behalf. Without it, a receiving server has no way to confirm your ESP is actually allowed to send as you.
+- **SPF (Sender Policy Framework):** A list of servers authorized to send email on your domain's behalf. Without it, a receiving server has no way to confirm your ESP is allowed to send as you.
 - **DKIM (DomainKeys Identified Mail):** A cryptographic signature attached to each email, proving it wasn't altered between sending and delivery. It's how a receiving server confirms the message is authentic, not spoofed.
 - **DMARC (Domain-based Message Authentication, Reporting and Conformance):** The policy layer on top of SPF and DKIM. It tells receiving servers what to do when a message fails authentication (quarantine, reject, or do nothing) and asks for reporting on failures so you can catch problems.
 
