@@ -60,6 +60,7 @@ const blogPosts = defineCollection({
     ...seoFields,
     author: z.string().default('Uros Korene'),
     readTime: z.string(), // e.g. "7 MIN READ"
+    dataDisclaimer: z.string().optional(), // the [ DATA_NOTE ] footer text, when the post cites performance figures
     faq: z.array(faqEntry).default([]),
   }),
 });

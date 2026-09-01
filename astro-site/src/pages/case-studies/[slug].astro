@@ -1,5 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
 
 export async function getStaticPaths() {
   const caseStudies = await getCollection('caseStudies');
@@ -12,41 +14,166 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const data = entry.data;
+const canonicalPath = `/case-studies/${entry.id}`;
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+const dateISO = (d: Date) => d.toISOString();
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: data.title,
+        description: data.description,
+        url: canonicalUrl,
+        image: `https://openratelab.com${data.ogImage}`,
+        datePublished: dateISO(data.datePublished),
+        dateModified: dateISO(data.dateModified),
+        author: { '@type': 'Person', name: data.authorQuote?.attribution.split(',')[0] ?? 'Uros Korene', url: 'https://openratelab.com/about/' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'OpenRateLab',
+          url: 'https://openratelab.com',
+          logo: { '@type': 'ImageObject', url: `https://openratelab.com${data.ogImage}` },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://openratelab.com/#case-studies' },
+          { '@type': 'ListItem', position: 3, name: data.industryLabel, item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: data.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{data.title}</title>
-    <meta name="description" content={data.description} />
-    <link rel="canonical" href={`https://openratelab.com/case-studies/${entry.id}`} />
-  </head>
-  <body>
-    <p>[ THE LEDGER / CASE_STUDY:{data.caseStudyNumber} // {data.industryLabel.toUpperCase()} ]</p>
-    {data.isComposite && <p><strong>COMPOSITE CASE STUDY</strong></p>}
-    <h1 set:html={data.heroHeadline.replace('\n', '<br/>')} />
-    <p>{data.heroSubtext}</p>
-    <p>{data.primaryMetric.value} — {data.primaryMetric.label}</p>
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  canonicalPath={canonicalPath}
+  ogImage={data.ogImage}
+  ogImageWidth={data.ogImageWidth}
+  ogImageHeight={data.ogImageHeight}
+  ogType="article"
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="min-h-[60vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <a href="/#ledger" class="inline-flex items-center gap-2 font-label-technical text-label-technical text-muted-silver uppercase hover:text-accent-performance transition-colors mb-10 w-fit">
+      <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span> BACK TO THE LEDGER
+    </a>
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-10">
+      <div class="max-w-3xl">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4 tracking-[0.2em]">
+          [ THE LEDGER / CASE_STUDY:{data.caseStudyNumber} // {data.industryLabel.toUpperCase()} ]
+        </span>
+        {data.isComposite && (
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-2">COMPOSITE CASE STUDY</span>
+        )}
+        <h1 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg font-black md:font-bold uppercase leading-none mb-6" set:html={data.heroHeadline.replace(/\n/g, '<br/>')} />
+        <p class="font-body-lg text-body-lg text-muted-silver max-w-xl">{data.heroSubtext}</p>
+      </div>
+      <div class="flex flex-col items-start md:items-end text-left md:text-right border-l-4 md:border-l border-accent-performance md:border-muted-silver/20 pl-6 md:pl-12">
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase mb-2">PRIMARY METRIC</span>
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none">{data.primaryMetric.value}</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm">{data.primaryMetric.label}</span>
+      </div>
+    </div>
+  </section>
 
-    <article>
+  <!-- Body content, rendered from MDX -->
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-t border-muted-silver/20">
+    <div class="prose-case-study max-w-4xl">
       <Content />
-    </article>
+    </div>
+  </section>
 
-    {data.authorQuote && (
-      <blockquote>
-        <p>&ldquo;{data.authorQuote.quote}&rdquo;</p>
-        <cite>{data.authorQuote.attribution}</cite>
-      </blockquote>
-    )}
+  {data.authorQuote && (
+    <section class="py-24 md:py-60 px-8 md:px-16 flex flex-col items-center text-center">
+      <div class="max-w-3xl">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-8">WHY THIS WORKED</span>
+        <blockquote class="font-headline-lg text-headline-lg-mobile md:text-headline-lg italic leading-tight text-on-surface-warm mb-8">
+          &ldquo;{data.authorQuote.quote}&rdquo;
+        </blockquote>
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase">{data.authorQuote.attribution.toUpperCase()}</span>
+      </div>
+    </section>
+  )}
 
-    <p><em>[ DATA_NOTE ] {data.compositeDisclaimer}</em></p>
+  <div class="px-8 md:px-16"><div class="rule-line opacity-50"></div></div>
 
-    <h2>Frequently Asked</h2>
-    {data.faq.map((item: { question: string; answer: string }) => (
-      <details>
-        <summary>{item.question}</summary>
-        <p>{item.answer}</p>
-      </details>
-    ))}
-  </body>
-</html>
+  <section class="px-8 md:px-16 py-16">
+    <p class="font-label-technical text-label-technical text-muted-silver max-w-2xl">[ DATA_NOTE ] {data.compositeDisclaimer}</p>
+  </section>
+
+  <FaqAccordion items={data.faq} />
+
+  {data.furtherReading.length > 0 && (
+    <section class="px-8 md:px-16 py-12 border-t border-muted-silver/20">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-6">FURTHER READING</span>
+      <ul class="space-y-3">
+        {data.furtherReading.map((link) => (
+          <li><a href={link.url} class="font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">&rarr; {link.title}</a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">DEPLOYMENT_FINAL_PHASE</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">WANT RESULTS<br/>LIKE THIS?</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Tell us where you are, what's not working, and what you want to grow. We'll map out an exact strategy. No cost, no obligation.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose-case-study :global(h2) {
+    font-family: 'Hanken Grotesk', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: #F9F9F7;
+    margin-top: 56px;
+    margin-bottom: 20px;
+  }
+  .prose-case-study :global(p) {
+    font-family: 'Source Serif 4', serif;
+    font-size: 20px;
+    line-height: 32px;
+    color: #F9F9F7;
+    margin-bottom: 24px;
+  }
+  .prose-case-study :global(ul), .prose-case-study :global(ol) {
+    margin-bottom: 24px;
+    padding-left: 1.5em;
+  }
+  .prose-case-study :global(li) {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    line-height: 28px;
+    color: #F9F9F7;
+    margin-bottom: 8px;
+  }
+  .prose-case-study :global(strong) {
+    color: #F9F9F7;
+    font-weight: 700;
+  }
+</style>
