@@ -254,6 +254,36 @@ const jsonLd = [
     </div>
   </section>
 
+  <!-- Before/After: problem framing, new -->
+  <section id="diagnosis" class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary">
+    <div class="mb-16 max-w-2xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4">PROBLEM_DIAGNOSIS</span>
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase leading-none">MOST EMAIL PROGRAMS<br/>ARE BROKEN THE SAME WAY.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-muted-silver/20">
+      <div class="p-10 md:p-14 border-b md:border-b-0 md:border-r border-muted-silver/20">
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-8">BEFORE</span>
+        <ul class="space-y-6">
+          <li class="font-body-md text-body-md text-muted-silver">Occasional sends when someone remembers.</li>
+          <li class="font-body-md text-body-md text-muted-silver">No flows running in the background.</li>
+          <li class="font-body-md text-body-md text-muted-silver">Generic copy that could be any brand's.</li>
+          <li class="font-body-md text-body-md text-muted-silver">Open rates drifting toward industry-average mediocrity.</li>
+          <li class="font-body-md text-body-md text-muted-silver">No idea what's actually driving revenue.</li>
+        </ul>
+      </div>
+      <div class="p-10 md:p-14">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-8">AFTER</span>
+        <ul class="space-y-6">
+          <li class="font-body-md text-body-md text-on-surface-warm">Automated flows covering the full customer lifecycle.</li>
+          <li class="font-body-md text-body-md text-on-surface-warm">Copy tested against real data, not guesses.</li>
+          <li class="font-body-md text-body-md text-on-surface-warm">Open rates 35–50%+, sustained.</li>
+          <li class="font-body-md text-body-md text-on-surface-warm">Revenue you can forecast because the system runs itself.</li>
+          <li class="font-body-md text-body-md text-on-surface-warm">A system that runs whether or not anyone remembers to hit send.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- Services Section -->
   <section id="services" class="py-24 md:py-40 px-8 md:px-16">
     <div class="grid grid-cols-12 gap-gutter mb-24">
@@ -306,126 +336,42 @@ const jsonLd = [
     </div>
   </section>
 
-  <!-- Case Studies: The Ledger -->
-  <!--
-    Data-driven from the caseStudies content collection (see frontmatter
-    above) instead of 12 hand-copied slides. Each card pulls its eyebrow
-    tag, composite label, primary metric, and blurb straight from the
-    collection so this list can never drift from what's on the individual
-    case-study pages. All 12 cards are still always present in the raw
-    HTML (fully crawlable) — the carousel below is a CSS/JS presentation
-    layer on top, not a content-hiding mechanism.
-  -->
-  <section id="ledger" class="py-24 md:py-40 bg-surface-primary overflow-x-hidden">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-16 px-8 md:px-16">
-      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">THE LEDGER</h2>
-      <span class="font-label-technical text-label-technical text-muted-silver md:pb-4">[ RECENT_DEPLOYMENTS ]</span>
-    </div>
-
-    <div class="px-8 md:px-16">
-      <div id="ledger-track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-        {caseStudies.map((entry) => (
-          <div class="ledger-slide snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-8 md:p-10 border border-muted-silver/20 flex flex-col justify-between min-h-[380px]">
-            <div>
-              <span class="font-label-technical text-label-technical text-accent-performance mb-4 block">
-                [ THE LEDGER / CASE_STUDY:{entry.data.caseStudyNumber} // {entry.data.industryLabel.toUpperCase()} ]
-              </span>
-              {entry.data.isComposite && (
-                <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-6">COMPOSITE CASE STUDY</span>
-              )}
-              <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">{entry.data.primaryMetric.value}</div>
-              <span class="font-label-button uppercase text-muted-silver block mb-6">{entry.data.primaryMetric.label}</span>
-              <p class="font-body-md text-body-md text-muted-silver mb-8">{truncate(entry.data.heroSubtext)}</p>
-            </div>
-            <a href={`/case-studies/${entry.id}`} class="w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">READ FULL CASE STUDY</a>
-          </div>
-        ))}
-      </div>
-
-      <div class="flex items-center justify-between mt-8">
-        <div id="ledger-dots" class="flex items-center gap-2"></div>
-        <div class="flex gap-3">
-          <button id="ledger-prev" class="p-3 border border-muted-silver/30 hover:border-accent-performance hover:text-accent-performance transition-colors" aria-label="Previous case study">
-            <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
-          </button>
-          <button id="ledger-next" class="p-3 border border-muted-silver/30 hover:border-accent-performance hover:text-accent-performance transition-colors" aria-label="Next case study">
-            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-          </button>
-        </div>
-      </div>
-    </div>
+  <!-- CTA Banner 1, new -->
+  <section class="py-24 md:py-40 px-8 md:px-16 text-center bg-surface-secondary border-y border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">STOP GUESSING WHAT'S<br/>WRONG WITH YOUR KLAVIYO ACCOUNT.</h2>
+    <a href="#contact" class="inline-block bg-accent-performance text-on-surface-warm px-8 py-6 md:px-16 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.1em] md:tracking-[0.2em] hover:brightness-110 transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
   </section>
 
-  <!-- Testimonials -->
-  <!--
-    Reproduced verbatim from index.html. Testimonial role/title accuracy
-    is a known issue tracked separately by the site owner in an unrelated
-    work stream — intentionally not touched here.
-  -->
-  <section id="testimonials" class="py-24 md:py-40 px-8 md:px-16 bg-surface-secondary">
-    <div class="mb-16">
-      <h2 class="font-label-technical text-label-technical text-muted-silver uppercase tracking-[0.2em] mb-4">CLIENT TESTIMONIALS // CLIENT SIGNAL</h2>
-      <div class="rule-line opacity-50"></div>
+  <!-- Process: how it works, new -->
+  <section id="process" class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary">
+    <div class="mb-16 max-w-2xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4">HOW_IT_WORKS</span>
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase leading-none">FOUR STEPS.<br/>NO GUESSWORK.</h2>
     </div>
-    <div class="space-y-0 border-t border-muted-silver/20">
-
-      <!-- Testimonial: Nika -->
-      <div class="grid grid-cols-12 gap-gutter py-16 border-b border-muted-silver/20 group hover:bg-white/2 transition-colors">
-        <div class="col-span-12 md:col-span-1 flex items-start pt-1">
-          <img src="/images/testimonial-nika.jpg" alt="Nika, E-commerce founder" class="w-12 h-12 object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" width="200" height="200" loading="lazy"/>
-        </div>
-        <div class="col-span-12 md:col-span-7 md:col-start-2">
-          <p class="font-body-lg text-body-lg text-on-surface-warm italic mb-6 leading-relaxed">
-            "We've used email before, but it never really moved the needle. This time, email became a consistent revenue channel, not just something we sent occasionally."
-          </p>
-          <div class="flex items-center gap-6">
-            <span class="font-label-technical text-label-technical text-accent-performance uppercase">NIKA</span>
-            <span class="font-label-technical text-label-technical text-muted-silver uppercase">// E-COMMERCE FOUNDER</span>
-          </div>
-        </div>
-        <div class="col-span-12 md:col-span-3 md:col-start-10 flex items-center justify-start md:justify-end mt-2 md:mt-0">
-          <span class="font-label-technical text-label-technical text-accent-performance uppercase border border-accent-performance/30 px-4 py-2">WELCOME FLOW</span>
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-0 border border-muted-silver/20">
+      <div class="p-10 border-b md:border-b-0 md:border-r border-muted-silver/20">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-8 block">01</span>
+        <h3 class="font-headline-md text-headline-md uppercase mb-4">AUDIT</h3>
+        <p class="font-body-md text-body-md text-muted-silver">Free review of your Klaviyo account: flow architecture, active campaigns, list health, and deliverability signals.</p>
       </div>
-
-      <!-- Testimonial: Teia -->
-      <div class="grid grid-cols-12 gap-gutter py-16 border-b border-muted-silver/20 group hover:bg-white/2 transition-colors">
-        <div class="col-span-12 md:col-span-1 flex items-start pt-1">
-          <img src="/images/testimonial-teia.jpg" alt="Teia, DTC brand owner" class="w-12 h-12 object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" width="200" height="200" loading="lazy"/>
-        </div>
-        <div class="col-span-12 md:col-span-7 md:col-start-2">
-          <p class="font-body-lg text-body-lg text-on-surface-warm italic mb-6 leading-relaxed">
-            "Email finally made sense as a system. It started bringing sales on autopilot, and it actually supported revenue."
-          </p>
-          <div class="flex items-center gap-6">
-            <span class="font-label-technical text-label-technical text-accent-performance uppercase">TEIA</span>
-            <span class="font-label-technical text-label-technical text-muted-silver uppercase">// DTC BRAND OWNER</span>
-          </div>
-        </div>
-        <div class="col-span-12 md:col-span-3 md:col-start-10 flex items-center justify-start md:justify-end mt-2 md:mt-0">
-          <span class="font-label-technical text-label-technical text-accent-performance uppercase border border-accent-performance/30 px-4 py-2">EMAIL COPY</span>
-        </div>
+      <div class="p-10 border-b md:border-b-0 md:border-r border-muted-silver/20">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-8 block">02</span>
+        <h3 class="font-headline-md text-headline-md uppercase mb-4">ROADMAP</h3>
+        <p class="font-body-md text-body-md text-muted-silver">A prioritized fix list ranked by revenue impact, not a generic 90-day template.</p>
       </div>
-
-      <!-- Testimonial: Viktor -->
-      <div class="grid grid-cols-12 gap-gutter py-16 border-b border-muted-silver/20 group hover:bg-white/2 transition-colors">
-        <div class="col-span-12 md:col-span-1 flex items-start pt-1">
-          <img src="/images/testimonial-viktor.jpg" alt="Viktor, Growth director" class="w-12 h-12 object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" width="200" height="200" loading="lazy"/>
-        </div>
-        <div class="col-span-12 md:col-span-7 md:col-start-2">
-          <p class="font-body-lg text-body-lg text-on-surface-warm italic mb-6 leading-relaxed">
-            "I didn't expect email to start working this fast. People opened, replied, and bought, and it kept happening without constant sending."
-          </p>
-          <div class="flex items-center gap-6">
-            <span class="font-label-technical text-label-technical text-accent-performance uppercase">VIKTOR</span>
-            <span class="font-label-technical text-label-technical text-muted-silver uppercase">// GROWTH DIRECTOR</span>
-          </div>
-        </div>
-        <div class="col-span-12 md:col-span-3 md:col-start-10 flex items-center justify-start md:justify-end mt-2 md:mt-0">
-          <span class="font-label-technical text-label-technical text-accent-performance uppercase border border-accent-performance/30 px-4 py-2">FULL FUNNEL</span>
-        </div>
+      <div class="p-10 border-b md:border-b-0 md:border-r border-muted-silver/20">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-8 block">03</span>
+        <h3 class="font-headline-md text-headline-md uppercase mb-4">BUILD</h3>
+        <p class="font-body-md text-body-md text-muted-silver">Flows, copy, and segmentation implemented and tested against real data.</p>
       </div>
-
+      <div class="p-10">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-8 block">04</span>
+        <h3 class="font-headline-md text-headline-md uppercase mb-4">COMPOUND</h3>
+        <p class="font-body-md text-body-md text-muted-silver">Ongoing campaigns and optimization. Revenue that compounds monthly instead of resetting.</p>
+      </div>
     </div>
   </section>
 
@@ -499,6 +445,167 @@ const jsonLd = [
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <!--
+    Reproduced verbatim from index.html. Testimonial role/title accuracy
+    is a known issue tracked separately by the site owner in an unrelated
+    work stream — intentionally not touched here. Moved to this position
+    (was right after Ledger) per the WeConvert-comparison pass: this is
+    now the site's single consolidated proof/social-proof section.
+  -->
+  <section id="testimonials" class="py-24 md:py-40 px-8 md:px-16 bg-surface-secondary">
+    <div class="mb-16">
+      <h2 class="font-label-technical text-label-technical text-muted-silver uppercase tracking-[0.2em] mb-4">CLIENT TESTIMONIALS // CLIENT SIGNAL</h2>
+      <div class="rule-line opacity-50"></div>
+    </div>
+    <div class="space-y-0 border-t border-muted-silver/20">
+
+      <!-- Testimonial: Nika -->
+      <div class="grid grid-cols-12 gap-gutter py-16 border-b border-muted-silver/20 group hover:bg-white/2 transition-colors">
+        <div class="col-span-12 md:col-span-1 flex items-start pt-1">
+          <img src="/images/testimonial-nika.jpg" alt="Nika, E-commerce founder" class="w-12 h-12 object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" width="200" height="200" loading="lazy"/>
+        </div>
+        <div class="col-span-12 md:col-span-7 md:col-start-2">
+          <p class="font-body-lg text-body-lg text-on-surface-warm italic mb-6 leading-relaxed">
+            "We've used email before, but it never really moved the needle. This time, email became a consistent revenue channel, not just something we sent occasionally."
+          </p>
+          <div class="flex items-center gap-6">
+            <span class="font-label-technical text-label-technical text-accent-performance uppercase">NIKA</span>
+            <span class="font-label-technical text-label-technical text-muted-silver uppercase">// E-COMMERCE FOUNDER</span>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-3 md:col-start-10 flex items-center justify-start md:justify-end mt-2 md:mt-0">
+          <span class="font-label-technical text-label-technical text-accent-performance uppercase border border-accent-performance/30 px-4 py-2">WELCOME FLOW</span>
+        </div>
+      </div>
+
+      <!-- Testimonial: Teia -->
+      <div class="grid grid-cols-12 gap-gutter py-16 border-b border-muted-silver/20 group hover:bg-white/2 transition-colors">
+        <div class="col-span-12 md:col-span-1 flex items-start pt-1">
+          <img src="/images/testimonial-teia.jpg" alt="Teia, DTC brand owner" class="w-12 h-12 object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" width="200" height="200" loading="lazy"/>
+        </div>
+        <div class="col-span-12 md:col-span-7 md:col-start-2">
+          <p class="font-body-lg text-body-lg text-on-surface-warm italic mb-6 leading-relaxed">
+            "Email finally made sense as a system. It started bringing sales on autopilot, and it actually supported revenue."
+          </p>
+          <div class="flex items-center gap-6">
+            <span class="font-label-technical text-label-technical text-accent-performance uppercase">TEIA</span>
+            <span class="font-label-technical text-label-technical text-muted-silver uppercase">// DTC BRAND OWNER</span>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-3 md:col-start-10 flex items-center justify-start md:justify-end mt-2 md:mt-0">
+          <span class="font-label-technical text-label-technical text-accent-performance uppercase border border-accent-performance/30 px-4 py-2">EMAIL COPY</span>
+        </div>
+      </div>
+
+      <!-- Testimonial: Viktor -->
+      <div class="grid grid-cols-12 gap-gutter py-16 border-b border-muted-silver/20 group hover:bg-white/2 transition-colors">
+        <div class="col-span-12 md:col-span-1 flex items-start pt-1">
+          <img src="/images/testimonial-viktor.jpg" alt="Viktor, Growth director" class="w-12 h-12 object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" width="200" height="200" loading="lazy"/>
+        </div>
+        <div class="col-span-12 md:col-span-7 md:col-start-2">
+          <p class="font-body-lg text-body-lg text-on-surface-warm italic mb-6 leading-relaxed">
+            "I didn't expect email to start working this fast. People opened, replied, and bought, and it kept happening without constant sending."
+          </p>
+          <div class="flex items-center gap-6">
+            <span class="font-label-technical text-label-technical text-accent-performance uppercase">VIKTOR</span>
+            <span class="font-label-technical text-label-technical text-muted-silver uppercase">// GROWTH DIRECTOR</span>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-3 md:col-start-10 flex items-center justify-start md:justify-end mt-2 md:mt-0">
+          <span class="font-label-technical text-label-technical text-accent-performance uppercase border border-accent-performance/30 px-4 py-2">FULL FUNNEL</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Banner 2, new -->
+  <section class="py-24 md:py-40 px-8 md:px-16 text-center bg-surface-primary border-b border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">COMPETITIVE_DELTA</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">YOUR COMPETITORS ARE<br/>ALREADY DOING THIS.</h2>
+    <a href="#contact" class="inline-block bg-on-surface-warm text-surface-primary px-8 py-6 md:px-16 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.1em] md:tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+
+  <!-- Case Studies: The Ledger -->
+  <!--
+    Data-driven from the caseStudies content collection (see frontmatter
+    above) instead of 12 hand-copied slides. Each card pulls its eyebrow
+    tag, composite label, primary metric, and blurb straight from the
+    collection so this list can never drift from what's on the individual
+    case-study pages. All 12 cards are still always present in the raw
+    HTML (fully crawlable) — the carousel below is a CSS/JS presentation
+    layer on top, not a content-hiding mechanism. Moved after Testimonials
+    per the WeConvert-comparison pass (was right after Services).
+  -->
+  <section id="ledger" class="py-24 md:py-40 bg-surface-primary overflow-x-hidden">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-16 px-8 md:px-16">
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">THE LEDGER</h2>
+      <span class="font-label-technical text-label-technical text-muted-silver md:pb-4">[ RECENT_DEPLOYMENTS ]</span>
+    </div>
+
+    <div class="px-8 md:px-16">
+      <div id="ledger-track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        {caseStudies.map((entry) => (
+          <div class="ledger-slide snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-8 md:p-10 border border-muted-silver/20 flex flex-col justify-between min-h-[380px]">
+            <div>
+              <span class="font-label-technical text-label-technical text-accent-performance mb-4 block">
+                [ THE LEDGER / CASE_STUDY:{entry.data.caseStudyNumber} // {entry.data.industryLabel.toUpperCase()} ]
+              </span>
+              {entry.data.isComposite && (
+                <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-6">COMPOSITE CASE STUDY</span>
+              )}
+              <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">{entry.data.primaryMetric.value}</div>
+              <span class="font-label-button uppercase text-muted-silver block mb-6">{entry.data.primaryMetric.label}</span>
+              <p class="font-body-md text-body-md text-muted-silver mb-8">{truncate(entry.data.heroSubtext)}</p>
+            </div>
+            <a href={`/case-studies/${entry.id}`} class="w-full py-4 border border-on-surface-warm text-on-surface-warm font-label-button uppercase hover:bg-on-surface-warm hover:text-surface-primary transition-all text-center">READ FULL CASE STUDY</a>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex items-center justify-between mt-8">
+        <div id="ledger-dots" class="flex items-center gap-2"></div>
+        <div class="flex gap-3">
+          <button id="ledger-prev" class="p-3 border border-muted-silver/30 hover:border-accent-performance hover:text-accent-performance transition-colors" aria-label="Previous case study">
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+          </button>
+          <button id="ledger-next" class="p-3 border border-muted-silver/30 hover:border-accent-performance hover:text-accent-performance transition-colors" aria-label="Next case study">
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us: objection handling, new -->
+  <section id="why-us" class="py-24 md:py-40 px-8 md:px-16 bg-surface-secondary border-t border-muted-silver/20">
+    <div class="mb-16 max-w-2xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4">WHY_OPENRATELAB</span>
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase leading-none">WHY BRANDS<br/>WORK WITH US.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0 border-t border-muted-silver/20">
+      <div class="py-10 md:border-r border-muted-silver/20 md:pr-16 border-b border-muted-silver/20">
+        <h3 class="font-headline-md text-headline-md uppercase mb-4">DATA-LED, NOT VIBES</h3>
+        <p class="font-body-md text-body-md text-muted-silver">Every case study cites real metrics: open rates, revenue attribution, flow counts. Not "we grew your revenue."</p>
+      </div>
+      <div class="py-10 md:pl-16 border-b border-muted-silver/20">
+        <h3 class="font-headline-md text-headline-md uppercase mb-4">KLAVIYO SPECIALISTS</h3>
+        <p class="font-body-md text-body-md text-muted-silver">Not generalists. Shopify and Klaviyo is the whole focus, not one channel among many.</p>
+      </div>
+      <div class="py-10 md:border-r border-muted-silver/20 md:pr-16 border-b md:border-b-0 border-muted-silver/20">
+        <h3 class="font-headline-md text-headline-md uppercase mb-4">COPY IS THE PRODUCT</h3>
+        <p class="font-body-md text-body-md text-muted-silver">Copy quality is a core proof point, not an afterthought. Every line models what we sell.</p>
+      </div>
+      <div class="py-10 md:pl-16">
+        <h3 class="font-headline-md text-headline-md uppercase mb-4">NO OBLIGATION AUDIT</h3>
+        <p class="font-body-md text-body-md text-muted-silver">Free, no pitch attached. You get a written breakdown whether or not you ever work with us.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="py-24 md:py-60 px-8 md:px-16 text-center pixel-grid">
     <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">DEPLOYMENT_FINAL_PHASE</span>
@@ -509,6 +616,52 @@ const jsonLd = [
     <a href="#contact" class="inline-block bg-on-surface-warm text-surface-primary px-8 py-6 md:px-16 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.1em] md:tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
       GET A FREE AUDIT
     </a>
+  </section>
+
+  <!-- ROI Calculator, new -->
+  <section id="calculator" class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-t border-muted-silver/20">
+    <div class="mb-16 max-w-2xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4">REVENUE_PROJECTION</span>
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase leading-none">WHAT'S YOUR EMAIL<br/>REVENUE GAP?</h2>
+      <p class="font-body-md text-body-md text-muted-silver mt-6">Fill in your numbers to see what closing the gap could be worth.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div class="space-y-12">
+        <div>
+          <div class="flex justify-between items-baseline mb-4">
+            <label class="font-label-technical text-label-technical text-muted-silver uppercase">MONTHLY STORE REVENUE</label>
+            <span id="calc-revenue-display" class="font-label-technical text-label-technical text-accent-performance">$50,000</span>
+          </div>
+          <input type="range" id="calc-revenue" min="5000" max="500000" step="5000" value="50000" class="w-full accent-accent-performance"/>
+        </div>
+        <div>
+          <div class="flex justify-between items-baseline mb-4">
+            <label class="font-label-technical text-label-technical text-muted-silver uppercase">CURRENT EMAIL ATTRIBUTION</label>
+            <span id="calc-attribution-display" class="font-label-technical text-label-technical text-accent-performance">10%</span>
+          </div>
+          <input type="range" id="calc-attribution" min="0" max="40" step="1" value="10" class="w-full accent-accent-performance"/>
+        </div>
+        <div class="pt-4 border-t border-muted-silver/20">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-2">CURRENT MONTHLY EMAIL REVENUE</span>
+          <span id="calc-current-revenue" class="font-headline-md text-headline-md md:text-[40px] font-bold leading-none break-all">$5,000/mo</span>
+        </div>
+      </div>
+      <div class="border border-muted-silver/20 p-10">
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-6">TARGET ATTRIBUTION</span>
+        <div class="flex gap-3 mb-10">
+          <button type="button" class="calc-scenario-btn flex-1 py-3 border border-muted-silver/30 font-label-button uppercase text-sm hover:border-accent-performance transition-colors" data-pct="20">20%</button>
+          <button type="button" class="calc-scenario-btn flex-1 py-3 border border-muted-silver/30 font-label-button uppercase text-sm hover:border-accent-performance transition-colors" data-pct="25">25%</button>
+          <button type="button" class="calc-scenario-btn flex-1 py-3 border border-accent-performance bg-accent-performance text-on-surface-warm font-label-button uppercase text-sm transition-colors" data-pct="30">30%+</button>
+        </div>
+        <p class="font-body-md text-body-md text-muted-silver mb-2">Reaching <span id="calc-target-pct" class="text-on-surface-warm font-semibold">30%+</span> attribution — what we typically deliver — would mean:</p>
+        <span id="calc-target-revenue" class="font-headline-md text-headline-md md:text-[40px] font-bold text-accent-performance leading-none block mb-2 break-all">$15,000/mo</span>
+        <p class="font-body-md text-body-md text-muted-silver mb-8"><span id="calc-delta" class="text-on-surface-warm font-semibold">+$10,000/mo</span> more than where you are today.</p>
+        <a href="#contact" class="block text-center w-full bg-on-surface-warm text-surface-primary py-5 font-label-button uppercase tracking-widest hover:bg-accent-performance hover:text-on-surface-warm transition-all">
+          GET A FREE AUDIT
+        </a>
+      </div>
+    </div>
+    <p class="font-label-technical text-label-technical text-muted-silver/60 mt-8 max-w-2xl">This calculator is a planning tool based on outcomes from accounts we manage, not a guarantee of results. See the <a href="/case-studies/dtc-brand-attribution-system" class="underline hover:text-accent-performance transition-colors">30%+ attribution case study →</a></p>
   </section>
 
   <!-- FAQ Section -->
@@ -552,6 +705,29 @@ const jsonLd = [
           </summary>
           <p class="font-body-lg text-body-lg text-muted-silver pb-8 max-w-2xl">We scope each engagement after the audit. Account size, send volume, and whether you need full management or copy-only support all affect scope. The audit is always the right starting point. Book one and we'll give you a straight answer on what your account needs.</p>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Magnet, new -->
+  <section id="lead-magnet" class="py-24 md:py-40 px-8 md:px-16 bg-surface-secondary border-t border-muted-silver/20">
+    <div class="grid grid-cols-12 gap-gutter items-center">
+      <div class="col-span-12 md:col-span-7 mb-10 md:mb-0">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4">FREE_RESOURCE</span>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase leading-none mb-6">THE KLAVIYO<br/>AUDIT CHECKLIST.</h2>
+        <p class="font-body-md text-body-md text-muted-silver max-w-xl">The exact checklist we run through on every account audit. Flow architecture, list health, deliverability, and more. Free, no obligation.</p>
+      </div>
+      <div class="col-span-12 md:col-span-5">
+        <form name="lead-magnet" method="POST" data-netlify="true" netlify-honeypot="bot-field-lm" class="flex flex-col sm:flex-row gap-4">
+          <input type="hidden" name="form-name" value="lead-magnet"/>
+          <p class="hidden">
+            <label>Don't fill this out: <input name="bot-field-lm"/></label>
+          </p>
+          <input type="email" name="email" required placeholder="your@email.com" class="flex-1 bg-transparent border border-muted-silver/30 px-4 py-4 font-body-md text-body-md text-on-surface-warm placeholder-muted-silver/40 focus:border-accent-performance focus:outline-none transition-colors"/>
+          <button type="submit" class="bg-accent-performance text-on-surface-warm px-8 py-4 font-label-button uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap">
+            GET IT FREE
+          </button>
+        </form>
       </div>
     </div>
   </section>
@@ -603,7 +779,10 @@ const jsonLd = [
   <!--
     Contact Section — form markup/fields ported faithfully, including the
     Netlify Forms detection attributes (data-netlify, hidden form-name
-    input, netlify-honeypot). AJAX submit handler wired below.
+    input, netlify-honeypot). AJAX submit handler wired below. Enhanced
+    with 6 qualifying fields (previously scoped for a separate /audit/
+    page, which was dropped in favor of enriching this form directly) so
+    submissions carry zero-party data instead of just an open message.
   -->
   <section id="contact" class="py-24 md:py-40 px-8 md:px-16 bg-surface-secondary border-t border-muted-silver/20">
     <div class="grid grid-cols-12 gap-gutter">
@@ -642,9 +821,58 @@ const jsonLd = [
             <label class="font-label-technical text-label-technical text-muted-silver uppercase mb-2 block">BRAND / STORE URL</label>
             <input type="text" name="brand" placeholder="mystore.com" class="w-full bg-transparent border border-muted-silver/30 px-4 py-4 font-body-md text-body-md text-on-surface-warm placeholder-muted-silver/40 focus:border-accent-performance focus:outline-none transition-colors"/>
           </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="font-label-technical text-label-technical text-muted-silver uppercase mb-2 block">CURRENT EMAIL PLATFORM</label>
+              <select name="esp" class="w-full bg-transparent border border-muted-silver/30 px-4 py-4 font-body-md text-body-md text-on-surface-warm focus:border-accent-performance focus:outline-none transition-colors">
+                <option value="" class="bg-surface-secondary">Select one</option>
+                <option value="Klaviyo" class="bg-surface-secondary">Klaviyo</option>
+                <option value="Another ESP" class="bg-surface-secondary">Another ESP</option>
+                <option value="None yet" class="bg-surface-secondary">None yet</option>
+              </select>
+            </div>
+            <div>
+              <label class="font-label-technical text-label-technical text-muted-silver uppercase mb-2 block">STORE PLATFORM</label>
+              <select name="platform" class="w-full bg-transparent border border-muted-silver/30 px-4 py-4 font-body-md text-body-md text-on-surface-warm focus:border-accent-performance focus:outline-none transition-colors">
+                <option value="" class="bg-surface-secondary">Select one</option>
+                <option value="Shopify" class="bg-surface-secondary">Shopify</option>
+                <option value="WooCommerce" class="bg-surface-secondary">WooCommerce</option>
+                <option value="Other" class="bg-surface-secondary">Other</option>
+              </select>
+            </div>
+          </div>
           <div>
-            <label class="font-label-technical text-label-technical text-muted-silver uppercase mb-2 block">MESSAGE</label>
-            <textarea name="message" rows="4" placeholder="What's your biggest email challenge right now?" class="w-full bg-transparent border border-muted-silver/30 px-4 py-4 font-body-md text-body-md text-on-surface-warm placeholder-muted-silver/40 focus:border-accent-performance focus:outline-none transition-colors resize-none"></textarea>
+            <label class="font-label-technical text-label-technical text-muted-silver uppercase mb-2 block">MONTHLY EMAIL REVENUE / LIST SIZE</label>
+            <select name="revenue_range" class="w-full bg-transparent border border-muted-silver/30 px-4 py-4 font-body-md text-body-md text-on-surface-warm focus:border-accent-performance focus:outline-none transition-colors">
+              <option value="" class="bg-surface-secondary">Select one</option>
+              <option value="Under $10K/mo" class="bg-surface-secondary">Under $10K/mo</option>
+              <option value="$10K-$50K/mo" class="bg-surface-secondary">$10K–$50K/mo</option>
+              <option value="$50K+/mo" class="bg-surface-secondary">$50K+/mo</option>
+            </select>
+          </div>
+          <div>
+            <label class="font-label-technical text-label-technical text-muted-silver uppercase mb-2 block">BIGGEST CHALLENGE (SELECT ALL THAT APPLY)</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <label class="flex items-center gap-2 font-body-md text-body-md text-muted-silver"><input type="checkbox" name="challenge" value="Low open rates" class="accent-accent-performance"/> Low open rates</label>
+              <label class="flex items-center gap-2 font-body-md text-body-md text-muted-silver"><input type="checkbox" name="challenge" value="Not enough flows" class="accent-accent-performance"/> Not enough flows</label>
+              <label class="flex items-center gap-2 font-body-md text-body-md text-muted-silver"><input type="checkbox" name="challenge" value="No time to manage it" class="accent-accent-performance"/> No time to manage it</label>
+              <label class="flex items-center gap-2 font-body-md text-body-md text-muted-silver"><input type="checkbox" name="challenge" value="Deliverability issues" class="accent-accent-performance"/> Deliverability issues</label>
+              <label class="flex items-center gap-2 font-body-md text-body-md text-muted-silver"><input type="checkbox" name="challenge" value="Weak copy" class="accent-accent-performance"/> Weak copy</label>
+              <label class="flex items-center gap-2 font-body-md text-body-md text-muted-silver"><input type="checkbox" name="challenge" value="Don't know where to start" class="accent-accent-performance"/> Don't know where to start</label>
+            </div>
+          </div>
+          <div>
+            <label class="font-label-technical text-label-technical text-muted-silver uppercase mb-2 block">TIMELINE</label>
+            <select name="timeline" class="w-full bg-transparent border border-muted-silver/30 px-4 py-4 font-body-md text-body-md text-on-surface-warm focus:border-accent-performance focus:outline-none transition-colors">
+              <option value="" class="bg-surface-secondary">Select one</option>
+              <option value="ASAP" class="bg-surface-secondary">ASAP</option>
+              <option value="Next 1-3 months" class="bg-surface-secondary">Next 1–3 months</option>
+              <option value="Just exploring" class="bg-surface-secondary">Just exploring</option>
+            </select>
+          </div>
+          <div>
+            <label class="font-label-technical text-label-technical text-muted-silver uppercase mb-2 block">ANYTHING ELSE?</label>
+            <textarea name="message" rows="4" placeholder="Anything else we should know?" class="w-full bg-transparent border border-muted-silver/30 px-4 py-4 font-body-md text-body-md text-on-surface-warm placeholder-muted-silver/40 focus:border-accent-performance focus:outline-none transition-colors resize-none"></textarea>
           </div>
           <button type="submit" class="w-full bg-accent-performance text-on-surface-warm py-5 font-label-button uppercase tracking-widest hover:brightness-110 transition-all">
             REQUEST FREE AUDIT
@@ -682,6 +910,11 @@ const jsonLd = [
               name: formData.get('name'),
               email: formData.get('email'),
               service: formData.get('brand'),
+              esp: formData.get('esp'),
+              platform: formData.get('platform'),
+              revenueRange: formData.get('revenue_range'),
+              challenge: formData.getAll('challenge').join(', '),
+              timeline: formData.get('timeline'),
               message: formData.get('message'),
             }),
           }).catch(() => {});
@@ -701,6 +934,101 @@ const jsonLd = [
             });
         });
       }
+    })();
+
+    // Lead magnet form — same AJAX pattern as the main contact form, but
+    // email-only. /api/contact only requires `email` (name/message are
+    // optional there specifically so this lighter form can reuse it).
+    (() => {
+      const leadForm = document.querySelector('form[name="lead-magnet"]');
+      if (leadForm) {
+        leadForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const btn = leadForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+          const orig = btn.textContent;
+          btn.textContent = 'SENDING...';
+          btn.disabled = true;
+
+          const formData = new FormData(leadForm as HTMLFormElement);
+          const netlifyCapture = fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+          });
+          const emailSend = fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: formData.get('email') }),
+          }).catch(() => {});
+
+          Promise.all([netlifyCapture, emailSend])
+            .then(([r]) => {
+              if (r.ok) {
+                leadForm.innerHTML = '<p class="font-label-technical text-label-technical text-accent-performance uppercase py-4 tracking-widest">CHECK YOUR INBOX SHORTLY.</p>';
+              } else {
+                btn.textContent = orig;
+                btn.disabled = false;
+              }
+            })
+            .catch(() => {
+              btn.textContent = orig;
+              btn.disabled = false;
+            });
+        });
+      }
+    })();
+
+    // ROI calculator: live revenue-gap projection. Pure arithmetic, no
+    // network calls — revenue * attribution% = current, revenue *
+    // targetPct% = target, delta = target - current.
+    (() => {
+      const revenueInput = document.getElementById('calc-revenue') as HTMLInputElement;
+      const attributionInput = document.getElementById('calc-attribution') as HTMLInputElement;
+      const revenueDisplay = document.getElementById('calc-revenue-display');
+      const attributionDisplay = document.getElementById('calc-attribution-display');
+      const currentRevenueEl = document.getElementById('calc-current-revenue');
+      const targetPctEl = document.getElementById('calc-target-pct');
+      const targetRevenueEl = document.getElementById('calc-target-revenue');
+      const deltaEl = document.getElementById('calc-delta');
+      const scenarioBtns = document.querySelectorAll<HTMLButtonElement>('.calc-scenario-btn');
+      if (!revenueInput || !attributionInput || !revenueDisplay || !attributionDisplay || !currentRevenueEl || !targetPctEl || !targetRevenueEl || !deltaEl || !scenarioBtns.length) return;
+
+      let targetPct = 30;
+
+      const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+
+      const recalc = () => {
+        const revenue = parseFloat(revenueInput.value);
+        const attribution = parseFloat(attributionInput.value);
+        revenueDisplay.textContent = fmt(revenue);
+        attributionDisplay.textContent = attribution + '%';
+
+        const currentRevenue = revenue * (attribution / 100);
+        currentRevenueEl.textContent = fmt(currentRevenue) + '/mo';
+
+        const targetRevenue = revenue * (targetPct / 100);
+        const delta = Math.max(0, targetRevenue - currentRevenue);
+        targetPctEl.textContent = targetPct + '%' + (targetPct === 30 ? '+' : '');
+        targetRevenueEl.textContent = fmt(targetRevenue) + '/mo';
+        deltaEl.textContent = '+' + fmt(delta) + '/mo';
+      };
+
+      revenueInput.addEventListener('input', recalc);
+      attributionInput.addEventListener('input', recalc);
+      scenarioBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          targetPct = parseFloat(btn.dataset.pct || '30');
+          scenarioBtns.forEach((b) => {
+            b.classList.remove('border-accent-performance', 'bg-accent-performance', 'text-on-surface-warm');
+            b.classList.add('border-muted-silver/30');
+          });
+          btn.classList.remove('border-muted-silver/30');
+          btn.classList.add('border-accent-performance', 'bg-accent-performance', 'text-on-surface-warm');
+          recalc();
+        });
+      });
+
+      recalc();
     })();
 
     // Smooth-scroll for in-page anchor links, offset for the fixed nav.
