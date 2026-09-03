@@ -1,0 +1,49 @@
+name: Refine homepage motion v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/refine-homepage-motion-v2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-and-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.12.0'
+          cache: npm
+          cache-dependency-path: astro-site/package-lock.json
+
+      - name: Apply motion refinement
+        run: python .github/scripts/refine_homepage_motion_v2.py
+
+      - name: Diff QA
+        run: |
+          git diff --check
+          grep -q "Motion v2 deliberately avoids flashes" astro-site/src/pages/index.astro
+          grep -q "Homepage motion v2 — calm, continuous, no snap-back" astro-site/src/styles/global.css
+
+      - name: Install
+        working-directory: astro-site
+        run: npm ci
+
+      - name: Build
+        working-directory: astro-site
+        run: npm run build
+
+      - name: Commit refined motion
+        run: |
+          git config user.name "OpenRateLab QA Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add astro-site/src/pages/index.astro astro-site/src/styles/global.css
+          git commit -m "Refine homepage motion timing and continuity"
+          git push
