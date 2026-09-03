@@ -1336,10 +1336,10 @@ const jsonLd = [
       if (!('IntersectionObserver' in window) || !('animate' in Element.prototype)) return;
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      const isMobile = window.matchMedia('(max-width: 767px)').matches;
-      const hasViewTimeline = typeof CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('animation-timeline: view()');
-      if (!isMobile && hasViewTimeline) return;
-
+      // Use one choreography engine everywhere. Some desktop browsers report
+      // view-timeline support while failing to advance the actual animation,
+      // which left the desktop page effectively static. The JS observer / WAAPI
+      // path is consistent across desktop and mobile, so it is authoritative.
       document.documentElement.classList.add('orl-motion-fallback');
 
       // The original reveal system and the newer assembly system must never run
