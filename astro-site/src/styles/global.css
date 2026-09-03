@@ -849,7 +849,25 @@
       position: relative;
     }
 
+    /* Scroll animation owns transform while the timeline is active; these
+       important hover transforms deliberately take precedence afterwards so
+       the original interactive lift is preserved. */
+    #services > div:last-child > div:hover {
+      transform: translateY(-4px) !important;
+    }
+
+    #ledger .ledger-slide:hover,
+    #lead-magnet + section .grid > a:hover {
+      transform: translateY(-3px) !important;
+    }
+
     @media (max-width: 767px) {
+      #services > div:last-child > div:hover,
+      #ledger .ledger-slide:hover,
+      #lead-magnet + section .grid > a:hover {
+        transform: none !important;
+      }
+
       #process > div:last-child::before {
         transform-origin: center top;
         animation-name: orl-process-rail-y;
