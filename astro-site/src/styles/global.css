@@ -161,3 +161,923 @@
   --text-headline-md--line-height: 40px;
   --text-headline-md--font-weight: 600;
 }
+
+/* Homepage hierarchy pass — phase 1.
+   Keep the existing brutalist/editorial language, but give adjacent sections
+   distinct surface levels and stop every content group reading like one table. */
+
+#diagnosis {
+  background: #0D0D0D;
+}
+
+#diagnosis > div:last-child {
+  gap: 24px;
+  border: 0;
+}
+
+#diagnosis > div:last-child > div {
+  position: relative;
+  border: 1px solid rgba(163, 163, 163, 0.18) !important;
+  background: #131313;
+}
+
+#diagnosis > div:last-child > div:first-child {
+  background: #0E0E0E;
+}
+
+#diagnosis > div:last-child > div:first-child li {
+  color: rgba(163, 163, 163, 0.78);
+}
+
+#diagnosis > div:last-child > div:last-child {
+  background: #201F1F;
+  border-color: rgba(230, 57, 70, 0.42) !important;
+}
+
+#diagnosis > div:last-child > div:last-child::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #E63946;
+}
+
+#services {
+  background: #131313;
+  border-top: 1px solid rgba(163, 163, 163, 0.10);
+  border-bottom: 1px solid rgba(163, 163, 163, 0.10);
+}
+
+#services > div:last-child {
+  gap: 16px;
+  border: 0;
+}
+
+#services > div:last-child > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(163, 163, 163, 0.22) !important;
+  background: #1C1B1B;
+  transition: background-color 180ms linear, border-color 180ms linear, transform 180ms linear;
+}
+
+#services > div:last-child > div::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 56px;
+  height: 2px;
+  background: #E63946;
+  transition: width 180ms linear;
+}
+
+#services > div:last-child > div > p {
+  flex: 1;
+}
+
+#services > div:last-child > div:hover {
+  background: #201F1F;
+  border-color: rgba(230, 57, 70, 0.50) !important;
+  transform: translateY(-4px);
+}
+
+#services > div:last-child > div:hover::before {
+  width: calc(100% + 2px);
+}
+
+#process {
+  background: #0D0D0D;
+}
+
+#process > div:last-child {
+  position: relative;
+  gap: 0;
+  border: 0;
+  padding-top: 28px;
+}
+
+#process > div:last-child::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(163, 163, 163, 0.28);
+}
+
+#process > div:last-child > div {
+  position: relative;
+  border: 0 !important;
+  background: transparent;
+  padding: 28px 32px 12px 0;
+}
+
+#process > div:last-child > div::before {
+  content: "";
+  position: absolute;
+  top: -27px;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  background: #0D0D0D;
+  border: 2px solid #E63946;
+}
+
+#process > div:last-child > div > span:first-child {
+  display: inline-block;
+  color: #E63946;
+  margin-bottom: 20px;
+}
+
+/* Homepage hierarchy pass — phase 2.
+   Data/proof areas use denser graphite panels; editorial rows remain open. */
+
+#results > div:last-child {
+  gap: 16px;
+}
+
+#results > div:last-child > div {
+  position: relative;
+  padding: 32px;
+  background: #1C1B1B;
+  border: 1px solid rgba(163, 163, 163, 0.20) !important;
+}
+
+#results > div:last-child > div::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 40px;
+  height: 2px;
+  background: #E63946;
+}
+
+#results > div:last-child > div + div {
+  padding-left: 32px !important;
+}
+
+#testimonials > div:last-child {
+  display: grid;
+  gap: 16px;
+  border-top: 0;
+}
+
+#testimonials > div:last-child > div {
+  padding: 48px 32px;
+  background: #1C1B1B;
+  border: 1px solid rgba(163, 163, 163, 0.18) !important;
+  transition: background-color 180ms linear, border-color 180ms linear;
+}
+
+#testimonials > div:last-child > div:hover {
+  background: #201F1F;
+  border-color: rgba(230, 57, 70, 0.38) !important;
+}
+
+#testimonials img {
+  width: 56px;
+  height: 56px;
+}
+
+#ledger .ledger-slide {
+  position: relative;
+  background: #1C1B1B;
+  border-color: rgba(163, 163, 163, 0.24) !important;
+  transition: background-color 180ms linear, border-color 180ms linear, transform 180ms linear;
+}
+
+#ledger .ledger-slide::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 72px;
+  height: 2px;
+  background: rgba(230, 57, 70, 0.78);
+}
+
+#ledger .ledger-slide:hover {
+  background: #201F1F;
+  border-color: rgba(230, 57, 70, 0.42) !important;
+  transform: translateY(-3px);
+}
+
+#why-us > div:last-child {
+  gap: 16px;
+  border-top: 0;
+}
+
+#why-us > div:last-child > div {
+  position: relative;
+  padding: 40px;
+  background: #1C1B1B;
+  border: 1px solid rgba(163, 163, 163, 0.18) !important;
+}
+
+#why-us > div:last-child > div::before {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(163, 163, 163, 0.42);
+}
+
+#why-us > div:last-child > div:nth-child(1)::before { content: "01"; }
+#why-us > div:last-child > div:nth-child(2)::before { content: "02"; }
+#why-us > div:last-child > div:nth-child(3)::before { content: "03"; }
+#why-us > div:last-child > div:nth-child(4)::before { content: "04"; }
+
+#calculator > div:nth-child(2) > div:first-child {
+  padding: 40px;
+  background: #131313;
+  border: 1px solid rgba(163, 163, 163, 0.18);
+}
+
+#calculator > div:nth-child(2) > div:last-child {
+  position: relative;
+  background: #201F1F;
+  border-color: rgba(230, 57, 70, 0.42) !important;
+}
+
+#calculator > div:nth-child(2) > div:last-child::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 3px;
+  background: #E63946;
+}
+
+/* Homepage hierarchy pass — phase 3.
+   Finish the scroll rhythm without turning editorial sections into cards. */
+
+#expertise {
+  background: #131313;
+  border-top: 1px solid rgba(163, 163, 163, 0.10);
+  border-bottom: 1px solid rgba(163, 163, 163, 0.10);
+}
+
+#calculator + section {
+  background: #131313;
+}
+
+#lead-magnet {
+  background: #1C1B1B;
+}
+
+#lead-magnet > div {
+  position: relative;
+  padding: 48px;
+  background: #201F1F;
+  border: 1px solid rgba(163, 163, 163, 0.20);
+}
+
+#lead-magnet > div::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 72px;
+  height: 2px;
+  background: #E63946;
+}
+
+#lead-magnet input[type="email"] {
+  background: #0D0D0D;
+}
+
+#lead-magnet + section {
+  background: #0D0D0D;
+}
+
+#lead-magnet + section .grid > a {
+  position: relative;
+  background: #131313 !important;
+  border-color: rgba(163, 163, 163, 0.22) !important;
+  transition: background-color 180ms linear, border-color 180ms linear, transform 180ms linear;
+}
+
+#lead-magnet + section .grid > a:hover {
+  background: #1C1B1B !important;
+  border-color: rgba(230, 57, 70, 0.48) !important;
+  transform: translateY(-3px);
+}
+
+#contact {
+  background: #131313;
+}
+
+#contact > div > div:last-child {
+  position: relative;
+  padding: 40px;
+  background: #1C1B1B;
+  border: 1px solid rgba(163, 163, 163, 0.20);
+}
+
+#contact > div > div:last-child::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 3px;
+  background: #E63946;
+}
+
+#contact input,
+#contact select,
+#contact textarea {
+  background-color: #131313;
+}
+
+@media (max-width: 767px) {
+  #diagnosis > div:last-child,
+  #services > div:last-child {
+    gap: 16px;
+  }
+
+  #services > div:last-child > div:hover,
+  #ledger .ledger-slide:hover,
+  #lead-magnet + section .grid > a:hover {
+    transform: none;
+  }
+
+  #process > div:last-child {
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  #process > div:last-child::before {
+    top: 4px;
+    bottom: 0;
+    left: 6px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+
+  #process > div:last-child > div {
+    padding: 0 0 48px 40px;
+  }
+
+  #process > div:last-child > div:last-child {
+    padding-bottom: 0;
+  }
+
+  #process > div:last-child > div::before {
+    top: 2px;
+    left: 0;
+  }
+
+  #results > div:last-child {
+    gap: 12px;
+  }
+
+  #results > div:last-child > div,
+  #results > div:last-child > div + div,
+  #testimonials > div:last-child > div,
+  #why-us > div:last-child > div,
+  #calculator > div:nth-child(2) > div:first-child,
+  #lead-magnet > div,
+  #contact > div > div:last-child {
+    padding: 28px !important;
+  }
+
+  #testimonials > div:last-child {
+    gap: 12px;
+  }
+
+  #testimonials img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Homepage motion language — progressive enhancement only.
+   Modern browsers get scroll-driven assembly; unsupported browsers keep the
+   exact static design. No content is hidden by these rules. */
+
+@keyframes orl-frame-assemble {
+  0% {
+    clip-path: inset(0 100% 100% 0);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  76% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 0;
+  }
+}
+
+@keyframes orl-panel-enter {
+  0% {
+    transform: translateY(20px) scale(0.985);
+    filter: brightness(0.82);
+  }
+  70% {
+    transform: translateY(0) scale(1.006);
+    filter: brightness(1.04);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes orl-rail-shoot-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes orl-rail-shoot-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes orl-process-rail-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes orl-process-rail-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes orl-process-node {
+  0% { transform: scale(0); background: #E63946; }
+  60% { transform: scale(1.28); background: #E63946; }
+  100% { transform: scale(1); background: #0D0D0D; }
+}
+
+@keyframes orl-process-content {
+  from { opacity: 0.22; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orl-metric-impact {
+  0% { transform: scale(0.92); opacity: 0.35; }
+  68% { transform: scale(1.045); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes orl-signal-travel {
+  0% { left: -88px; opacity: 0; }
+  12% { opacity: 1; }
+  82% { opacity: 1; }
+  100% { left: calc(100% + 88px); opacity: 0; }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* The old JS wipe remains as a fallback for browsers without scroll
+       timelines. Where heavy assembly exists, neutralize the whole-grid wipe
+       so the individual panels become the motion focus. */
+    #services .reveal-wipe,
+    #testimonials .reveal-wipe {
+      clip-path: none !important;
+    }
+
+    /* Shared construction tracer: a bright temporary frame draws around the
+       panel, then disappears and leaves the normal muted border underneath. */
+    #diagnosis > div:last-child > div,
+    #services > div:last-child > div,
+    #results > div:last-child > div,
+    #testimonials > div:last-child > div,
+    #ledger .ledger-slide,
+    #why-us > div:last-child > div,
+    #calculator > div:nth-child(2) > div,
+    #lead-magnet > div,
+    #lead-magnet + section .grid > a,
+    #contact > div > div:last-child {
+      animation-name: orl-panel-enter;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: view(block);
+      animation-range: entry 8% cover 34%;
+    }
+
+    #diagnosis > div:last-child > div::after,
+    #services > div:last-child > div::after,
+    #results > div:last-child > div::after,
+    #testimonials > div:last-child > div::after,
+    #ledger .ledger-slide::after,
+    #why-us > div:last-child > div::after,
+    #calculator > div:nth-child(2) > div::after,
+    #lead-magnet > div::after,
+    #lead-magnet + section .grid > a::after,
+    #contact > div > div:last-child::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: 4;
+      pointer-events: none;
+      border: 1px solid rgba(249, 249, 247, 0.72);
+      clip-path: inset(0 100% 100% 0);
+      opacity: 0;
+      animation-name: orl-frame-assemble;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: view(block);
+      animation-range: entry 7% cover 30%;
+    }
+
+    /* Card staggering. On one-row groups the construction wave moves across
+       the screen rather than every panel assembling at the exact same frame. */
+    #services > div:last-child > div:nth-child(1),
+    #services > div:last-child > div:nth-child(1)::after { animation-range: entry 6% cover 27%; }
+    #services > div:last-child > div:nth-child(2),
+    #services > div:last-child > div:nth-child(2)::after { animation-range: entry 10% cover 31%; }
+    #services > div:last-child > div:nth-child(3),
+    #services > div:last-child > div:nth-child(3)::after { animation-range: entry 14% cover 35%; }
+    #services > div:last-child > div:nth-child(4),
+    #services > div:last-child > div:nth-child(4)::after { animation-range: entry 18% cover 39%; }
+
+    #results > div:last-child > div:nth-child(1),
+    #results > div:last-child > div:nth-child(1)::after { animation-range: entry 8% cover 29%; }
+    #results > div:last-child > div:nth-child(2),
+    #results > div:last-child > div:nth-child(2)::after { animation-range: entry 13% cover 34%; }
+    #results > div:last-child > div:nth-child(3),
+    #results > div:last-child > div:nth-child(3)::after { animation-range: entry 18% cover 39%; }
+
+    #why-us > div:last-child > div:nth-child(1),
+    #why-us > div:last-child > div:nth-child(1)::after { animation-range: entry 7% cover 28%; }
+    #why-us > div:last-child > div:nth-child(2),
+    #why-us > div:last-child > div:nth-child(2)::after,
+    #why-us > div:last-child > div:nth-child(3),
+    #why-us > div:last-child > div:nth-child(3)::after { animation-range: entry 13% cover 34%; }
+    #why-us > div:last-child > div:nth-child(4),
+    #why-us > div:last-child > div:nth-child(4)::after { animation-range: entry 19% cover 40%; }
+
+    #lead-magnet + section .grid > a:nth-child(1),
+    #lead-magnet + section .grid > a:nth-child(1)::after { animation-range: entry 8% cover 30%; }
+    #lead-magnet + section .grid > a:nth-child(2),
+    #lead-magnet + section .grid > a:nth-child(2)::after { animation-range: entry 14% cover 36%; }
+    #lead-magnet + section .grid > a:nth-child(3),
+    #lead-magnet + section .grid > a:nth-child(3)::after { animation-range: entry 20% cover 42%; }
+
+    /* Red rails are the recurring motion signal: frame first, then the red
+       performance line shoots in and locks into its final resting state. */
+    #services > div:last-child > div::before,
+    #results > div:last-child > div::before,
+    #ledger .ledger-slide::before,
+    #lead-magnet > div::before,
+    #calculator > div:nth-child(2) > div:last-child::before,
+    #contact > div > div:last-child::before {
+      transform-origin: left center;
+      animation-name: orl-rail-shoot-x;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      animation-timeline: view(block);
+      animation-range: entry 20% cover 38%;
+    }
+
+    #diagnosis > div:last-child > div:last-child::before {
+      transform-origin: center top;
+      animation-name: orl-rail-shoot-y;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      animation-timeline: view(block);
+      animation-range: entry 20% cover 40%;
+    }
+
+    /* Process becomes a literal deployment sequence: rail draws first, nodes
+       activate as the signal reaches them, and each step settles into place. */
+    #process > div:last-child {
+      view-timeline-name: --orl-process;
+      view-timeline-axis: block;
+    }
+
+    #process > div:last-child::before {
+      transform-origin: left center;
+      animation-name: orl-process-rail-x;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: --orl-process;
+      animation-range: entry 12% cover 54%;
+    }
+
+    #process > div:last-child > div {
+      animation-name: orl-process-content;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: --orl-process;
+    }
+
+    #process > div:last-child > div::before {
+      transform-origin: center;
+      animation-name: orl-process-node;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: --orl-process;
+    }
+
+    #process > div:last-child > div:nth-child(1),
+    #process > div:last-child > div:nth-child(1)::before { animation-range: entry 13% cover 25%; }
+    #process > div:last-child > div:nth-child(2),
+    #process > div:last-child > div:nth-child(2)::before { animation-range: entry 22% cover 34%; }
+    #process > div:last-child > div:nth-child(3),
+    #process > div:last-child > div:nth-child(3)::before { animation-range: entry 31% cover 43%; }
+    #process > div:last-child > div:nth-child(4),
+    #process > div:last-child > div:nth-child(4)::before { animation-range: entry 40% cover 52%; }
+
+    /* Metrics get a short mechanical impact after their surrounding frame has
+       assembled. This complements the existing JS count-up rather than
+       replacing it. */
+    #results span.font-display-xl-mobile,
+    #ledger .ledger-slide .font-display-xl-mobile,
+    #calculator #calc-target-revenue {
+      transform-origin: left center;
+      animation-name: orl-metric-impact;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: view(block);
+      animation-range: entry 22% cover 44%;
+    }
+
+    /* Occasional travelling red packet over long editorial rules. Repeating
+       the same motif only on proof/editorial separators keeps it special. */
+    #results .rule-line,
+    #testimonials .rule-line,
+    #expertise .border-t {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #results .rule-line::after,
+    #testimonials .rule-line::after,
+    #expertise .border-t::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -88px;
+      width: 72px;
+      height: 1px;
+      background: #E63946;
+      opacity: 0;
+      pointer-events: none;
+      animation-name: orl-signal-travel;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: view(block);
+      animation-range: entry 12% cover 42%;
+    }
+
+    #calculator > div:nth-child(2) > div:first-child {
+      position: relative;
+    }
+
+    /* Scroll animation owns transform while the timeline is active; these
+       important hover transforms deliberately take precedence afterwards so
+       the original interactive lift is preserved. */
+    #services > div:last-child > div:hover {
+      transform: translateY(-4px) !important;
+    }
+
+    #ledger .ledger-slide:hover,
+    #lead-magnet + section .grid > a:hover {
+      transform: translateY(-3px) !important;
+    }
+
+    @media (max-width: 767px) {
+      #services > div:last-child > div:hover,
+      #ledger .ledger-slide:hover,
+      #lead-magnet + section .grid > a:hover {
+        transform: none !important;
+      }
+
+      #process > div:last-child::before {
+        transform-origin: center top;
+        animation-name: orl-process-rail-y;
+        animation-range: entry 10% cover 62%;
+      }
+
+      #process > div:last-child > div:nth-child(1),
+      #process > div:last-child > div:nth-child(1)::before { animation-range: entry 10% cover 23%; }
+      #process > div:last-child > div:nth-child(2),
+      #process > div:last-child > div:nth-child(2)::before { animation-range: entry 25% cover 38%; }
+      #process > div:last-child > div:nth-child(3),
+      #process > div:last-child > div:nth-child(3)::before { animation-range: entry 40% cover 53%; }
+      #process > div:last-child > div:nth-child(4),
+      #process > div:last-child > div:nth-child(4)::before { animation-range: entry 55% cover 68%; }
+    }
+  }
+}
+
+/* Accessibility: also neutralize the pre-existing JS reveal start states when
+   reduced motion is requested. The inline start values lose to !important,
+   so content is immediately visible with no scroll choreography. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-wipe {
+    clip-path: none !important;
+    transition: none !important;
+  }
+
+  .reveal-left {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .rule-line {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* Homepage motion v2 — calm, continuous, no snap-back.
+   This intentionally overrides the first motion pass rather than changing the
+   static design. Scroll progress remains the driver on capable desktop
+   browsers; fallback browsers use the matching JS choreography in index.astro. */
+@keyframes orl-frame-assemble {
+  0% { clip-path: inset(0 100% 100% 0); opacity: 0; }
+  18% { opacity: .24; }
+  78% { clip-path: inset(0 0 0 0); opacity: .38; }
+  100% { clip-path: inset(0 0 0 0); opacity: 0; }
+}
+
+@keyframes orl-panel-enter {
+  from { transform: translateY(12px); opacity: .82; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes orl-text-settle {
+  from { opacity: .52; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orl-process-node {
+  from { transform: scale(.72); opacity: .45; background: #0D0D0D; }
+  to { transform: scale(1); opacity: 1; background: #0D0D0D; }
+}
+
+@keyframes orl-process-content {
+  from { opacity: .5; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orl-metric-impact {
+  from { transform: translateY(6px) scale(.98); opacity: .58; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes orl-signal-travel {
+  0% { left: -88px; opacity: 0; }
+  16% { opacity: .55; }
+  82% { opacity: .55; }
+  100% { left: calc(100% + 88px); opacity: 0; }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* One motion system only. The older JS reveals are neutralized on browsers
+       where the view-timeline choreography owns the page. */
+    .reveal-wipe,
+    .reveal-left,
+    .rule-line {
+      clip-path: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    #diagnosis > div:last-child > div,
+    #services > div:last-child > div,
+    #results > div:last-child > div,
+    #testimonials > div:last-child > div,
+    #ledger .ledger-slide,
+    #why-us > div:last-child > div,
+    #calculator > div:nth-child(2) > div,
+    #lead-magnet > div,
+    #lead-magnet + section .grid > a,
+    #contact > div > div:last-child {
+      animation-range: entry 4% cover 46%;
+    }
+
+    #diagnosis > div:last-child > div::after,
+    #services > div:last-child > div::after,
+    #results > div:last-child > div::after,
+    #testimonials > div:last-child > div::after,
+    #ledger .ledger-slide::after,
+    #why-us > div:last-child > div::after,
+    #calculator > div:nth-child(2) > div::after,
+    #lead-magnet > div::after,
+    #lead-magnet + section .grid > a::after,
+    #contact > div > div:last-child::after {
+      border-color: rgba(249, 249, 247, .40);
+      animation-range: entry 2% cover 50%;
+    }
+
+    #services > div:last-child > div::before,
+    #results > div:last-child > div::before,
+    #ledger .ledger-slide::before,
+    #lead-magnet > div::before,
+    #calculator > div:nth-child(2) > div:last-child::before,
+    #contact > div > div:last-child::before,
+    #diagnosis > div:last-child > div:last-child::before {
+      animation-range: entry 12% cover 50%;
+    }
+
+    #process > div:last-child::before {
+      animation-range: entry 5% cover 68%;
+    }
+
+    #process > div:last-child > div:nth-child(1),
+    #process > div:last-child > div:nth-child(1)::before { animation-range: entry 10% cover 31%; }
+    #process > div:last-child > div:nth-child(2),
+    #process > div:last-child > div:nth-child(2)::before { animation-range: entry 24% cover 45%; }
+    #process > div:last-child > div:nth-child(3),
+    #process > div:last-child > div:nth-child(3)::before { animation-range: entry 38% cover 59%; }
+    #process > div:last-child > div:nth-child(4),
+    #process > div:last-child > div:nth-child(4)::before { animation-range: entry 52% cover 73%; }
+
+    #results span.font-display-xl-mobile,
+    #ledger .ledger-slide .font-display-xl-mobile,
+    #calculator #calc-target-revenue {
+      animation-range: entry 18% cover 50%;
+    }
+
+    #results .rule-line::after,
+    #testimonials .rule-line::after,
+    #expertise .border-t::after {
+      box-shadow: none;
+      animation-range: entry 8% cover 54%;
+    }
+
+    /* Text motion is deliberately subtle and slower than the frame. This gives
+       the page a composed editorial reveal instead of content flashing in. */
+    #diagnosis h2,
+    #services h2,
+    #process h2,
+    #expertise h2,
+    #testimonials h2,
+    #ledger h2,
+    #why-us h2,
+    #calculator h2,
+    #lead-magnet h2,
+    #lead-magnet + section h2,
+    #contact h2,
+    #diagnosis > div:first-child > span,
+    #process > div:first-child > span,
+    #why-us > div:first-child > span,
+    #calculator > div:first-child > span,
+    #lead-magnet > div span,
+    #contact > div > div:first-child > span {
+      animation-name: orl-text-settle;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: view(block);
+      animation-range: entry 8% cover 38%;
+    }
+
+    #diagnosis > div:last-child p,
+    #diagnosis > div:last-child li,
+    #services > div:last-child h3,
+    #services > div:last-child p,
+    #process > div:last-child h3,
+    #process > div:last-child p,
+    #why-us > div:last-child h3,
+    #why-us > div:last-child p,
+    #testimonials > div:last-child p,
+    #ledger .ledger-slide p,
+    #lead-magnet p,
+    #contact > div > div:first-child p {
+      animation-name: orl-text-settle;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: view(block);
+      animation-range: entry 12% cover 44%;
+    }
+
+    @media (max-width: 767px) {
+      #process > div:last-child::before {
+        animation-range: entry 4% cover 78%;
+      }
+    }
+  }
+}
