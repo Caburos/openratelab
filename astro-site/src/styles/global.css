@@ -292,13 +292,137 @@
   margin-bottom: 20px;
 }
 
+/* Homepage hierarchy pass — phase 2.
+   Data/proof areas use denser graphite panels; editorial rows remain open. */
+
+#results > div:last-child {
+  gap: 16px;
+}
+
+#results > div:last-child > div {
+  position: relative;
+  padding: 32px;
+  background: #1C1B1B;
+  border: 1px solid rgba(163, 163, 163, 0.20) !important;
+}
+
+#results > div:last-child > div::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 40px;
+  height: 2px;
+  background: #E63946;
+}
+
+#results > div:last-child > div + div {
+  padding-left: 32px !important;
+}
+
+#testimonials > div:last-child {
+  display: grid;
+  gap: 16px;
+  border-top: 0;
+}
+
+#testimonials > div:last-child > div {
+  padding: 48px 32px;
+  background: #1C1B1B;
+  border: 1px solid rgba(163, 163, 163, 0.18) !important;
+  transition: background-color 180ms linear, border-color 180ms linear;
+}
+
+#testimonials > div:last-child > div:hover {
+  background: #201F1F;
+  border-color: rgba(230, 57, 70, 0.38) !important;
+}
+
+#testimonials img {
+  width: 56px;
+  height: 56px;
+}
+
+#ledger .ledger-slide {
+  position: relative;
+  background: #1C1B1B;
+  border-color: rgba(163, 163, 163, 0.24) !important;
+  transition: background-color 180ms linear, border-color 180ms linear, transform 180ms linear;
+}
+
+#ledger .ledger-slide::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 72px;
+  height: 2px;
+  background: rgba(230, 57, 70, 0.78);
+}
+
+#ledger .ledger-slide:hover {
+  background: #201F1F;
+  border-color: rgba(230, 57, 70, 0.42) !important;
+  transform: translateY(-3px);
+}
+
+#why-us > div:last-child {
+  gap: 16px;
+  border-top: 0;
+}
+
+#why-us > div:last-child > div {
+  position: relative;
+  padding: 40px;
+  background: #1C1B1B;
+  border: 1px solid rgba(163, 163, 163, 0.18) !important;
+}
+
+#why-us > div:last-child > div::before {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(163, 163, 163, 0.42);
+}
+
+#why-us > div:last-child > div:nth-child(1)::before { content: "01"; }
+#why-us > div:last-child > div:nth-child(2)::before { content: "02"; }
+#why-us > div:last-child > div:nth-child(3)::before { content: "03"; }
+#why-us > div:last-child > div:nth-child(4)::before { content: "04"; }
+
+#calculator > div:nth-child(2) > div:first-child {
+  padding: 40px;
+  background: #131313;
+  border: 1px solid rgba(163, 163, 163, 0.18);
+}
+
+#calculator > div:nth-child(2) > div:last-child {
+  position: relative;
+  background: #201F1F;
+  border-color: rgba(230, 57, 70, 0.42) !important;
+}
+
+#calculator > div:nth-child(2) > div:last-child::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 3px;
+  background: #E63946;
+}
+
 @media (max-width: 767px) {
   #diagnosis > div:last-child,
   #services > div:last-child {
     gap: 16px;
   }
 
-  #services > div:last-child > div:hover {
+  #services > div:last-child > div:hover,
+  #ledger .ledger-slide:hover {
     transform: none;
   }
 
@@ -327,5 +451,26 @@
   #process > div:last-child > div::before {
     top: 2px;
     left: 0;
+  }
+
+  #results > div:last-child {
+    gap: 12px;
+  }
+
+  #results > div:last-child > div,
+  #results > div:last-child > div + div,
+  #testimonials > div:last-child > div,
+  #why-us > div:last-child > div,
+  #calculator > div:nth-child(2) > div:first-child {
+    padding: 28px !important;
+  }
+
+  #testimonials > div:last-child {
+    gap: 12px;
+  }
+
+  #testimonials img {
+    width: 48px;
+    height: 48px;
   }
 }
