@@ -1,7 +1,7 @@
 import { Handler } from "@netlify/functions";
 import { Resend } from "resend";
 
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL_TO ?? "uros@openratelab.com";
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL_TO ?? "hello@openratelab.com";
 const RESEND_KEY = process.env.RESEND_API_KEY;
 
 export const handler: Handler = async (event) => {
