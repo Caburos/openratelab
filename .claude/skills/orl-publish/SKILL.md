@@ -19,7 +19,22 @@ its slot turns out to be. Nothing gets drafted same-day-as-posting anymore.
 
 ### `/orl-publish --plan`
 
-Run once nightly (~23:30). Order matters — each step feeds the next:
+Run once nightly (~23:30).
+
+**Idempotency guard — check this before anything else:** read
+`socials/timing-intelligence/ready-to-publish.json`. If it exists with
+`status: "pending"` — regardless of what `date` it names — stop here, do
+nothing else, this is a no-op. `status: "pending"` means a post is still
+queued to fire (normally today, but `--fire` can be delayed if the machine
+was off), and planning a new day now would overwrite that file and lose
+the queued post before it ever went out. Only proceed past this check once
+the file doesn't exist, or its `status` is `"fired"` (that day's post is
+confirmed out, safe to plan the next one) or `"plan-failed"` (nothing to
+protect). This also naturally covers the case where a manual/dry-run
+planning pass already happened earlier the same day — the scheduled run
+sees `pending` and no-ops instead of redoing it.
+
+Order matters — each step feeds the next:
 
 1. **`/orl-timing --log-previous`** — reads today's post's real engagement
    (it's had most of a day to accumulate by now), logs it, marks its slot
