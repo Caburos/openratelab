@@ -11,3 +11,4 @@ recently or that already exists in `socials/seo-registry.json`.
 | Date | Mode | Topic | Angle | Target keyword | Folder | Status |
 |------|------|-------|-------|-----------------|--------|--------|
 | 2026-09-07 | blog-trend | Open rate high, click rate low | Diagnose as promise/payoff mismatch, not deliverability | high open rate low click rate email marketing | 2026-09-07-open-rate-high-click-rate-low | published (blog: https://openratelab.com/blog/high-open-rate-low-click-rate/, LinkedIn: posted 2026-09-07, see socials/linkedin-performance.json for exact time) |
+| 2026-09-08 | blog-trend | Open rate data accuracy / iOS MPP | Measurement accuracy, not campaign diagnosis (distinct from 09-07's post) | can you trust open rate data email tracking | 2026-09-08-open-rate-data-accuracy | drafted (DRY RUN of /orl-publish --plan) |

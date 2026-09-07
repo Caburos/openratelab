@@ -8,13 +8,17 @@
       "actual_post_time_tz": "CEST (UTC+2)",
       "post_url": null,
       "blog_url": "https://openratelab.com/blog/high-open-rate-low-click-rate/",
-      "analytics_checked_at": null,
-      "impressions": null,
-      "reactions": null,
-      "comments": null,
-      "shares": null,
-      "engagement_rate": null,
-      "notes": "First post from the pipeline. Ad hoc timing, not from the exploration rotation, since the timing-intelligence system didn't exist yet when this was posted. Not counted as a slot trial in timing-intelligence/state.json for that reason -- do not mark 21:30 as tried based on this entry alone."
+      "analytics_checked_at": "2026-09-07T22:18 CEST",
+      "reading_age_minutes": 42,
+      "impressions": 2,
+      "clicks": 0,
+      "click_through_rate": 0.0,
+      "reactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagement_rate": 0.0,
+      "engagement_rate_source": "LinkedIn's own 'Post performance' panel (Page posts -> Preview results -> Show all results), not manually recomputed -- their formula is authoritative and may weight fields (e.g. clicks) differently than a naive reactions+comments+shares/impressions calc.",
+      "notes": "DRY RUN reading, not a real nightly check. First post from the pipeline, ad hoc timing (not from the exploration rotation) since the timing-intelligence system didn't exist yet when this was posted -- do not count as a slot trial in timing-intelligence/state.json. Also far too immature (42 min old, 0 followers) to mean anything about slot performance; logged purely to validate the /orl-timing --log-previous mechanics work end to end."
     }
   ]
 }

@@ -29,12 +29,17 @@ slot — this is the "check what happened today" half of the daily cycle.
 
 1. Find the most recent entry in `socials/linkedin-performance.json` with
    `analytics_checked_at: null`.
-2. Via browser, open that post (Page posts → Published, or the post's own
-   analytics view) and read: impressions, reactions, comments, shares. If
-   LinkedIn also shows a views count for this post type, capture that too.
-3. Compute `engagement_rate = (reactions + comments + shares) / impressions`
-   (guard against division by zero — if impressions is 0 or missing, leave
-   engagement_rate null and note why).
+2. Via browser: Page posts → Published → find the post → click "Preview
+   results" / "Show all results" under it. This panel (confirmed by
+   actually checking it, not assumed) directly gives: Impressions,
+   Engagement rate, Clicks, Click-through rate, Reactions, Comments,
+   Reposts — no need to hunt through a separate analytics view.
+3. Use LinkedIn's own displayed **Engagement rate** as-is — it's
+   authoritative and may weight fields (e.g. clicks) differently than a
+   naive `(reactions+comments+shares)/impressions` calc would. Don't
+   recompute it; just record it, alongside the raw counts including clicks
+   and CTR (both worth tracking separately since this is a link-post and
+   traffic to the blog is the actual point, not just reactions).
 4. Write these values into that post's entry, set
    `analytics_checked_at` to now.
 5. If that post had a `scheduled_slot` (i.e. it came from this system, not
