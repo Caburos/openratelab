@@ -1,0 +1,13 @@
+# OpenRateLab Content Log
+
+Append-only. One row per content cycle. Updated by `/orl-strategy` (adds row,
+status `briefed`) and `/orl-write` (flips status to `drafted`). You update
+status to `exported` / `published` / `skipped` by hand for now (phase 1 is
+manual).
+
+Purpose: lets `/orl-strategy` avoid repeating a topic/angle/keyword that ran
+recently or that already exists in `socials/seo-registry.json`.
+
+| Date | Mode | Topic | Angle | Target keyword | Folder | Status |
+|------|------|-------|-------|-----------------|--------|--------|
+| 2026-09-07 | blog-trend | Open rate high, click rate low | Diagnose as promise/payoff mismatch, not deliverability | high open rate low click rate email marketing | 2026-09-07-open-rate-high-click-rate-low | drafted |

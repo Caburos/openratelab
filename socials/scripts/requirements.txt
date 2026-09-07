@@ -1,0 +1,15 @@
+# DC Email Automation — Python dependencies
+# Install with: pip install -r requirements.txt
+
+# Anthropic Claude API
+anthropic>=0.40.0
+
+# Google API (Gmail + Docs + Drive)
+google-api-python-client>=2.100.0
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
+
+# HTML scraping (used by onboard-client.py)
+requests>=2.31.0
+beautifulsoup4>=4.12.0

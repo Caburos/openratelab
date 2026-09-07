@@ -27,3 +27,8 @@ data/contacts.json
 # public repo (repo should only contain the actual site and its content).
 ASTRO_MIGRATION_PLAN.md
 UROSBUILDS_COMPARISON_TRANSCRIPT.md
+
+# Google OAuth secrets/tokens for socials automation — never commit these.
+socials/scripts/credentials.json
+socials/scripts/token.json
+socials/scripts/__pycache__/

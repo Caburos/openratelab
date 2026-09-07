@@ -1,0 +1,256 @@
+{
+  "generated": "2026-09-07T16:01:54.823414+00:00",
+  "blog_posts": [
+    {
+      "slug": "ecommerce-email-open-rate-benchmarks",
+      "url": "/blog/ecommerce-email-open-rate-benchmarks",
+      "title": "Ecommerce Email Open Rate Benchmarks: Data From Active Klaviyo Accounts | OpenRateLab",
+      "description": "What's a good ecommerce email open rate? Illustrative benchmarks for campaigns and flows, based on patterns across managed accounts.",
+      "category": "BENCHMARKS / DATA",
+      "excerpt": "What's a good open rate for ecommerce email? Illustrative benchmarks based on patterns across managed accounts, not industry surveys.",
+      "datePublished": "2026-07-18"
+    },
+    {
+      "slug": "email-deliverability-guide-dtc",
+      "url": "/blog/email-deliverability-guide-dtc",
+      "title": "Email Deliverability for DTC Brands: SPF, DKIM, and Sender Reputation Explained | OpenRateLab",
+      "description": "Great copy in the spam folder converts nobody. A plain-language guide to SPF, DKIM, DMARC, and the sender reputation habits that keep DTC email in the inbox.",
+      "category": "DELIVERABILITY",
+      "excerpt": "Great copy in the spam folder converts nobody. A plain-language guide to authentication and the habits that keep DTC email in the inbox.",
+      "datePublished": "2026-08-21"
+    },
+    {
+      "slug": "email-list-hygiene-klaviyo",
+      "url": "/blog/email-list-hygiene-klaviyo",
+      "title": "Email List Hygiene in Klaviyo: How to Clean Your List Without Losing Revenue | OpenRateLab",
+      "description": "A practical guide to email list hygiene in Klaviyo: the 4-tier segmentation system we use to protect deliverability without burning winnable subscribers.",
+      "category": "DELIVERABILITY / KLAVIYO",
+      "excerpt": "Most brands either never clean their list (bad) or suppress too aggressively (also bad). Here's the segmentation system that protects deliverability without burning winnable subscribers.",
+      "datePublished": "2026-07-18"
+    },
+    {
+      "slug": "how-to-choose-a-klaviyo-agency",
+      "url": "/blog/how-to-choose-a-klaviyo-agency",
+      "title": "How to Choose a Klaviyo Agency: The Questions That Matter | OpenRateLab",
+      "description": "What separates a Klaviyo agency that moves revenue from one that just sends emails: a checklist for evaluating agencies, plus questions brands forget to ask.",
+      "category": "STRATEGY / AGENCY",
+      "excerpt": "The real numbers to ask for, who works on your account, and what month one should look like.",
+      "datePublished": "2026-08-04"
+    },
+    {
+      "slug": "klaviyo-abandoned-cart-flow",
+      "url": "/blog/klaviyo-abandoned-cart-flow",
+      "title": "Abandoned Cart Flows in Klaviyo: Structure, Timing, and Copy That Recovers Revenue | OpenRateLab",
+      "description": "How to structure a Klaviyo abandoned cart flow that recovers revenue without nagging. Timing, email count, and the copy that gets carts finished.",
+      "category": "KLAVIYO / FLOWS",
+      "excerpt": "Speed, structure, and why the discount shouldn't be the first thing a lapsed cart sees.",
+      "datePublished": "2026-08-11"
+    },
+    {
+      "slug": "klaviyo-email-copywriting-guide",
+      "url": "/blog/klaviyo-email-copywriting-guide",
+      "title": "Klaviyo Email Copywriting: What Makes Subscribers Click | OpenRateLab",
+      "description": "Subject lines, structure, and CTAs that convert in Klaviyo flows and campaigns: copywriting principles we apply on active DTC accounts, not generic filler.",
+      "category": "COPYWRITING",
+      "excerpt": "Subject lines, structure, CTAs, and why editing matters more than the first draft.",
+      "datePublished": "2026-08-01"
+    },
+    {
+      "slug": "klaviyo-email-flows-guide",
+      "url": "/blog/klaviyo-email-flows-guide",
+      "title": "Klaviyo Email Flows: The Complete Setup Guide for DTC Brands | OpenRateLab",
+      "description": "What Klaviyo flows you need, how to structure them, and what separates a 30-flow account from one running 200+. Data from active DTC accounts.",
+      "category": "KLAVIYO / FLOWS",
+      "excerpt": "What flows you need, how to structure them, and what separates a 30-flow account from one running 200+. Includes performance data from active accounts.",
+      "datePublished": "2026-07-18"
+    },
+    {
+      "slug": "klaviyo-performance-report-2026",
+      "url": "/blog/klaviyo-performance-report-2026",
+      "title": "Klaviyo Email Performance Report 2026: Data From 22+ Active DTC Accounts | OpenRateLab",
+      "description": "Illustrative Klaviyo performance benchmarks based on patterns across managed DTC accounts: open rates, flow metrics, what top performers do differently.",
+      "category": "DATA / REPORT",
+      "excerpt": "Campaign open rates, flow metrics, and what separates top-performing accounts: illustrative benchmarks, not industry surveys.",
+      "datePublished": "2026-07-21"
+    },
+    {
+      "slug": "klaviyo-post-purchase-flow",
+      "url": "/blog/klaviyo-post-purchase-flow",
+      "title": "Post-Purchase Flows in Klaviyo: Turning One Order Into a Repeat Customer | OpenRateLab",
+      "description": "Most brands stop emailing once someone buys. The post-purchase flow is where retention gets built: structure, timing, and what to send after the sale.",
+      "category": "KLAVIYO / FLOWS",
+      "excerpt": "Most brands go quiet the moment someone buys. The post-purchase flow is where retention gets built.",
+      "datePublished": "2026-08-14"
+    },
+    {
+      "slug": "klaviyo-welcome-series-guide",
+      "url": "/blog/klaviyo-welcome-series-guide",
+      "title": "The Klaviyo Welcome Series That Converts | OpenRateLab",
+      "description": "Welcome series structure, timing, and copy for DTC brands: how to use the highest-intent moment in the lifecycle without wasting it on one discount email.",
+      "category": "KLAVIYO / FLOWS",
+      "excerpt": "Why a single discount email isn't a welcome series, and the 4-email structure that builds trust before it asks for a purchase.",
+      "datePublished": "2026-08-08"
+    },
+    {
+      "slug": "klaviyo-win-back-flow",
+      "url": "/blog/klaviyo-win-back-flow",
+      "title": "Win-Back Flows in Klaviyo: Recovering Lapsed Customers Before You Suppress Them | OpenRateLab",
+      "description": "Before you suppress an inactive segment, try to win it back. Win-back flow structure, timing, and how it connects to list hygiene and sender reputation.",
+      "category": "KLAVIYO / FLOWS",
+      "excerpt": "Before you suppress an inactive segment, try to win it back. Structure, timing, and how it connects to list hygiene.",
+      "datePublished": "2026-08-18"
+    }
+  ],
+  "case_studies": [
+    {
+      "slug": "activewear-brand-email-engagement",
+      "url": "/case-studies/activewear-brand-email-engagement",
+      "title": "40.3% Open Rate + 2.66% CTR: Fashion Email That Holds | OpenRateLab Case Study",
+      "description": "How an activewear brand maintained above-industry open rates and click rates simultaneously across 46 campaigns and 58 automated flows.",
+      "industryLabel": "Activewear & Fashion Brand",
+      "datePublished": "2026-07-17",
+      "primaryMetric": {
+        "value": "40.3%",
+        "label": "AVG OPEN RATE"
+      }
+    },
+    {
+      "slug": "dtc-brand-attribution-system",
+      "url": "/case-studies/dtc-brand-attribution-system",
+      "title": "30%+ Email Revenue Attribution, Ongoing | OpenRateLab Case Study",
+      "description": "How a DTC brand went from sporadic, occasional email sends to a proper Klaviyo system consistently driving 30%+ of revenue.",
+      "industryLabel": "DTC Brand",
+      "datePublished": "2026-07-17",
+      "primaryMetric": {
+        "value": "30%+",
+        "label": "EMAIL REVENUE ATTRIBUTION"
+      }
+    },
+    {
+      "slug": "ecommerce-open-rate-system",
+      "url": "/case-studies/ecommerce-open-rate-system",
+      "title": "70.7% Open Rate From a Flow Rebuild | OpenRateLab Case Study",
+      "description": "How an e-commerce brand's Klaviyo flow rebuild produced a sustained 70.7% open rate across a 15,000+ subscriber list.",
+      "industryLabel": "E-Commerce Brand",
+      "datePublished": "2026-07-17",
+      "primaryMetric": {
+        "value": "70.7%",
+        "label": "AVERAGE OPEN RATE"
+      }
+    },
+    {
+      "slug": "equine-performance-nutrition-brand",
+      "url": "/case-studies/equine-performance-nutrition-brand",
+      "title": "The Same Result, Four Different Ways | OpenRateLab Case Study",
+      "description": "How an equine performance nutrition brand validated a repeatable, no-incentive educational email pattern across four creative angles and 12+ months.",
+      "industryLabel": "Equine Performance Nutrition",
+      "datePublished": "2026-07-17",
+      "primaryMetric": {
+        "value": "4X",
+        "label": "INDEPENDENTLY REPLICATED"
+      }
+    },
+    {
+      "slug": "farm-direct-pet-treats-brand",
+      "url": "/case-studies/farm-direct-pet-treats-brand",
+      "title": "Highest Revenue Efficiency of Any Account We've Run | OpenRateLab Case Study",
+      "description": "How a small-list, farm-direct pet treats brand generated the best revenue-per-recipient of any account in our portfolio review, with zero discount incentive.",
+      "industryLabel": "Farm-Direct Pet Treats",
+      "datePublished": "2026-07-17",
+      "primaryMetric": {
+        "value": "$0.75",
+        "label": "REVENUE PER RECIPIENT"
+      }
+    },
+    {
+      "slug": "health-supplement-brand-at-scale",
+      "url": "/case-studies/health-supplement-brand-at-scale",
+      "title": "51.5% Open Rate at Scale: 191 Campaigns, 2.4 Million Emails | OpenRateLab Case Study",
+      "description": "How a health and supplement brand maintained a 51.5% average open rate across 191 campaigns and 2.4 million email delivers without sacrificing deliverability.",
+      "industryLabel": "Health & Supplement Brand",
+      "datePublished": "2026-07-17",
+      "primaryMetric": {
+        "value": "51.5%",
+        "label": "AVG OPEN RATE"
+      }
+    },
+    {
+      "slug": "lifestyle-wellness-brand",
+      "url": "/case-studies/lifestyle-wellness-brand",
+      "title": "75.8% Open Rate After Full Klaviyo Rebuild | OpenRateLab Case Study",
+      "description": "How a lifestyle and wellness brand went from a broken email setup to 75.8% average open rate: full Klaviyo rebuild, 42 flows, $53K revenue in 12 months.",
+      "industryLabel": "Lifestyle & Wellness Brand",
+      "datePublished": "2026-07-28",
+      "primaryMetric": {
+        "value": "75.8%",
+        "label": "POST REBUILD"
+      }
+    },
+    {
+      "slug": "multi-species-wellness-brand",
+      "url": "/case-studies/multi-species-wellness-brand",
+      "title": "$33,454 From a Single Campaign Send | OpenRateLab Case Study",
+      "description": "How a story-led, no-discount campaign generated $33,454 in a single send for an animal wellness brand on Klaviyo.",
+      "industryLabel": "Multi-Species Animal Wellness",
+      "datePublished": "2026-07-17",
+      "primaryMetric": {
+        "value": "$33,454",
+        "label": "SINGLE-SEND REVENUE"
+      }
+    },
+    {
+      "slug": "nutrition-brand-revenue",
+      "url": "/case-studies/nutrition-brand-revenue",
+      "title": "$65K Email Revenue: Flows Outperforming Campaigns | OpenRateLab Case Study",
+      "description": "How a nutrition and lifestyle brand built an automation-first email program where flows generated more revenue than campaigns: $64,838 total, 65.8% open rate.",
+      "industryLabel": "Nutrition & Lifestyle Brand",
+      "datePublished": "2026-07-28",
+      "primaryMetric": {
+        "value": "$64,838",
+        "label": "12 MONTHS"
+      }
+    },
+    {
+      "slug": "pet-wellness-brand",
+      "url": "/case-studies/pet-wellness-brand",
+      "title": "72-76% Open Rates, Sustained Over Two Years | OpenRateLab Case Study",
+      "description": "How a pet wellness brand sustained a 72-76% open rate on curiosity-driven, non-promotional subject lines for over two years.",
+      "industryLabel": "DTC Pet Wellness",
+      "datePublished": "2026-07-17",
+      "primaryMetric": {
+        "value": "72-76%",
+        "label": "SUSTAINED OPEN RATE"
+      }
+    },
+    {
+      "slug": "specialty-food-brand-lean-setup",
+      "url": "/case-studies/specialty-food-brand-lean-setup",
+      "title": "$18K Email Revenue: Lean 15-Flow Setup | OpenRateLab Case Study",
+      "description": "How a specialty food brand generated $18,501 in email revenue with just 15 flows and 37 campaigns: proof you don't need volume to extract value from email.",
+      "industryLabel": "Specialty Food Brand",
+      "datePublished": "2026-07-28",
+      "primaryMetric": {
+        "value": "$18,501",
+        "label": "15 FLOWS ONLY"
+      }
+    },
+    {
+      "slug": "specialty-supplement-brand",
+      "url": "/case-studies/specialty-supplement-brand",
+      "title": "$172K Email Revenue in 12 Months | OpenRateLab Case Study",
+      "description": "How a specialty supplement brand turned a passive email list into its #1 revenue channel: $171,647 from campaigns and automated flows in 12 months.",
+      "industryLabel": "Specialty Supplement Brand",
+      "datePublished": "2026-07-28",
+      "primaryMetric": {
+        "value": "$172K",
+        "label": "12 MONTHS"
+      }
+    }
+  ],
+  "evergreen_links": {
+    "contact": "/#contact",
+    "services": "/#services",
+    "about": "/about/",
+    "case_studies_index": null
+  }
+}

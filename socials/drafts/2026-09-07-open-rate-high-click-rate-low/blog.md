@@ -1,0 +1,54 @@
+---
+title: "High Open Rate, Low Click Rate? Here's Why (and the Fix) | OpenRateLab"
+description: "A high open rate and a low click rate together isn't a deliverability problem. Here's how to diagnose the real cause and fix it."
+category: "COPYWRITING / STRATEGY"
+excerpt: "60% opens and under 0.5% clicks isn't broken deliverability. It's a promise your email didn't keep. Here's how to find which of three causes it is."
+readTime: "6 MIN READ"
+faq:
+  - question: "Is a high open rate but low click rate a deliverability problem?"
+    answer: "No. A high open rate means your emails are reaching the inbox and the subject line is earning attention. Deliverability problems show up as low open rates, spam folder placement, or bounces. When opens are strong but clicks are weak, the inbox placement already worked. The breakdown happens after the open, inside the email itself: the subject promised something the body didn't deliver, the email asked for too many actions at once, or the content wasn't relevant to why that specific subscriber opened. Treating this as a deliverability issue (warming up a domain, cleaning SPF/DKIM records) won't move the click rate, because that's not where the problem lives."
+  - question: "What's a good click-through rate for ecommerce email?"
+    answer: "It depends heavily on list segment and email type, but as a rough range, campaigns to an engaged segment typically land between 1-3% CTR, with flows (welcome, abandoned cart, post-purchase) often higher since they're triggered by intent. A 60% open rate paired with under 0.5% clicks is a meaningful gap regardless of which benchmark you use: it means a large share of people who opened found nothing worth acting on. The goal isn't chasing a benchmark number, it's closing the gap between how many people opened and how many found the email worth clicking."
+  - question: "How do you fix a low click rate without hurting open rate?"
+    answer: "Don't touch the subject line first. A strong open rate means the subject line is doing its job: earning the open. The fix lives in the body. Align the first line of the email with exactly what the subject promised, cut every CTA except the one action you actually want, and check whether the segment receiving this email is the segment the content was written for. Fixing the body doesn't put the open rate at risk, since the open already happened before the reader saw any of it. The two metrics are affected by different parts of the email, which is exactly why you can improve one without disturbing the other."
+---
+
+A 60% open rate and under 0.5% clicks isn't a small problem. It's a large group of people who opened, read the subject line's promise, and found nothing in the email worth acting on. That gap between opens and clicks is diagnosable. It just isn't diagnosed by looking at deliverability.
+
+## Why Is My Open Rate High But Click Rate Low?
+
+A high open rate with a low click rate means your subject line worked and your body copy didn't. Deliverability, sender reputation, and inbox placement are all doing their job: the email arrived and got opened. What breaks down happens after the open. Three things cause this pattern, and none of them are "write a better subject line," because the subject line already worked.
+
+## Cause 1: The Subject Line Oversold The Email
+
+The most common cause is a mismatch between what the subject promised and what the first line of the body delivers. If the subject raises a specific question or names a specific benefit, and the email opens with something generic instead of answering that exact thing, the reader's attention drops before they reach the CTA. The fix isn't a weaker subject line. It's a body that opens by directly paying off the exact promise the subject made, in the first sentence, not three paragraphs in.
+
+## Cause 2: Too Many Competing CTAs
+
+An email with four links competing for attention gets fewer clicks than an email with one, even from readers who are genuinely interested. Each additional CTA doesn't add opportunity, it splits attention and adds a decision the reader has to make before clicking anything. One email, one primary action. Secondary links, if they exist at all, should be visually and structurally subordinate, not competing for the same weight as the main CTA.
+
+## Cause 3: The Offer Isn't Relevant To Why They Opened
+
+This one isn't a copy problem, it's a segmentation problem. If the email went to a broad list rather than the segment it was actually written for, some percentage of opens come from people the content simply isn't for. They open because the subject was compelling in a general sense, then find an offer or a message that doesn't apply to them. No amount of body-copy rewriting fixes a targeting mismatch. See our guide to [email list hygiene in Klaviyo](/blog/email-list-hygiene-klaviyo) for the segmentation structure that prevents this.
+
+## How To Tell Which Cause It Is
+
+Pull the last 3-5 campaigns with this same open/click pattern and check three things, in this order:
+
+- **Subject-to-body alignment.** Read only the subject line, then only the first sentence of the body. Does that first sentence directly answer what the subject raised, or does it take a paragraph of throat-clearing to get there? A gap here points to Cause 1.
+- **CTA count.** Count every clickable link in the email, including footer links and secondary product callouts, not just the main button. More than one competing CTA above the fold points to Cause 2.
+- **Segment match.** Pull the segment definition the campaign was actually sent to and compare it against who the copy was written for. If the segment is broader than the content assumes ("all subscribers" instead of "subscribers who viewed this category"), that's Cause 3.
+
+Whichever of the three shows the clearest mismatch is almost always the primary driver. It's rare for all three to be equally responsible, so fix the biggest gap first and re-measure before touching the other two.
+
+## The Fix
+
+**For Cause 1:** rewrite the opening line of the body so it pays off the subject's specific promise immediately, not three sentences in. If the subject asks a question, the first line should start answering it.
+
+**For Cause 2:** cut every CTA except the one action you actually want. If a secondary link genuinely needs to exist, make it visually and structurally subordinate: smaller, later in the email, clearly not competing with the primary button.
+
+**For Cause 3:** stop rewriting the copy and fix the send list first. Build (or tighten) the segment so the people receiving the email are the people the content was actually built for, then re-send to that narrower group before making any further copy changes.
+
+This is largely a copywriting and CTA-clarity problem once segmentation is ruled out: our [Klaviyo email copywriting guide](/blog/klaviyo-email-copywriting-guide) covers the subject-to-body alignment piece in more depth. For a real example of a brand holding both open rate and click rate together, above industry benchmarks, across 46 campaigns and 58 flows, see this [activewear email engagement case study](/case-studies/activewear-brand-email-engagement).
+
+Open rate and click rate are affected by different parts of the email, which is why a strong one and a weak other isn't a contradiction, it's a diagnostic clue. If your flows are showing this same disconnect and you want a second set of eyes on it, [book a free audit](/#contact).
