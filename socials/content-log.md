@@ -10,4 +10,4 @@ recently or that already exists in `socials/seo-registry.json`.
 
 | Date | Mode | Topic | Angle | Target keyword | Folder | Status |
 |------|------|-------|-------|-----------------|--------|--------|
-| 2026-09-07 | blog-trend | Open rate high, click rate low | Diagnose as promise/payoff mismatch, not deliverability | high open rate low click rate email marketing | 2026-09-07-open-rate-high-click-rate-low | drafted |
+| 2026-09-07 | blog-trend | Open rate high, click rate low | Diagnose as promise/payoff mismatch, not deliverability | high open rate low click rate email marketing | 2026-09-07-open-rate-high-click-rate-low | published (blog: https://openratelab.com/blog/high-open-rate-low-click-rate/, LinkedIn: posted 2026-09-07, see socials/linkedin-performance.json for exact time) |

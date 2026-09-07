@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "date": "2026-09-07",
+      "weekday": "Monday",
+      "scheduled_slot": null,
+      "actual_post_time": "21:36",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/high-open-rate-low-click-rate/",
+      "analytics_checked_at": null,
+      "impressions": null,
+      "reactions": null,
+      "comments": null,
+      "shares": null,
+      "engagement_rate": null,
+      "notes": "First post from the pipeline. Ad hoc timing, not from the exploration rotation, since the timing-intelligence system didn't exist yet when this was posted. Not counted as a slot trial in timing-intelligence/state.json for that reason -- do not mark 21:30 as tried based on this entry alone."
+    }
+  ]
+}
