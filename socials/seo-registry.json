@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T16:01:54.823414+00:00",
+  "generated": "2026-09-07T18:59:04.059375+00:00",
   "blog_posts": [
     {
       "slug": "ecommerce-email-open-rate-benchmarks",
@@ -27,6 +27,15 @@
       "category": "DELIVERABILITY / KLAVIYO",
       "excerpt": "Most brands either never clean their list (bad) or suppress too aggressively (also bad). Here's the segmentation system that protects deliverability without burning winnable subscribers.",
       "datePublished": "2026-07-18"
+    },
+    {
+      "slug": "high-open-rate-low-click-rate",
+      "url": "/blog/high-open-rate-low-click-rate",
+      "title": "High Open Rate, Low Click Rate? Here's Why (and the Fix) | OpenRateLab",
+      "description": "A high open rate and a low click rate together isn't a deliverability problem. Here's how to diagnose the real cause and fix it.",
+      "category": "COPYWRITING / STRATEGY",
+      "excerpt": "60% opens and under 0.5% clicks isn't broken deliverability. It's a promise your email didn't keep. Here's how to find which of three causes it is.",
+      "datePublished": "2026-09-07"
     },
     {
       "slug": "how-to-choose-a-klaviyo-agency",

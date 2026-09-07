@@ -8,4 +8,4 @@ We keep seeing the same pattern: 60% opens, under 0.5% clicks. That's not a deli
 
 Fix the biggest gap first, then re-measure before touching the others.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/high-open-rate-low-click-rate

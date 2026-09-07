@@ -83,6 +83,10 @@ scores) more cleanly than the markdown.
 
 ### 2b. Re-score for OpenRateLab, not Uros Builds
 
+Read `brand-guide.md` (repo root) first if you haven't this session —
+**Services**, **Target audience**, and **Positioning** sections define what
+"relevant" actually means below, so scoring without it is scoring blind.
+
 The report's own `POST` / `COMMENT_ONLY` / `IGNORE` verdicts and its
 "Positioning Anchors" were computed for Uros Builds (workflow automation,
 migrations, internal AI tooling). Ignore those verdicts. Look at the raw
