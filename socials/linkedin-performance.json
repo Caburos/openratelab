@@ -19,6 +19,24 @@
       "engagement_rate": 0.0,
       "engagement_rate_source": "LinkedIn's own 'Post performance' panel (Page posts -> Preview results -> Show all results), not manually recomputed -- their formula is authoritative and may weight fields (e.g. clicks) differently than a naive reactions+comments+shares/impressions calc.",
       "notes": "DRY RUN reading, not a real nightly check. First post from the pipeline, ad hoc timing (not from the exploration rotation) since the timing-intelligence system didn't exist yet when this was posted -- do not count as a slot trial in timing-intelligence/state.json. Also far too immature (42 min old, 0 followers) to mean anything about slot performance; logged purely to validate the /orl-timing --log-previous mechanics work end to end."
+    },
+    {
+      "date": "2026-09-08",
+      "weekday": "Tuesday",
+      "scheduled_slot": "00:00",
+      "actual_post_time": "11:00",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/open-rate-data-accuracy/",
+      "analytics_checked_at": null,
+      "impressions": null,
+      "clicks": null,
+      "click_through_rate": null,
+      "reactions": null,
+      "comments": null,
+      "shares": null,
+      "engagement_rate": null,
+      "notes": "Scheduled automation (/orl-publish --fire) failed to actually fire: found two bugs, (1) both scheduled tasks pointed at bare 'claude' which Task Scheduler couldn't resolve -- fixed to use claude.exe's full path, (2) the standalone claude.exe CLI's OAuth login had expired and could not auto-refresh, which blocked the retried run too -- needs an API key instead of OAuth for reliable unattended use (user action required, not fixed yet). Published manually instead, roughly 11 hours after the intended 00:00 slot. DO NOT mark 00:00 as tried in timing-intelligence/state.json based on this entry -- the actual post time diverged too far from the assigned slot to say anything about how 00:00 itself performs."
     }
   ]
 }
