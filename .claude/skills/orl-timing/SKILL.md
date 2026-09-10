@@ -6,9 +6,16 @@ improving. This is the "brain" for posting time, separate from what gets
 posted (`/orl-strategy` + `/orl-write`) and separate from the act of
 publishing itself.
 
-No official LinkedIn Analytics API access exists yet (same gap as
-posting), so this reads real numbers via browser, off the Page's own
-Analytics — same mechanism used to set the page up originally.
+No official LinkedIn Analytics API access exists — and Claude Code's own
+Chrome bridge doesn't work in headless/scheduled sessions at all (confirmed
+by direct testing: the claude-in-chrome MCP server simply never connects in
+`-p` mode, with or without an explicit device ID — this isn't a "which
+browser" ambiguity problem, don't waste time re-testing that theory). So
+this step uses a **standalone script**, `socials/scripts/linkedin-bot.py`,
+which drives its own independent Playwright-controlled Chrome with a
+persistent, already-logged-in browser profile — no Claude Code browser
+tools involved at all, works identically whether run interactively or from
+a scheduled task.
 
 ## Data files
 
@@ -29,11 +36,19 @@ slot — this is the "check what happened today" half of the daily cycle.
 
 1. Find the most recent entry in `socials/linkedin-performance.json` with
    `analytics_checked_at: null`.
-2. Via browser: Page posts → Published → find the post → click "Preview
-   results" / "Show all results" under it. This panel (confirmed by
-   actually checking it, not assumed) directly gives: Impressions,
-   Engagement rate, Clicks, Click-through rate, Reactions, Comments,
-   Reposts — no need to hunt through a separate analytics view.
+2. Run:
+   ```bash
+   python socials/scripts/linkedin-bot.py --analytics
+   ```
+   Prints JSON with `impressions`, `engagement_rate`, `clicks`,
+   `click_through_rate`, `reactions`, `comments`, `reposts` — reading
+   LinkedIn's own "Post performance" panel for the most recent post, same
+   fields as before, just via the standalone script now. If the command
+   exits non-zero or prints an auth error, the saved browser session has
+   likely expired — stop and tell the user to re-run
+   `python socials/scripts/linkedin-bot.py --login` (a one-time interactive
+   step only they can do; requires entering their own LinkedIn credentials,
+   never do this yourself).
 3. Use LinkedIn's own displayed **Engagement rate** as-is — it's
    authoritative and may weight fields (e.g. clicks) differently than a
    naive `(reactions+comments+shares)/impressions` calc would. Don't

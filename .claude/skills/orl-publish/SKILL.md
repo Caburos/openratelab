@@ -104,11 +104,20 @@ see "Scheduling this" below).
    LinkedIn post is recoverable, a public post with a broken link looks
    bad and isn't easily undone.
 4. **Post to LinkedIn**: fill the real blog URL into `linkedin.md`
-   (replacing the `{BLOG_URL}` placeholder), post it via browser to the
-   Open Rate Lab company page exactly as done manually this session
-   (Create → Start a post → type content → Post). If the link-preview
-   fetch fails/shows "cannot display preview," proceed anyway — the link
-   still works, LinkedIn's crawler cache is not a reason to hold the post.
+   (replacing the `{BLOG_URL}` placeholder), then run:
+   ```bash
+   python socials/scripts/linkedin-bot.py --post --text-file socials/drafts/{folder}/linkedin.md
+   ```
+   This is a standalone script with its own persistent, already-logged-in
+   Chrome session — **not** Claude Code's own browser tools, which don't
+   work in headless/scheduled sessions at all (confirmed: the claude-in-
+   chrome MCP server never connects in `-p` mode, regardless of device
+   selection — don't try routing this through `select_browser`/`navigate`/
+   `computer`, they won't exist in this context). If the script exits
+   non-zero, that's a real failure — check its stderr; an auth/login error
+   means the saved session expired and needs the user to re-run
+   `python socials/scripts/linkedin-bot.py --login` themselves (never do
+   this step yourself, it requires their own credentials).
 5. **Log the outcome**: append the new entry to
    `socials/linkedin-performance.json` (date, weekday, `scheduled_slot`
    from the plan, `actual_post_time`, blog URL, `analytics_checked_at:
@@ -136,6 +145,14 @@ that distinction matters.
 Both tasks run with `StartWhenAvailable` and `WakeToRun` enabled, so a
 machine that's off or asleep at trigger time catches up once it's back,
 rather than silently missing the cycle.
+
+Neither task's invocation includes `--chrome` — it's meaningless here.
+Claude Code's own browser integration doesn't work in headless/`-p`
+sessions at all (confirmed by direct testing, not assumed), so all browser
+access for this pipeline goes through `socials/scripts/linkedin-bot.py`
+instead (see `/orl-timing` and step 4 of `--fire` above), which has its
+own independent, persistent, already-logged-in Chrome session via
+Playwright — nothing to do with Claude Code's browser tools.
 
 ## Case studies stay separate
 

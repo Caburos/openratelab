@@ -32,3 +32,6 @@ UROSBUILDS_COMPARISON_TRANSCRIPT.md
 socials/scripts/credentials.json
 socials/scripts/token.json
 socials/scripts/__pycache__/
+
+# LinkedIn session cookies for the standalone automation bot — never commit.
+socials/scripts/.linkedin-browser-profile/
