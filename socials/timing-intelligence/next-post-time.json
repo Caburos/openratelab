@@ -1,7 +1,7 @@
 {
-  "date": "2026-09-08",
-  "weekday": "Tuesday",
-  "slot": "00:00",
+  "date": "2026-09-11",
+  "weekday": "Friday",
+  "slot": "00:30",
   "phase": "exploration",
-  "note": "First slot ever picked by /orl-timing --next-slot. Exploration phase, order arbitrary among untried slots -- 00:00 was simply first in list order."
+  "note": "Second slot picked by /orl-timing --next-slot. 00:00 was already used once (09-08) but not validly, so picking a different slot (00:30) this time for actual coverage rather than repeating an already-attempted one."
 }

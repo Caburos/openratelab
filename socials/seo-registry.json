@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T20:20:52.941121+00:00",
+  "generated": "2026-09-10T16:18:53.362293+00:00",
   "blog_posts": [
     {
       "slug": "ecommerce-email-open-rate-benchmarks",
@@ -108,6 +108,15 @@
       "category": "KLAVIYO / FLOWS",
       "excerpt": "Before you suppress an inactive segment, try to win it back. Structure, timing, and how it connects to list hygiene.",
       "datePublished": "2026-08-18"
+    },
+    {
+      "slug": "open-rate-data-accuracy",
+      "url": "/blog/open-rate-data-accuracy",
+      "title": "Can You Trust Your Open Rate Data? What iOS Mail Privacy Protection Changed | OpenRateLab",
+      "description": "Open rate isn't broken. It's just less trustworthy for one specific, explainable reason. Here's what iOS Mail Privacy Protection actually distorts.",
+      "category": "BENCHMARKS / DATA",
+      "excerpt": "Your open rate didn't get better. Apple started pre-opening emails for privacy reasons before a human ever saw them. Here's what that changes, and what it doesn't.",
+      "datePublished": "2026-09-08"
     }
   ],
   "case_studies": [

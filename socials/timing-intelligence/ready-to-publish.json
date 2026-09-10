@@ -1,7 +1,6 @@
 {
-  "date": "2026-09-08",
-  "slot": "00:00",
-  "draft_folder": "socials/drafts/2026-09-08-open-rate-data-accuracy",
-  "status": "fired",
-  "note": "Automated --fire failed silently overnight (claude.exe OAuth session expired, could not refresh -- separate bug from the PATH issue found and fixed in the scheduled tasks). Published manually instead on 2026-09-08. Status set to fired so tonight's --plan proceeds normally rather than re-planning today."
+  "date": "2026-09-11",
+  "slot": "00:30",
+  "draft_folder": "socials/drafts/2026-09-11-klaviyo-limitations-workarounds",
+  "status": "pending"
 }

@@ -28,15 +28,16 @@
       "actual_post_time_tz": "CEST (UTC+2)",
       "post_url": null,
       "blog_url": "https://openratelab.com/blog/open-rate-data-accuracy/",
-      "analytics_checked_at": null,
-      "impressions": null,
+      "analytics_checked_at": "2026-09-10T18:20 CEST",
+      "impressions": 47,
       "clicks": null,
       "click_through_rate": null,
-      "reactions": null,
-      "comments": null,
-      "shares": null,
-      "engagement_rate": null,
-      "notes": "Scheduled automation (/orl-publish --fire) failed to actually fire: found two bugs, (1) both scheduled tasks pointed at bare 'claude' which Task Scheduler couldn't resolve -- fixed to use claude.exe's full path, (2) the standalone claude.exe CLI's OAuth login had expired and could not auto-refresh, which blocked the retried run too -- needs an API key instead of OAuth for reliable unattended use (user action required, not fixed yet). Published manually instead, roughly 11 hours after the intended 00:00 slot. DO NOT mark 00:00 as tried in timing-intelligence/state.json based on this entry -- the actual post time diverged too far from the assigned slot to say anything about how 00:00 itself performs."
+      "reactions": 2,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.021,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel). clicks/click_through_rate came back null -- known minor parsing gap in the script's regex for those two fields specifically, not investigated yet.",
+      "notes": "Scheduled automation (/orl-publish --fire) failed to actually fire on 09-08: found two bugs, (1) both scheduled tasks pointed at bare 'claude' which Task Scheduler couldn't resolve -- fixed, (2) the standalone claude.exe CLI's OAuth login had expired -- fixed with an API key. Published manually instead, roughly 11 hours after the intended 00:00 slot. DO NOT mark 00:00 as tried in timing-intelligence/state.json based on this entry -- the actual post time diverged too far from the assigned slot to say anything about how 00:00 itself performs. Checked late (09-10, ~2 days after posting, not the usual same-day-later reading) because /orl-timing --log-previous had no working browser mechanism until linkedin-bot.py was built."
     }
   ]
 }
