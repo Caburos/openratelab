@@ -181,7 +181,18 @@ def cmd_analytics() -> dict:
         ("Comments", "comments", _parse_int),
         ("Reposts", "reposts", _parse_int),
     ]:
-        m = re.search(rf"([\d.,]+%?)\s*\n?\s*{re.escape(label)}", body_text)
+        # The panel uses two different orderings depending on which sub-section
+        # a field is in: "48\n\nImpressions" (value first, e.g. the top
+        # discovery/engagement summary) vs "Clicks\n1" (label first, e.g. the
+        # detailed breakdown list). Try both -- but the number pattern must
+        # require a trailing '%' for percentage fields specifically, or the
+        # value-first regex can wrongly grab an adjacent field's plain integer
+        # (e.g. "1\nClick-through rate" matching on the previous line's
+        # Clicks=1, since '%' was optional -- confirmed bug, not hypothetical).
+        num_pat = r"[\d.,]+%" if parser is _parse_pct else r"[\d.,]+"
+        m = re.search(rf"({num_pat})\s*\n+\s*{re.escape(label)}\b", body_text)
+        if not m:
+            m = re.search(rf"{re.escape(label)}\s*\n+\s*({num_pat})", body_text)
         if m:
             result[key] = parser(m.group(1))
 
