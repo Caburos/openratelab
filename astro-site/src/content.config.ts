@@ -67,4 +67,42 @@ const blogPosts = defineCollection({
   }),
 });
 
-export const collections = { caseStudies, blogPosts };
+const services = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/services' }),
+  schema: z.object({
+    ...seoFields,
+    serviceNumber: z.string(), // e.g. "01", used for hub ordering + eyebrow tag
+    eyebrow: z.string(), // e.g. "KLAVIYO_MANAGEMENT" — technical-label eyebrow tag
+    heroHeadline: z.string(), // supports \n for <br/> line breaks
+    heroSubtext: z.string(),
+    summary: z.string(), // 1-2 sentence blurb for the /services/ hub card
+    primaryMetric: z.object({
+      value: z.string(), // e.g. "51.5%"
+      label: z.string(), // e.g. "AVG OPEN RATE"
+    }),
+    relatedCaseStudies: z.array(z.string()).default([]), // case-study collection ids
+    relatedServices: z.array(z.string()).default([]), // sibling service collection ids
+    faq: z.array(faqEntry),
+  }),
+});
+
+const industries = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/industries' }),
+  schema: z.object({
+    ...seoFields,
+    industryLabel: z.string(), // e.g. "Supplements" — eyebrow tag + hub card label
+    eyebrow: z.string(), // e.g. "SUPPLEMENTS" — technical-label eyebrow tag
+    heroHeadline: z.string(), // supports \n for <br/> line breaks
+    heroSubtext: z.string(),
+    summary: z.string(), // 1-2 sentence blurb for the /industries/ hub card
+    primaryMetric: z.object({
+      value: z.string(),
+      label: z.string(),
+    }),
+    relatedCaseStudies: z.array(z.string()).default([]), // case-study collection ids
+    relatedServices: z.array(z.string()).default([]), // service collection ids most relevant to this vertical
+    faq: z.array(faqEntry),
+  }),
+});
+
+export const collections = { caseStudies, blogPosts, services, industries };

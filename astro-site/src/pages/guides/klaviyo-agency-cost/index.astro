@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+
+const canonicalPath = '/guides/klaviyo-agency-cost/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const factors = [
+  { title: 'Account scope', body: 'Full management (flows, campaigns, segmentation, deliverability) costs more than a single service like copy-only support or a one-time audit.' },
+  { title: 'List size and send volume', body: 'A larger list with more segments and higher send volume generally means more work to plan, execute, and maintain.' },
+  { title: 'Current state of the account', body: 'A from-zero setup is a different scope than managing an already-healthy account, and a migration or full rebuild is different again.' },
+  { title: 'Ongoing vs one-time', body: 'Ongoing management is typically a monthly retainer; an audit or a single flow build is typically a one-time project fee.' },
+];
+
+const faq = [
+  {
+    question: 'Why don\'t agencies publish a fixed price list?',
+    answer: "Because the honest answer depends on your list size, current setup, and scope, and a fixed price list either overcharges simple accounts or undercharges complex ones. A free audit lets us quote based on your actual account instead of a generic package.",
+  },
+  {
+    question: 'Is a cheaper agency or freelancer always the better deal?',
+    answer: "Not necessarily. Cost matters less than whether the engagement actually moves revenue. A cheap engagement that doesn't fix the underlying problem costs more in lost revenue than a properly scoped one that does.",
+  },
+  {
+    question: 'How do I get an actual number for my account?',
+    answer: "Book a free audit. We'll look at your list size, current setup, and goals, then scope pricing based on what your account actually needs rather than a generic tier.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: 'How Much Does a Klaviyo Agency Cost?',
+        description: 'What actually drives Klaviyo agency pricing: account scope, list size, current setup, and ongoing vs one-time engagements.',
+        url: canonicalUrl,
+        author: { '@type': 'Organization', name: 'OpenRateLab', url: 'https://openratelab.com' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'OpenRateLab',
+          url: 'https://openratelab.com',
+          logo: { '@type': 'ImageObject', url: 'https://openratelab.com/images/logo.png' },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'How Much Does a Klaviyo Agency Cost', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="How Much Does a Klaviyo Agency Cost? | OpenRateLab"
+  description="What actually drives Klaviyo agency pricing: account scope, list size, current setup, and whether the engagement is ongoing or one-time."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <section class="min-h-[45vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ PRICING GUIDE ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      HOW MUCH DOES A<br/>KLAVIYO AGENCY COST?
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      We don't publish a fixed price list, and we're skeptical of agencies that quote one before seeing your account. Here's what actually drives the number instead.
+    </p>
+  </section>
+
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-t border-muted-silver/20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {factors.map((factor) => (
+        <div class="p-8 border border-muted-silver/20">
+          <h2 class="font-headline-md text-headline-md uppercase mb-4">{factor.title}</h2>
+          <p class="font-body-md text-body-md text-muted-silver">{factor.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">GET AN ACTUAL NUMBER,<br/>NOT A GENERIC RANGE.</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. We'll scope pricing against your actual account, not a tier chosen off a pricing page.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+
+  <FaqAccordion items={faq} />
+</BaseLayout>

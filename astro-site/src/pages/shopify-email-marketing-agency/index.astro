@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+
+const canonicalPath = '/shopify-email-marketing-agency/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const faq = [
+  {
+    question: 'Why Shopify and Klaviyo specifically?',
+    answer: "We work primarily with Shopify brands because Klaviyo's Shopify integration is where we're most effective: native event tracking, product and order data flowing into segmentation automatically, and flow triggers that reflect actual store behavior without custom engineering.",
+  },
+  {
+    question: 'Do you handle the Shopify-Klaviyo integration setup?',
+    answer: "Yes. Whether you're setting up Klaviyo on Shopify for the first time or migrating from another platform, integration and custom event tracking are part of the setup, so segmentation and flows have accurate data from day one.",
+  },
+  {
+    question: 'Can you work with Shopify Plus accounts?',
+    answer: "Yes. Higher-volume Shopify Plus accounts typically need more sophisticated segmentation and flow architecture, which is exactly the kind of account our Klaviyo management and flows work is built around.",
+  },
+  {
+    question: 'Do you also work with WooCommerce?',
+    answer: "We also work with WooCommerce accounts where Klaviyo is already the ESP, though Shopify is where we're most effective given the depth of that integration.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ProfessionalService',
+        name: 'OpenRateLab',
+        url: 'https://openratelab.com',
+        description: 'Shopify email marketing agency using Klaviyo: flows, campaigns, segmentation, and copy built on native Shopify integration.',
+        areaServed: 'Worldwide',
+        email: 'hello@openratelab.com',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Shopify Email Marketing Agency', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Shopify Email Marketing Agency (Klaviyo) | OpenRateLab"
+  description="A Shopify email marketing agency built on Klaviyo's native Shopify integration: flows, segmentation, and campaigns driven by real store data."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="min-h-[55vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ SHOPIFY // KLAVIYO SPECIALISTS ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      SHOPIFY DATA.<br/>KLAVIYO EXECUTION.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      We work primarily with Shopify brands because Klaviyo's Shopify integration is where we're most effective: real order and product data feeding segmentation and flow triggers automatically, with no custom engineering required.
+    </p>
+  </section>
+
+  <!-- Proof -->
+  <section class="bg-surface-secondary border-y border-muted-silver/20 py-24 px-8 md:px-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="flex flex-col">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">REV_ATTRIBUTED</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">$2.3M+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Email Revenue Per Year</p>
+      </div>
+      <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">AVG_OPEN_RATE</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">33%+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Average Across Accounts</p>
+      </div>
+      <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">BRANDS_SERVED</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">22</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Active Accounts</p>
+      </div>
+    </div>
+    <a href="/benchmarks/" class="inline-flex items-center gap-2 mt-10 font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">SEE FULL BENCHMARKS <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+  </section>
+
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary">
+    <div class="mb-16 max-w-2xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4">WHAT_WE_DO</span>
+      <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase leading-none">TEN SERVICES, BUILT<br/>ON YOUR STORE DATA.</h2>
+    </div>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-3xl mb-12">
+      Klaviyo setup and migration onto Shopify, full account management, flows and automation, or copy-only support, every service built around the integration doing the heavy lifting.
+    </p>
+    <a href="/services/" class="inline-flex items-center gap-2 font-label-button uppercase text-accent-performance hover:translate-x-2 transition-transform">
+      SEE ALL SERVICES <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+    </a>
+  </section>
+
+  <section class="py-24 md:py-40 px-8 md:px-16 flex flex-col items-center text-center border-t border-muted-silver/20">
+    <div class="max-w-3xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-8">CLIENT SIGNAL</span>
+      <blockquote class="font-headline-lg text-headline-lg-mobile md:text-headline-lg italic leading-tight text-on-surface-warm mb-8">
+        &ldquo;Email finally made sense as a system. It started bringing sales on autopilot, and it supported revenue.&rdquo;
+      </blockquote>
+      <span class="font-label-technical text-label-technical text-muted-silver uppercase">TEIA, DTC BRAND OWNER</span>
+    </div>
+  </section>
+
+  <section class="py-24 px-8 md:px-16 border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-10">PROOF IN THE LEDGER</span>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="/case-studies/pet-wellness-brand" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">72-76%</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">SUSTAINED OPEN RATE, 2+ YEARS</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+      <a href="/case-studies/equine-performance-nutrition-brand" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">4X</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">INDEPENDENTLY REPLICATED</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+      <a href="/case-studies/ecommerce-open-rate-system" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">70.7%</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">AVERAGE OPEN RATE</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+    </div>
+    <a href="/#ledger" class="inline-flex items-center gap-2 mt-10 font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">
+      SEE ALL 12 CASE STUDIES <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+    </a>
+  </section>
+
+  <FaqAccordion items={faq} />
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">DEPLOYMENT_FINAL_PHASE</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">PUT YOUR STORE DATA<br/>TO WORK IN THE INBOX.</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. A specific, written breakdown of what's underperforming in your account.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+</BaseLayout>

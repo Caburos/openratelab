@@ -19,6 +19,22 @@ const canonicalUrl = `https://openratelab.com${canonicalPath}`;
 const dateISO = (d: Date) => d.toISOString();
 const cleanTitle = data.title.split('|')[0].trim();
 
+// Cross-links each case study into its matching /industries/ page, so no
+// case study exists as an SEO island (per the topical-graph requirement).
+const industryLinkMap: Record<string, { slug: string; label: string }> = {
+  'health-supplement-brand-at-scale': { slug: 'supplements', label: 'Supplements' },
+  'specialty-supplement-brand': { slug: 'supplements', label: 'Supplements' },
+  'pet-wellness-brand': { slug: 'pet', label: 'Pet' },
+  'farm-direct-pet-treats-brand': { slug: 'pet', label: 'Pet' },
+  'multi-species-wellness-brand': { slug: 'pet', label: 'Pet' },
+  'activewear-brand-email-engagement': { slug: 'fashion-activewear', label: 'Fashion & Activewear' },
+  'specialty-food-brand-lean-setup': { slug: 'food-beverage', label: 'Food & Beverage' },
+  'lifestyle-wellness-brand': { slug: 'health-wellness', label: 'Health & Wellness' },
+  'nutrition-brand-revenue': { slug: 'health-wellness', label: 'Health & Wellness' },
+  'equine-performance-nutrition-brand': { slug: 'equine', label: 'Equine' },
+};
+const industryLink = industryLinkMap[entry.id];
+
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -121,6 +137,14 @@ const jsonLd = [
   </section>
 
   <FaqAccordion items={data.faq} />
+
+  {industryLink && (
+    <section class="px-8 md:px-16 py-12 border-t border-muted-silver/20">
+      <a href={`/industries/${industryLink.slug}`} class="inline-flex items-center gap-2 font-label-button uppercase text-accent-performance hover:translate-x-2 transition-transform">
+        MORE {industryLink.label.toUpperCase()} EMAIL RESULTS <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+      </a>
+    </section>
+  )}
 
   {data.furtherReading.length > 0 && (
     <section class="px-8 md:px-16 py-12 border-t border-muted-silver/20">

@@ -10,9 +10,11 @@ import { getCollection } from 'astro:content';
 const cleanTitle = (title: string) => title.split('|')[0].trim();
 
 export const GET: APIRoute = async () => {
-  const [blogPosts, caseStudies] = await Promise.all([
+  const [blogPosts, caseStudies, services, industries] = await Promise.all([
     getCollection('blogPosts'),
     getCollection('caseStudies'),
+    getCollection('services'),
+    getCollection('industries'),
   ]);
 
   const sortedBlog = [...blogPosts].sort(
@@ -21,17 +23,49 @@ export const GET: APIRoute = async () => {
   const sortedCaseStudies = [...caseStudies].sort((a, b) =>
     a.data.caseStudyNumber.localeCompare(b.data.caseStudyNumber)
   );
+  const sortedServices = [...services].sort((a, b) =>
+    a.data.serviceNumber.localeCompare(b.data.serviceNumber)
+  );
+  const sortedIndustries = [...industries].sort((a, b) =>
+    a.data.industryLabel.localeCompare(b.data.industryLabel)
+  );
 
   const lines = [
     '# OpenRateLab',
     '',
-    '> OpenRateLab is a Klaviyo email marketing agency for e-commerce and DTC brands, founded by Uros Korene in 2023. Services: email copywriting, full Klaviyo account builds, Klaviyo automation (flows, segmentation), and email strategy audits.',
+    '> OpenRateLab is a Klaviyo email marketing agency for e-commerce and DTC brands, founded by Uros Korene in 2023. Ten services: Klaviyo management, email marketing management, email copywriting, Klaviyo flows and automation, Klaviyo audits, email deliverability, segmentation, email strategy, Klaviyo setup, and Klaviyo migration.',
     '',
     '## Site',
     '',
     '- [Homepage](https://openratelab.com/): services, case studies, and contact',
+    '- [Services](https://openratelab.com/services/): all ten services in detail',
+    '- [Benchmarks](https://openratelab.com/benchmarks/): Klaviyo open rate, click rate, and flow-depth data from managed accounts',
+    '- [Klaviyo Agency](https://openratelab.com/klaviyo-agency/): full-service Klaviyo agency positioning',
+    '- [Email Marketing Agency](https://openratelab.com/email-marketing-agency/): general email marketing agency positioning',
+    '- [Ecommerce & DTC Email Marketing Agency](https://openratelab.com/ecommerce-email-marketing-agency/): ecommerce-specific positioning',
+    '- [Shopify Email Marketing Agency](https://openratelab.com/shopify-email-marketing-agency/): Shopify + Klaviyo positioning',
+    '- [Industries](https://openratelab.com/industries/): email marketing by vertical',
+    '- [Klaviyo vs Mailchimp](https://openratelab.com/compare/klaviyo-vs-mailchimp/)',
+    '- [Klaviyo vs Omnisend](https://openratelab.com/compare/klaviyo-vs-omnisend/)',
+    '- [Klaviyo Agency vs Freelancer](https://openratelab.com/compare/klaviyo-agency-vs-freelancer/)',
+    '- [How Much Does a Klaviyo Agency Cost](https://openratelab.com/guides/klaviyo-agency-cost/)',
+    '- [Best Klaviyo Agency for DTC Brands](https://openratelab.com/guides/best-klaviyo-agency-for-dtc-brands/)',
+    '- [When to Hire a Klaviyo Agency](https://openratelab.com/guides/when-to-hire-a-klaviyo-agency/)',
+    '- [Klaviyo Audit Checklist](https://openratelab.com/guides/klaviyo-audit-checklist/)',
     '- [About](https://openratelab.com/about/): founder background and agency approach',
     '- [Blog](https://openratelab.com/blog/): Klaviyo guides, benchmarks, and flow deep-dives',
+    '',
+    '## Services',
+    '',
+    ...sortedServices.map(
+      (service) => `- [${cleanTitle(service.data.title)}](https://openratelab.com/services/${service.id})`
+    ),
+    '',
+    '## Industries',
+    '',
+    ...sortedIndustries.map(
+      (industry) => `- [${cleanTitle(industry.data.title)}](https://openratelab.com/industries/${industry.id})`
+    ),
     '',
     '## Blog',
     '',

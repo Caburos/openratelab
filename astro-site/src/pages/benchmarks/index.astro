@@ -1,0 +1,146 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const industries = (await getCollection('industries')).sort((a, b) =>
+  a.data.industryLabel.localeCompare(b.data.industryLabel)
+);
+
+const canonicalPath = '/benchmarks/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const sectorRows = [
+  { sector: 'Health & Supplement (DTC)', campaignOpen: '51.5%', flowOpen: '33.2%', flows: '193', emails: '2,365,244' },
+  { sector: 'Activewear & Fashion (DTC)', campaignOpen: '40.3%', flowOpen: '—', flows: '58', emails: '46 campaigns' },
+  { sector: 'Pet Wellness (DTC)', campaignOpen: '72–76%', flowOpen: '—', flows: '—', emails: 'over two years sustained' },
+  { sector: 'Ecommerce, General (DTC)', campaignOpen: '70.7%', flowOpen: '—', flows: '—', emails: '15,000+ subscriber list' },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Dataset',
+        name: 'OpenRateLab Klaviyo Email Marketing Benchmarks',
+        description: 'Klaviyo campaign and flow open rate, unsubscribe rate, and flow-depth benchmarks aggregated across 22+ actively managed DTC accounts.',
+        url: canonicalUrl,
+        creator: { '@type': 'Organization', name: 'OpenRateLab', url: 'https://openratelab.com' },
+        temporalCoverage: '2026',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Benchmarks', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Klaviyo Email Marketing Benchmarks | OpenRateLab"
+  description="Open rate and flow-depth benchmarks from 22+ actively managed Klaviyo accounts, by sector, compared against published industry averages."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="min-h-[45vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ DATA_NOTE // 22+ MANAGED ACCOUNTS ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      KLAVIYO BENCHMARKS,<br/>NOT INVENTED AVERAGES.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      Every number below comes from actual Klaviyo reporting on accounts we manage, not a survey or an industry press release. Where we compare to a published industry average, we cite the source.
+    </p>
+  </section>
+
+  <!-- Top-line stats -->
+  <section class="bg-surface-secondary border-y border-muted-silver/20 py-24 px-8 md:px-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="flex flex-col">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">REV_ATTRIBUTED</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">$2.3M+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Email Revenue Per Year</p>
+      </div>
+      <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">AVG_OPEN_RATE</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">33%+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Average Across Accounts</p>
+      </div>
+      <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">EMAILS_ANALYZED</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">2.4M+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Total Emails Sent</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benchmark table -->
+  <section class="py-16 md:py-24 px-8 md:px-16 border-t border-muted-silver/20 overflow-x-auto">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-8">CAMPAIGN OPEN RATE BY SECTOR</span>
+    <table class="w-full border-collapse min-w-[640px]">
+      <thead>
+        <tr class="border-b border-muted-silver/20">
+          <th class="text-left py-4 font-label-technical text-label-technical text-muted-silver uppercase">Sector</th>
+          <th class="text-left py-4 font-label-technical text-label-technical text-accent-performance uppercase">Campaign Open</th>
+          <th class="text-left py-4 font-label-technical text-label-technical text-accent-performance uppercase">Flow Open</th>
+          <th class="text-left py-4 font-label-technical text-label-technical text-muted-silver uppercase">Active Flows</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sectorRows.map((row) => (
+          <tr class="border-b border-muted-silver/10">
+            <td class="py-5 pr-6 font-label-button uppercase text-on-surface-warm">{row.sector}</td>
+            <td class="py-5 pr-6 font-body-md text-body-md text-accent-performance">{row.campaignOpen}</td>
+            <td class="py-5 pr-6 font-body-md text-body-md text-muted-silver">{row.flowOpen}</td>
+            <td class="py-5 font-body-md text-body-md text-muted-silver">{row.flows}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="font-label-technical text-label-technical text-muted-silver mt-8 max-w-2xl">[ SOURCE ] Klaviyo's published industry average sits around 30–35% for campaigns and ~25% for flows. Full methodology and additional metrics (unsubscribe rate, subject line testing findings) in the <a href="/blog/klaviyo-performance-report-2026" class="text-accent-performance underline">full 2026 performance report</a>.</p>
+  </section>
+
+  <!-- Per-industry breakdown -->
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-t border-muted-silver/20">
+    <div class="mb-16 max-w-2xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4">BY_INDUSTRY</span>
+      <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase leading-none">RESULTS, BROKEN<br/>DOWN BY VERTICAL.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {industries.map((industry) => (
+        <a href={`/industries/${industry.id}`} class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+          <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-4">{industry.data.industryLabel}</span>
+          <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">{industry.data.primaryMetric.value}</div>
+          <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">{industry.data.primaryMetric.label}</span>
+          <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">
+            SEE INDUSTRY PAGE <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Full report link -->
+  <section class="py-24 px-8 md:px-16 border-t border-muted-silver/20 text-center">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-6">FULL_METHODOLOGY</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">READ THE FULL<br/>2026 PERFORMANCE REPORT.</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-10 max-w-2xl mx-auto italic">Unsubscribe rate data, what 193 active flows actually looks like, and the three factors that separate high-performing accounts from underperforming ones.</p>
+    <a href="/blog/klaviyo-performance-report-2026" class="inline-flex items-center gap-2 font-label-button uppercase text-accent-performance hover:translate-x-2 transition-transform">
+      READ THE FULL REPORT <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+    </a>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">WHERE DOES YOUR<br/>ACCOUNT STAND?</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. We'll benchmark your account against these numbers and tell you specifically where the gap is.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+</BaseLayout>

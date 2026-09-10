@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+
+const canonicalPath = '/ecommerce-email-marketing-agency/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const faq = [
+  {
+    question: 'Do you work specifically with ecommerce and DTC brands?',
+    answer: "Yes, exclusively. Every case study we publish and every service we offer is built around ecommerce and DTC email: purchase-triggered flows, product-based segmentation, and revenue attribution tied to actual orders, not generic B2B nurture sequences.",
+  },
+  {
+    question: "What makes DTC email marketing different from B2B?",
+    answer: "The lifecycle is transactional and fast: browse, cart, purchase, repeat. Flows are triggered by purchase behavior, segmentation is built around product affinity and order history, and revenue attribution is measurable per email in a way B2B's longer sales cycles rarely allow.",
+  },
+  {
+    question: 'What size ecommerce brand do you work with?',
+    answer: "Growth-stage brands that already have real order volume and want email to become a reliable revenue channel rather than an afterthought. The free audit tells us quickly whether your list size and volume are a fit.",
+  },
+  {
+    question: 'Which platforms do you integrate with?',
+    answer: "Primarily Shopify, since that's where Klaviyo's integration is deepest and where we're most effective. We also work with WooCommerce accounts where Klaviyo is already the ESP.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ProfessionalService',
+        name: 'OpenRateLab',
+        url: 'https://openratelab.com',
+        description: 'Ecommerce and DTC email marketing agency: Klaviyo flows, campaigns, segmentation, and copy built around purchase behavior.',
+        areaServed: 'Worldwide',
+        email: 'hello@openratelab.com',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Ecommerce Email Marketing Agency', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Ecommerce & DTC Email Marketing Agency | OpenRateLab"
+  description="OpenRateLab is an email marketing agency built exclusively for ecommerce and DTC brands: purchase-triggered flows, segmentation, and revenue attribution."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="min-h-[55vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ ECOMMERCE // DTC EMAIL MARKETING AGENCY ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      BUILT FOR ECOMMERCE.<br/>NOTHING ELSE.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      Ecommerce and DTC brands don't need a generalist marketing agency's email add-on. They need flows triggered by actual purchase behavior, segmentation built around product affinity, and revenue attribution tied to real orders, not opens and clicks in isolation.
+    </p>
+  </section>
+
+  <!-- Proof -->
+  <section class="bg-surface-secondary border-y border-muted-silver/20 py-24 px-8 md:px-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="flex flex-col">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">REV_ATTRIBUTED</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">$2.3M+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Email Revenue Per Year</p>
+      </div>
+      <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">AVG_OPEN_RATE</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">33%+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Average Across Accounts</p>
+      </div>
+      <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">BRANDS_SERVED</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">22</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Active Accounts</p>
+      </div>
+    </div>
+    <a href="/benchmarks/" class="inline-flex items-center gap-2 mt-10 font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">SEE FULL BENCHMARKS <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+  </section>
+
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary">
+    <div class="mb-16 max-w-2xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4">WHAT_WE_DO</span>
+      <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase leading-none">TEN SERVICES.<br/>ONE VERTICAL.</h2>
+    </div>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-3xl mb-12">
+      Full account management, copy-only support, a one-time audit, or a platform migration, every service built around ecommerce's purchase-triggered lifecycle.
+    </p>
+    <a href="/services/" class="inline-flex items-center gap-2 font-label-button uppercase text-accent-performance hover:translate-x-2 transition-transform">
+      SEE ALL SERVICES <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+    </a>
+  </section>
+
+  <section class="py-24 md:py-40 px-8 md:px-16 flex flex-col items-center text-center border-t border-muted-silver/20">
+    <div class="max-w-3xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-8">CLIENT SIGNAL</span>
+      <blockquote class="font-headline-lg text-headline-lg-mobile md:text-headline-lg italic leading-tight text-on-surface-warm mb-8">
+        &ldquo;I didn't expect email to start working this fast. People opened, replied, and bought, and it kept happening without constant sending.&rdquo;
+      </blockquote>
+      <span class="font-label-technical text-label-technical text-muted-silver uppercase">VIKTOR, GROWTH DIRECTOR</span>
+    </div>
+  </section>
+
+  <section class="py-24 px-8 md:px-16 border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-10">PROOF IN THE LEDGER</span>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="/case-studies/nutrition-brand-revenue" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">$64,838</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">12 MONTHS, AUTOMATION-FIRST</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+      <a href="/case-studies/farm-direct-pet-treats-brand" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">$0.75</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">REVENUE PER RECIPIENT</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+      <a href="/case-studies/specialty-food-brand-lean-setup" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">$18,501</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">15 FLOWS ONLY, FROM ZERO</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+    </div>
+    <a href="/#ledger" class="inline-flex items-center gap-2 mt-10 font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">
+      SEE ALL 12 CASE STUDIES <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+    </a>
+  </section>
+
+  <FaqAccordion items={faq} />
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">DEPLOYMENT_FINAL_PHASE</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">YOUR STORE IS READY.<br/>IS YOUR EMAIL?</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. A specific, written breakdown of what's underperforming in your account.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+</BaseLayout>

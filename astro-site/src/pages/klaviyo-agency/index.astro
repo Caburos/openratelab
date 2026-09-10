@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+
+const canonicalPath = '/klaviyo-agency/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const faq = [
+  {
+    question: 'What does a Klaviyo agency actually do?',
+    answer: "A Klaviyo agency manages your account end to end: flow architecture, campaign calendar, segmentation, deliverability, and copy, so email runs as a system instead of a task someone remembers to do. See the full breakdown on our [services page](/services/).",
+  },
+  {
+    question: "Klaviyo agency, Klaviyo expert, or Klaviyo consultant, what's the difference?",
+    answer: "In practice, less than the labels suggest. An 'expert' or 'consultant' usually means one person advising or fixing a specific problem; an 'agency' usually means an ongoing team managing the full account. We do both: a scoped consulting engagement for a specific fix, or full agency management for the whole account. The free audit tells us which one your situation actually needs.",
+  },
+  {
+    question: 'How is OpenRateLab different from a generalist marketing agency?',
+    answer: "We're Klaviyo specialists, not generalists. Shopify and Klaviyo is the whole focus, not one channel among many services. Every case study we publish cites real metrics: open rates, revenue attribution, flow counts, not vague claims about 'improved engagement.'",
+  },
+  {
+    question: 'Do you work with brands that already have an in-house email person?',
+    answer: "Yes. Some engagements are full account management; others are strategic support layered onto an existing in-house team or freelancer, scoped around whatever gap the audit finds.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ProfessionalService',
+        name: 'OpenRateLab',
+        url: 'https://openratelab.com',
+        description: 'Klaviyo agency for ecommerce and DTC brands: flows, campaigns, segmentation, and deliverability managed end to end.',
+        areaServed: 'Worldwide',
+        email: 'hello@openratelab.com',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Klaviyo Agency', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Klaviyo Agency for Ecommerce & DTC Brands | OpenRateLab"
+  description="OpenRateLab is a Klaviyo agency for ecommerce and DTC brands: flows, campaigns, segmentation, and deliverability, managed by specialists, not generalists."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="min-h-[55vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ KLAVIYO AGENCY // KLAVIYO EXPERT // KLAVIYO CONSULTANT ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      THE KLAVIYO AGENCY THAT<br/>TREATS YOUR ACCOUNT LIKE OURS.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      Whether you're looking for a Klaviyo agency to run the whole account, a Klaviyo expert to fix one specific problem, or a consultant to sanity-check your setup, the work is the same: specialists who live inside Klaviyo daily, not generalists treating it as one channel among many.
+    </p>
+  </section>
+
+  <!-- Proof -->
+  <section class="bg-surface-secondary border-y border-muted-silver/20 py-24 px-8 md:px-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="flex flex-col">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">REV_ATTRIBUTED</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">$2.3M+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Email Revenue Per Year</p>
+      </div>
+      <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">AVG_OPEN_RATE</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">33%+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Average Across Accounts</p>
+      </div>
+      <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">BRANDS_SERVED</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">22</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Active Accounts</p>
+      </div>
+    </div>
+    <a href="/benchmarks/" class="inline-flex items-center gap-2 mt-10 font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">SEE FULL BENCHMARKS <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+  </section>
+
+  <!-- What a Klaviyo agency does -->
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary">
+    <div class="mb-16 max-w-2xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4">WHAT_WE_DO</span>
+      <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase leading-none">TEN SERVICES.<br/>ONE SPECIALTY.</h2>
+    </div>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-3xl mb-12">
+      A Klaviyo agency engagement can mean full account management, a one-time audit, a platform migration, or copy-only support layered onto your existing team. We scope it during the free audit instead of selling a fixed package before we've seen your account.
+    </p>
+    <a href="/services/" class="inline-flex items-center gap-2 font-label-button uppercase text-accent-performance hover:translate-x-2 transition-transform">
+      SEE ALL SERVICES <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+    </a>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="py-24 md:py-40 px-8 md:px-16 flex flex-col items-center text-center border-t border-muted-silver/20">
+    <div class="max-w-3xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-8">CLIENT SIGNAL</span>
+      <blockquote class="font-headline-lg text-headline-lg-mobile md:text-headline-lg italic leading-tight text-on-surface-warm mb-8">
+        &ldquo;My store went from sending the occasional newsletter to having a proper email system with flows, a campaign calendar, and clean deliverability. Revenue attribution from email is consistently above 30%.&rdquo;
+      </blockquote>
+      <span class="font-label-technical text-label-technical text-muted-silver uppercase">AMANDA R., FOUNDER, DTC BRAND</span>
+    </div>
+  </section>
+
+  <!-- Case studies -->
+  <section class="py-24 px-8 md:px-16 border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-10">PROOF IN THE LEDGER</span>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="/case-studies/dtc-brand-attribution-system" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">30%+</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">EMAIL REVENUE ATTRIBUTION</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+      <a href="/case-studies/health-supplement-brand-at-scale" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">51.5%</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">AVG OPEN RATE, 191 CAMPAIGNS</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+      <a href="/case-studies/lifestyle-wellness-brand" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">75.8%</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">OPEN RATE POST-REBUILD</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+    </div>
+    <a href="/#ledger" class="inline-flex items-center gap-2 mt-10 font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">
+      SEE ALL 12 CASE STUDIES <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+    </a>
+  </section>
+
+  <FaqAccordion items={faq} />
+
+  <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-6">RELATED READING</span>
+    <ul class="space-y-3">
+      <li><a href="/guides/best-klaviyo-agency-for-dtc-brands/" class="font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">&rarr; How to Find the Best Klaviyo Agency for Your DTC Brand</a></li>
+      <li><a href="/guides/klaviyo-agency-cost/" class="font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">&rarr; How Much Does a Klaviyo Agency Cost?</a></li>
+      <li><a href="/guides/when-to-hire-a-klaviyo-agency/" class="font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">&rarr; When Should You Hire a Klaviyo Agency?</a></li>
+      <li><a href="/compare/klaviyo-agency-vs-freelancer/" class="font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">&rarr; Klaviyo Agency vs Freelancer</a></li>
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">DEPLOYMENT_FINAL_PHASE</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">TALK TO THE AGENCY,<br/>NOT A SALES REP.</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. A specific, written breakdown of what's underperforming in your account.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+</BaseLayout>

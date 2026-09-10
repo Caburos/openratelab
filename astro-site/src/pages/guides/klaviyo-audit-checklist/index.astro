@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+
+const canonicalPath = '/guides/klaviyo-audit-checklist/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const categories = [
+  { title: 'Flow architecture', items: ['Welcome series live and covering the full onboarding sequence', 'Abandoned cart and browse abandonment flows configured', 'Post-purchase and win-back flows in place', 'Flow timing and triggers reviewed against actual customer behavior'] },
+  { title: 'Campaign history', items: ['A planned, consistent sending calendar rather than sporadic sends', 'Subject line and open rate performance reviewed by segment', 'Click-through and conversion tracked per campaign, not just opens'] },
+  { title: 'List health', items: ['Segmentation built on behavior, not just static fields', 'Unengaged and unsubscribed contacts properly suppressed', 'List growth sources reviewed for quality, not just volume'] },
+  { title: 'Deliverability', items: ['SPF, DKIM, and DMARC configured correctly', 'Sender reputation and inbox placement monitored', 'Unsubscribe and spam-complaint rates within healthy range'] },
+];
+
+const faq = [
+  {
+    question: 'Is this the exact checklist you use on client audits?',
+    answer: "This page covers the same four categories our free audit reviews: flow architecture, campaign history, list health, and deliverability. The full, detailed checklist is available as a free download further down the homepage.",
+  },
+  {
+    question: 'Can I run this audit myself instead of booking one?',
+    answer: "Yes, this checklist is useful for a self-audit. If you want a specific, written breakdown of what's underperforming in your account rather than a generic checklist, the free audit goes further.",
+  },
+  {
+    question: 'How often should a Klaviyo account be audited?',
+    answer: "At least every 6-12 months for an active account, or immediately if revenue attribution has plateaued, you're planning a platform migration, or you've inherited an account from a previous freelancer or agency.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: 'The Klaviyo Audit Checklist',
+        description: 'What a real Klaviyo audit actually reviews: flow architecture, campaign history, list health, and deliverability, the four categories we check on every account.',
+        url: canonicalUrl,
+        author: { '@type': 'Organization', name: 'OpenRateLab', url: 'https://openratelab.com' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'OpenRateLab',
+          url: 'https://openratelab.com',
+          logo: { '@type': 'ImageObject', url: 'https://openratelab.com/images/logo.png' },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Klaviyo Audit Checklist', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="The Klaviyo Audit Checklist | OpenRateLab"
+  description="What a real Klaviyo audit reviews: flow architecture, campaign history, list health, and deliverability, the four categories we check on every account."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <section class="min-h-[45vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ AUDIT CHECKLIST ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      THE KLAVIYO AUDIT<br/>CHECKLIST.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      Four categories, the same ones we review on every client account. Run it yourself, or get the full detailed version free.
+    </p>
+  </section>
+
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-t border-muted-silver/20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {categories.map((cat) => (
+        <div class="p-8 border border-muted-silver/20">
+          <h2 class="font-headline-md text-headline-md uppercase mb-6">{cat.title}</h2>
+          <ul class="space-y-3">
+            {cat.items.map((item) => (
+              <li class="font-body-md text-body-md text-muted-silver flex gap-3">
+                <span class="material-symbols-outlined text-accent-performance text-lg shrink-0" aria-hidden="true">check</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">FREE_RESOURCE</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">GET THE FULL<br/>DETAILED CHECKLIST FREE.</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">The exact checklist we run through on every account audit, free, no obligation.</p>
+    <a href="/#lead-magnet" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET IT FREE
+    </a>
+    <p class="font-label-technical text-label-technical text-muted-silver mt-10">
+      Or skip straight to <a href="/#contact" class="text-accent-performance underline">a full written audit of your account &rarr;</a>
+    </p>
+  </section>
+
+  <FaqAccordion items={faq} />
+</BaseLayout>

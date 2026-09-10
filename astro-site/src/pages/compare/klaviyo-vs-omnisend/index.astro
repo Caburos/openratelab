@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+
+const canonicalPath = '/compare/klaviyo-vs-omnisend/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const rows = [
+  { label: 'Built for', klaviyo: 'Ecommerce specifically, with a large third-party ecosystem and integration library', omnisend: 'Ecommerce specifically, positioned around bundling email and SMS together' },
+  { label: 'Channel scope', klaviyo: 'Email-first, with SMS and push available', omnisend: 'Email and SMS positioned as equally core to the product from the start' },
+  { label: 'Segmentation & flows', klaviyo: 'Deep, granular behavior-based segmentation and a large flow template library', omnisend: 'Solid ecommerce automation, generally considered less granular at the high end than Klaviyo' },
+  { label: 'Ecosystem', klaviyo: 'Large network of agencies, integrations, and specialists (including us)', omnisend: 'Smaller but growing ecosystem' },
+  { label: 'Typical use case', klaviyo: 'Brands wanting the deepest segmentation and flow customization as they scale', omnisend: 'Brands wanting email and SMS unified from day one, often at an earlier stage' },
+];
+
+const faq = [
+  {
+    question: 'Is Omnisend cheaper than Klaviyo?',
+    answer: "Pricing structures and plans change on both platforms regularly, so check each provider's current pricing directly rather than relying on a fixed comparison here. The more durable difference is depth of segmentation and flow customization, where Klaviyo is generally considered stronger at scale.",
+  },
+  {
+    question: "Do I need SMS bundled with email, or can they be separate?",
+    answer: "It depends on the brand. Some brands benefit from a unified email and SMS platform from day one; others are better served scaling email deeply first (which is our specialty) and adding SMS separately once the email system is performing well.",
+  },
+  {
+    question: 'We\'re on Omnisend already. Is it worth migrating to Klaviyo?',
+    answer: "Usually worth evaluating once your list and revenue have grown to the point where deeper segmentation and flow customization would materially move revenue. We scope this during a free audit rather than recommending a migration by default.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: 'Klaviyo vs Omnisend for Ecommerce',
+        description: 'A factual comparison of Klaviyo and Omnisend for ecommerce email marketing: segmentation depth, channel scope, and ecosystem.',
+        url: canonicalUrl,
+        author: { '@type': 'Organization', name: 'OpenRateLab', url: 'https://openratelab.com' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'OpenRateLab',
+          url: 'https://openratelab.com',
+          logo: { '@type': 'ImageObject', url: 'https://openratelab.com/images/logo.png' },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Klaviyo vs Omnisend', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Klaviyo vs Omnisend for Ecommerce | OpenRateLab"
+  description="A factual comparison of Klaviyo and Omnisend for ecommerce email marketing: segmentation depth, channel scope, and which fits your growth stage."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <section class="min-h-[45vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ PLATFORM COMPARISON ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      KLAVIYO VS OMNISEND<br/>FOR ECOMMERCE.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      We're a Klaviyo agency, so read this knowing where we sit. Both platforms are built for ecommerce; the real question is which fits your growth stage and channel priorities.
+    </p>
+  </section>
+
+  <section class="py-16 md:py-24 px-8 md:px-16 border-t border-muted-silver/20 overflow-x-auto">
+    <table class="w-full border-collapse min-w-[640px]">
+      <thead>
+        <tr class="border-b border-muted-silver/20">
+          <th class="text-left py-4 font-label-technical text-label-technical text-muted-silver uppercase">Factor</th>
+          <th class="text-left py-4 font-label-technical text-label-technical text-accent-performance uppercase">Klaviyo</th>
+          <th class="text-left py-4 font-label-technical text-label-technical text-muted-silver uppercase">Omnisend</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr class="border-b border-muted-silver/10">
+            <td class="py-5 pr-6 font-label-button uppercase text-on-surface-warm align-top">{row.label}</td>
+            <td class="py-5 pr-6 font-body-md text-body-md text-muted-silver align-top">{row.klaviyo}</td>
+            <td class="py-5 font-body-md text-body-md text-muted-silver align-top">{row.omnisend}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="font-label-technical text-label-technical text-muted-silver mt-8 max-w-2xl">[ NOTE ] Both platforms update features and pricing regularly. Check each provider's site directly for current plans before deciding.</p>
+  </section>
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">SCALING PAST WHAT<br/>YOUR PLATFORM CAN DO?</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. We'll tell you honestly whether Klaviyo's depth would actually move the needle for your account.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+
+  <FaqAccordion items={faq} />
+</BaseLayout>

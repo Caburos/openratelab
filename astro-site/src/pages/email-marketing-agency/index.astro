@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+
+const canonicalPath = '/email-marketing-agency/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const faq = [
+  {
+    question: 'What does an email marketing agency actually manage?',
+    answer: "Campaign planning, flow architecture, segmentation, copywriting, and deliverability, run as one connected system instead of separate one-off tasks. See the full list on our [services page](/services/).",
+  },
+  {
+    question: 'Do you only work with Klaviyo, or other email platforms too?',
+    answer: "Klaviyo is our specialty and where nearly all of our accounts run. We're specialists, not generalists, so we're most effective on the platform we know best rather than spreading thin across every ESP.",
+  },
+  {
+    question: 'How much does an email marketing agency cost?',
+    answer: "It depends on account size, send volume, and whether you need full management or copy-only support. We scope pricing after the free audit, once we know your list size and current setup, rather than quoting a fixed number before seeing the account.",
+  },
+  {
+    question: 'How is this different from hiring a freelance email marketer?',
+    answer: "An agency brings a full team's worth of specialization (strategy, copy, flow architecture, deliverability) instead of one person's bandwidth across all of it. It also means the work continues without a single point of failure if one person is unavailable.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ProfessionalService',
+        name: 'OpenRateLab',
+        url: 'https://openratelab.com',
+        description: 'Email marketing agency for ecommerce and DTC brands, specializing in Klaviyo flows, campaigns, and copy.',
+        areaServed: 'Worldwide',
+        email: 'hello@openratelab.com',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Email Marketing Agency', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Email Marketing Agency for Ecommerce Brands | OpenRateLab"
+  description="OpenRateLab is an email marketing agency for ecommerce brands: campaigns, flows, segmentation, and copy, run as one system that compounds revenue."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="min-h-[55vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ EMAIL MARKETING AGENCY // KLAVIYO SPECIALISTS ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      AN EMAIL MARKETING<br/>AGENCY BUILT FOR REVENUE.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      Not a generalist marketing agency with email as one line item. Email is the whole focus: campaigns, flows, segmentation, and copy, run as one system instead of a task list nobody owns.
+    </p>
+  </section>
+
+  <!-- Proof -->
+  <section class="bg-surface-secondary border-y border-muted-silver/20 py-24 px-8 md:px-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="flex flex-col">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">REV_ATTRIBUTED</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">$2.3M+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Email Revenue Per Year</p>
+      </div>
+      <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">AVG_OPEN_RATE</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">33%+</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Average Across Accounts</p>
+      </div>
+      <div class="flex flex-col md:border-l border-muted-silver/10 md:pl-16">
+        <span class="font-label-technical text-label-technical text-accent-performance mb-2">BRANDS_SERVED</span>
+        <span class="font-display-xl-mobile text-display-xl-mobile md:text-[64px] font-bold font-label-technical leading-none">22</span>
+        <p class="font-label-button uppercase text-muted-silver mt-4">Active Accounts</p>
+      </div>
+    </div>
+    <a href="/benchmarks/" class="inline-flex items-center gap-2 mt-10 font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">SEE FULL BENCHMARKS <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+  </section>
+
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary">
+    <div class="mb-16 max-w-2xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4">WHAT_WE_DO</span>
+      <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase leading-none">TEN SERVICES.<br/>ONE SPECIALTY.</h2>
+    </div>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-3xl mb-12">
+      Full account management, copy-only support, a one-time audit, or a platform migration. We scope the engagement during a free audit instead of selling a fixed package before we've seen your account.
+    </p>
+    <a href="/services/" class="inline-flex items-center gap-2 font-label-button uppercase text-accent-performance hover:translate-x-2 transition-transform">
+      SEE ALL SERVICES <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+    </a>
+  </section>
+
+  <section class="py-24 md:py-40 px-8 md:px-16 flex flex-col items-center text-center border-t border-muted-silver/20">
+    <div class="max-w-3xl">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-8">CLIENT SIGNAL</span>
+      <blockquote class="font-headline-lg text-headline-lg-mobile md:text-headline-lg italic leading-tight text-on-surface-warm mb-8">
+        &ldquo;We've used email before, but it never really moved the needle. This time, email became a consistent revenue channel, not just something we sent occasionally.&rdquo;
+      </blockquote>
+      <span class="font-label-technical text-label-technical text-muted-silver uppercase">NIKA, E-COMMERCE FOUNDER</span>
+    </div>
+  </section>
+
+  <section class="py-24 px-8 md:px-16 border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-10">PROOF IN THE LEDGER</span>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="/case-studies/specialty-supplement-brand" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">$172K</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">12 MONTHS, FROM ZERO SYSTEM</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+      <a href="/case-studies/multi-species-wellness-brand" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">$33,454</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">SINGLE-SEND REVENUE</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+      <a href="/case-studies/activewear-brand-email-engagement" class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">40.3%</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">AVG OPEN RATE, 58 FLOWS</span>
+        <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">READ CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span></span>
+      </a>
+    </div>
+    <a href="/#ledger" class="inline-flex items-center gap-2 mt-10 font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">
+      SEE ALL 12 CASE STUDIES <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+    </a>
+  </section>
+
+  <FaqAccordion items={faq} />
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">DEPLOYMENT_FINAL_PHASE</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">LET'S BUILD YOUR<br/>EMAIL SYSTEM.</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. A specific, written breakdown of what's underperforming in your account.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+</BaseLayout>

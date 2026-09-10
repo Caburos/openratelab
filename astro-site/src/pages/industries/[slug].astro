@@ -1,0 +1,181 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+
+export async function getStaticPaths() {
+  const industries = await getCollection('industries');
+  return industries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data;
+const canonicalPath = `/industries/${entry.id}`;
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+const cleanTitle = data.title.split('|')[0].trim();
+
+const relatedCaseStudies = (
+  await Promise.all(data.relatedCaseStudies.map((id) => getEntry('caseStudies', id)))
+).filter((c): c is NonNullable<typeof c> => Boolean(c));
+
+const relatedServices = (
+  await Promise.all(data.relatedServices.map((id) => getEntry('services', id)))
+).filter((s): s is NonNullable<typeof s> => Boolean(s));
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        name: `Klaviyo Email Marketing for ${data.industryLabel} Brands`,
+        description: data.description,
+        url: canonicalUrl,
+        serviceType: 'Email Marketing',
+        provider: {
+          '@type': 'Organization',
+          name: 'OpenRateLab',
+          url: 'https://openratelab.com',
+          logo: { '@type': 'ImageObject', url: 'https://openratelab.com/images/logo.png' },
+        },
+        areaServed: 'Worldwide',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://openratelab.com/industries/' },
+          { '@type': 'ListItem', position: 3, name: data.industryLabel, item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: data.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  canonicalPath={canonicalPath}
+  ogImage={data.ogImage}
+  ogImageWidth={data.ogImageWidth}
+  ogImageHeight={data.ogImageHeight}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="min-h-[55vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <a href="/industries/" class="inline-flex items-center gap-2 font-label-technical text-label-technical text-muted-silver uppercase hover:text-accent-performance transition-colors mb-10 w-fit">
+      <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span> ALL INDUSTRIES
+    </a>
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-10">
+      <div class="max-w-3xl">
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-4 tracking-[0.2em]">
+          [ INDUSTRY // {data.eyebrow} ]
+        </span>
+        <h1 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg font-black md:font-bold uppercase leading-none mb-6" set:html={data.heroHeadline.replace(/\n/g, '<br/>')} />
+        <p class="font-body-lg text-body-lg text-muted-silver max-w-xl">{data.heroSubtext}</p>
+      </div>
+      <div class="flex flex-col items-start md:items-end text-left md:text-right border-l-4 md:border-l border-accent-performance md:border-muted-silver/20 pl-6 md:pl-12">
+        <span class="font-label-technical text-label-technical text-muted-silver uppercase mb-2">PROOF POINT</span>
+        <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none">{data.primaryMetric.value}</div>
+        <span class="font-headline-md text-headline-md uppercase text-on-surface-warm">{data.primaryMetric.label}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body content, rendered from MDX -->
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-t border-muted-silver/20">
+    <div class="prose-service max-w-4xl">
+      <Content />
+    </div>
+  </section>
+
+  <!-- CTA banner -->
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">SEE WHAT THIS LOOKS<br/>LIKE FOR YOUR BRAND.</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit. No obligation. A specific, written breakdown of what's underperforming, whether or not you ever work with us.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 font-label-button uppercase text-lg tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+
+  {relatedCaseStudies.length > 0 && (
+    <section class="py-24 px-8 md:px-16 border-t border-muted-silver/20">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-10">RELATED CASE STUDIES</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {relatedCaseStudies.map((cs) => (
+          <a href={`/case-studies/${cs.id}`} class="block p-8 border border-muted-silver/20 hover:bg-white/5 transition-colors group">
+            <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-4">[ CASE_STUDY:{cs.data.caseStudyNumber} // {cs.data.industryLabel.toUpperCase()} ]</span>
+            <div class="font-display-xl-mobile text-display-xl-mobile font-black text-accent-performance leading-none mb-2">{cs.data.primaryMetric.value}</div>
+            <span class="font-headline-md text-headline-md uppercase text-on-surface-warm block mb-4">{cs.data.primaryMetric.label}</span>
+            <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">
+              READ FULL CASE STUDY <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <FaqAccordion items={data.faq} />
+
+  {relatedServices.length > 0 && (
+    <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20">
+      <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-6">RELEVANT SERVICES</span>
+      <ul class="space-y-3">
+        {relatedServices.map((svc) => (
+          <li><a href={`/services/${svc.id}`} class="font-label-button uppercase text-muted-silver hover:text-accent-performance transition-colors">&rarr; {svc.data.title.split('|')[0].trim()}</a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .prose-service :global(h2) {
+    font-family: 'Hanken Grotesk', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: #F9F9F7;
+    margin-top: 56px;
+    margin-bottom: 20px;
+  }
+  .prose-service :global(p) {
+    font-family: 'Source Serif 4', serif;
+    font-size: 20px;
+    line-height: 32px;
+    color: #F9F9F7;
+    margin-bottom: 24px;
+  }
+  .prose-service :global(ul), .prose-service :global(ol) {
+    margin-bottom: 24px;
+    padding-left: 1.5em;
+  }
+  .prose-service :global(li) {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    line-height: 28px;
+    color: #F9F9F7;
+    margin-bottom: 8px;
+  }
+  .prose-service :global(strong) {
+    color: #F9F9F7;
+    font-weight: 700;
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+
+const canonicalPath = '/guides/best-klaviyo-agency-for-dtc-brands/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const criteria = [
+  { title: 'Real, specific case studies', body: 'Look for published results with actual numbers, open rates, revenue attribution, flow counts, not vague claims about "improved engagement." See our own results in the ledger.', link: { href: '/#ledger', label: 'See our case studies' } },
+  { title: 'Klaviyo specialization, not a side service', body: 'A generalist marketing agency treating Klaviyo as one line item among many rarely goes as deep as a team where it\'s the whole focus.' },
+  { title: 'A specific answer to "what\'s wrong with my account"', body: 'A competent agency should be able to look at your account and name specific gaps. A vague answer ("everything could be better") is a sales pitch, not an audit.' },
+  { title: 'Transparent scoping, not a fixed package', body: 'Pricing and scope should follow an actual look at your account, not a one-size tier chosen off a pricing page.' },
+  { title: 'Clarity on what happens after signing', body: 'Ask what the first 30, 60, and 90 days actually look like. A specific roadmap beats a vague promise.' },
+];
+
+const faq = [
+  {
+    question: 'Is there really a single "best" Klaviyo agency for every DTC brand?',
+    answer: "No, and be skeptical of any claim otherwise. The best fit depends on your catalog, list size, current setup, and what specifically needs fixing. Use the criteria above to evaluate any agency, including us.",
+  },
+  {
+    question: 'How do I compare case studies between agencies?',
+    answer: "Look for specificity: real metrics, a clear before-and-after, and whether the result is described as ongoing or a one-time spike. Vague, unquantified claims are a red flag regardless of which agency makes them.",
+  },
+  {
+    question: 'Should I get quotes from multiple agencies before deciding?',
+    answer: "It's reasonable to. Just make sure each one is scoping against your actual account (via an audit) rather than quoting a generic package sight unseen, so the quotes are actually comparable.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: 'How to Find the Best Klaviyo Agency for Your DTC Brand',
+        description: 'A buying-criteria guide for evaluating Klaviyo agencies: case studies, specialization, scoping, and what to ask before signing.',
+        url: canonicalUrl,
+        author: { '@type': 'Organization', name: 'OpenRateLab', url: 'https://openratelab.com' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'OpenRateLab',
+          url: 'https://openratelab.com',
+          logo: { '@type': 'ImageObject', url: 'https://openratelab.com/images/logo.png' },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Best Klaviyo Agency for DTC Brands', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Best Klaviyo Agency for DTC Brands: How to Evaluate One | OpenRateLab"
+  description="A buying-criteria guide for finding the best Klaviyo agency for your DTC brand: real case studies, specialization, and transparent scoping."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <section class="min-h-[45vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ BUYING GUIDE ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      HOW TO FIND THE BEST<br/>KLAVIYO AGENCY FOR YOU.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      "Best" depends on your brand, not a universal ranking. Here's what to actually check before signing with anyone, us included.
+    </p>
+  </section>
+
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-t border-muted-silver/20">
+    <div class="space-y-10 max-w-3xl">
+      {criteria.map((item, i) => (
+        <div class="border-l-2 border-accent-performance pl-8">
+          <span class="font-label-technical text-label-technical text-accent-performance block mb-2">{String(i + 1).padStart(2, '0')}</span>
+          <h2 class="font-headline-md text-headline-md uppercase mb-3">{item.title}</h2>
+          <p class="font-body-md text-body-md text-muted-silver mb-3">{item.body}</p>
+          {item.link && (
+            <a href={item.link.href} class="inline-flex items-center gap-2 font-label-button uppercase text-accent-performance hover:translate-x-2 transition-transform">
+              {item.link.label} <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">SEE HOW WE HOLD UP<br/>AGAINST THIS LIST.</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. Judge us against the same criteria you'd use for anyone else.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+
+  <FaqAccordion items={faq} />
+</BaseLayout>

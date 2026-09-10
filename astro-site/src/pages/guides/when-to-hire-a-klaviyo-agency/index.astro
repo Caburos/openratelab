@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+
+const canonicalPath = '/guides/when-to-hire-a-klaviyo-agency/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const signals = [
+  { title: 'Email revenue is flat or declining', body: 'If email revenue attribution has plateaued or dropped despite steady traffic and orders, the account likely has a structural problem an audit would surface.' },
+  { title: 'You only have a welcome flow', body: 'One flow covering the entire customer lifecycle usually means abandoned cart, post-purchase, and win-back revenue is being left on the table entirely.' },
+  { title: 'Sends are sporadic, not scheduled', body: 'If campaigns go out "when someone remembers," there\'s no system, just a task nobody consistently owns.' },
+  { title: 'You\'re migrating platforms', body: 'A platform migration done wrong can damage list health and deliverability. This is a common point to bring in specialist support even for a one-time project.' },
+  { title: 'You\'re scaling past what in-house bandwidth can cover', body: 'A growing list and catalog often outpaces what one in-house generalist can maintain alongside their other responsibilities.' },
+];
+
+const faq = [
+  {
+    question: 'Is there a specific revenue or list size where hiring an agency makes sense?',
+    answer: "There's no fixed threshold. It's more about whether email is treated as a priority revenue channel worth investing in, regardless of exact list size. A free audit is a low-cost way to find out where your account actually stands.",
+  },
+  {
+    question: 'Should I fix things in-house first before hiring an agency?',
+    answer: "If you have the in-house bandwidth and expertise, that's reasonable. If email keeps getting deprioritized behind other work, bringing in dedicated help sooner usually costs less than months of continued underperformance.",
+  },
+  {
+    question: 'Can I start small before committing to full management?',
+    answer: "Yes. A free audit or a single scoped project (a flow build, a migration, an audit) is a low-commitment way to evaluate fit before considering ongoing management.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: 'When Should You Hire a Klaviyo Agency?',
+        description: 'Five signals it\'s time to bring in specialist Klaviyo help: flat revenue, thin flow coverage, sporadic sends, migrations, and scaling past in-house bandwidth.',
+        url: canonicalUrl,
+        author: { '@type': 'Organization', name: 'OpenRateLab', url: 'https://openratelab.com' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'OpenRateLab',
+          url: 'https://openratelab.com',
+          logo: { '@type': 'ImageObject', url: 'https://openratelab.com/images/logo.png' },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'When to Hire a Klaviyo Agency', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="When Should You Hire a Klaviyo Agency? | OpenRateLab"
+  description="Five signals it's time to bring in specialist Klaviyo help: flat revenue, thin flow coverage, sporadic sends, migrations, and scaling past in-house bandwidth."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <section class="min-h-[45vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ DECISION GUIDE ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      WHEN SHOULD YOU<br/>HIRE A KLAVIYO AGENCY?
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      Five signals it's time to bring in specialist help, and none of them require a specific revenue threshold.
+    </p>
+  </section>
+
+  <section class="py-24 md:py-40 px-8 md:px-16 bg-surface-primary border-t border-muted-silver/20">
+    <div class="space-y-10 max-w-3xl">
+      {signals.map((item, i) => (
+        <div class="border-l-2 border-accent-performance pl-8">
+          <span class="font-label-technical text-label-technical text-accent-performance block mb-2">{String(i + 1).padStart(2, '0')}</span>
+          <h2 class="font-headline-md text-headline-md uppercase mb-3">{item.title}</h2>
+          <p class="font-body-md text-body-md text-muted-silver">{item.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">SEE ANY OF THESE<br/>SIGNALS IN YOUR ACCOUNT?</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. We'll tell you specifically what's underperforming and whether it's worth fixing now.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+
+  <FaqAccordion items={faq} />
+</BaseLayout>

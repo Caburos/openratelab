@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+
+const canonicalPath = '/compare/klaviyo-vs-mailchimp/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const rows = [
+  { label: 'Built for', klaviyo: 'Ecommerce specifically', mailchimp: 'General-purpose marketing (ecommerce, newsletters, small business)' },
+  { label: 'Store integration', klaviyo: 'Deep native Shopify/WooCommerce sync: orders, product catalog, and behavior flow into segmentation automatically', mailchimp: 'Ecommerce integrations exist but are less central to the product’s overall design' },
+  { label: 'Segmentation', klaviyo: 'Behavior- and purchase-based segments as a core feature', mailchimp: 'Available, generally considered less granular for ecommerce-specific behavior' },
+  { label: 'Flow / automation depth', klaviyo: 'Purpose-built for lifecycle flows: abandoned cart, browse abandonment, post-purchase, win-back', mailchimp: 'Automation exists but is less specialized toward ecommerce lifecycle triggers' },
+  { label: 'Typical use case', klaviyo: 'Ecommerce brands scaling email as a primary revenue channel', mailchimp: 'Small businesses and brands wanting one platform for email, basic CRM, and simple automation' },
+];
+
+const faq = [
+  {
+    question: 'Is Klaviyo always better than Mailchimp for ecommerce?',
+    answer: "For ecommerce brands specifically, Klaviyo's deeper store integration and purchase-behavior segmentation tend to be a better fit once revenue from email becomes a real priority. Mailchimp can still make sense for very early-stage brands wanting one simple, general-purpose tool.",
+  },
+  {
+    question: 'Is migrating from Mailchimp to Klaviyo difficult?',
+    answer: "It's a real project, not a toggle: list export and cleanup, re-authentication (SPF, DKIM, DMARC) on the new platform, and rebuilding flows to Klaviyo's architecture rather than a straight import. See our [Klaviyo migration service](/services/klaviyo-migration/) for how we handle it.",
+  },
+  {
+    question: 'Does switching platforms hurt deliverability?',
+    answer: "It can if done carelessly: importing a dirty list or skipping proper authentication setup on the new platform are the two most common causes. Done in the right order (list hygiene first, authentication second, then flows), a migration shouldn't damage sender reputation.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: 'Klaviyo vs Mailchimp for Ecommerce',
+        description: 'A factual comparison of Klaviyo and Mailchimp for ecommerce email marketing: store integration, segmentation, and automation depth.',
+        url: canonicalUrl,
+        author: { '@type': 'Organization', name: 'OpenRateLab', url: 'https://openratelab.com' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'OpenRateLab',
+          url: 'https://openratelab.com',
+          logo: { '@type': 'ImageObject', url: 'https://openratelab.com/images/logo.png' },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Klaviyo vs Mailchimp', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Klaviyo vs Mailchimp for Ecommerce | OpenRateLab"
+  description="A factual comparison of Klaviyo and Mailchimp for ecommerce email marketing: store integration, segmentation depth, and automation built for purchase behavior."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <section class="min-h-[45vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ PLATFORM COMPARISON ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      KLAVIYO VS MAILCHIMP<br/>FOR ECOMMERCE.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      We're a Klaviyo agency, so read this knowing where we sit. The comparison below is about product fit for ecommerce specifically, not a claim that one platform is universally better.
+    </p>
+  </section>
+
+  <section class="py-16 md:py-24 px-8 md:px-16 border-t border-muted-silver/20 overflow-x-auto">
+    <table class="w-full border-collapse min-w-[640px]">
+      <thead>
+        <tr class="border-b border-muted-silver/20">
+          <th class="text-left py-4 font-label-technical text-label-technical text-muted-silver uppercase">Factor</th>
+          <th class="text-left py-4 font-label-technical text-label-technical text-accent-performance uppercase">Klaviyo</th>
+          <th class="text-left py-4 font-label-technical text-label-technical text-muted-silver uppercase">Mailchimp</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr class="border-b border-muted-silver/10">
+            <td class="py-5 pr-6 font-label-button uppercase text-on-surface-warm align-top">{row.label}</td>
+            <td class="py-5 pr-6 font-body-md text-body-md text-muted-silver align-top">{row.klaviyo}</td>
+            <td class="py-5 font-body-md text-body-md text-muted-silver align-top">{row.mailchimp}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="font-label-technical text-label-technical text-muted-silver mt-8 max-w-2xl">[ NOTE ] Both platforms update features and pricing regularly. Check each provider's site directly for current plans before deciding.</p>
+  </section>
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">ALREADY ON KLAVIYO?<br/>MAKE IT EARN ITS KEEP.</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. We'll show you specifically what's underperforming in your account.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+
+  <FaqAccordion items={faq} />
+</BaseLayout>

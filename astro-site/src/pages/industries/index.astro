@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const industries = (await getCollection('industries')).sort((a, b) =>
+  a.data.industryLabel.localeCompare(b.data.industryLabel)
+);
+
+const canonicalPath = '/industries/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        name: 'Industries We Serve | OpenRateLab',
+        description: 'Klaviyo email marketing by industry: supplements, pet, fashion and activewear, food and beverage, health and wellness, and equine brands.',
+        url: canonicalUrl,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Industries We Serve | OpenRateLab"
+  description="Klaviyo email marketing by industry: supplements, pet, fashion and activewear, food and beverage, health and wellness, and equine brands."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="min-h-[45vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ INDUSTRIES WE SERVE ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      EVERY INDUSTRY BUYS<br/>DIFFERENTLY.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      We only publish an industry page where we have real accounts and real results behind it. No templated content with the category name swapped in.
+    </p>
+  </section>
+
+  <!-- Grid -->
+  <section class="px-8 md:px-16 py-16 md:py-24 border-t border-muted-silver/20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-muted-silver/20">
+      {industries.map((industry, i) => (
+        <a
+          href={`/industries/${industry.id}`}
+          class:list={[
+            'p-10 border-muted-silver/20 hover:bg-white/5 transition-colors group',
+            i % 2 === 0 ? 'md:border-r' : '',
+            i < industries.length - (industries.length % 2 === 0 ? 2 : 1) ? 'border-b' : '',
+          ]}
+        >
+          <span class="font-label-technical text-label-technical text-accent-performance mb-6 block">{industry.data.eyebrow.replace(/_/g, ' ')}</span>
+          <h2 class="font-headline-md text-headline-md uppercase mb-6 leading-tight">{industry.data.industryLabel}</h2>
+          <p class="font-body-md text-body-md text-muted-silver mb-8">{industry.data.summary}</p>
+          <div class="flex items-center justify-between">
+            <span class="font-label-technical text-label-technical text-muted-silver uppercase">{industry.data.primaryMetric.value} {industry.data.primaryMetric.label}</span>
+            <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">
+              <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">DON'T SEE YOUR<br/>INDUSTRY LISTED?</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">We work beyond these six categories too. Book a free audit and tell us about your brand, we'll tell you honestly whether we're a fit.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+</BaseLayout>

@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+
+const canonicalPath = '/compare/klaviyo-agency-vs-freelancer/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const rows = [
+  { label: 'Skill coverage', agency: 'A team spanning strategy, flow architecture, copy, and deliverability', freelancer: "Usually one person's strongest skill, with the rest handled at a lower level or outsourced further" },
+  { label: 'Continuity', agency: 'Work continues if one team member is unavailable', freelancer: "A single point of failure: illness, a new client, or burnout can pause your account" },
+  { label: 'Cost', agency: 'Generally higher, reflecting full-team coverage', freelancer: 'Generally lower, reflecting one person\'s time' },
+  { label: 'Best fit', agency: 'Accounts where email is a serious revenue channel worth full-team investment', freelancer: 'Smaller accounts, a single well-defined task, or budget-constrained early stages' },
+  { label: 'Accountability', agency: 'A process and a team accountable to a scoped engagement', freelancer: 'Accountability tied to one individual\'s availability and consistency' },
+];
+
+const faq = [
+  {
+    question: 'Is a Klaviyo agency always worth it over a freelancer?',
+    answer: "Not always. A well-defined, narrow task (a single flow build, a copy refresh) can be a good fit for a skilled freelancer. Full account management, where strategy, copy, flows, and deliverability all need to work together, tends to favor a team.",
+  },
+  {
+    question: 'Can a freelancer do everything an agency does?',
+    answer: "A generalist freelancer can cover the basics but rarely matches a specialized team's depth across every discipline (strategy, copy, flow architecture, deliverability) at once. Some freelancers specialize deeply in one of these and are excellent at that one thing.",
+  },
+  {
+    question: 'What should I ask before hiring either one?',
+    answer: "Ask for specific case studies with real metrics, not vague claims. Ask what happens if they're unavailable for two weeks. Ask how they'd scope your specific account rather than quoting a fixed package before seeing it.",
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: 'Klaviyo Agency vs Freelancer',
+        description: 'When a Klaviyo agency fits better than a freelancer, and when it doesn\'t: skill coverage, continuity, cost, and accountability.',
+        url: canonicalUrl,
+        author: { '@type': 'Organization', name: 'OpenRateLab', url: 'https://openratelab.com' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'OpenRateLab',
+          url: 'https://openratelab.com',
+          logo: { '@type': 'ImageObject', url: 'https://openratelab.com/images/logo.png' },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Klaviyo Agency vs Freelancer', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Klaviyo Agency vs Freelancer: Which Fits Your Account? | OpenRateLab"
+  description="Klaviyo agency vs freelancer: skill coverage, continuity, cost, and accountability, with an honest read on which fits your account and stage."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <section class="min-h-[45vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ AGENCY VS FREELANCER ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      KLAVIYO AGENCY OR<br/>FREELANCER? HONESTLY.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      We're an agency, so read this knowing where we sit. The honest answer depends on your account's scope and stage, not a universal rule.
+    </p>
+  </section>
+
+  <section class="py-16 md:py-24 px-8 md:px-16 border-t border-muted-silver/20 overflow-x-auto">
+    <table class="w-full border-collapse min-w-[640px]">
+      <thead>
+        <tr class="border-b border-muted-silver/20">
+          <th class="text-left py-4 font-label-technical text-label-technical text-muted-silver uppercase">Factor</th>
+          <th class="text-left py-4 font-label-technical text-label-technical text-accent-performance uppercase">Agency</th>
+          <th class="text-left py-4 font-label-technical text-label-technical text-muted-silver uppercase">Freelancer</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr class="border-b border-muted-silver/10">
+            <td class="py-5 pr-6 font-label-button uppercase text-on-surface-warm align-top">{row.label}</td>
+            <td class="py-5 pr-6 font-body-md text-body-md text-muted-silver align-top">{row.agency}</td>
+            <td class="py-5 font-body-md text-body-md text-muted-silver align-top">{row.freelancer}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">NOT SURE WHICH FIT<br/>YOU ARE? ASK US.</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Free audit, no obligation. If a freelancer or in-house hire is genuinely the better fit for your account, we'll say so.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+
+  <FaqAccordion items={faq} />
+</BaseLayout>
