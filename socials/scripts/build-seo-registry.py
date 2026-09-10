@@ -24,8 +24,10 @@ OUT_FILE    = Path(__file__).resolve().parent.parent / "seo-registry.json"
 # Evergreen internal targets that aren't content-collection entries.
 EVERGREEN_LINKS = {
     "contact": "/#contact",
-    "services": "/#services",
+    "services": "/services/",  # dedicated hub as of 2026-09, no longer the homepage anchor
     "about": "/about/",
+    "benchmarks": "/benchmarks/",
+    "industries": "/industries/",
     "case_studies_index": None,  # no listing page exists — link directly to individual case studies
 }
 
@@ -99,17 +101,57 @@ def scan_case_studies() -> list[dict]:
     return out
 
 
+def scan_services() -> list[dict]:
+    out = []
+    services_dir = CONTENT_DIR / "services"
+    if not services_dir.exists():
+        return out
+    for path in sorted(services_dir.glob("*.mdx")):
+        fm = _read_frontmatter(path)
+        slug = path.stem
+        out.append({
+            "slug": slug,
+            "url": f"/services/{slug}",
+            "title": _scalar_field(fm, "title"),
+            "description": _scalar_field(fm, "description"),
+            "summary": _scalar_field(fm, "summary"),
+        })
+    return out
+
+
+def scan_industries() -> list[dict]:
+    out = []
+    industries_dir = CONTENT_DIR / "industries"
+    if not industries_dir.exists():
+        return out
+    for path in sorted(industries_dir.glob("*.mdx")):
+        fm = _read_frontmatter(path)
+        slug = path.stem
+        out.append({
+            "slug": slug,
+            "url": f"/industries/{slug}",
+            "title": _scalar_field(fm, "title"),
+            "description": _scalar_field(fm, "description"),
+            "industryLabel": _scalar_field(fm, "industryLabel"),
+        })
+    return out
+
+
 def main():
     import datetime
     registry = {
         "generated": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "blog_posts": scan_blog_posts(),
         "case_studies": scan_case_studies(),
+        "services": scan_services(),
+        "industries": scan_industries(),
         "evergreen_links": EVERGREEN_LINKS,
     }
     OUT_FILE.write_text(json.dumps(registry, indent=2), encoding="utf-8")
     print(f"[seo-registry] {len(registry['blog_posts'])} blog posts, "
-          f"{len(registry['case_studies'])} case studies -> {OUT_FILE}")
+          f"{len(registry['case_studies'])} case studies, "
+          f"{len(registry['services'])} services, "
+          f"{len(registry['industries'])} industries -> {OUT_FILE}")
 
 
 if __name__ == "__main__":

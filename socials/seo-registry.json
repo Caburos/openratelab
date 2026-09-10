@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10T16:18:53.362293+00:00",
+  "generated": "2026-09-10T22:32:21.766705+00:00",
   "blog_posts": [
     {
       "slug": "ecommerce-email-open-rate-benchmarks",
@@ -265,10 +265,128 @@
       }
     }
   ],
+  "services": [
+    {
+      "slug": "email-copywriting",
+      "url": "/services/email-copywriting",
+      "title": "Email Copywriting Services for DTC Brands | OpenRateLab",
+      "description": "Klaviyo email copywriting for ecommerce and DTC brands: flows and campaigns written to convert, tested against real account data instead of templates.",
+      "summary": "Flows and campaigns written to convert, not to tick a send box, tested against real account data instead of a template."
+    },
+    {
+      "slug": "email-deliverability",
+      "url": "/services/email-deliverability",
+      "title": "Email Deliverability Services for Klaviyo Accounts | OpenRateLab",
+      "description": "Email deliverability audits and fixes for ecommerce brands: authentication, list hygiene, and sender reputation, so campaigns land in the inbox instead of spam.",
+      "summary": "Authentication, list hygiene, and sender reputation management, so campaigns land in the inbox instead of spam."
+    },
+    {
+      "slug": "email-marketing-management",
+      "url": "/services/email-marketing-management",
+      "title": "Email Marketing Management for Ecommerce Brands | OpenRateLab",
+      "description": "Day-to-day email marketing management for ecommerce brands: campaign planning, copy, segmentation, and reporting, run as a system instead of one-off sends.",
+      "summary": "Day-to-day email marketing management, from campaign planning to copy to reporting, run as one system instead of one-off sends."
+    },
+    {
+      "slug": "email-strategy",
+      "url": "/services/email-strategy",
+      "title": "Email Marketing Strategy for DTC Brands | OpenRateLab",
+      "description": "A Klaviyo email strategy roadmap built on your account's own data: list, flows, and segments audited, then a 90-day plan tied to real numbers.",
+      "summary": "A revenue roadmap built on your account's own data, audited and turned into a 90-day plan before a single email gets written."
+    },
+    {
+      "slug": "klaviyo-audit",
+      "url": "/services/klaviyo-audit",
+      "title": "Free Klaviyo Audit for Ecommerce Brands | OpenRateLab",
+      "description": "A free Klaviyo audit covering flow architecture, campaign history, list health, and deliverability, with a written breakdown of what's underperforming.",
+      "summary": "A free, specific review of flow architecture, campaign history, list health, and deliverability, no generic checklist, no sales pitch."
+    },
+    {
+      "slug": "klaviyo-flows-automation",
+      "url": "/services/klaviyo-flows-automation",
+      "title": "Klaviyo Flows & Automation Services | OpenRateLab",
+      "description": "Klaviyo flow architecture and automation for ecommerce brands: welcome, abandoned cart, post-purchase, and win-back flows built to run without manual work.",
+      "summary": "Full Klaviyo flow architecture: custom events, dynamic segmentation, and automation systems that compound revenue without manual work."
+    },
+    {
+      "slug": "klaviyo-management",
+      "url": "/services/klaviyo-management",
+      "title": "Klaviyo Management Services for DTC Brands | OpenRateLab",
+      "description": "Full-service Klaviyo account management: flows, campaigns, segmentation, and deliverability handled end to end by a team that lives inside the platform daily.",
+      "summary": "Full-service, ongoing management of your entire Klaviyo account: flows, campaigns, segmentation, and deliverability, handled end to end."
+    },
+    {
+      "slug": "klaviyo-migration",
+      "url": "/services/klaviyo-migration",
+      "title": "Klaviyo Migration Services for Ecommerce Brands | OpenRateLab",
+      "description": "Migrate to Klaviyo from another ESP without losing list history or deliverability: full account rebuild, clean list import, and flow architecture.",
+      "summary": "A full platform migration to Klaviyo, with the account rebuilt clean instead of a broken setup carried over from the old platform."
+    },
+    {
+      "slug": "klaviyo-setup",
+      "url": "/services/klaviyo-setup",
+      "title": "Klaviyo Setup Services for New Accounts | OpenRateLab",
+      "description": "Full Klaviyo account setup for ecommerce brands starting from zero: account structure, flow architecture, segmentation, and campaign calendar.",
+      "summary": "The entire retention system built from zero: account setup, flow architecture, segmentation, and campaign calendar, live inside your first month."
+    },
+    {
+      "slug": "segmentation",
+      "url": "/services/segmentation",
+      "title": "Klaviyo Segmentation Services for Ecommerce Brands | OpenRateLab",
+      "description": "Behavioral segmentation for Klaviyo accounts: lists built around purchase history and engagement, kept current as your customer base changes.",
+      "summary": "Behavioral segmentation built around purchase history and engagement, kept current as your customer base changes."
+    }
+  ],
+  "industries": [
+    {
+      "slug": "equine",
+      "url": "/industries/equine",
+      "title": "Email Marketing for Equine Brands | OpenRateLab",
+      "description": "Klaviyo email marketing for equine brands: credible, specialist copy and a repeatable educational content system, tested across independent sends.",
+      "industryLabel": "Equine"
+    },
+    {
+      "slug": "fashion-activewear",
+      "url": "/industries/fashion-activewear",
+      "title": "Email Marketing for Fashion & Activewear Brands | OpenRateLab",
+      "description": "Klaviyo email marketing for fashion and activewear brands: fast-moving campaign calendars, clean segmentation, and deliverability built for frequent drops.",
+      "industryLabel": "Fashion & Activewear"
+    },
+    {
+      "slug": "food-beverage",
+      "url": "/industries/food-beverage",
+      "title": "Email Marketing for Food & Beverage Brands | OpenRateLab",
+      "description": "Klaviyo email marketing for specialty food and beverage brands: lean, intentional flow stacks built for smaller lists and focused catalogs.",
+      "industryLabel": "Food & Beverage"
+    },
+    {
+      "slug": "health-wellness",
+      "url": "/industries/health-wellness",
+      "title": "Email Marketing for Health & Wellness Brands | OpenRateLab",
+      "description": "Klaviyo email marketing for health and wellness brands: full account rebuilds, automation-first flow architecture, and copy grounded in trust, not hype.",
+      "industryLabel": "Health & Wellness"
+    },
+    {
+      "slug": "pet",
+      "url": "/industries/pet",
+      "title": "Email Marketing for Pet Brands | OpenRateLab",
+      "description": "Klaviyo email marketing for pet brands: story-led copy, consumption-based replenishment flows, and segmentation built for emotionally invested owners.",
+      "industryLabel": "Pet"
+    },
+    {
+      "slug": "supplements",
+      "url": "/industries/supplements",
+      "title": "Email Marketing for Supplement Brands | OpenRateLab",
+      "description": "Klaviyo email marketing for supplement brands: replenishment flows, education-led copy, and segmentation built around reorder cycles, not one-time sales.",
+      "industryLabel": "Supplements"
+    }
+  ],
   "evergreen_links": {
     "contact": "/#contact",
-    "services": "/#services",
+    "services": "/services/",
     "about": "/about/",
+    "benchmarks": "/benchmarks/",
+    "industries": "/industries/",
     "case_studies_index": null
   }
 }
