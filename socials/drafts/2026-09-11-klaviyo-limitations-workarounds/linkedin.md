@@ -12,4 +12,4 @@ Four we actually run into on Klaviyo accounts, and how we handle each:
 
 None of these are reasons to switch platforms. They're known friction points with known fixes.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/klaviyo-limitations-workarounds
