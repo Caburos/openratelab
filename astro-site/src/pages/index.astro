@@ -1084,7 +1084,7 @@ const jsonLd = [
           Promise.all([netlifyCapture, emailSend])
             .then(([r]) => {
               if (r.ok) {
-                leadForm.innerHTML = '<p class="font-label-technical text-label-technical text-accent-performance uppercase py-4 tracking-widest">CHECK YOUR INBOX SHORTLY.</p>';
+                leadForm.innerHTML = '<p class="font-label-technical text-label-technical text-accent-performance uppercase py-4 tracking-widest">CHECK YOUR INBOX SHORTLY.</p><a href="/downloads/openratelab-klaviyo-audit-checklist.xlsx" download class="font-label-button text-muted-silver uppercase underline hover:text-accent-performance transition-colors">Or download it directly →</a>';
               } else {
                 btn.textContent = orig;
                 btn.disabled = false;

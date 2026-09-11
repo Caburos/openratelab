@@ -3,6 +3,7 @@ import { Resend } from "resend";
 
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL_TO ?? "hello@openratelab.com";
 const RESEND_KEY = process.env.RESEND_API_KEY;
+const CHECKLIST_URL = "https://openratelab.com/downloads/openratelab-klaviyo-audit-checklist.xlsx";
 
 export const handler: Handler = async (event) => {
   if (event.httpMethod !== "POST") {
@@ -61,6 +62,33 @@ export const handler: Handler = async (event) => {
         subject: name ? `New enquiry from ${name}` : `New lead magnet signup: ${email}`,
         text: lines.join("\n"),
       });
+
+      // Lead-magnet submissions (no name field) promise "check your inbox
+      // shortly" on the site — actually deliver the checklist as an
+      // attachment instead of only notifying us of the signup.
+      if (!name) {
+        try {
+          const fileRes = await fetch(CHECKLIST_URL);
+          if (!fileRes.ok) throw new Error(`Checklist fetch failed: ${fileRes.status}`);
+          const fileBuffer = Buffer.from(await fileRes.arrayBuffer());
+
+          await resend.emails.send({
+            from: "OpenRateLab <noreply@openratelab.com>",
+            to: email,
+            replyTo: CONTACT_EMAIL,
+            subject: "Your Klaviyo Audit Checklist",
+            text: "Here's the 36-point Klaviyo audit checklist we run on every account audit: flow architecture, campaign cadence, list health, and deliverability.\n\nOpen it, set each item to Pass / Needs work / Missing / N/A, and the Start Here tab scores it for you automatically.\n\nWant a second pair of eyes on the results? Just reply to this email or book a free audit at https://openratelab.com/#contact.\n\n— OpenRateLab",
+            attachments: [
+              {
+                filename: "OpenRateLab-Klaviyo-Audit-Checklist.xlsx",
+                content: fileBuffer,
+              },
+            ],
+          });
+        } catch (attachErr) {
+          console.error("Checklist delivery error:", attachErr);
+        }
+      }
     } catch (err) {
       console.error("Resend error:", err);
     }

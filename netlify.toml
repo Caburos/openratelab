@@ -103,3 +103,19 @@
   to = "/case-studies/nutrition-brand-revenue"
   status = 301
   force = true
+
+# GSC flagged a 404 on /home/ — no page in this codebase ever links to that
+# path (the only "#home" reference is the homepage's own in-page anchor),
+# so this is an external/malformed reference. Redirecting rather than
+# leaving it a dead 404 costs nothing and closes the finding cleanly.
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/home/"
+  to = "/"
+  status = 301
+  force = true
