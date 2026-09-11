@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11T07:55:33.417539+00:00",
+  "generated": "2026-09-11T14:19:36.877883+00:00",
   "blog_posts": [
     {
       "slug": "ecommerce-email-open-rate-benchmarks",
@@ -142,6 +142,78 @@
       "primaryMetric": {
         "value": "30%+",
         "label": "EMAIL REVENUE ATTRIBUTION"
+      }
+    },
+    {
+      "slug": "dtc-brand-holiday-attribution-growth",
+      "url": "/case-studies/dtc-brand-holiday-attribution-growth",
+      "title": "93% Attributed-Revenue Growth Through Black Friday | OpenRateLab Case Study",
+      "description": "How a DTC brand's email attribution climbed from 26.84% to 46.75% of revenue across three months, holding above baseline through Black Friday.",
+      "industryLabel": "DTC Brand",
+      "datePublished": "2026-09-11",
+      "primaryMetric": {
+        "value": "+93%",
+        "label": "ATTRIBUTED REVENUE GROWTH"
+      }
+    },
+    {
+      "slug": "dtc-brand-multi-month-ramp",
+      "url": "/case-studies/dtc-brand-multi-month-ramp",
+      "title": "Email Attribution Nearly Doubled Over 2 Months | OpenRateLab Case Study",
+      "description": "A DTC brand's email attribution climbed from 19.61% to 35.34% of total revenue over two consecutive months, an 80% increase overall.",
+      "industryLabel": "DTC Brand",
+      "datePublished": "2026-09-11",
+      "primaryMetric": {
+        "value": "+63%",
+        "label": "ATTRIBUTED REVENUE GROWTH"
+      }
+    },
+    {
+      "slug": "dtc-brand-zero-to-fifty-percent",
+      "url": "/case-studies/dtc-brand-zero-to-fifty-percent",
+      "title": "0% to 50.62% Email Attribution in One Month | OpenRateLab Case Study",
+      "description": "A DTC brand with zero email-attributed revenue went to 50.62% of total revenue attributed to email within one month of launching a real program.",
+      "industryLabel": "DTC Brand",
+      "datePublished": "2026-09-11",
+      "primaryMetric": {
+        "value": "50.62%",
+        "label": "EMAIL REVENUE ATTRIBUTION"
+      }
+    },
+    {
+      "slug": "ecommerce-brand-doubled-email-revenue",
+      "url": "/case-studies/ecommerce-brand-doubled-email-revenue",
+      "title": "133% Attributed-Revenue Growth in One Month | OpenRateLab Case Study",
+      "description": "An ecommerce brand with underused email went from 6.34% to 13.13% of total revenue attributed to email, a 133% increase, in a single month.",
+      "industryLabel": "Ecommerce Brand",
+      "datePublished": "2026-09-11",
+      "primaryMetric": {
+        "value": "+133%",
+        "label": "ATTRIBUTED REVENUE GROWTH"
+      }
+    },
+    {
+      "slug": "ecommerce-brand-fast-ramp",
+      "url": "/case-studies/ecommerce-brand-fast-ramp",
+      "title": "73% Attributed-Revenue Growth in One Month | OpenRateLab Case Study",
+      "description": "An ecommerce brand's email attribution jumped from 24.13% to 41.24% of total revenue in a single month, a 73% increase period over period.",
+      "industryLabel": "Ecommerce Brand",
+      "datePublished": "2026-09-11",
+      "primaryMetric": {
+        "value": "+73%",
+        "label": "ATTRIBUTED REVENUE GROWTH"
+      }
+    },
+    {
+      "slug": "ecommerce-brand-steady-attribution-growth",
+      "url": "/case-studies/ecommerce-brand-steady-attribution-growth",
+      "title": "Steady Email Attribution Growth Over 3 Months | OpenRateLab Case Study",
+      "description": "An ecommerce brand's email attribution climbed steadily from 12.47% to 19.11% of total revenue over three consecutive months, not a single spike.",
+      "industryLabel": "Ecommerce Brand",
+      "datePublished": "2026-09-11",
+      "primaryMetric": {
+        "value": "+50%",
+        "label": "ATTRIBUTED REVENUE GROWTH"
       }
     },
     {
