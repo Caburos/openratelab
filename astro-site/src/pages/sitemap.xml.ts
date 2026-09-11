@@ -19,11 +19,12 @@ const url = (loc: string, lastmod: string, changefreq: string, priority: string)
   </url>`;
 
 export const GET: APIRoute = async () => {
-  const [blogPosts, caseStudies, services, industries] = await Promise.all([
+  const [blogPosts, caseStudies, services, industries, platforms] = await Promise.all([
     getCollection('blogPosts'),
     getCollection('caseStudies'),
     getCollection('services'),
     getCollection('industries'),
+    getCollection('platforms'),
   ]);
 
   const today = dateStr(new Date());
@@ -39,6 +40,10 @@ export const GET: APIRoute = async () => {
     url('https://openratelab.com/ecommerce-email-marketing-agency/', today, 'monthly', '0.9'),
     url('https://openratelab.com/shopify-email-marketing-agency/', today, 'monthly', '0.9'),
     url('https://openratelab.com/benchmarks/', today, 'weekly', '0.9'),
+    url('https://openratelab.com/platforms/', mostRecent(platforms.map((p) => p.data.dateModified)), 'monthly', '0.8'),
+    ...platforms.map((p) =>
+      url(`https://openratelab.com/platforms/${p.id}`, dateStr(p.data.dateModified), 'monthly', '0.75')
+    ),
     url('https://openratelab.com/industries/', mostRecent(industries.map((i) => i.data.dateModified)), 'monthly', '0.85'),
     ...industries.map((i) =>
       url(`https://openratelab.com/industries/${i.id}`, dateStr(i.data.dateModified), 'monthly', '0.8')

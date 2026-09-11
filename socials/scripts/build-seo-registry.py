@@ -137,6 +137,24 @@ def scan_industries() -> list[dict]:
     return out
 
 
+def scan_platforms() -> list[dict]:
+    out = []
+    platforms_dir = CONTENT_DIR / "platforms"
+    if not platforms_dir.exists():
+        return out
+    for path in sorted(platforms_dir.glob("*.mdx")):
+        fm = _read_frontmatter(path)
+        slug = path.stem
+        out.append({
+            "slug": slug,
+            "url": f"/platforms/{slug}",
+            "title": _scalar_field(fm, "title"),
+            "description": _scalar_field(fm, "description"),
+            "platformLabel": _scalar_field(fm, "platformLabel"),
+        })
+    return out
+
+
 def main():
     import datetime
     registry = {
@@ -145,13 +163,15 @@ def main():
         "case_studies": scan_case_studies(),
         "services": scan_services(),
         "industries": scan_industries(),
+        "platforms": scan_platforms(),
         "evergreen_links": EVERGREEN_LINKS,
     }
     OUT_FILE.write_text(json.dumps(registry, indent=2), encoding="utf-8")
     print(f"[seo-registry] {len(registry['blog_posts'])} blog posts, "
           f"{len(registry['case_studies'])} case studies, "
           f"{len(registry['services'])} services, "
-          f"{len(registry['industries'])} industries -> {OUT_FILE}")
+          f"{len(registry['industries'])} industries, "
+          f"{len(registry['platforms'])} platforms -> {OUT_FILE}")
 
 
 if __name__ == "__main__":

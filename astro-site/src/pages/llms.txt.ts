@@ -10,11 +10,12 @@ import { getCollection } from 'astro:content';
 const cleanTitle = (title: string) => title.split('|')[0].trim();
 
 export const GET: APIRoute = async () => {
-  const [blogPosts, caseStudies, services, industries] = await Promise.all([
+  const [blogPosts, caseStudies, services, industries, platforms] = await Promise.all([
     getCollection('blogPosts'),
     getCollection('caseStudies'),
     getCollection('services'),
     getCollection('industries'),
+    getCollection('platforms'),
   ]);
 
   const sortedBlog = [...blogPosts].sort(
@@ -29,6 +30,9 @@ export const GET: APIRoute = async () => {
   const sortedIndustries = [...industries].sort((a, b) =>
     a.data.industryLabel.localeCompare(b.data.industryLabel)
   );
+  const sortedPlatforms = [...platforms].sort((a, b) =>
+    a.data.platformLabel.localeCompare(b.data.platformLabel)
+  );
 
   const lines = [
     '# OpenRateLab',
@@ -40,6 +44,7 @@ export const GET: APIRoute = async () => {
     '- [Homepage](https://openratelab.com/): services, case studies, and contact',
     '- [Services](https://openratelab.com/services/): all ten services in detail',
     '- [Benchmarks](https://openratelab.com/benchmarks/): Klaviyo open rate, click rate, and flow-depth data from managed accounts',
+    '- [Platforms](https://openratelab.com/platforms/): email platforms managed (Klaviyo, Mailchimp, Omnisend, MailerLite, ActiveCampaign, SendGrid)',
     '- [Klaviyo Agency](https://openratelab.com/klaviyo-agency/): full-service Klaviyo agency positioning',
     '- [Email Marketing Agency](https://openratelab.com/email-marketing-agency/): general email marketing agency positioning',
     '- [Ecommerce & DTC Email Marketing Agency](https://openratelab.com/ecommerce-email-marketing-agency/): ecommerce-specific positioning',
@@ -65,6 +70,12 @@ export const GET: APIRoute = async () => {
     '',
     ...sortedIndustries.map(
       (industry) => `- [${cleanTitle(industry.data.title)}](https://openratelab.com/industries/${industry.id})`
+    ),
+    '',
+    '## Platforms',
+    '',
+    ...sortedPlatforms.map(
+      (platform) => `- [${cleanTitle(platform.data.title)}](https://openratelab.com/platforms/${platform.id})`
     ),
     '',
     '## Blog',

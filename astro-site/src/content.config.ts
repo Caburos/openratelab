@@ -105,4 +105,19 @@ const industries = defineCollection({
   }),
 });
 
-export const collections = { caseStudies, blogPosts, services, industries };
+const platforms = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/platforms' }),
+  schema: z.object({
+    ...seoFields,
+    platformLabel: z.string(), // e.g. "Mailchimp" — eyebrow tag + hub card label
+    eyebrow: z.string(), // e.g. "MAILCHIMP" — technical-label eyebrow tag
+    heroHeadline: z.string(), // supports \n for <br/> line breaks
+    heroSubtext: z.string(),
+    summary: z.string(), // 1-2 sentence blurb for the /platforms/ hub card
+    relatedServices: z.array(z.string()).default([]), // service collection ids
+    comparePageUrl: z.string().optional(), // e.g. "/compare/klaviyo-vs-mailchimp/" when one exists
+    faq: z.array(faqEntry),
+  }),
+});
+
+export const collections = { caseStudies, blogPosts, services, industries, platforms };

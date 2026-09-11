@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const platforms = (await getCollection('platforms')).sort((a, b) =>
+  a.data.platformLabel.localeCompare(b.data.platformLabel)
+);
+
+const canonicalPath = '/platforms/';
+const canonicalUrl = `https://openratelab.com${canonicalPath}`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        name: 'Email Platforms We Manage | OpenRateLab',
+        description: 'Email marketing management across Klaviyo, Mailchimp, Omnisend, MailerLite, ActiveCampaign, and SendGrid.',
+        url: canonicalUrl,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://openratelab.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Platforms', item: canonicalUrl },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Email Platforms We Manage | OpenRateLab"
+  description="Email marketing management across Klaviyo, Mailchimp, Omnisend, MailerLite, ActiveCampaign, and SendGrid. Klaviyo is our specialty, we support the rest too."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="min-h-[45vh] flex flex-col justify-center px-8 md:px-16 py-20 relative overflow-hidden pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-8 block">[ PLATFORMS WE MANAGE ]</span>
+    <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl uppercase leading-none tracking-tighter mb-8 max-w-4xl">
+      KLAVIYO IS THE<br/>SPECIALTY. NOT THE LIMIT.
+    </h1>
+    <p class="font-body-lg text-body-lg text-muted-silver max-w-2xl border-l-2 border-accent-performance pl-8 italic">
+      Klaviyo is where we go deepest, and it's what most of our published results are built on. We also manage accounts on the platforms below, for brands that aren't on Klaviyo yet or aren't ready to switch.
+    </p>
+  </section>
+
+  <!-- Klaviyo callout -->
+  <section class="px-8 md:px-16 py-16 border-t border-muted-silver/20">
+    <a href="/services/" class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 p-8 md:p-10 border border-accent-performance hover:bg-white/5 transition-colors group">
+      <div>
+        <span class="font-label-technical text-label-technical text-accent-performance uppercase block mb-3">OUR SPECIALTY</span>
+        <h2 class="font-headline-md text-headline-md uppercase">KLAVIYO</h2>
+        <p class="font-body-md text-body-md text-muted-silver mt-3 max-w-xl">Ten dedicated services, our full case-study ledger, and the deepest build we offer. Start here if you're on Klaviyo or open to it.</p>
+      </div>
+      <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform shrink-0">
+        SEE KLAVIYO SERVICES <span class="material-symbols-outlined ml-2" aria-hidden="true">arrow_forward</span>
+      </span>
+    </a>
+  </section>
+
+  <!-- Other platforms grid -->
+  <section class="px-8 md:px-16 py-8 md:py-16 border-t border-muted-silver/20">
+    <span class="font-label-technical text-label-technical text-muted-silver uppercase block mb-10">ALSO MANAGED</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-muted-silver/20">
+      {platforms.map((platform, i) => (
+        <a
+          href={`/platforms/${platform.id}`}
+          class:list={[
+            'p-10 border-muted-silver/20 hover:bg-white/5 transition-colors group',
+            i % 2 === 0 ? 'md:border-r' : '',
+            i < platforms.length - (platforms.length % 2 === 0 ? 2 : 1) ? 'border-b' : '',
+          ]}
+        >
+          <span class="font-label-technical text-label-technical text-accent-performance mb-6 block">{platform.data.eyebrow}</span>
+          <h2 class="font-headline-md text-headline-md uppercase mb-6 leading-tight">{platform.data.platformLabel}</h2>
+          <p class="font-body-md text-body-md text-muted-silver mb-8">{platform.data.summary}</p>
+          <span class="flex items-center text-accent-performance font-label-technical group-hover:translate-x-2 transition-transform">
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 md:py-32 px-8 md:px-16 text-center pixel-grid">
+    <span class="font-label-technical text-label-technical text-accent-performance uppercase mb-6 block">SYSTEM_CHECK</span>
+    <h2 class="font-display-xl-mobile text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight">DON'T SEE YOUR<br/>PLATFORM LISTED?</h2>
+    <p class="font-body-lg text-body-lg text-muted-silver mb-12 max-w-2xl mx-auto italic">Book a free audit and tell us what you're running on. We'll tell you honestly whether we're a fit.</p>
+    <a href="/#contact" class="inline-block bg-on-surface-warm text-surface-primary px-10 md:px-16 py-6 md:py-8 font-label-button uppercase text-lg md:text-2xl tracking-[0.2em] hover:bg-accent-performance hover:text-on-surface-warm transition-all duration-300">
+      GET A FREE AUDIT
+    </a>
+  </section>
+</BaseLayout>
