@@ -35,6 +35,7 @@ export const GET: APIRoute = async () => {
   const entries = [
     url('https://openratelab.com/', mostRecent(blogPosts.map((p) => p.data.dateModified).concat(caseStudies.map((c) => c.data.dateModified))), 'monthly', '1.0'),
     url('https://openratelab.com/services/', mostRecent(services.map((s) => s.data.dateModified)), 'monthly', '0.9'),
+    url('https://openratelab.com/case-studies/', mostRecent(caseStudies.map((c) => c.data.dateModified)), 'weekly', '0.9'),
     url('https://openratelab.com/klaviyo-agency/', today, 'monthly', '0.9'),
     url('https://openratelab.com/email-marketing-agency/', today, 'monthly', '0.9'),
     url('https://openratelab.com/ecommerce-email-marketing-agency/', today, 'monthly', '0.9'),

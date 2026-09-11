@@ -86,6 +86,8 @@ export const GET: APIRoute = async () => {
     '',
     '## Case Studies',
     '',
+    '(also browsable at https://openratelab.com/case-studies/)',
+    '',
     ...sortedCaseStudies.map(
       (study) => `- [${cleanTitle(study.data.title)}](https://openratelab.com/case-studies/${study.id})`
     ),
