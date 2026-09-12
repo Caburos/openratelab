@@ -47,15 +47,27 @@
       "actual_post_time_tz": "CEST (UTC+2)",
       "post_url": null,
       "blog_url": "https://openratelab.com/blog/klaviyo-limitations-workarounds",
-      "analytics_checked_at": null,
-      "impressions": null,
-      "clicks": null,
-      "click_through_rate": null,
-      "reactions": null,
-      "comments": null,
-      "reposts": null,
-      "engagement_rate": null,
+      "analytics_checked_at": "2026-09-11T23:33:52 CEST",
+      "impressions": 3,
+      "clicks": 0,
+      "click_through_rate": 0.0,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.0,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
       "notes": "Scheduled ORL-Fire ran at 00:30 (Task Scheduler exit 0) but did nothing -- root cause was a stale OAuth credential file (~/.claude/.credentials.json) blocking claude.exe from ever falling back to ANTHROPIC_API_KEY in headless mode, compounded by insufficient API balance underneath that. Both fixed (credential file renamed to .bak, balance topped up). Fired manually via /orl-publish --fire run directly in an interactive session instead of retrying the scheduled task, roughly 21.5 hours after the intended 00:30 slot -- DO NOT mark 00:30 as tried in timing-intelligence/state.json based on this entry, same reasoning as the 09-08 entry (actual post time too far from assigned slot). linkedin-bot.py --post again exited 1 on the 'Post successful' toast check (same known false-negative as the 09-11 case-study post) but a direct Playwright read of the published-posts page confirmed the post is live with matching text, timestamped 'now' at post time."
+    },
+    {
+      "date": "2026-09-12",
+      "weekday": "Friday",
+      "scheduled_slot": "01:00",
+      "actual_post_time": "21:36",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/2026-09-12-email-owned-revenue-channel/",
+      "analytics_checked_at": null,
+      "notes": "Fired manually via /orl-publish --fire (user-triggered with --fire flag, not scheduled task). Blog post built and deployed successfully. linkedin-bot.py --post exited code 1, couldn't confirm 'Post successful' toast message -- verify manually on LinkedIn company page. Post was submitted to LinkedIn but confirmation uncertain."
     }
   ]
 }
