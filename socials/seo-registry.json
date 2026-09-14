@@ -1,6 +1,15 @@
 {
-  "generated": "2026-09-11T14:19:36.877883+00:00",
+  "generated": "2026-09-14T14:39:12.078574+00:00",
   "blog_posts": [
+    {
+      "slug": "2026-09-12-email-owned-revenue-channel",
+      "url": "/blog/2026-09-12-email-owned-revenue-channel",
+      "title": "Why Email Is the Most Reliable Revenue Channel You Own | OpenRateLab",
+      "description": "Paid ads move with algorithm changes and referrals move with luck. Email is the one revenue channel you own outright and can compound forever.",
+      "category": "STRATEGY",
+      "excerpt": "Paid budgets get more expensive, referrals aren't a plan, and organic shifts with every algorithm update. Email is the one channel that's actually yours.",
+      "datePublished": "2026-09-12"
+    },
     {
       "slug": "ecommerce-email-open-rate-benchmarks",
       "url": "/blog/ecommerce-email-open-rate-benchmarks",
@@ -72,6 +81,15 @@
       "category": "KLAVIYO / FLOWS",
       "excerpt": "What flows you need, how to structure them, and what separates a 30-flow account from one running 200+. Includes performance data from active accounts.",
       "datePublished": "2026-07-18"
+    },
+    {
+      "slug": "klaviyo-limitations-workarounds",
+      "url": "/blog/klaviyo-limitations-workarounds",
+      "title": "The Real Klaviyo Limitations Agencies Work Around (And How) | OpenRateLab",
+      "description": "Every platform has real Klaviyo limitations. Here's what they actually are, and the specific workarounds that make them a non-issue.",
+      "category": "STRATEGY / AGENCY",
+      "excerpt": "Every platform has limits. The agencies that look like they don't are just better at working around them. Here's what we actually run into, and how we handle it.",
+      "datePublished": "2026-09-11"
     },
     {
       "slug": "klaviyo-performance-report-2026",

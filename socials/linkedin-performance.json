@@ -66,8 +66,16 @@
       "actual_post_time_tz": "CEST (UTC+2)",
       "post_url": null,
       "blog_url": "https://openratelab.com/blog/2026-09-12-email-owned-revenue-channel/",
-      "analytics_checked_at": null,
-      "notes": "Fired manually via /orl-publish --fire (user-triggered with --fire flag, not scheduled task). Blog post built and deployed successfully. linkedin-bot.py --post exited code 1, couldn't confirm 'Post successful' toast message -- verify manually on LinkedIn company page. Post was submitted to LinkedIn but confirmation uncertain."
+      "analytics_checked_at": "2026-09-12T23:52 CEST",
+      "impressions": 1,
+      "clicks": 0,
+      "click_through_rate": 0.0,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.0,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
+      "notes": "Fired manually via /orl-publish --fire (user-triggered with --fire flag, not scheduled task). Blog post built and deployed successfully. linkedin-bot.py --post exited code 1, couldn't confirm 'Post successful' toast message -- verify manually on LinkedIn company page. Post was submitted to LinkedIn but confirmation uncertain. DO NOT mark 01:00 as tried in timing-intelligence/state.json -- actual post time (21:36 previous evening) too far from intended 01:00 slot to indicate how 01:00 itself performs."
     }
   ]
 }
