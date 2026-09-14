@@ -10,4 +10,4 @@ Where it genuinely helps: narrow, well-defined problems like send timing. Where 
 
 Treat the scoring as an input to a list hygiene policy you've actually designed, not a replacement for having one.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/klaviyo-ai-features
