@@ -95,6 +95,17 @@
       "engagement_rate": 0.0,
       "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
       "notes": "Catch-up cycle after the 2-day API-credit outage (09-13/09-14) -- fired manually, ahead of the planned 19:30 slot, right after the user asked to post immediately rather than wait. linkedin-bot.py --post failed twice in a row this time (not the usual toast false-negative -- confirmed via the Browser pane that neither attempt actually posted anything). Posted instead via the Browser pane driving the already-logged-in LinkedIn session directly -- first attempt got garbled (rapid batched Return-key + type actions raced and dropped paragraph breaks, merging sentences together), discarded as a draft and redone with the whole post typed as one call with embedded blank lines, which worked cleanly. Confirmed live via the 'Post successful' toast AND the feed showing it as post #1, timestamped 'now'. DO NOT mark 19:30 as tried in timing-intelligence/state.json -- actual post time diverged from the planned slot (fired early by request), same reasoning as prior manual-catch-up entries."
+    },
+    {
+      "date": "2026-09-15",
+      "weekday": "Tuesday",
+      "scheduled_slot": "14:00",
+      "actual_post_time": "14:02",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/email-marketing-brand-image",
+      "analytics_checked_at": null,
+      "notes": "First fully-on-schedule cycle through the new session-based CronCreate pipeline (planned last night, fired automatically at the assigned slot, no manual intervention needed). linkedin-bot.py --post exited 1 on the usual toast false-negative, confirmed genuinely live via the Browser pane against the company admin page (post #1, timestamped 'now', full matching text). Safe to mark 14:00 as a valid timing trial in timing-intelligence/state.json once analytics are checked -- this is the first post whose actual_post_time matches its scheduled_slot closely enough to count."
     }
   ]
 }

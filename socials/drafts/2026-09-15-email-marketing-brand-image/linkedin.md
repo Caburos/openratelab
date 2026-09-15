@@ -10,4 +10,4 @@ A well-designed premium program can send as often as a discount brand and read c
 
 Cutting frequency to protect brand image usually just cuts revenue from a channel that was never the actual risk.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/email-marketing-brand-image
