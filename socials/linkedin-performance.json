@@ -104,8 +104,16 @@
       "actual_post_time_tz": "CEST (UTC+2)",
       "post_url": null,
       "blog_url": "https://openratelab.com/blog/email-marketing-brand-image",
-      "analytics_checked_at": null,
-      "notes": "First fully-on-schedule cycle through the new session-based CronCreate pipeline (planned last night, fired automatically at the assigned slot, no manual intervention needed). linkedin-bot.py --post exited 1 on the usual toast false-negative, confirmed genuinely live via the Browser pane against the company admin page (post #1, timestamped 'now', full matching text). Safe to mark 14:00 as a valid timing trial in timing-intelligence/state.json once analytics are checked -- this is the first post whose actual_post_time matches its scheduled_slot closely enough to count."
+      "analytics_checked_at": "2026-09-16T00:05 CEST",
+      "impressions": 2,
+      "clicks": 1,
+      "click_through_rate": 0.5,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.5,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
+      "notes": "First fully-on-schedule cycle through the new session-based CronCreate pipeline (planned last night, fired automatically at the assigned slot, no manual intervention needed). linkedin-bot.py --post exited 1 on the usual toast false-negative, confirmed genuinely live via the Browser pane against the company admin page (post #1, timestamped 'now', full matching text). First slot marked as a valid timing trial in timing-intelligence/state.json -- actual_post_time matched the scheduled_slot closely enough to count. Sample size is tiny (2 impressions) so the 0.5 engagement rate isn't meaningful on its own yet."
     }
   ]
 }
