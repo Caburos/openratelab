@@ -8,4 +8,4 @@ Check flows first. It's the cheapest thing to rule out, and it's often the actua
 
 Fix that before spending more to bring in traffic that leaks the same way.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/traffic-not-converting-email-flows
