@@ -123,8 +123,16 @@
       "actual_post_time_tz": "CEST (UTC+2)",
       "post_url": null,
       "blog_url": "https://openratelab.com/blog/traffic-not-converting-email-flows",
-      "analytics_checked_at": null,
-      "notes": "Second consecutive fully-on-schedule cycle through the CronCreate pipeline -- planned overnight, fired automatically at 09:00. linkedin-bot.py --post exited 1 on the toast check again, confirmed genuinely live via the Browser pane (post #1, timestamped 'now', full matching text). Safe to mark 09:00 as a valid timing trial once analytics are checked."
+      "analytics_checked_at": "2026-09-17T00:03 CEST",
+      "impressions": 2,
+      "clicks": 1,
+      "click_through_rate": 0.5,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.5,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
+      "notes": "Second consecutive fully-on-schedule cycle through the CronCreate pipeline -- planned overnight, fired automatically at 09:00. linkedin-bot.py --post exited 1 on the toast check again, confirmed genuinely live via the Browser pane (post #1, timestamped 'now', full matching text). Marked 09:00 as a valid timing trial in timing-intelligence/state.json. Same tiny sample size as prior posts (2 impressions), still 0 followers -- engagement_rate numbers aren't meaningful yet at this volume."
     }
   ]
 }

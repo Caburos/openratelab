@@ -1,0 +1,52 @@
+---
+title: "Klaviyo Flow Revenue vs Campaign Revenue: Why You Should Track Them Separately | OpenRateLab"
+description: "Klaviyo flow revenue vs campaign revenue gets blended into one number by default. Splitting them is the fastest way to find out what's actually working."
+category: "STRATEGY / REPORTING"
+excerpt: "Your Klaviyo dashboard blends flow and campaign revenue into one number. That blend is hiding the actual signal. Here's how to split it."
+readTime: "6 MIN READ"
+faq:
+  - question: "What's the difference between Klaviyo flow revenue and campaign revenue?"
+    answer: "Flow revenue is attributed revenue from automated, triggered sends: welcome series, abandoned cart, post-purchase, win-back, and similar. Campaign revenue is attributed revenue from manually scheduled one-time sends: promotions, newsletters, announcements. Klaviyo's default overview blends both into a single attributed revenue figure, which makes it easy to see the total without ever seeing which one is actually generating it. Splitting the two in reporting shows the real split, not just the combined total."
+  - question: "How do I see flow revenue and campaign revenue separately in Klaviyo?"
+    answer: "Klaviyo's Analytics section lets you filter attributed revenue by flow versus by campaign rather than viewing the blended total. Pulling both numbers for the same date range and comparing them directly, rather than relying on the combined dashboard figure, is what actually surfaces the split. It takes a few minutes and uses reporting that already exists in the account, no new tooling required."
+  - question: "What does it mean if campaign revenue is much higher than flow revenue?"
+    answer: "It usually means flows are undersized, missing, or under-optimized, and the account is leaning heavily on manual sends to generate revenue that automation should be capturing on its own. That's a real risk: campaign revenue depends on someone actively scheduling and sending, while flow revenue keeps compounding in the background whether or not anyone touches the account that week. A campaign-heavy split is a signal to invest in flow coverage before scaling campaign volume further."
+---
+
+Your Klaviyo dashboard blends flow revenue and campaign revenue into one attributed total by default. That blend is hiding the actual signal. Splitting flow revenue from campaign revenue is the fastest diagnostic for knowing whether your automation or your send calendar is actually carrying the account.
+
+## Why The Blended View Hides The Signal
+
+Klaviyo's overview reporting shows total attributed revenue as one number, which is useful for a quick check but tells you nothing about where that revenue is actually coming from. Two accounts can show the same total attributed revenue and have completely different underlying health: one carried almost entirely by flows, the other dependent on someone manually scheduling and sending campaigns every week.
+
+Those are not the same account, even though the blended dashboard number makes them look identical.
+
+## How To Split The Two In Klaviyo's Reporting
+
+Klaviyo's Analytics section supports filtering attributed revenue by flow versus by campaign, rather than relying on the combined overview figure. Pulling both numbers for the same date range and comparing them directly is what surfaces the real split. This takes a few minutes using reporting that already exists in the account, not a new dashboard or a manual export.
+
+## What A Flow-Heavy Split Usually Means
+
+If flow revenue is doing most of the work, that's generally a healthy sign: automation is compounding in the background regardless of whether anyone actively works the account that week. Our guide to [Klaviyo flow architecture](/blog/klaviyo-email-flows-guide) covers what a strong flow set looks like if this is the direction you want to lean into further.
+
+The risk on this end of the spectrum is under-investing in the campaign calendar entirely, leaving revenue on the table that a well-timed promotional or content send could capture on top of what flows already generate.
+
+## What A Campaign-Heavy Split Usually Means
+
+If campaign revenue dominates, flows are likely undersized, missing key stages, or under-optimized, and the account is leaning on manual sends to generate revenue that automation should be capturing without anyone touching the account. That's a real dependency risk: campaign revenue only shows up when someone schedules and sends, while flow revenue keeps compounding whether or not that happens in a given week.
+
+A campaign-heavy split is a signal to invest in flow coverage before scaling campaign volume further, not a reason to send more campaigns to compensate.
+
+## What A Healthy Ratio Roughly Looks Like
+
+There's no single universal ratio, since it depends on purchase frequency, catalog size, and how aggressive the campaign calendar is by design. What matters more than hitting a specific number is knowing which end of the spectrum an account sits on and whether that's the result of a deliberate strategy or an accidental gap nobody checked for.
+
+Neither extreme, all flow with no campaign strategy, or all campaign with weak flows, is actually healthy long-term. Our [email owned revenue channel](/blog/2026-09-12-email-owned-revenue-channel) piece covers why treating email as one connected system, not two separate levers, is what makes the channel compound over time.
+
+## What To Do With The Answer
+
+Once the split is visible, the next move is specific instead of guessing. A campaign-heavy account should audit flow coverage next: is a real win-back flow live, does post-purchase do more than confirm an order, is browse abandonment captured at all. A flow-heavy account with weak campaign revenue should look at whether the campaign calendar is being run deliberately or an afterthought.
+
+Either way, the split tells you where the next hour of work actually pays off, instead of guessing.
+
+If you're not sure what your own flow-to-campaign split looks like, that's worth checking before deciding what to fix next. [Book a free audit](/#contact) and we'll pull the real numbers with you.
