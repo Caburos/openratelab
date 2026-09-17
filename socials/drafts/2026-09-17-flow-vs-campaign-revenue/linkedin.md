@@ -10,4 +10,4 @@ Campaign-heavy split: flows are likely undersized or missing key stages, and rev
 
 Neither extreme is actually healthy long-term. The split just tells you where the next hour of work pays off.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/flow-vs-campaign-revenue
