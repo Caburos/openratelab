@@ -142,8 +142,16 @@
       "actual_post_time_tz": "CEST (UTC+2)",
       "post_url": null,
       "blog_url": "https://openratelab.com/blog/flow-vs-campaign-revenue",
-      "analytics_checked_at": null,
-      "notes": "Third consecutive fully-on-schedule cycle through the CronCreate pipeline -- planned overnight, fired automatically at 16:00. linkedin-bot.py --post exited 1 on the toast check again, confirmed genuinely live via the Browser pane (post #1, timestamped 'now', full matching text). Safe to mark 16:00 as a valid timing trial once analytics are checked."
+      "analytics_checked_at": "2026-09-18T00:03 CEST",
+      "impressions": 1,
+      "clicks": 0,
+      "click_through_rate": 0.0,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.0,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
+      "notes": "Third consecutive fully-on-schedule cycle through the CronCreate pipeline -- planned overnight, fired automatically at 16:00. linkedin-bot.py --post exited 1 on the toast check again, confirmed genuinely live via the Browser pane (post #1, timestamped 'now', full matching text). Marked 16:00 as a valid timing trial in timing-intelligence/state.json. Still 0 followers, tiny sample size (1 impression) -- these numbers aren't meaningful yet, just coverage."
     }
   ]
 }
