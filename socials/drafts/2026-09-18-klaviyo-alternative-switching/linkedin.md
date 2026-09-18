@@ -8,4 +8,4 @@ What doesn't: a limitation with a known workaround, a bad month, or an account t
 
 Migration costs real time too: flow history doesn't transfer, integrations get reconnected from scratch, months of degraded performance while flows rebuild. "Just switch" advice almost never factors that in.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/klaviyo-alternative-switching

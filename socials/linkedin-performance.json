@@ -152,6 +152,17 @@
       "engagement_rate": 0.0,
       "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
       "notes": "Third consecutive fully-on-schedule cycle through the CronCreate pipeline -- planned overnight, fired automatically at 16:00. linkedin-bot.py --post exited 1 on the toast check again, confirmed genuinely live via the Browser pane (post #1, timestamped 'now', full matching text). Marked 16:00 as a valid timing trial in timing-intelligence/state.json. Still 0 followers, tiny sample size (1 impression) -- these numbers aren't meaningful yet, just coverage."
+    },
+    {
+      "date": "2026-09-18",
+      "weekday": "Friday",
+      "scheduled_slot": "11:00",
+      "actual_post_time": "11:02",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/klaviyo-alternative-switching",
+      "analytics_checked_at": null,
+      "notes": "Fourth consecutive fully-on-schedule cycle through the CronCreate pipeline -- planned overnight, fired automatically at 11:00. linkedin-bot.py --post exited 1 on the toast check again, confirmed genuinely live via the Browser pane (post #1, timestamped 'now', full matching text). Safe to mark 11:00 as a valid timing trial once analytics are checked."
     }
   ]
 }
