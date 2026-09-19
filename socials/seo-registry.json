@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T14:39:12.078574+00:00",
+  "generated": "2026-09-19T17:45:55.975912+00:00",
   "blog_posts": [
     {
       "slug": "2026-09-12-email-owned-revenue-channel",
@@ -38,6 +38,24 @@
       "datePublished": "2026-07-18"
     },
     {
+      "slug": "email-marketing-brand-image",
+      "url": "/blog/email-marketing-brand-image",
+      "title": "Does Email Marketing Hurt Your Brand Image? Here's the Real Answer | OpenRateLab",
+      "description": "Worried email marketing will hurt your brand image? The risk isn't the channel, it's how it's run. Here's what actually protects a premium brand.",
+      "category": "STRATEGY / BRAND",
+      "excerpt": "Email doesn't cheapen a premium brand. Running it like a discount blast list does. Here's the actual difference.",
+      "datePublished": "2026-09-15"
+    },
+    {
+      "slug": "flow-vs-campaign-revenue",
+      "url": "/blog/flow-vs-campaign-revenue",
+      "title": "Klaviyo Flow Revenue vs Campaign Revenue: Why You Should Track Them Separately | OpenRateLab",
+      "description": "Klaviyo flow revenue vs campaign revenue gets blended into one number by default. Splitting them is the fastest way to find out what's actually working.",
+      "category": "STRATEGY / REPORTING",
+      "excerpt": "Your Klaviyo dashboard blends flow and campaign revenue into one number. That blend is hiding the actual signal. Here's how to split it.",
+      "datePublished": "2026-09-17"
+    },
+    {
       "slug": "high-open-rate-low-click-rate",
       "url": "/blog/high-open-rate-low-click-rate",
       "title": "High Open Rate, Low Click Rate? Here's Why (and the Fix) | OpenRateLab",
@@ -63,6 +81,24 @@
       "category": "KLAVIYO / FLOWS",
       "excerpt": "Speed, structure, and why the discount shouldn't be the first thing a lapsed cart sees.",
       "datePublished": "2026-08-11"
+    },
+    {
+      "slug": "klaviyo-ai-features",
+      "url": "/blog/klaviyo-ai-features",
+      "title": "What Klaviyo's AI Features Actually Do (And Where They Fall Short) | OpenRateLab",
+      "description": "A direct breakdown of Klaviyo's AI features: what's genuinely automated today, and what still needs a human making the actual decisions.",
+      "category": "KLAVIYO / AI",
+      "excerpt": "Klaviyo's AI scores, predicts, and suggests. It doesn't decide your strategy for you. Here's exactly where the line sits.",
+      "datePublished": "2026-09-14"
+    },
+    {
+      "slug": "klaviyo-alternative-switching",
+      "url": "/blog/klaviyo-alternative-switching",
+      "title": "Klaviyo Alternative? What Actually Justifies Switching Platforms | OpenRateLab",
+      "description": "Searching for a Klaviyo alternative? Most of the time the platform isn't the actual problem. Here's what genuinely justifies switching, and what doesn't.",
+      "category": "STRATEGY / PLATFORM",
+      "excerpt": "\\\"Klaviyo alternative\\\" gets searched constantly. Most of the time, switching platforms is solving the wrong problem. Here's how to actually tell the difference.",
+      "datePublished": "2026-09-18"
     },
     {
       "slug": "klaviyo-email-copywriting-guide",
@@ -135,6 +171,15 @@
       "category": "BENCHMARKS / DATA",
       "excerpt": "Your open rate didn't get better. Apple started pre-opening emails for privacy reasons before a human ever saw them. Here's what that changes, and what it doesn't.",
       "datePublished": "2026-09-08"
+    },
+    {
+      "slug": "traffic-not-converting-email-flows",
+      "url": "/blog/traffic-not-converting-email-flows",
+      "title": "Traffic But No Conversions? Check Your Email Flows Before Anything Else | OpenRateLab",
+      "description": "Shopify traffic not converting? Before blaming ads or landing pages, check whether your email flows are even trying to bring people back.",
+      "category": "STRATEGY / FLOWS",
+      "excerpt": "Traffic but no conversions almost always gets blamed on ads or landing pages first. Check your flows before either. It's cheaper and it's usually the actual leak.",
+      "datePublished": "2026-09-16"
     }
   ],
   "case_studies": [

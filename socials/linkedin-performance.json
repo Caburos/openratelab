@@ -161,8 +161,35 @@
       "actual_post_time_tz": "CEST (UTC+2)",
       "post_url": null,
       "blog_url": "https://openratelab.com/blog/klaviyo-alternative-switching",
-      "analytics_checked_at": null,
-      "notes": "Fourth consecutive fully-on-schedule cycle through the CronCreate pipeline -- planned overnight, fired automatically at 11:00. linkedin-bot.py --post exited 1 on the toast check again, confirmed genuinely live via the Browser pane (post #1, timestamped 'now', full matching text). Safe to mark 11:00 as a valid timing trial once analytics are checked."
+      "analytics_checked_at": "2026-09-18T14:45 CEST",
+      "impressions": 1,
+      "clicks": 0,
+      "click_through_rate": 0.0,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.0,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
+      "notes": "Fourth consecutive fully-on-schedule cycle through the CronCreate pipeline -- planned overnight, fired automatically at 11:00. linkedin-bot.py --post exited 1 on the toast check again, confirmed genuinely live via the Browser pane (post #1, timestamped 'now', full matching text). Marked 11:00 as a valid timing trial in timing-intelligence/state.json. Still 0 followers, tiny sample size (1 impression) -- these numbers aren't meaningful yet, just coverage."
+    },
+    {
+      "date": "2026-09-19",
+      "weekday": "Saturday",
+      "scheduled_slot": null,
+      "actual_post_time": "19:52",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/campaign-already-sent-underperforming",
+      "analytics_checked_at": "2026-09-19T19:52 CEST",
+      "impressions": 1,
+      "clicks": 0,
+      "click_through_rate": 0.0,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.0,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
+      "notes": "Fired manually by direct user request ('Limit is gone. Lets manually publish something today shall we?') rather than waiting for the assigned 19:45 slot to arrive via the automated cycle -- blog built, deployed, and confirmed live (200 OK) before posting. linkedin-bot.py --post exited 1 on the usual toast false-negative; the Browser pane's own LinkedIn session unexpectedly showed a login wall when attempting the normal admin-page verification (first time this specific failure mode has occurred this session -- likely that browser context's cookies expired independently of linkedin-bot.py's own separate persistent profile). Verified instead via linkedin-bot.py --analytics itself, which returned live data (1 impression, exit 0) confirming the post is real and published. scheduled_slot recorded as null and this is NOT marked as a valid timing trial in timing-intelligence/state.json -- the 19:45 'slot' in next-post-time.json was never chosen by the actual exploration/exploit algorithm, just set as 'now' when the user asked to publish immediately."
     }
   ]
 }
