@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19T17:45:55.975912+00:00",
+  "generated": "2026-09-19T22:07:36.214331+00:00",
   "blog_posts": [
     {
       "slug": "2026-09-12-email-owned-revenue-channel",
@@ -9,6 +9,15 @@
       "category": "STRATEGY",
       "excerpt": "Paid budgets get more expensive, referrals aren't a plan, and organic shifts with every algorithm update. Email is the one channel that's actually yours.",
       "datePublished": "2026-09-12"
+    },
+    {
+      "slug": "campaign-already-sent-underperforming",
+      "url": "/blog/campaign-already-sent-underperforming",
+      "title": "Email Campaign Underperforming? What To Actually Do In The First Hour | OpenRateLab",
+      "description": "Your email campaign underperforming right after it sent? Here's what's actually still fixable in the first hour or two, and what isn't.",
+      "category": "STRATEGY / RESPONSE",
+      "excerpt": "The campaign already sent and the numbers look bad. Most advice is about getting it right beforehand. Here's what's still fixable now.",
+      "datePublished": "2026-09-19"
     },
     {
       "slug": "ecommerce-email-open-rate-benchmarks",
