@@ -190,6 +190,25 @@
       "engagement_rate": 0.0,
       "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
       "notes": "Fired manually by direct user request ('Limit is gone. Lets manually publish something today shall we?') rather than waiting for the assigned 19:45 slot to arrive via the automated cycle -- blog built, deployed, and confirmed live (200 OK) before posting. linkedin-bot.py --post exited 1 on the usual toast false-negative; the Browser pane's own LinkedIn session unexpectedly showed a login wall when attempting the normal admin-page verification (first time this specific failure mode has occurred this session -- likely that browser context's cookies expired independently of linkedin-bot.py's own separate persistent profile). Verified instead via linkedin-bot.py --analytics itself, which returned live data (1 impression, exit 0) confirming the post is real and published. scheduled_slot recorded as null and this is NOT marked as a valid timing trial in timing-intelligence/state.json -- the 19:45 'slot' in next-post-time.json was never chosen by the actual exploration/exploit algorithm, just set as 'now' when the user asked to publish immediately."
+    },
+    {
+      "date": "2026-09-20",
+      "weekday": "Sunday",
+      "scheduled_slot": "10:00",
+      "actual_post_time": "10:02",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/last-minute-campaign-edits",
+      "analytics_checked_at": "2026-09-20T10:02 CEST",
+      "impressions": 2,
+      "clicks": 0,
+      "click_through_rate": 0.0,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.0,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
+      "notes": "Fifth consecutive fully-on-schedule cycle through the session-based CronCreate pipeline (planned overnight by the autonomous nightly cron, fired automatically at the assigned 10:00 slot by a one-shot fire cron). linkedin-bot.py --post exited 1 on the usual toast false-negative. Could not verify via the Browser pane -- its LinkedIn session is still logged out (same unresolved issue first hit on 2026-09-19, showed a Sign Up page again on both linkedin.com and the company admin URL). Verified instead via linkedin-bot.py --analytics, which returned live data (2 impressions, exit 0) confirming the post is real. Marked 10:00 as a valid timing trial in timing-intelligence/state.json -- actual_post_time (10:02) matches the scheduled_slot closely enough."
     }
   ]
 }

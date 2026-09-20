@@ -8,4 +8,4 @@ And canceling isn't instant either. A cancellation triggered too close to send c
 
 Five minutes before send is not the moment to improvise this decision. Worth having the checklist before the pressure hits, not during it.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/last-minute-campaign-edits
