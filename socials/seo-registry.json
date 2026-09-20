@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19T22:07:36.214331+00:00",
+  "generated": "2026-09-20T22:07:40.695830+00:00",
   "blog_posts": [
     {
       "slug": "2026-09-12-email-owned-revenue-channel",
@@ -171,6 +171,15 @@
       "category": "KLAVIYO / FLOWS",
       "excerpt": "Before you suppress an inactive segment, try to win it back. Structure, timing, and how it connects to list hygiene.",
       "datePublished": "2026-08-18"
+    },
+    {
+      "slug": "last-minute-campaign-edits",
+      "url": "/blog/last-minute-campaign-edits",
+      "title": "Editing a Scheduled Email Campaign Last Minute: What's Actually Safe | OpenRateLab",
+      "description": "Caught a problem right before your Klaviyo campaign sends? Here's what's safe to edit last minute, and what quietly breaks tracking or personalization.",
+      "category": "KLAVIYO / CAMPAIGNS",
+      "excerpt": "A problem shows up minutes before a scheduled campaign sends. Not every fix at that point is actually safe. Here's what to change and what to leave alone.",
+      "datePublished": "2026-09-20"
     },
     {
       "slug": "open-rate-data-accuracy",
