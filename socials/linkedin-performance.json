@@ -209,6 +209,25 @@
       "engagement_rate": 0.0,
       "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
       "notes": "Fifth consecutive fully-on-schedule cycle through the session-based CronCreate pipeline (planned overnight by the autonomous nightly cron, fired automatically at the assigned 10:00 slot by a one-shot fire cron). linkedin-bot.py --post exited 1 on the usual toast false-negative. Could not verify via the Browser pane -- its LinkedIn session is still logged out (same unresolved issue first hit on 2026-09-19, showed a Sign Up page again on both linkedin.com and the company admin URL). Verified instead via linkedin-bot.py --analytics, which returned live data (2 impressions, exit 0) confirming the post is real. Marked 10:00 as a valid timing trial in timing-intelligence/state.json -- actual_post_time (10:02) matches the scheduled_slot closely enough."
+    },
+    {
+      "date": "2026-09-21",
+      "weekday": "Monday",
+      "scheduled_slot": "15:00",
+      "actual_post_time": "15:02",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/fake-urgency-subject-line-risk",
+      "analytics_checked_at": "2026-09-21T15:02 CEST",
+      "impressions": 2,
+      "clicks": 0,
+      "click_through_rate": 0.0,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.0,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
+      "notes": "Sixth consecutive fully-on-schedule cycle through the session-based CronCreate pipeline -- planned overnight, fired automatically at the assigned 15:00 slot. linkedin-bot.py --post exited 1 on the usual toast false-negative; this time the Browser pane's LinkedIn session was logged in again (fixed earlier today), so verified directly via the company admin page -- post #1, timestamped 'now', full matching text. Marked 15:00 as a valid timing trial in timing-intelligence/state.json -- actual_post_time (15:02) matches the scheduled_slot closely enough."
     }
   ]
 }

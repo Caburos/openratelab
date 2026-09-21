@@ -8,4 +8,4 @@ The fix isn't softer language. It's making sure the deadline in the subject line
 
 Worth an audit of your last few months of urgency sends before this gets flagged from outside instead.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/fake-urgency-subject-line-risk
