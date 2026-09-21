@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-20T22:07:40.695830+00:00",
+  "generated": "2026-09-21T22:07:33.615574+00:00",
   "blog_posts": [
     {
       "slug": "2026-09-12-email-owned-revenue-channel",
@@ -54,6 +54,15 @@
       "category": "STRATEGY / BRAND",
       "excerpt": "Email doesn't cheapen a premium brand. Running it like a discount blast list does. Here's the actual difference.",
       "datePublished": "2026-09-15"
+    },
+    {
+      "slug": "fake-urgency-subject-line-risk",
+      "url": "/blog/fake-urgency-subject-line-risk",
+      "title": "Fake Urgency in Email Subject Lines: The Real Risk of 'Last Chance' Claims | OpenRateLab",
+      "description": "'Last chance' and 'final hours' subject lines are drawing real scrutiny when the deadline isn't real. Here's the risk, and how to keep urgency honest.",
+      "category": "COPYWRITING / COMPLIANCE",
+      "excerpt": "Fake urgency in subject lines is getting real attention. Not because urgency doesn't work, because too many deadlines aren't true. Here's the fix.",
+      "datePublished": "2026-09-21"
     },
     {
       "slug": "flow-vs-campaign-revenue",
