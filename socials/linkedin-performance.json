@@ -228,6 +228,25 @@
       "engagement_rate": 0.0,
       "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
       "notes": "Sixth consecutive fully-on-schedule cycle through the session-based CronCreate pipeline -- planned overnight, fired automatically at the assigned 15:00 slot. linkedin-bot.py --post exited 1 on the usual toast false-negative; this time the Browser pane's LinkedIn session was logged in again (fixed earlier today), so verified directly via the company admin page -- post #1, timestamped 'now', full matching text. Marked 15:00 as a valid timing trial in timing-intelligence/state.json -- actual_post_time (15:02) matches the scheduled_slot closely enough."
+    },
+    {
+      "date": "2026-09-22",
+      "weekday": "Tuesday",
+      "scheduled_slot": "13:00",
+      "actual_post_time": "13:01",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/changing-sending-domain-deliverability",
+      "analytics_checked_at": "2026-09-22T13:01 CEST",
+      "impressions": 1,
+      "clicks": 0,
+      "click_through_rate": 0.0,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": 0.0,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
+      "notes": "Seventh consecutive fully-on-schedule cycle through the session-based CronCreate pipeline -- planned overnight, fired automatically at the assigned 13:00 slot. linkedin-bot.py --post exited 1 on the usual toast false-negative; verified directly via the Browser pane against the company admin page -- post #1, timestamped 'now', full matching text. Page now shows 2 followers (up from 0), first real followers from the new page-follower-invites pipeline. Marked 13:00 as a valid timing trial in timing-intelligence/state.json -- actual_post_time (13:01) matches the scheduled_slot closely enough."
     }
   ]
 }

@@ -6,4 +6,4 @@ Before the first send: SPF, DKIM, and DMARC configured and verified on the new d
 
 Keep the old domain running in parallel the whole time. Only retire it once the new one has a genuinely proven track record.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/changing-sending-domain-deliverability
