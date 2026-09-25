@@ -247,6 +247,25 @@
       "engagement_rate": 0.0,
       "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel)",
       "notes": "Seventh consecutive fully-on-schedule cycle through the session-based CronCreate pipeline -- planned overnight, fired automatically at the assigned 13:00 slot. linkedin-bot.py --post exited 1 on the usual toast false-negative; verified directly via the Browser pane against the company admin page -- post #1, timestamped 'now', full matching text. Page now shows 2 followers (up from 0), first real followers from the new page-follower-invites pipeline. Marked 13:00 as a valid timing trial in timing-intelligence/state.json -- actual_post_time (13:01) matches the scheduled_slot closely enough."
+    },
+    {
+      "date": "2026-09-25",
+      "weekday": "Friday",
+      "scheduled_slot": null,
+      "actual_post_time": "09:43",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/gmail-promotions-tab-plain-text",
+      "analytics_checked_at": "2026-09-25T09:43 CEST",
+      "impressions": null,
+      "clicks": null,
+      "click_through_rate": null,
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": null,
+      "engagement_rate_source": "Verified directly via the Browser pane (company admin page) -- too fresh for an impressions count yet at verification time",
+      "notes": "Ninth cycle overall, fired manually by direct user request ('push posts everywhere') after discovering the nightly crons had silently expired (auto-expire after 7 days) and the pipeline had been quiet since 09-22. Recreated the nightly cron same day. linkedin-bot.py --post exited 1 on the usual toast false-negative; confirmed genuinely live via the Browser pane -- post #1, timestamped 'now', full matching text. Page now at 4 followers. scheduled_slot recorded as null and NOT marked as a valid timing trial -- this was an immediate manual fire, not a slot the exploration algorithm chose."
     }
   ]
 }

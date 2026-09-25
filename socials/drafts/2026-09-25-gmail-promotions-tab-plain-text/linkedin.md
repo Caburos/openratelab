@@ -8,4 +8,4 @@ This doesn't mean send everything as plain text. Promotions isn't a penalty box,
 
 Test it directly: send to a Gmail account you control and check the actual tab, don't guess from open rate.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/gmail-promotions-tab-plain-text
