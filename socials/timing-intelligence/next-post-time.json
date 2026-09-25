@@ -1,1 +1,1 @@
-{"date": "2026-09-22", "weekday": "Tuesday", "slot": "13:00", "phase": "exploration"}
+{"date": "2026-09-25", "weekday": "Friday", "slot": "09:45", "phase": "exploration", "note": "Fired immediately by direct user request ('push posts everywhere') rather than waiting for a scheduled slot later today, since the pipeline had been silently quiet since 09-22 (expired crons). Manual/immediate fire -- exclude from tried_slots per the standing manual-fire exclusion rule."}

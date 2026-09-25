@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-21T22:07:33.615574+00:00",
+  "generated": "2026-09-25T07:38:18.648565+00:00",
   "blog_posts": [
     {
       "slug": "2026-09-12-email-owned-revenue-channel",
@@ -18,6 +18,15 @@
       "category": "STRATEGY / RESPONSE",
       "excerpt": "The campaign already sent and the numbers look bad. Most advice is about getting it right beforehand. Here's what's still fixable now.",
       "datePublished": "2026-09-19"
+    },
+    {
+      "slug": "changing-sending-domain-deliverability",
+      "url": "/blog/changing-sending-domain-deliverability",
+      "title": "Changing Your Email Sending Domain Without Hurting Deliverability | OpenRateLab",
+      "description": "Switching to a new sending domain? Reputation doesn't carry over. Here's how to change domains without tanking your open rates and inbox placement.",
+      "category": "DELIVERABILITY / MIGRATION",
+      "excerpt": "A new sending domain starts with zero reputation, no matter how established the brand is. Here's how to change domains without losing deliverability.",
+      "datePublished": "2026-09-22"
     },
     {
       "slug": "ecommerce-email-open-rate-benchmarks",
