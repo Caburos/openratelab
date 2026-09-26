@@ -266,6 +266,25 @@
       "engagement_rate": 0.01,
       "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel). First check at fire time (09-25) was too fresh to have a real impressions count (page had just gained followers from the invite pipeline); this is the genuine day-later reading, a substantial jump (96 impressions, 1 click) likely reflecting the growing real follower base from the page-invite pipeline.",
       "notes": "Ninth cycle overall, fired manually by direct user request ('push posts everywhere') after discovering the nightly crons had silently expired (auto-expire after 7 days) and the pipeline had been quiet since 09-22. Recreated the nightly cron same day. linkedin-bot.py --post exited 1 on the usual toast false-negative; confirmed genuinely live via the Browser pane -- post #1, timestamped 'now', full matching text. Page now at 4 followers. scheduled_slot recorded as null and NOT marked as a valid timing trial -- this was an immediate manual fire, not a slot the exploration algorithm chose."
+    },
+    {
+      "date": "2026-09-26",
+      "weekday": "Saturday",
+      "scheduled_slot": "18:00",
+      "actual_post_time": "18:02",
+      "actual_post_time_tz": "CEST (UTC+2)",
+      "post_url": null,
+      "blog_url": "https://openratelab.com/blog/how-many-flows-should-you-run/",
+      "analytics_checked_at": null,
+      "impressions": null,
+      "clicks": null,
+      "click_through_rate": null,
+      "reactions": null,
+      "comments": null,
+      "reposts": null,
+      "engagement_rate": null,
+      "engagement_rate_source": null,
+      "notes": "Tenth cycle overall, fired via /orl-publish --fire (Skill tool, session-based, no API key) at its scheduled 18:00 slot -- first fully on-time /orl-publish --fire execution logged since the pipeline moved to session-native CronCreate scheduling. linkedin-bot.py --post exited 1 on the usual toast false-negative; confirmed genuinely live via the Browser pane -- post #1 on company/144914968/admin/page-posts/published/, timestamped 'now', full matching text, dated 9/26/2026. Page at 4 followers. analytics_checked_at left null -- tomorrow night's /orl-timing --log-previous fills it in and marks the 18:00 slot as tried."
     }
   ]
 }

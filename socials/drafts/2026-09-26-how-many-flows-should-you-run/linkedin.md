@@ -8,4 +8,4 @@ Where accounts under-build: browse abandonment and post-purchase are the two flo
 
 The audit that actually matters: list every active flow next to the customer moment it covers. What's duplicated, what's missing, what's actually doing its job.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/how-many-flows-should-you-run/
