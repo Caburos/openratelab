@@ -256,15 +256,15 @@
       "actual_post_time_tz": "CEST (UTC+2)",
       "post_url": null,
       "blog_url": "https://openratelab.com/blog/gmail-promotions-tab-plain-text",
-      "analytics_checked_at": "2026-09-25T09:43 CEST",
-      "impressions": null,
-      "clicks": null,
-      "click_through_rate": null,
+      "analytics_checked_at": "2026-09-26T00:00 CEST",
+      "impressions": 96,
+      "clicks": 1,
+      "click_through_rate": 0.01,
       "reactions": 0,
       "comments": 0,
       "reposts": 0,
-      "engagement_rate": null,
-      "engagement_rate_source": "Verified directly via the Browser pane (company admin page) -- too fresh for an impressions count yet at verification time",
+      "engagement_rate": 0.01,
+      "engagement_rate_source": "socials/scripts/linkedin-bot.py --analytics (standalone Playwright script reading LinkedIn's own Post performance panel). First check at fire time (09-25) was too fresh to have a real impressions count (page had just gained followers from the invite pipeline); this is the genuine day-later reading, a substantial jump (96 impressions, 1 click) likely reflecting the growing real follower base from the page-invite pipeline.",
       "notes": "Ninth cycle overall, fired manually by direct user request ('push posts everywhere') after discovering the nightly crons had silently expired (auto-expire after 7 days) and the pipeline had been quiet since 09-22. Recreated the nightly cron same day. linkedin-bot.py --post exited 1 on the usual toast false-negative; confirmed genuinely live via the Browser pane -- post #1, timestamped 'now', full matching text. Page now at 4 followers. scheduled_slot recorded as null and NOT marked as a valid timing trial -- this was an immediate manual fire, not a slot the exploration algorithm chose."
     }
   ]

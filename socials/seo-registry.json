@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-25T07:38:18.648565+00:00",
+  "generated": "2026-09-26T14:56:37.285522+00:00",
   "blog_posts": [
     {
       "slug": "2026-09-12-email-owned-revenue-channel",
@@ -81,6 +81,15 @@
       "category": "STRATEGY / REPORTING",
       "excerpt": "Your Klaviyo dashboard blends flow and campaign revenue into one number. That blend is hiding the actual signal. Here's how to split it.",
       "datePublished": "2026-09-17"
+    },
+    {
+      "slug": "gmail-promotions-tab-plain-text",
+      "url": "/blog/gmail-promotions-tab-plain-text",
+      "title": "Why Gmail Puts Your Emails In Promotions (And When Plain Text Fixes It) | OpenRateLab",
+      "description": "A welcome email kept landing in Gmail's Promotions tab. The plain-text version hit Primary. Here's what Gmail's classifier is actually reading.",
+      "category": "DELIVERABILITY / GMAIL",
+      "excerpt": "Gmail's Promotions tab isn't reading your copy for quality. It's reading formatting and engagement signals, and welcome emails are the most exposed.",
+      "datePublished": "2026-09-25"
     },
     {
       "slug": "high-open-rate-low-click-rate",
