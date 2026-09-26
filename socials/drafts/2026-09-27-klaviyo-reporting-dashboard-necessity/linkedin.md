@@ -6,4 +6,4 @@ Klaviyo's native reporting already covers flow performance, campaign performance
 
 Before building or buying anything: name the exact number, broken down the exact way, that requires manual work every time someone asks. If that gap is structural, tooling earns its cost. If it's a five-minute report someone forgot to check, that's the actual fix.
 
-→ Full breakdown: {BLOG_URL}
+→ Full breakdown: https://openratelab.com/blog/klaviyo-reporting-dashboard-necessity/
