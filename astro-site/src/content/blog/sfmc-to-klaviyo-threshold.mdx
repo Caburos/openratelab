@@ -1,0 +1,52 @@
+---
+title: "Moving Off Salesforce Marketing Cloud: What Actually Justifies It | OpenRateLab"
+description: "SFMC makes sense at a certain complexity tier. Here's the actual signal that a DTC brand has outgrown the platform, not the reason."
+datePublished: 2026-10-01
+dateModified: 2026-10-01
+category: "STRATEGY / PLATFORM"
+excerpt: "Revenue size isn't the signal that a brand should move off Salesforce Marketing Cloud. Whether the team is actually using its enterprise features is."
+readTime: "6 MIN READ"
+faq:
+  - question: "What's the actual threshold for moving off Salesforce Marketing Cloud?"
+    answer: "It's not a revenue number. The real threshold is whether the team is actually using SFMC's enterprise-specific capabilities, complex multi-channel journey orchestration, deep CRM or Data Cloud integration, or true enterprise-scale send volume. A brand generating strong revenue can still be running nothing more than standard flows and campaigns on SFMC, which means they're paying enterprise pricing and carrying enterprise implementation overhead for functionality Klaviyo handles natively with far less setup."
+  - question: "How do you know if you're only using basic SFMC features?"
+    answer: "List out what's actually built: welcome, abandoned cart, post-purchase, browse abandonment, win-back, and a campaign calendar. If that's the extent of it, with no complex branching journeys spanning multiple channels and no deep CRM data model dependency, that's the exact feature set Klaviyo was built around. The enterprise features that justify SFMC's cost are conspicuous when they're actually in use. Their absence is just as conspicuous once you look."
+  - question: "What does migrating from SFMC to Klaviyo actually involve?"
+    answer: "Three things matter most: rebuilding journey logic as Klaviyo flows rather than a straight lift-and-shift of SFMC's journey builder output, deliberately bringing over historical engagement data instead of a raw export (SFMC and Klaviyo model engagement differently), and a real cutover plan so nothing silently stops sending mid-migration. Treat it as a rebuild informed by what's currently live, not a file transfer."
+---
+
+Salesforce Marketing Cloud makes sense at a certain complexity tier. The question worth asking isn't whether a brand has outgrown it by revenue. It's whether the team is still actually using the features that justified moving there in the first place.
+
+## Why Brands End Up On SFMC
+
+Most DTC brands land on SFMC for one of two reasons: it got sold in during a growth phase as the platform serious brands use, or it was inherited from a parent company's existing enterprise stack after an acquisition or a broader martech consolidation.
+
+Neither reason is a technical justification on its own. Both are organizational reasons a contract exists, not evidence that the brand's actual email and lifecycle needs require SFMC's specific capabilities.
+
+## The Features That Actually Justify SFMC's Overhead
+
+Three things genuinely justify SFMC's cost and implementation complexity: complex multi-channel journey orchestration spanning email, SMS, push, and paid audiences in one branching logic tree, deep CRM or Data Cloud integration where marketing needs to read and write against the same enterprise data model sales and service teams use, and true enterprise-scale send volume with the governance requirements that come with it.
+
+When a brand is actually using these, SFMC's cost is the price of real capability, not overhead. The problem shows up when none of these are true.
+
+## The Signal The Threshold Has Been Crossed
+
+If the marketing team's actual footprint is a welcome flow, an abandoned cart flow, a post-purchase sequence, browse abandonment, a win-back flow, and a campaign calendar, that is standard lifecycle marketing. It is also exactly the feature set [Klaviyo's flow-building tools](/blog/klaviyo-email-flows-guide) were built around, with a fraction of the implementation and ongoing admin overhead.
+
+Revenue size doesn't tell you this. A brand doing significant volume can still be running only standard flows. The signal isn't how much money moves through the account. It's whether anyone on the team could point to a specific SFMC capability they'd lose by leaving, beyond "it's what we're already on."
+
+## What The Migration Actually Requires
+
+Journey logic needs to be rebuilt as Klaviyo flows, not exported and translated mechanically. SFMC's journey builder and Klaviyo's flow logic don't map one to one, and a straight lift-and-shift tends to carry over complexity that was never load-bearing in the first place.
+
+Historical engagement data needs deliberate handling, not a raw export. The two platforms model engagement differently, and treating a migration as a pure data dump usually means inheriting stale segmentation logic instead of a clean rebuild.
+
+A real cutover plan matters more than either of those. Flows need to hand off from one platform to the other without a gap where nothing is actually sending, which means the old flows stay live until the new ones are tested and confirmed working, not switched off on the migration's start date.
+
+## The Cost Math Once The Features Aren't In Use
+
+SFMC's licensing and the specialized admin time it requires are priced for the enterprise features. Once a brand isn't using those features, the same send volume on Klaviyo typically costs meaningfully less while requiring less specialized implementation knowledge to maintain.
+
+That gap compounds over time. The brands that end up re-evaluating years into an SFMC contract usually find the same answer: the enterprise features were valuable when the brand needed them, and the brand's actual usage moved back toward standard lifecycle marketing well before anyone checked.
+
+If your team is on an enterprise platform running standard flows and campaigns, [book a free audit](/#contact) and we'll help you figure out whether the platform still matches what you're actually doing with it.
