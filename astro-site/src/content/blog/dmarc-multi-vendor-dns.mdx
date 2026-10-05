@@ -1,0 +1,48 @@
+---
+title: "Why DMARC Fails When Your Email Platform and DNS Host Are Different Companies | OpenRateLab"
+description: "When the email platform and DNS host are separate vendors, DMARC usually fails at the seam between them. Here's where it breaks."
+category: "KLAVIYO / DELIVERABILITY"
+excerpt: "The platform says the domain is verified and the DNS host says the records are there. DMARC still fails, and the cause is almost always one record at the seam."
+datePublished: 2026-10-05
+dateModified: 2026-10-05
+readTime: "6 MIN READ"
+faq:
+  - question: "Why does DMARC fail when my email platform says the domain is verified?"
+    answer: "Platform verification and DMARC evaluation check different things. Verification usually confirms that a DKIM or CNAME record exists somewhere. DMARC then checks whether the message's authenticated domain matches the visible From domain, so a record can exist and still not align. A common case is DKIM signing with the platform's own domain rather than yours, which passes verification but fails DMARC alignment for your From address."
+  - question: "What is the most common DMARC mistake when using separate DNS and email vendors?"
+    answer: "Two SPF records on the same domain. Each vendor asks you to add an SPF include, and adding a second TXT record instead of merging them into one produces a record that fails validation entirely. Receivers treat a domain with multiple SPF records as an error, so SPF stops passing for every sender on that domain, not just the new one."
+  - question: "How do I check what my DNS actually says?"
+    answer: "Query the records directly with a DNS lookup tool instead of trusting either vendor's dashboard. Check the TXT record for SPF at the root domain, the DKIM CNAME at the selector name the platform gave you, and the DMARC TXT record at _dmarc. The dashboard status shows what the platform last saw, and a record added to the wrong host or with a trailing typo can look correct in the UI while being absent from public DNS."
+---
+
+When the email platform and the DNS host are two different companies, the setup looks simple on paper. The platform says the domain is verified, the DNS host says the records are there, and DMARC still fails. The cause is almost never your DMARC policy. It's one record at the seam between the two vendors.
+
+## Why Splitting Ownership Breaks Authentication
+
+Most DMARC guides assume one vendor owns both the sending service and the DNS. Once they're split, each side handles its own piece and nobody checks the combined result.
+
+The sending platform gives you records to add. Your DNS host is where they actually have to go. Each vendor is correct about its own part, and the failure happens between them, where no single dashboard shows the whole picture.
+
+## The Three Failure Modes At The Seam
+
+The first is a duplicate SPF record. Every sending platform asks for an SPF include, and adding it as a second TXT record instead of merging it into the existing one produces two SPF records on the same domain. Receivers treat that as an error, so SPF stops passing for every sender on the domain, including the ones that were working before.
+
+The second is a DKIM record that never got added. The platform gives you a CNAME at a specific selector name. If it lands at the wrong name, or the DNS host adds a trailing domain automatically and doubles it, the platform's dashboard can still show verified from its own last check while public DNS has nothing at the selector.
+
+The third is a DMARC record pointed at the wrong place. The DMARC TXT record belongs at `_dmarc` on the domain you send from. A record placed on the platform's domain, or at the root with the wrong prefix, is valid DNS that does nothing for your From address.
+
+## What Passing DMARC Actually Requires
+
+For each message, DMARC needs either SPF or DKIM to pass and to align with the visible From domain. Alignment is the part that gets missed. A message can pass DKIM cryptographically and still fail DMARC if the signing domain is the platform's own, not yours.
+
+The useful question is whether something passed for the domain the reader actually sees.
+
+## How To Check The Real DNS Answer
+
+Query the records directly with a DNS lookup tool rather than trusting either vendor's dashboard. Check three things: the SPF TXT record at the root of your sending domain (exactly one, containing every include), the DKIM CNAME at the selector name the platform gave you, and the DMARC TXT record at `_dmarc`.
+
+A record can look correct in the UI and be absent from public DNS. Typos and automatically appended domains are the usual reasons, and the dashboard won't show either one.
+
+If you're moving a sending domain at the same time, the [domain change guide](/blog/changing-sending-domain-deliverability) covers the reputation side, which you'll need to handle alongside the records.
+
+The records are the fast part. Once they're right, a DMARC report is the thing to watch for a few weeks, since it shows which sources actually authenticate and which are still failing. If you want someone to check the full seam between your platform and your DNS host, [book a free audit](/#contact) and we'll walk the records against what's actually live.
