@@ -1,0 +1,50 @@
+---
+title: "What BIMI Actually Requires Before Your Logo Shows Up Next to Your Emails | OpenRateLab"
+description: "BIMI puts a verified brand logo next to your emails, but it only works once DMARC is already enforcing. Here's what the setup actually requires."
+datePublished: 2026-10-08
+dateModified: 2026-10-08
+category: "KLAVIYO / DELIVERABILITY"
+excerpt: "A verified logo next to your sender name sounds like a quick win. It's the last step in an authentication setup, not the first."
+readTime: "6 MIN READ"
+faq:
+  - question: "What does BIMI actually do?"
+    answer: "BIMI (Brand Indicators for Message Identification) displays a verified brand logo next to your sender name in supporting inboxes. It's a visual trust signal for the recipient, not a deliverability booster on its own. It doesn't bypass spam filtering and doesn't improve inbox placement directly; its only function is showing a verified logo once a message has already passed authentication and landed in the inbox."
+  - question: "Why does BIMI require DMARC at enforcement?"
+    answer: "BIMI's specification requires a DMARC policy of p=quarantine or p=reject, not p=none. The logic is that BIMI is a trust signal layered on top of authentication that's actually being enforced. A domain still at p=none hasn't proven it's protecting its own mail stream, so mailbox providers won't display a logo for a domain that could still be spoofed without consequence."
+  - question: "Do you need a certificate to use BIMI?"
+    answer: "For most major providers, yes. Gmail and Yahoo require a Verified Mark Certificate (VMC), which validates that the logo belongs to a registered trademark, issued by a small number of authorized certificate authorities. Apple Mail has supported BIMI with a self-asserted logo record and no VMC, but that's the exception, not the rule, and the certificate requirement is the step most setup guides mention briefly and then skip past."
+---
+
+A verified logo next to your sender name sounds like a quick visual win. In practice, it's the last step in an authentication setup that has to already be working, not something you can add on top of a setup that isn't.
+
+## What BIMI Actually Does
+
+BIMI displays a verified brand logo next to the sender name in supporting inboxes. That's the entire function. It's a trust signal for the person looking at their inbox, not a deliverability mechanism.
+
+It doesn't help a message get past spam filtering and doesn't improve inbox placement on its own. A message still has to pass the same authentication and reputation checks it would without BIMI. The logo only appears once all of that has already succeeded.
+
+## Why DMARC Has To Already Be Enforcing
+
+BIMI's specification requires a DMARC policy of p=quarantine or p=reject. A domain still sitting at p=none, which is the starting policy for most setups, doesn't qualify.
+
+The reasoning is straightforward: BIMI is a visual trust signal layered on top of authentication that's actually protecting the domain. A domain at p=none hasn't proven anything yet, since a spoofed message using that domain wouldn't be blocked or flagged. Showing a logo for a domain that could still be impersonated without consequence would make the logo meaningless as a trust signal.
+
+That dependency makes BIMI the step that comes after DMARC enforcement has been live and stable, not a parallel project you can run at the same time.
+
+## The Certificate Requirement Most Guides Skip Past
+
+Gmail and Yahoo require a Verified Mark Certificate, a VMC, before they'll display the logo. The certificate validates that the logo belongs to a registered trademark, and it's issued by a small number of authorized certificate authorities, not something a domain can self-assert its way into.
+
+That requirement means BIMI for the major inboxes depends on having a registered trademark in the first place, which isn't true for every brand. Apple Mail is the one notable exception, supporting a self-asserted logo record without a VMC, but it's the exception, not something to plan the whole rollout around.
+
+## The Logo Format Requirements That Trip People Up
+
+BIMI requires the logo in SVG Tiny 1.2 PS format, a constrained SVG profile, not a regular SVG export from a design tool. A standard SVG export usually fails validation, and the fix is converting it through a tool built specifically for this profile rather than troubleshooting the export settings in whatever generated it.
+
+This is a small technical detail, but it's the kind of thing that stalls a BIMI rollout for a week if nobody on the team has hit it before.
+
+## Do This Only Once Authentication Is Already Stable
+
+BIMI is worth pursuing once DMARC enforcement has been live long enough to be genuinely stable, not as a parallel project alongside getting authentication right. If [your DMARC setup still has gaps at the seam between your email platform and your DNS host](/blog/dmarc-multi-vendor-dns), that's the thing to fix first. A verified logo on top of an authentication setup that isn't solid yet just adds another moving part to a foundation that still needs work.
+
+If you want help figuring out whether your domain is actually ready for BIMI, [book a free audit](/#contact) and we'll check where your DMARC enforcement actually stands.
