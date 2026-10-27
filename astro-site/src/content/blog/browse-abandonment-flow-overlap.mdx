@@ -1,0 +1,52 @@
+---
+title: "Klaviyo Browse Abandonment Overlapping With Cart Abandonment? Here's the Fix | OpenRateLab"
+description: "Why Klaviyo's Browse Abandonment flow can still fire on someone already deep in Cart or Checkout Abandonment, and the filter logic that actually stops it."
+category: "KLAVIYO / FLOWS"
+excerpt: "The native filters only look forward from when a flow starts. That's the whole problem."
+readTime: "6 MIN READ"
+datePublished: 2026-10-27
+dateModified: 2026-10-27
+faq:
+  - question: "Why does my Browse Abandonment flow still send to someone already in Cart Abandonment?"
+    answer: "Because Klaviyo's profile filters like \"Added to Cart = 0 times since starting this flow\" only count activity that happens after a profile enters that specific flow. If someone added a product to cart before Browse Abandonment started, then later views a different product, that filter still reads zero, so Browse Abandonment fires even though the person is already deeper in the funnel in a different flow. The filter isn't broken. It's just answering a narrower question than most people assume."
+  - question: "Does Klaviyo support an \"is not set\" filter for custom Boolean properties?"
+    answer: "No, not as a direct condition in flow filters. A Boolean profile property only has true or false as filterable states, with no native \"has never been set\" option. This matters because a customer who's never entered a given flow has no value for that flow's tracking property at all, not false. The workaround is to initialize the property to false at a point everyone passes through, like list signup or site identification, rather than only setting it when a specific flow starts."
+  - question: "What's the right order to sequence overlapping Klaviyo abandonment flows?"
+    answer: "Checkout Abandonment should always take priority over Cart Abandonment, which should always take priority over Browse Abandonment. The logic follows funnel depth: whoever is closest to completing a purchase gets that flow's messaging, and everyone else gets filtered out of the earlier-stage flow. In practice this means every downstream flow needs a gate checking whether the customer already qualifies for a flow further along, not just whether they've completed the flow's own trigger condition."
+---
+
+A Klaviyo user on r/Klaviyo recently described a setup that looked correct on paper and still leaked: a Browse Abandonment flow gated by "Added to Cart = 0 times since starting this flow," paired with a custom Boolean property to keep new subscribers out of it during their Welcome Flow. It still fired on customers who were already receiving Cart Abandonment emails. The filters weren't wrong. They were answering a question that doesn't cover the actual failure case.
+
+## Why "Since Starting This Flow" Filters Miss the Overlap
+
+Klaviyo's native profile filters that reference "since starting this flow" only count activity from the moment a specific profile entered that specific flow forward. They have no visibility into what happened before entry, and no visibility into what's happening concurrently in a different flow.
+
+Here's the gap in practice: a customer adds a product to their cart, which starts Cart Abandonment. A day later, before that flow finishes, they browse a second, unrelated product. That view triggers Browse Abandonment. Its filter checks "Added to Cart = 0 times since starting this flow," and since the cart addition happened before Browse Abandonment started, the counter reads zero. The filter is technically accurate. It's also useless for preventing the overlap, because it was never designed to look backward or sideways, only forward from its own entry point.
+
+## Sequence Flows by Funnel Depth, Not Just by Trigger Event
+
+The fix isn't a better filter on Browse Abandonment alone. It's treating all three abandonment flows (Checkout, Cart, Browse) as one sequence with an explicit priority order, where whichever flow is closest to a completed purchase wins.
+
+That means: Checkout Abandonment outranks Cart Abandonment, and Cart Abandonment outranks Browse Abandonment. Every downstream flow needs a gate that asks "is this person already in a higher-priority flow right now," not just "has this person completed my own trigger condition recently." Without that cross-flow check, you're relying on three flows to coincidentally never collide, which works until a customer's real browsing behavior stops being that tidy.
+
+## Use One Shared Property, Not a Separate Boolean Per Flow
+
+The original approach used a dedicated custom Boolean for each flow (`WelcomeFlow`, then a proposed `CartAbandonedFlow`), toggled true on entry and false on exit. That pattern breaks down fast: a customer who's never entered Cart Abandonment has no value at all for `CartAbandonedFlow`, not false, so a filter checking "CartAbandonedFlow = false" silently excludes people it should include, because they simply don't have the property.
+
+A single shared property, something like `currentFunnelStage`, set as a string or number rather than a separate Boolean per flow, scales better: one property, one value at a time, checked by every downstream flow's entry filter. "Enter Browse Abandonment only if `currentFunnelStage` is not `checkout` and not `cart`" is one condition to maintain instead of three Booleans that all need to stay in sync.
+
+## Why Klaviyo's Missing "Is Not Set" Condition Forces This
+
+Klaviyo's Boolean profile filters only offer true or false as states, with no native "has never been set" condition. That's precisely why toggling a Boolean per flow doesn't hold up: anyone who's never touched that flow has no property value, not false, and a filter built for true/false logic can't distinguish "never entered" from "entered and already left."
+
+The practical fix is initializing the shared property at a point every profile passes through, such as list signup or first site identification, so every profile has a real value from day one. Set it once there, then update it as customers move through funnel stages. This also sidesteps the "is not set" gap entirely: if the property always has a value, you never need to check for its absence.
+
+For a deeper look at [structuring a single Cart Abandonment flow](/blog/klaviyo-abandoned-cart-flow) on its own, including timing and the 3-email structure this piece assumes as the downstream flow in the sequence, that's the right starting point before layering Browse Abandonment on top.
+
+## What This Doesn't Fix
+
+No filter logic resolves true real-time concurrency, where a customer triggers two flows within seconds of each other and Klaviyo's own processing order decides which one "wins" the race before your filters even get a chance to evaluate. That's a platform-level limitation, not a setup mistake, and the only real mitigation is a short delay step at the start of lower-priority flows (Browse Abandonment, in this case) to give the system time to register entry into a higher-priority flow first.
+
+It's also not a substitute for deciding, as part of [planning how many flows a brand actually needs](/blog/how-many-flows-should-you-run), whether three separate abandonment flows earn their complexity in the first place. Some accounts are better served by consolidating Browse and Cart Abandonment into a single flow with branching logic than by maintaining the overlap-prevention machinery three fully separate flows require.
+
+If your Klaviyo account has grown past the point where you can reason about flow overlap by memory, [we can audit the whole system](/#contact) and sequence it properly.
