@@ -1,0 +1,60 @@
+---
+title: "Klaviyo Abandoned Cart Flow Not Triggering? Check These In Order | OpenRateLab"
+description: "Klaviyo abandoned cart flow not triggering? Check flow status, the trigger metric, filters, and suppression in this order before rebuilding anything."
+category: "KLAVIYO / FLOWS"
+excerpt: "A flow that never fires is rarely one big bug. Here are the checks that find it in minutes, in the order that saves the most time."
+readTime: "6 MIN READ"
+datePublished: 2026-11-07
+dateModified: 2026-11-07
+faq:
+  - question: "Why is my Klaviyo abandoned cart flow not triggering?"
+    answer: "The cause is almost always one of four things, and they are quick to rule out in order. The flow or its emails are not actually live, the trigger event is not reaching Klaviyo from your store, a trigger filter or flow filter is quietly excluding the people you expect to enter, or the individual profile cannot receive the email because they are unsubscribed, suppressed, or still inside an earlier run of the same flow. Rebuilding the flow is the last thing to try, not the first, because a rebuilt flow with the same blocker will fail in exactly the same way. Start with the flow status, then open a recent profile's activity feed and confirm the checkout or cart event actually arrived, then read the filters one by one, then check that profile's consent and flow history."
+  - question: "How do I test whether my Klaviyo abandoned cart flow works?"
+    answer: "Use a real test profile instead of waiting for a customer. Start a checkout on your own store with an email address that is subscribed to your list, enter the email at the first checkout step so the shopper becomes identified, and leave without ordering. Then open that profile in Klaviyo and look at the activity feed to confirm the trigger event arrived, and open the flow's analytics to see whether the profile shows as queued or skipped. If the event is missing, the problem sits between your store and Klaviyo. If the event is there but the profile was skipped, the filters or the profile's status are the cause. This takes a few minutes and tells you which half of the system to look at, which is the information a rebuild never gives you."
+  - question: "Why do some abandoned carts never get an email even when the flow is live?"
+    answer: "Some of those carts were never going to qualify, and that is not a bug. A shopper who abandons before entering an email address cannot be identified, so there is no profile to send to. A shopper who completes an order before the first email is due should leave the flow, which is the intended behavior. Profiles that are unsubscribed from email marketing or suppressed after a bounce or complaint are skipped too. When the gap is larger than those groups explain, compare the number of trigger events against the number of people who entered the flow, because the difference points directly at a filter or an integration problem rather than a vague sense that the flow underperforms."
+---
+
+A Klaviyo abandoned cart flow that is not triggering is almost never one big mystery. It is one item on a short list, and the fastest way to find it is to check that list in order, from the cheapest check to the most involved, before anyone rebuilds the flow.
+
+The order that saves the most time is flow status first, then whether the trigger event is actually reaching Klaviyo, then the filters, then the individual profile's status. Each step rules out a whole category of causes, so by the third check most people have found it.
+
+## Check Whether The Flow And Its Emails Are Actually Live
+
+A flow can look finished and still send nothing. Open the flow and look at the status in the top corner. A flow in draft or manual status does not run on its own, and individual emails inside the flow have their own status as well. An email left in draft or manual means the flow reaches that step and then does nothing with it.
+
+This is the most common cause on a freshly built or recently edited flow, because someone saved changes, duplicated an email, or switched a status while testing and never switched it back. It takes ten seconds to check and it is the least dignified explanation, which is why it gets skipped.
+
+## Confirm The Trigger Event Is Reaching Klaviyo
+
+A live flow can only start when its trigger event arrives, so the next question is whether the event is being recorded at all. Open a recent profile who you know started a checkout and read their activity feed. Look for the checkout-started or added-to-cart event, whichever metric your flow is built on.
+
+If the event is missing for that profile, the break is between your store and Klaviyo. Check that the store integration is still connected and syncing, and that nothing changed recently on the storefront, such as a theme update, a checkout customization, or an app that alters the checkout. If the event is present, the integration is fine and the cause is further down.
+
+One thing that surprises people here: the event only attaches to a profile once the shopper is identified. A visitor who adds to cart and leaves before typing an email address produces no profile to send to. Those carts are lost to the flow by design, not by failure.
+
+## Look For Filters Quietly Excluding People
+
+If the event arrives and the flow is live, read the filters. A flow has trigger filters, which decide whether a given event starts the flow, and flow filters, which decide whether a profile is allowed to receive messages at all. Either one can exclude far more people than intended.
+
+Common examples are a trigger filter on cart value set higher than most carts, a filter that excludes anyone who has already purchased once, or a flow filter that references a segment which no longer contains what you expect. Read each condition literally, as if you were the system, and ask whether your test profile would pass it.
+
+This is also where a flow that used to work stops. A filter that referenced a property or segment that later changed will keep excluding people long after the person who built it has forgotten it exists.
+
+## Check The Profile, Not Just The Flow
+
+When status, event, and filters all look right, the remaining cause lives on the individual profile. Email flows only send to profiles who can receive marketing email, so someone who is unsubscribed, never consented, or suppressed after a bounce or spam complaint is skipped without any warning on the flow itself.
+
+Two more profile-level behaviors catch people out. A profile that is still inside an earlier run of the same flow will not simply start a second run on top of it, so repeat testing with the same address can look like the flow has stopped working. And smart sending, if enabled on the emails, skips a message when the profile received something recently, which can look like a flow failure when it is a safeguard working as designed.
+
+For your own testing, use a fresh, subscribed address that has never been through the flow. Testing with an address that has already been through it is the most common reason a working flow looks broken.
+
+## Prove The Fix Without Waiting A Week
+
+Do not wait for customers to tell you the flow works. Start a checkout with a clean test profile, enter the email at the first step, leave without ordering, and watch what happens in Klaviyo. The activity feed shows whether the event arrived. The flow's analytics show whether the profile was queued or skipped, and the reason for a skip points straight at the filter or the profile status responsible.
+
+Once the test passes, compare trigger events against flow entries over the next few days. A gap between the two is the number worth tracking, because it shows how many shoppers the flow is actually reaching, and it is the same logic we use when a flow is [underperforming for other reasons](/blog/traffic-not-converting-email-flows).
+
+If you have confirmed the flow is live and firing and want to improve what it does once it runs, the structure and timing questions are covered in our guide to [abandoned cart flows in Klaviyo](/blog/klaviyo-abandoned-cart-flow). And if shoppers are receiving two overlapping sequences instead of none, that is a different problem with its own fix: [browse abandonment overlapping with cart abandonment](/blog/browse-abandonment-flow-overlap).
+
+If your flows need a second look and the cause is not obvious from these checks, [book a free audit](/#contact) and we will trace it for you.
