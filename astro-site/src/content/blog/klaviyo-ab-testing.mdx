@@ -1,0 +1,56 @@
+---
+title: "Klaviyo A/B Testing: How To Run A Test You Can Trust | OpenRateLab"
+description: "Klaviyo A/B testing gives a usable answer only when you test one variable, pick the right metric, and wait for enough sends. Here is the setup."
+category: "KLAVIYO / CAMPAIGNS"
+excerpt: "Most email A/B tests end with a winner that means nothing. Here is how to set one up so the result is worth acting on."
+readTime: "6 MIN READ"
+datePublished: 2026-11-20
+dateModified: 2026-11-20
+faq:
+  - question: "How big does my list need to be for a Klaviyo A/B test?"
+    answer: "There is no single minimum, and anyone quoting one without knowing your numbers is guessing. The size you need depends on two things: how large a difference you hope to detect, and how often your subscribers usually click or buy. A large difference shows up on a modest audience, while a small one needs far more recipients before it stands out from normal week-to-week noise. As a practical check, look at what your testing tool reports about significance after the test. If it says the result is inconclusive, treat the test as inconclusive and do not roll the winner out as a rule. Smaller lists still have options. You can test bigger changes, such as a different offer or a different main call to action, because large differences can be seen with fewer sends. You can also repeat the same test across several campaigns and look for the same version winning each time, which tells you more than a single borderline result from one send. Whatever your size, decide the audience before you send, not after."
+  - question: "What should I A/B test first in my emails?"
+    answer: "Start with the variable most likely to change what people do, which for most stores is the offer or the main call to action, followed by the subject line. Layout and image tests tend to come later because their effects are smaller and harder to read. Test one thing per send so the result has a single cause, and let each test build on the winner of the one before it. If your emails reach the inbox but few people click, test the content and the call to action. If you suspect people are not noticing the email at all, test the subject line and the sender name, and judge the result on clicks instead of opens. Choose the order by what your last few campaigns suggest is weak, and write the hypothesis down before you build the test. It also helps to keep a simple record of every test, with the date, the two versions, the metric and the result, so that you never rerun a test you already ran and forgot about."
+  - question: "How long should I run a Klaviyo A/B test before choosing a winner?"
+    answer: "Long enough that the slower responders have been counted, and the window should be set before you start. In general, opens and clicks cluster in the first hours after a send, while orders often trail in over the following days, so a test judged on revenue needs a longer window than one judged on clicks. If you use a feature that sends the winner to the rest of the list automatically, the test period is the setting that matters most, because a short period means the winner is chosen from the fastest responders only. A reasonable habit is to cover at least a full day, so people who read email in the evening are included, and to extend the window for revenue based tests. Avoid stopping the moment one version pulls ahead, because early gaps often close. Write the end date in your test log next to the hypothesis, and read the result only on that date, so the decision is made by the data and not by impatience."
+---
+
+Klaviyo A/B testing works when the test answers one question with enough data behind it, and most tests fail on both counts. A winner declared after a few hours on a small send tells you very little about what your list prefers.
+
+The setup below is what we use to make a result worth acting on: one variable, a hypothesis written first, a metric that matches the question, and a fixed end date.
+
+## Why Most Klaviyo A/B Testing Proves Nothing
+
+Most tests prove nothing because the result is read too early or the two versions differ in several ways at once. A subject line test that also changes the sender name and the send time cannot say which change did anything.
+
+The second cause is volume. Small differences between two versions show up as noise on a small audience, so a gap of a few points between version A and version B can appear and then vanish on the next send. Klaviyo's testing tools can flag results that are not statistically significant, though the exact wording and options change between versions of the interface, so check what your account shows before you trust a winner.
+
+## Change One Variable And Write The Hypothesis First
+
+Test one variable per send and write the hypothesis before you build the test. A usable hypothesis names the change and the expected effect, for example: a subject line that leads with the product name will get more clicks than one that leads with the offer.
+
+Writing it down first stops a common bad habit, which is looking at the results and then inventing a reason for them. It also keeps your list of things to test short. Subject line, preview text, sender name, the main image, the wording of the call to action and send time are the usual candidates, and each one deserves its own send.
+
+## Pick A Metric That Matches The Question
+
+Choose the metric before the send and match it to what the change could actually influence. A subject line can move opens, but opens have been unreliable since Apple Mail Privacy Protection started loading emails automatically, a problem we cover in our post on [whether you can trust your open rate data](/blog/open-rate-data-accuracy). A winner picked on opens alone can be a winner on inflated numbers.
+
+For subject line and preview text tests, clicks are the safer measure, because a click needs a person. For content, layout and call to action tests, use click rate or, where you have enough orders to read it, placed order rate or revenue per recipient. If a test lifts opens while clicks stay flat, the pattern we describe in [high open rate, low click rate](/blog/high-open-rate-low-click-rate) is worth reading before you roll the result out.
+
+## Sample Size And Duration: Wait For Enough Data
+
+Set the audience size and the end date before the send, and do not stop early because one version looks ahead. There is no universal minimum list size we can give you, because the number you need depends on how large a difference you want to detect and on your usual click rate. A big lift is visible on a smaller audience, and a small lift needs a much larger one.
+
+Duration matters as much as volume. In general, opens and clicks cluster in the first hours after a send and orders often trail in over the following days, so a result read after a couple of hours reflects the fastest responders only. If you use a feature that sends the winner to the rest of the list automatically, give the test period enough room to cover slower readers, because that window is what the winner is chosen from.
+
+## When Your List Is Too Small To Test
+
+When the audience is small, test bigger changes or repeat the same idea across several sends. A list that cannot produce a significant result on a subject line can still learn from a large swing, such as a completely different offer or call to action, because large differences show up even in smaller samples.
+
+The other option is repetition. If the same version wins across three or four campaigns, that consistency carries more weight than one significant-looking result. Keep a simple record so you can see the pattern, and treat a single small-list win as a lead to retest.
+
+## What To Do With A Winner
+
+Log every test and use the winner as the starting hypothesis for the next one. A short record with the date, the variable, the two versions, the metric, the result and the audience builds a library of what your subscribers respond to, and it stops you from rerunning a test you already ran last spring.
+
+Then apply the result where it fits. A subject line pattern that works in campaigns can carry over to flows such as the [welcome series](/blog/klaviyo-welcome-series-guide), though each flow deserves its own check because a new subscriber and a long-time customer respond to different things. If you want help setting up a testing program that fits your list size, [book a free audit](/#contact) and we will go through what is worth testing first.
