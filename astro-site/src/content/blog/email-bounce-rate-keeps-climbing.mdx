@@ -1,0 +1,59 @@
+---
+title: "Email Bounce Rate Keeps Climbing After A List Clean? Check The Entry Point | OpenRateLab"
+description: "If your email bounce rate keeps climbing after a list clean, bad addresses are arriving at signup. Here is how to find the source and close it."
+category: "DELIVERABILITY / LIST QUALITY"
+excerpt: "You cleaned the list and the bounce rate still went up. The cleanup was fine. The leak is where new addresses come in, and here is how to find it."
+readTime: "6 MIN READ"
+datePublished: 2026-11-22
+dateModified: 2026-11-22
+faq:
+  - question: "What is a normal email bounce rate, and when should I worry?"
+    answer: "There is no single number we can give you, because the right level depends on your list, your sending history and how you collect addresses. A widely repeated rule of thumb is to keep the rate low and stable, and many platforms flag accounts when it rises sharply, so the trend matters as much as the figure. A rate that sits flat for months is a different situation from one that doubles over a few weeks. Compare each campaign against your own recent sends rather than against a number from an article. Pay attention to the split between hard and soft bounces, because a rise in hard bounces points at bad addresses while a rise in soft bounces can point at a reputation or server problem. Also check whether the increase is concentrated in one campaign, one segment or one signup source. A single send to an old import can push the rate up on its own, and the cause sits in the list itself. If your sending platform shows a warning or restricts your account, treat that as a firm signal to stop and investigate before the next send."
+  - question: "Should I delete contacts that soft bounce?"
+    answer: "Not on the first soft bounce. A soft bounce is a temporary failure, such as a full inbox or a receiving server that was briefly unavailable, and the same address often works on the next send. The pattern is what matters. An address that soft bounces repeatedly across many sends is effectively dead for your purposes, and most platforms stop sending to it after a certain number of failures, though the exact rule varies by platform and version, so check how yours handles it. If soft bounces are climbing across many different addresses at once, look beyond the list. A burst of temporary failures at one mailbox provider can be a sign that provider is slowing or deferring your mail, which links back to sender reputation and authentication rather than to individual addresses. In that case, deleting contacts will not help, and you should read through your deliverability basics before touching the list. Keep a note of which domains the soft bounces cluster on, because that tells you quickly whether the problem is a handful of bad addresses or a wider delivery issue."
+  - question: "Can bot signups really cause a bounce problem?"
+    answer: "Yes. Automated scripts sometimes submit large numbers of email addresses to public signup forms, often addresses that belong to other people or do not exist at all. Every one of those becomes a contact on your list, and the fake or mistyped ones turn into hard bounces the first time you send. You may see a sudden jump in new subscribers with no matching rise in traffic or sales, and the new contacts often share odd patterns such as random-looking names or the same domain. The fix belongs at the form. Many form tools offer bot protection, hidden-field checks or a confirmation step before the address is added to your main list, and the exact option names differ by tool and version, so check what yours provides. A confirmation email also protects the people whose addresses were entered without their knowledge. After adding protection, watch your signup source breakdown for a few weeks to confirm the suspicious bursts have stopped, and suppress contacts from the affected period that never engaged."
+---
+
+When your email bounce rate keeps climbing after you have cleaned the list, the old addresses were never the real problem. Cleaning removes addresses that have already gone bad. It does nothing about the new bad addresses that arrive every week.
+
+Think of the list as a stock and a flow. The clean fixed the stock, and the bounces you are seeing now come from the flow, which is where to look.
+
+## Why A Rising Email Bounce Rate Survives A Clean
+
+A list clean is a one-time subtraction, so any steady source of bad addresses refills the problem within a few sends. If a signup form, an import or an integration keeps adding addresses that cannot receive mail, the bounce rate rebuilds itself no matter how carefully you cleaned.
+
+This is also why the usual engagement-based cleanup, which we cover in our guide to [email list hygiene in Klaviyo](/blog/email-list-hygiene-klaviyo), does not fix this on its own. That approach deals with people who stopped reading. A bounce is a different failure: the message never arrived at all.
+
+## Split Hard Bounces From Soft Bounces First
+
+Hard bounces are permanent failures, usually an address that does not exist, while soft bounces are temporary, such as a full inbox or a receiving server that was briefly down. The two point at different causes, so separate them before you change anything.
+
+A rise in hard bounces means bad addresses are getting onto your list. A rise in soft bounces across many unrelated addresses can mean a mailbox provider is deferring your mail, which points at sender reputation and sits outside the list itself. Most sending platforms, Klaviyo included, stop sending to addresses that hard bounce, but labels and exact rules vary by version, so check how your account reports and suppresses each type.
+
+## Find The Source Of The New Bad Addresses
+
+Group the bounced contacts by how and when they joined, because the pattern usually names the culprit within minutes. Build a segment of recently bounced profiles, then compare them against the properties you already store: signup form, source, join date, and whether they came from an import or an integration.
+
+Look for three things. Do the bounces cluster on one form? Do they cluster on one date range, such as the week of a giveaway or a discount popup launch? Do they cluster on one import file? Whichever one holds most of the bounces is where to work first, and the rest can wait.
+
+## The Usual Entry-Point Causes
+
+Four causes account for most of what we see on DTC lists:
+
+- **Typos at signup.** Domains like gmial or hotmial in the address field turn a real customer into a hard bounce.
+- **Bot signups.** Scripts submit addresses to open forms, many of them fake or belonging to other people.
+- **Incentive abuse.** A discount for signing up attracts people who enter a throwaway address to get the code.
+- **Old imports.** A list uploaded from another tool or an older system carries years of decay with it.
+
+## Fix It At The Door
+
+Close the entry point rather than cleaning again afterwards. Depending on what your forms and platform offer, that can mean bot protection on the form, a confirmation step before an address joins the main list, a prompt that catches obvious domain typos, and a rule that new imports go to a small test segment before they get a full send.
+
+For imports, send first to a small slice and watch what bounces before you mail the rest. If a slice bounces heavily, hold the whole file back. Our guide to [email deliverability for DTC brands](/blog/email-deliverability-guide-dtc) explains why a high bounce rate on one send can affect how mailbox providers treat the next ones.
+
+## What To Watch Afterwards
+
+Track the bounce rate per campaign and per signup source for several weeks, and compare against your own earlier sends instead of a benchmark from an article. You are looking for a flat line after the fix, and for new subscribers whose first send does not bounce.
+
+If the rate stays elevated after the entry points are closed, widen the search to sender reputation and authentication. If you would like a second pair of eyes on where your list is leaking, [book a free audit](/#contact) and we will trace the sources with you.
