@@ -1,0 +1,67 @@
+---
+title: "Catch-All Email Addresses In Your List: Delete, Keep Or Test? | OpenRateLab"
+description: "Verification tools flag catch-all email addresses as risky, but deleting them all cuts real subscribers. Here is how to decide which ones to keep."
+category: "DELIVERABILITY / LIST QUALITY"
+excerpt: "Your verification tool flagged a batch of addresses as risky. Deleting them all feels safe, but it usually removes real customers. Here is a better way to sort them."
+readTime: "6 MIN READ"
+datePublished: 2026-11-24
+dateModified: 2026-11-24
+faq:
+  - question: "Should I delete risky email addresses from my list?"
+    answer: "Not as a single blanket action. A risky label means the verification tool could not confirm that the mailbox exists, which is a statement about the tool's certainty and says nothing definite about the person behind the address. Some of those contacts are real customers who bought from you last month, and deleting them lowers your list size and your revenue without telling you anything about list quality. A better rule is to sort the risky group by behaviour. Keep anyone who has placed an order, because a purchase is the strongest evidence that a real person reads that mailbox. Keep anyone with recent clicks, with the caveat that company mail systems can scan links automatically. Suppress contacts who joined long ago and never opened or clicked anything, since they add risk and no revenue. Then test-send to the keepers and watch their bounce rate on its own. If it stays low, the label was cautious. If it climbs, you have your answer."
+  - question: "What is the difference between a catch-all address and an invalid address?"
+    answer: "An invalid address is one the receiving server has said does not exist, so mail to it fails immediately and a verification tool can flag it with confidence. A catch-all address sits on a domain whose server accepts mail for every address, whether or not a real mailbox exists behind it. Because the server says yes to everything, a verification tool cannot separate a working mailbox from a mistyped one, so it reports an uncertain label such as risky, unknown or accept-all. The names differ between vendors. In practice this means an invalid address is a confirmed problem you should suppress, while a catch-all address is an open question you can answer with your own data. Purchase history, click history and the way the address joined your list tell you more about a catch-all contact than the verification label does, so use those signals to decide what to do with it."
+  - question: "Can catch-all email addresses hurt my deliverability?"
+    answer: "They can, but the risk depends on which ones you keep sending to. Mailbox providers watch how recipients respond to your mail, and a steady stream of messages to addresses that do not exist is a bad signal, which is why a rising bounce rate deserves attention. Catch-all domains add a wrinkle, because some servers accept a message first and then bounce or discard it afterward, so the bounce can arrive late or look different from a normal hard bounce. Some verification vendors also warn that catch-all domains can hide addresses that exist only to catch senders with poor list practices, though we cannot tell you how common that is. The practical defence is to avoid mailing the whole risky group blindly. Keep the contacts with real engagement, suppress the never-engaged ones, and check the bounce and complaint rates for the group separately after each send. Doing this regularly keeps the group small enough to manage by hand."
+---
+
+Catch-all email addresses are the ones a verification tool cannot confirm, so it labels them risky or unknown. Deleting all of them is the quickest way to tidy a list, and it usually removes real subscribers along with the doubtful ones. A better move is to sort them by what each contact has actually done.
+
+A catch-all domain, sometimes called accept-all, is set up so the mail server accepts mail for any address at that domain, whether or not a mailbox exists. Verification tools work by asking the receiving server whether an address exists. A catch-all server answers yes to everything, so the tool cannot tell a working mailbox from a made-up one and falls back on a vague label.
+
+## What Catch-All Email Addresses Are And Why Tools Call Them Risky
+
+A catch-all address sits on a domain whose server accepts every message, so no outside tool can prove the specific mailbox is real. The label you see depends on the vendor. Risky, unknown and accept-all all describe the same situation: the tool could not decide.
+
+That uncertainty is the whole finding. Many of these addresses belong to real people, such as company addresses, small businesses and personal domains. On a consumer-focused list they are usually a minority, and the share rises where you sell to businesses or collect work emails.
+
+Because the tool is guessing, a risky label tells you where to look, and it does not tell you what to do.
+
+## Why Deleting Every Risky Address Costs You Real Subscribers
+
+A blanket delete treats uncertainty as guilt. The risky group mixes engaged customers with a few addresses that are genuinely dead, and removing all of them shrinks your list and your revenue in return for a small, unmeasured gain in quality.
+
+There is also a signal you may be ignoring. These addresses have not bounced. If a large share of them were dead, your bounce report would already show it. Our guide to [why a bounce rate keeps climbing after a list clean](/blog/email-bounce-rate-keeps-climbing) covers what to do when bounces do appear. Here the question is different: what do you do with contacts that are merely unverified?
+
+One caveat applies. Some catch-all servers accept a message and then reject or discard it afterward, so bounce reporting for these contacts can lag or look different from a normal hard bounce. That is a reason to measure the group carefully, and it gives no grounds for deleting the group unseen.
+
+## Sort Risky Addresses By What They Have Done
+
+Behaviour is better evidence than a verification label, so split the risky group by purchase and engagement history. Four buckets cover most lists:
+
+1. **Placed an order.** Keep them. A purchase is the strongest proof that a real person reads that mailbox.
+2. **Clicked recently.** Keep them, but weigh clicks with care. Company mail systems sometimes scan links automatically, which can record clicks nobody made, so purchases are the safer signal.
+3. **Joined long ago and never opened or clicked.** Suppress them. They carry risk and bring no revenue. The tiers and win-back steps in our guide to [email list hygiene in Klaviyo](/blog/email-list-hygiene-klaviyo) apply here unchanged.
+4. **Joined recently and flagged risky.** Hold them for confirmation. A welcome email that asks for a click, or a double opt-in form, proves the mailbox works before the full flow starts.
+
+The goal is to remove the contacts that add only risk and keep the ones that add revenue, using your own data instead of a vendor's guess.
+
+## Test The Keepers Before You Trust Them
+
+Send one normal campaign to the risky contacts you decided to keep, and read its bounce and complaint rates separately from the rest of the list. A small, clean test settles the question faster than any amount of debate about the label.
+
+If you verify addresses with an outside tool, import the result into Klaviyo as a custom profile property so you can build a segment on it. Property and segment labels vary by version, so check your own account for the exact names.
+
+Compare that segment with your overall numbers after the send:
+
+- Bounce rate close to the rest of the list: the label was cautious, and these contacts can stay in your normal sends.
+- Bounce rate clearly higher: tighten the rules, suppress the weakest bucket and repeat the test.
+- Complaints higher than elsewhere: reduce the frequency to this group before you touch anything else.
+
+Repeat the check after the next one or two sends, because a late bounce from an accept-all server may only show up then.
+
+## Catch Risky Addresses At The Door Next Time
+
+The cheapest fix is to stop collecting unconfirmed addresses in volume. Verify at signup where your form supports it, and consider a confirmation step for any address a tool flags. That keeps the risky group small, so each future decision involves a handful of contacts instead of a few thousand.
+
+If you would like a second opinion on how your list is segmented, or on anything else in your Klaviyo account, [book a free audit](/#contact) and we will go through it with you.
