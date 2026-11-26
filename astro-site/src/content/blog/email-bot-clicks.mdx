@@ -1,0 +1,69 @@
+---
+title: "Email Bot Clicks: How To Spot Fake Clicks In Your Reports | OpenRateLab"
+description: "Email bot clicks come from security scanners that follow your links before a person reads anything. Learn how to spot them and stop them skewing decisions."
+category: "ANALYTICS / DATA QUALITY"
+excerpt: "Your click rate rose and revenue stayed flat. Some of those clicks may have come from security software, so here is how to find them and what to do next."
+readTime: "6 MIN READ"
+datePublished: 2026-11-26
+dateModified: 2026-11-26
+faq:
+  - question: "How do I know if clicks on my emails are from bots?"
+    answer: "Look for three signs together. The first is timing: the click is logged within a few seconds of delivery, which is faster than most people open and read a campaign. The second is pattern: the same contact clicks every link in the message, including the footer and the unsubscribe link, in order and at almost the same moment. The third is missing follow-through: your platform counts the click, but your site analytics shows no matching session from that campaign. No single sign proves a bot click, because tracking blockers, slow pages and in-app browsers also create gaps between clicks and sessions. When all three appear for the same contacts, especially several people at one company domain, an automated scanner is the likely cause. Pick one recent campaign, pull the click activity with timestamps, and compare it with campaign-tagged sessions and orders. Labels for this activity vary by platform and version, so check your own account's reporting screens."
+  - question: "Do bot clicks hurt my deliverability or sender reputation?"
+    answer: "We have no evidence that they do, and we would not assume it either way. Mailbox providers judge your mail mostly by how their own users react, such as opens, replies, spam reports and deletions, along with your authentication and sending history. A scanner at a company gateway is not one of those users, so its clicks are unlikely to move your reputation up or down on their own. The bigger risk is internal: you act on the inflated numbers. A contact who looks engaged because a scanner clicked a link can stay on your list for months, and you keep mailing someone who never reads your email. That lowers real engagement over time, and falling engagement is something mailbox providers do respond to. So the practical answer is to protect your decisions rather than your reputation, and to keep an eye on genuine signals such as replies, complaints and unsubscribes by domain. Judge campaigns by orders and sessions, and define engaged contacts by actions that need a real person."
+  - question: "Should I remove contacts whose only clicks look like bot clicks?"
+    answer: "Not on timing alone. A contact who sits behind a company mail gateway may still be a real customer, and the scanner clicks simply tell you nothing about them either way. Start by checking purchase history and site visits. Anyone who has ordered, or who visits your site after emails, belongs on the list regardless of what the click log shows. For contacts who have never ordered, never visited and whose only clicks are instant, all-link clicks, treat them as unengaged when you decide who to mail less often or suppress, because the clicks carry no information. A gentle re-engagement email asking for one clear action is a fair test before removing them. Keep a record of how many contacts this affects, so you can see whether it is a handful of company domains or a wider pattern in your list. Revisit the group after a few sends and adjust. If the same company domains keep appearing, a note on your own reporting that those clicks are unreliable saves the next person from drawing the wrong conclusion."
+---
+
+Email bot clicks are clicks made by automated security software, and your platform records them like any other click. They raise your click rate, they can swing a test result, and they can mark a contact as engaged when nobody read the email. The fix is to check clicks against something a scanner cannot produce, such as a site session or an order.
+
+Our post on [open rate data accuracy](/blog/open-rate-data-accuracy) explains how Apple Mail Privacy Protection inflates opens, and it treats click rate as the sturdier number. That still holds as a comparison, but it has a limit. Link scanners can add clicks too, so a click is better evidence than an open and still short of proof.
+
+## What Email Bot Clicks Are And Where They Come From
+
+Email bot clicks come from software that follows the links in your message before a person has read it. Many company mail systems and security products check incoming email for malware and phishing links. To do that, they request every URL in the message. Your platform sees a request to a tracked link and logs a click.
+
+Nobody read anything. The scanner simply did its job. This tends to show up more on business addresses than on personal ones, because company mail gateways are where this kind of scanning usually sits. We have no figure for how much of any particular list it affects, which is why it is worth measuring in your own data.
+
+## How To Spot A Bot Click In Your Data
+
+A bot click usually looks too fast, too thorough or too empty. These are the signs to look for:
+
+- **Timing.** The click lands within seconds of delivery. A person rarely reads and clicks that quickly on a campaign sent to a whole list.
+- **Pattern.** One contact clicks every link in the email, footer and unsubscribe link included, in order, at nearly the same moment.
+- **No follow-through.** Your platform counts the click, but your site analytics shows no matching session from that campaign.
+- **Clustering.** Several contacts at one company domain all click in the same second.
+
+Any one of these has an innocent explanation. Tracking blockers and in-app browsers can also leave clicks without sessions. Treat a single sign as a reason to look closer and several signs together as a strong hint.
+
+## What Email Bot Clicks Quietly Distort
+
+Bot clicks do their damage wherever a decision rests on a raw click. Five places are worth checking:
+
+- **Click rate.** The headline number rises, and so does the gap between this campaign and last month's.
+- **A/B test winners.** A scanner that hits every link in both versions adds noise to both. On a small send, a handful of scanner clicks can decide the winner. Our [Klaviyo A/B testing guide](/blog/klaviyo-ab-testing) covers picking a metric that answers the question you asked.
+- **Engaged segments.** A segment built on "clicked in the last 90 days" includes people who never read a word, and those contacts dodge any clean-up you run on inactive ones.
+- **Flow branches.** A split that sends clickers down one path and non-clickers down another puts contacts on the wrong path.
+- **Unsubscribes.** A scanner that follows an unsubscribe link can remove a person who never asked to leave. Whether that happens depends on how your unsubscribe page works.
+
+## How To Check Your Own Account For Bot Clicks
+
+The quickest check is to compare click timing and site sessions for one recent campaign. It takes one sitting.
+
+1. Pick a recent campaign and pull its click activity with timestamps. Where this lives and what it is called varies by platform and version.
+2. Count how many clicks landed within seconds of the send, and how many contacts clicked every link.
+3. Compare total clicks with the sessions your analytics attributes to that campaign through its tracking tags.
+4. Look at orders. Divide campaign orders by clicks and compare the result with a campaign from earlier in the year.
+
+If click rate jumped and orders per click fell, suspect scanners before you suspect your copy. That order of diagnosis saves a lot of pointless rewriting.
+
+## What To Do About Email Bot Clicks
+
+Stop treating a raw click as proof of interest, and lean on signals that need a real person. Four changes cover most of the damage:
+
+- Judge campaigns and tests on placed orders and revenue per recipient, and keep clicks as supporting evidence.
+- Define an engaged contact by more than one action, such as a click plus a site visit, or clicks across more than one send.
+- Check what your platform says about bot filtering. Many filter some known scanner traffic, but do not assume it catches all of it.
+- Where your platform allows it, make the unsubscribe page ask for a confirming button press, so an automated visit cannot finish the job.
+
+If your reports look better than your revenue, [book a free audit](/#contact) and we will compare your click timing against your orders.
