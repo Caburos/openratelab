@@ -1,0 +1,65 @@
+---
+title: "Buying An Email List: What It Does To Your Sender Reputation | OpenRateLab"
+description: "Buying an email list puts people with no permission in your sends. Here is the damage to sender reputation and how to recover if it already happened."
+category: "DELIVERABILITY / LIST QUALITY"
+excerpt: "A cheap list looks like a shortcut to reach. In practice it hands mailbox providers the worst possible signals about your brand, and the cost shows up later."
+readTime: "6 MIN READ"
+datePublished: 2026-11-27
+dateModified: 2026-11-27
+faq:
+  - question: "Is buying an email list illegal?"
+    answer: "It depends on where your recipients live, and we are not lawyers, so treat this as orientation rather than legal advice. In the EU and UK, marketing email generally needs consent or another valid legal basis, and a list someone sold you almost never carries consent for your specific brand. That makes sending to it a compliance problem as well as a deliverability one. In the US, the CAN-SPAM Act does not require opt-in, but it still requires truthful headers, a physical address and a working opt-out, and it does not make a purchased list a good idea. Even where the law is permissive, the practical rules are stricter. Most email platforms, Klaviyo included, prohibit uploading purchased or rented lists in their terms, and accounts can be suspended for it. Check your platform's current acceptable use policy and the rules for each country you send to. The safer test is simple: if the person never asked to hear from your brand, they should not be on your list."
+  - question: "What is the difference between a purchased list, a rented list and a co-registration list?"
+    answer: "A purchased list is a file of addresses you receive and upload to your own account. A rented list is similar, except the seller sends your message on your behalf, so you never hold the addresses. A co-registration list comes from signup flows where someone ticks a box on another company's form to hear from partners. The three differ in mechanics, but the permission question is the same: did this person ask to hear from your brand specifically? In a purchased or rented list, the answer is almost always no. In co-registration, the consent is often vague, bundled or collected long ago, and engagement tends to be weak because the signup was not about your product. Each one can still produce complaints and spam trap hits, and each one puts someone else's collection standards on your sender reputation. If you test any of them, treat it as a risk to your main sending domain and ask what controls the seller offers. For most DTC brands, the better return is a stronger signup experience on your own site."
+  - question: "I already imported a purchased list into Klaviyo. What should I do now?"
+    answer: "Stop sending to those contacts immediately, then work in order. First, find out what happened. Pull the campaigns and flows those addresses received, and look at bounces, spam complaints and unsubscribes for that group compared with your normal audience. Second, isolate them. Keep them in a separate list or segment and exclude that group from every send, including flows triggered by list membership. Third, suppress the obvious damage, such as hard bounces, complaints and unsubscribes. Fourth, decide honestly whether any of those people have a real relationship with your brand, such as past customers who gave consent. Those can stay, and anyone else should be removed rather than re-permissioned by blast, because a re-permission email to cold addresses repeats the problem. Then watch your engaged-only sends for a few weeks, since reputation damage often shows in inbox placement before it shows in revenue. Labels and menus vary by platform and version, so check your own account for the exact steps."
+---
+
+Buying an email list damages sender reputation because the people on it never asked to hear from your brand. They ignore your email, delete it, report it or bounce it, and each of those reactions teaches mailbox providers that your mail is unwanted. The reach looks cheap on the invoice and gets paid for later in inbox placement.
+
+If you came here from a dropping open rate after an import, the short version is to stop sending to the imported group today, then follow the recovery order further down. If you are still weighing the purchase, the next section explains what you would be buying.
+
+## Why Buying An Email List Hurts Sender Reputation
+
+A bought list gives you contacts with no relationship to your brand, and mailbox providers judge you by how recipients react. Gmail, Yahoo and Outlook watch whether people open, reply, delete without reading or hit the spam button. A permission-based list produces mostly neutral to positive signals. A bought list produces mostly negative ones, and a few of them are severe.
+
+Four things go wrong, roughly in this order:
+
+- **Bounces.** Purchased files often carry stale, mistyped or invented addresses. A high bounce rate tells providers you do not know who you are mailing.
+- **Spam traps.** Some addresses exist only to catch senders with poor list sources. Pristine traps were never used by a real person, so the only way an address ends up on your list is that it was scraped or guessed. Recycled traps are old abandoned addresses that were reactivated. Neither gives you any warning before it hits.
+- **Complaints.** People who did not sign up report your email as spam. Google's bulk sender guidance asks senders to keep spam complaint rates low, with a stated ceiling of 0.3% and a recommendation to stay well below it, around 0.1%. A cold list can push you toward that line fast, because a small slice of unrequested email gets reported.
+- **Empty engagement.** Even the people who do not complain mostly do nothing. Low opens and clicks across a large share of your sends drag down the engagement your whole domain is judged on, including your good subscribers.
+
+The damage does not stay with the bought contacts. Reputation attaches to your sending domain and, depending on your setup, your IP. Once it drops, your welcome flow and abandoned cart emails to real customers land worse too. Our piece on [the order deliverability collapses in](/blog/deliverability-collapse-order) shows how these signals stack up before the revenue effect is obvious.
+
+## Lists That Carry The Same Risk
+
+Purchase is the obvious case, and several quieter sources behave the same way. Ask the same question of each: did this person choose to hear from our brand?
+
+- **Rented lists.** Someone else sends on your behalf. You never hold the addresses, but your brand is on the email and complaints still land on you.
+- **Scraped or harvested contacts.** Emails pulled from websites, directories or social profiles. These are a common source of spam traps.
+- **Partner and co-registration lists.** Consent is often bundled, vague or old, and engagement is weak.
+- **Giveaway and contest entrants.** People entered to win a prize. Unless the form asked clearly for marketing consent, you have entries and not subscribers.
+- **Inherited or acquired lists.** An older database from a previous owner or company. The permission belonged to the old brand, and the addresses have aged.
+- **Unverified bulk imports.** A spreadsheet from a trade show, a CRM export or a freelancer, with no record of how each contact opted in.
+
+None of these is automatically unusable, but each needs evidence of real consent and a plan to send carefully. The same applies if you are tempted to import everyone who ever bought from you without checking how they were collected.
+
+## What To Do If A Bad List Is Already In Your Account
+
+Stop sending to the imported contacts first, then work through the damage in a set order. Speed matters more than perfection here, because every extra send adds to the signal providers are collecting.
+
+1. **Pause every send to the group.** That includes flows triggered by list membership and any automation that adds them in.
+2. **Measure what already happened.** Compare bounces, complaints and unsubscribes for the imported group against your normal audience. Note which campaigns they received.
+3. **Isolate the group.** Keep it in its own list or segment and exclude it from everything while you decide what to do.
+4. **Suppress the clear failures.** Hard bounces, complainers and unsubscribes should be suppressed and never mailed again.
+5. **Keep only people with a real relationship.** Past customers who consented can stay. The rest should be removed. A mass re-permission email to cold addresses usually repeats the original problem.
+6. **Mail your engaged audience while reputation recovers.** Watch placement and complaints for a few weeks. Our guide to [email list hygiene in Klaviyo](/blog/email-list-hygiene-klaviyo) lays out engagement tiers that fit this recovery period.
+
+Recovery takes time because providers weigh recent behaviour, so avoid sudden jumps in volume while you rebuild.
+
+## What To Build Instead Of Buying An Email List
+
+A smaller list built on permission outperforms a bigger one built on a file. The levers are plain: a clear incentive on your signup form, a form that appears on the pages where intent is highest, a welcome flow that delivers on the promise, and a checkout opt-in that is honest about what people are agreeing to. Growth from these sources is slower per day and far more valuable per contact, because every address belongs to a person who chose your brand.
+
+If your list is thin and you want help building the signup and welcome system around it, [book a free audit](/#contact) and we will review where your subscribers come from today.
